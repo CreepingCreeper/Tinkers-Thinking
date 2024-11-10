@@ -103,6 +103,7 @@ public class DryingRackBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;// 具有属性是水平的朝向
     public DryingRackBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
     private static final VoxelShape EAST =
             Block.box(6, 12, 0, 10, 16, 16);

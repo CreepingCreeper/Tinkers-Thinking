@@ -3,6 +3,7 @@ package com.creeping_creeper.tinkers_thinking.common.things;
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.things.block.DryingRackBlock;
 import com.creeping_creeper.tinkers_thinking.common.things.block.HeavyCoreBlock;
+import com.creeping_creeper.tinkers_thinking.common.things.block.SpitterBlock;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -80,6 +81,10 @@ public class ModBlocks {
             }).sound(STONE),ParticleTypes.SOUL_FIRE_FLAME));
     public static final RegistryObject<Block> drying_rack = BLOCKS.register("drying_rack",
             () -> new DryingRackBlock(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.6f).sound(WOOD)));
+    public static final RegistryObject<Block> seared_spitter = BLOCKS.register("seared_spitter",
+            () -> new SpitterBlock(BlockBehaviour.Properties.of(Material.STONE).strength(8f).sound(BASALT)));
+    public static final RegistryObject<Block> scorched_spitter = BLOCKS.register("scorched_spitter",
+            () -> new SpitterBlock(BlockBehaviour.Properties.of(Material.STONE).strength(8f).sound(BASALT)));
     public static final RegistryObject<LiquidBlock> molten_ardite_block = BLOCKS.register("molten_ardite_block",
             ()->new BurningLiquidBlock(ModFluids.source_molten_ardite,CommonLiquid,10,9f));
     public static final RegistryObject<LiquidBlock> molten_tinkers_bronze_block = BLOCKS.register("molten_tinkers_bronze_block",

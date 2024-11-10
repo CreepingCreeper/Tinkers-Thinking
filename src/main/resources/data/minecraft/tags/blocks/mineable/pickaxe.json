@@ -19,6 +19,8 @@
     "tinkers_thinking:stone_torch",
     "tinkers_thinking:wall_stone_torch",
     "tinkers_thinking:stone_soul_torch",
-    "tinkers_thinking:wall_stone_soul_torch"
+    "tinkers_thinking:wall_stone_soul_torch",
+    "tinkers_thinking:seared_spitter",
+    "tinkers_thinking:scorched_spitter"
   ]
 }

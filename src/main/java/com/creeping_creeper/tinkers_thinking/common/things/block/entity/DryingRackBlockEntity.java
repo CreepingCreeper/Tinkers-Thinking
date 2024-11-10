@@ -137,9 +137,9 @@ public class DryingRackBlockEntity extends BlockEntity {
         }
     }
     public static void tick(Level level, BlockPos blockPos, BlockState state, DryingRackBlockEntity entity) {
-        if (level.isClientSide){
-            return;
-        }else   ModMessages.sendToClients(new ItemStackSyncS2CPacket(entity.itemStackHandler, blockPos));
+        if (!level.isClientSide) {
+            ModMessages.sendToClients(new ItemStackSyncS2CPacket(entity.itemStackHandler, blockPos));
+        }
         if(hasRecipe(entity)){
             entity.progress ++ ;
             setChanged(level,blockPos,state);

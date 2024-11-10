@@ -16,6 +16,14 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("drying_rack",
                     ()->BlockEntityType.Builder.of(DryingRackBlockEntity::new,
                             ModBlocks.drying_rack.get()).build(null));
+    public static final RegistryObject<BlockEntityType<SpitterBlockEntity>> Seared_Spitter =
+            BLOCK_ENTITIES.register("seared_spitter",
+                    ()->BlockEntityType.Builder.of(SpitterBlockEntity::new,
+                            ModBlocks.seared_spitter.get()).build(null));
+    public static final RegistryObject<BlockEntityType<SpitterBlockEntity>> Scorched_Spitter =
+            BLOCK_ENTITIES.register("scorched_spitter",
+                    ()->BlockEntityType.Builder.of(SpitterBlockEntity::new,
+                            ModBlocks.scorched_spitter.get()).build(null));
     public static void registers(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);
     }

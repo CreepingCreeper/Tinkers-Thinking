@@ -2,10 +2,7 @@ package com.creeping_creeper.tinkers_thinking;
 
 import com.creeping_creeper.tinkers_thinking.common.networking.ModMessages;
 import com.creeping_creeper.tinkers_thinking.common.recipes.ModRecipes;
-import com.creeping_creeper.tinkers_thinking.common.things.ModBlocks;
-import com.creeping_creeper.tinkers_thinking.common.things.ModEffects;
-import com.creeping_creeper.tinkers_thinking.common.things.ModFluids;
-import com.creeping_creeper.tinkers_thinking.common.things.ModItems;
+import com.creeping_creeper.tinkers_thinking.common.things.*;
 import com.creeping_creeper.tinkers_thinking.common.things.block.entity.ModBlockEntities;
 import com.creeping_creeper.tinkers_thinking.common.things.fluid.ModFluidTypes;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModPotions;
@@ -26,6 +23,7 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TinkersThinking.MODID)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TinkersThinking
 {
     // Define mod id in a common place for everything to reference
@@ -40,6 +38,7 @@ public class TinkersThinking
         ModBlocks.registers(modEventBus);
         ModFluids.registers(modEventBus);
         ModFluidTypes.registers(modEventBus);
+        ModEntityTypes.register(modEventBus);
         ModEffects.registers(modEventBus);
         ModPotions.registers(modEventBus);
         ModConfiguredFeatures.registers(modEventBus);
@@ -60,6 +59,7 @@ public class TinkersThinking
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
+
         {
         }
     }

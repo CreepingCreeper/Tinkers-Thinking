@@ -1,8 +1,9 @@
 {
   "modules": [
     {
-      "type": "tconstruct:base_stats",
-      "stats": {
+      "type": "tconstruct:multiply_stats",
+      "multipliers": {
+        "tconstruct:tank_capacity": 8.0
       }
     },
     {
@@ -20,8 +21,8 @@
           "level": 1
         },
         {
-          "name": "tconstruct:tank",
-          "level": 7
+          "name": "tinkers_thinking:forever",
+          "level": 1
         }
       ]
     },

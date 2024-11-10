@@ -32,7 +32,6 @@ public class SculkBoostModifier extends Modifier implements TooltipModifierHook,
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-
         hookBuilder.addHook(this, ModifierHooks.TOOLTIP,ModifierHooks.BREAK_SPEED,ModifierHooks.CONDITIONAL_STAT);
     }
     @Override
@@ -41,20 +40,14 @@ public class SculkBoostModifier extends Modifier implements TooltipModifierHook,
             return;
         }
         if (event.getEntity().hasEffect(ModEffects.sculk_power.get())){
-            event.setNewSpeed((float) (event.getNewSpeed() * (1 + modifier.getLevel() * 0.2)));
+            event.setNewSpeed((float) (event.getNewSpeed() * (1 + modifier.getLevel() * 0.20)));
         }
     }
     @Override
     public float modifyStat(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, LivingEntity living, @NotNull FloatToolStat stat, float baseValue, float multiplier) {
         if (living.hasEffect(ModEffects.sculk_power.get())) {
-            if (stat ==ToolStats.ATTACK_SPEED) {
-                return (float) (baseValue*( 1+(0.2*modifier.getLevel())));
-            }
             if (stat ==ToolStats.PROJECTILE_DAMAGE) {
-                return (float) (baseValue*( 1+(0.2*modifier.getLevel())));
-            }
-            if (stat ==ToolStats.DRAW_SPEED) {
-                return (float) (baseValue*( 1+(0.2*modifier.getLevel())));
+                return (float) (baseValue*( 1+(0.20*modifier.getLevel())));
             }
         }
         return baseValue;

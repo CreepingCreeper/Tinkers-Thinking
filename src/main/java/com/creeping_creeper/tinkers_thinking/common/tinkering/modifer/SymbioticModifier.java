@@ -12,7 +12,7 @@ import slimeknights.tconstruct.common.Sounds;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileLaunchModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
@@ -24,10 +24,10 @@ import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
 import javax.annotation.Nullable;
 
-public class SymbioticModifier extends Modifier implements  MeleeHitModifierHook, ProjectileLaunchModifierHook, OnAttackedModifierHook {
+public class SymbioticModifier extends Modifier implements  MeleeHitModifierHook, ProjectileLaunchModifierHook, ModifyDamageModifierHook{
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this,ModifierHooks.MELEE_HIT,ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.ON_ATTACKED);
+        hookBuilder.addHook(this,ModifierHooks.MELEE_HIT,ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.MODIFY_DAMAGE);
     }
     private void eat(IToolStackView tool, ModifierEntry modifier, LivingEntity entity) {
         if (entity instanceof Player player) {
@@ -57,12 +57,14 @@ public class SymbioticModifier extends Modifier implements  MeleeHitModifierHook
             eat(tool, modifier, entity);
         }
     }
+
     @Override
-    public void onAttacked(@NotNull IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
+    public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
         float level = modifier.getEffectiveLevel();
-        if (RANDOM.nextFloat() < (level * 0.15f) && living.getHealth() < living.getMaxHealth()&&!tool.isBroken()) {
-                eat(tool, modifier, living);
+        if (RANDOM.nextFloat() < (level * 0.15f) && living.getHealth() < living.getMaxHealth() && !tool.isBroken()) {
+            eat(tool, modifier, living);
         }
+        return amount;
     }
 }

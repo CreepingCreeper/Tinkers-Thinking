@@ -118,7 +118,7 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(pBuffer));
             ItemStack output = pBuffer.readItem();
             String category ="misc";
-            return new DryingRackRecipes(pRecipeId,output,inputs, category);
+            return new DryingRackRecipes(pRecipeId,output,inputs,category);
         }
 
         @Override

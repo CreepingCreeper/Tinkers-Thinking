@@ -16,8 +16,7 @@
   "item.tinkers_thinking.clay_crystal": "黏土水晶",
   "item.tinkers_thinking.magma_crystal": "岩浆水晶",
   "item.tinkers_thinking.quartz_crystal": "石英水晶",
-  "item.tinkers_thinking.chromatic_crystal": "异彩水晶", 
-  "item.tinkers_thinking.lightite_reinforcement": "轻悠加固板",
+  "item.tinkers_thinking.chromatic_crystal": "异彩水晶",
 
   "item.tinkers_thinking.stone_stick": "石棍",
   "item.tinkers_thinking.stone_torch": "石柄火把",
@@ -54,6 +53,7 @@
   "item.tinkers_thinking.black_chocolate": "黑巧克力",
 
   "item.tinkers_thinking.surging_wellspring": "涌流源泉",
+  "item.tinkers_thinking.ashes": "灰烬",
 
   "item.tinkers_thinking.tinkers_bronze_ingot": "工匠青铜锭",
   "item.tinkers_thinking.tinkers_bronze_nugget": "工匠青铜粒",
@@ -75,6 +75,9 @@
 
   "block.tinkers_thinking.drying_rack": "晾干架",
   "jei.tconstruct.drying_rack": "晾干架",
+
+  "block.tinkers_thinking.seared_spitter": "焦黑喷洒器",
+  "block.tinkers_thinking.scorched_spitter": "焦褐喷洒器",
 
   "item.tinkers_thinking.lightite_compound": "轻悠化合物",
   "item.tinkers_thinking.lightite_ingot": "轻悠锭",
@@ -214,16 +217,16 @@
 
   "material.tinkers_thinking.lightite": "轻悠",
   "material.tinkers_thinking.lightite.flavor": "轻悠悠!",
-  "material.tinkers_thinking.lightite.encyclopedia": "每级+0.25使用时速度，+5%移动速度",
-  "material.tinkers_thinking.lightite.armor": "每级+10%移动速度",
+  "material.tinkers_thinking.lightite.encyclopedia": "快捷栏没有其他物品时，攻击命中后3秒内提升30%攻击速度",
+  "material.tinkers_thinking.lightite.ranged": "快捷栏没有其他物品时，提升30%拉弓速度",
 
   "material.tinkers_thinking.black_chocolate": "黑巧克力",
   "material.tinkers_thinking.black_chocolate.flavor": "深色橡木活板门？",
-  "material.tinkers_thinking.black_chocolate.encyclopedia": "每级在攻击时有25%概率获得6秒力量 III，消耗5点耐久度",
+  "material.tinkers_thinking.black_chocolate.encyclopedia": "每级在攻击命中后有25%概率获得6秒力量 III，消耗5点耐久度",
 
   "material.tinkers_thinking.white_chocolate": "白巧克力",
   "material.tinkers_thinking.white_chocolate.flavor": "白桦木活板门？",
-  "material.tinkers_thinking.white_chocolate.encyclopedia": "每级在挖掘时有25%概率获得6秒急迫 III，消耗5点耐久度",
+  "material.tinkers_thinking.white_chocolate.encyclopedia": "每级在挖掘方块后时有25%概率获得6秒急迫 III，消耗5点耐久度",
 
   "material.tinkers_thinking.chlorophyte": "叶绿",
   "material.tinkers_thinking.chlorophyte.flavor": "生命源质",
@@ -253,8 +256,7 @@
 
   "material.tinkers_thinking.echo_bronze": "回响青铜",
   "material.tinkers_thinking.echo_bronze.flavor": "别和工匠青铜搞混了",
-  "material.tinkers_thinking.echo_bronze.encyclopedia": "拥有幽匿能量效果时提升20%挖掘速度和近战速度",
-  "material.tinkers_thinking.echo_bronze.ranged":"拥有幽匿能量效果时提升20%拉弓速度和初速度",
+  "material.tinkers_thinking.echo_bronze.encyclopedia": "拥有幽匿能量效果时提升20%挖掘速度和拉弓速度",
 
   "material.tinkers_thinking.verdant_frogcroaking": "青翠蛙鸣体",
   "material.tinkers_thinking.verdant_frogcroaking.flavor": "风之幽匿",
@@ -334,15 +336,11 @@
 
   "modifier.tinkers_thinking.stimulation": "激励",
   "modifier.tinkers_thinking.stimulation.flavor": "激励！",
-  "modifier.tinkers_thinking.stimulation.description": "对目标造成力量效果",
+  "modifier.tinkers_thinking.stimulation.description": "攻击命中后，有概率消耗耐久度令自身获得力量效果",
 
   "modifier.tinkers_thinking.inspired": "鼓舞",
   "modifier.tinkers_thinking.inspired.flavor": "鼓舞！",
-  "modifier.tinkers_thinking.inspired.description": "对目标造成生命恢复效果",
-
-  "modifier.tinkers_thinking.lightly_speed": "轻捷",
-  "modifier.tinkers_thinking.lightly_speed.flavor": "几乎没有阻力！",
-  "modifier.tinkers_thinking.lightly_speed.description": "提升使用中速度、初速度和移动速度",
+  "modifier.tinkers_thinking.inspired.description": "挖掘方块后，有概率消耗耐久度令自身获得急迫效果",
 
   "modifier.tinkers_thinking.symbiotic": "共生",
   "modifier.tinkers_thinking.symbiotic.flavor": "友谊的治愈力！",
@@ -381,7 +379,7 @@
 
   "modifier.tinkers_thinking.sculk_boost": "幽匿激发",
   "modifier.tinkers_thinking.sculk_boost.flavor": "厚积薄发",
-  "modifier.tinkers_thinking.sculk_boost.description": "拥有幽匿能量效果时提升挖掘速度、近战速度、拉弓速度和初速度",
+  "modifier.tinkers_thinking.sculk_boost.description": "拥有幽匿能量效果时提升挖掘速度和拉弓速度",
   "modifier.tconstruct.sculk_boost.boost": "幽匿激发加成",
 
   "modifier.tinkers_thinking.sculk_levitate": "幽匿飘浮",
@@ -398,7 +396,7 @@
 
   "modifier.tinkers_thinking.backstabbing": "背刺",
   "modifier.tinkers_thinking.backstabbing.flavor": "乘人之危……",
-  "modifier.tinkers_thinking.backstabbing.description": "增加从后攻击目标时的伤害",
+  "modifier.tinkers_thinking.backstabbing.description": "增加从后方攻击目标时的伤害",
 
   "modifier.tinkers_thinking.broad": "阔盾",
   "modifier.tinkers_thinking.broad.flavor": "滴水不漏！",
@@ -408,9 +406,9 @@
   "modifier.tinkers_thinking.sprinting.flavor": "冲刺！冲刺！",
   "modifier.tinkers_thinking.sprinting.description": "向水平方向快速位移",
 
-  "modifier.tinkers_thinking.extra_tank": "额外储罐",
-  "modifier.tinkers_thinking.extra_tank.flavor": "更大！更好！",
-  "modifier.tinkers_thinking.extra_tank.description": "额外的储罐",
+  "modifier.tinkers_thinking.forever": "永恒加固",
+  "modifier.tinkers_thinking.forever.flavor": "",
+  "modifier.tinkers_thinking.forever.description": "",
 
   "modifier.tinkers_thinking.countermeasures": "反制",
   "modifier.tinkers_thinking.countermeasures.flavor": "全方位保护",
@@ -427,10 +425,28 @@
   "modifier.tconstruct.hungriness.mining_speed": "饥渴挖掘速度",
   "modifier.tconstruct.hungriness.velocity": "饥渴初速度",
 
+  "modifier.tinkers_thinking.burning_out": "烬灭",
+  "modifier.tinkers_thinking.burning_out.flavor": "",
+  "modifier.tinkers_thinking.burning_out.description": "攻击命中着火目标后，根据其剩余着火时间造成额外伤害，然后熄灭其身上的火焰",
+  "modifier.tinkers_thinking.reburning": "复燃",
+  "modifier.tinkers_thinking.reburning.flavor": "",
+  "modifier.tinkers_thinking.reburning.description": "着火时受到非火焰伤害后，根据自身剩余着火时间恢复生命值，然后熄灭其身上的火焰",
+
+  "modifier.tinkers_thinking.lightly_attack": "轻袭",
+  "modifier.tinkers_thinking.lightly_attack.flavor": "",
+  "modifier.tinkers_thinking.lightly_attack.description": "快捷栏没有其他物品时，攻击命中后暂时提升攻击速度",
+  "modifier.tinkers_thinking.lightly_attack.ranged": "快捷栏没有其他物品时提升拉弓速度",
+  "modifier.tconstruct.lightly_attack.draw_speed": "轻袭拉弓速度",
+
+  "modifier.tinkers_thinking.test": "名称没想好",
+  "modifier.tinkers_thinking.test.flavor": "",
+  "modifier.tinkers_thinking.test.description": "受到伤害后根据伤害值暂时提升生命上限",
+
   "effect.tinkers_thinking.overweight": "超重",
   "effect.tinkers_thinking.weightless": "失重",
   "effect.tinkers_thinking.sculk_power": "幽匿能量",
   "effect.tinkers_thinking.modifier_immune": "特性免疫",
+  "effect.tinkers_thinking.lightly_attack": "轻袭",
   "item.minecraft.potion.effect.overweight_potion": "超重药水",
   "item.minecraft.potion.effect.overweight_potion_strong": "超重药水",
   "item.minecraft.potion.effect.overweight_potion_long": "超重药水",
@@ -440,6 +456,9 @@
   "item.minecraft.lingering_potion.effect.overweight_potion": "滞留型超重药水",
   "item.minecraft.lingering_potion.effect.overweight_potion_strong": "滞留型超重药水",
   "item.minecraft.lingering_potion.effect.overweight_potion_long": "滞留型超重药水",
+  "item.minecraft.tipped_arrow.effect.overweight_potion": "超重之箭",
+  "item.minecraft.tipped_arrow.effect.overweight_potion_long": "超重之箭",
+  "item.minecraft.tipped_arrow.effect.overweight_potion_strong": "超重之箭",
   "item.minecraft.potion.effect.weightless_potion": "失重药水",
   "item.minecraft.potion.effect.weightless_potion_strong": "失重药水",
   "item.minecraft.potion.effect.weightless_potion_long": "失重药水",
@@ -449,12 +468,17 @@
   "item.minecraft.lingering_potion.effect.weightless_potion": "滞留型失重药水",
   "item.minecraft.lingering_potion.effect.weightless_potion_strong": "滞留型失重药水",
   "item.minecraft.lingering_potion.effect.weightless_potion_long": "滞留型失重药水",
+  "item.minecraft.tipped_arrow.effect.weightless_potion": "失重之箭",
+  "item.minecraft.tipped_arrow.effect.weightless_potion_long": "失重之箭",
+  "item.minecraft.tipped_arrow.effect.weightless_potion_strong": "失重之箭",
   "item.minecraft.potion.effect.enderference_potion": "抑影药水",
   "item.minecraft.potion.effect.enderference_potion_long": "抑影药水",
   "item.minecraft.splash_potion.effect.enderference_potion": "喷溅型抑影药水",
   "item.minecraft.splash_potion.effect.enderference_potion_long": "喷溅型抑影药水",
   "item.minecraft.lingering_potion.effect.enderference_potion": "滞留型抑影药水",
   "item.minecraft.lingering_potion.effect.enderference_potion_long": "滞留型抑影药水",
+  "item.minecraft.tipped_arrow.effect.enderference_potion": "抑影之箭",
+  "item.minecraft.tipped_arrow.effect.enderference_potion_long": "抑影之箭",
 
   "recipe.tinkers_thinking.modifier.backstabbing.level_2": "“背刺 II”的合成与前一级不同",
   "recipe.tinkers_thinking.modifier.backstabbing.level_3": "“背刺 III”的合成与前两级不同"

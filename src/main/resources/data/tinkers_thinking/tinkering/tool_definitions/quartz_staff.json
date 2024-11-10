@@ -3,11 +3,17 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tconstruct:tough_handle",
-        "tconstruct:tough_handle",
+        {
+          "item": "tconstruct:tough_handle",
+          "scale": 0.5
+        },
+        {
+          "item": "tconstruct:tough_handle",
+          "scale": 0.5
+        },
         "tconstruct:large_plate"
-      ],
-      "stat_provider": "tconstruct:melee_harvest"
+       ],
+         "primary_part": 0
     },
     {
       "type": "tconstruct:default_materials",

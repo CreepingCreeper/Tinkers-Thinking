@@ -16,15 +16,13 @@ import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
 import slimeknights.tconstruct.library.client.modifiers.ModifierModelManager;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
 
+
 @SuppressWarnings("unused")
 
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 
 public class ToolClientEvents extends ClientEventBase {
-    private static final ISafeManagerReloadListener MODIFIER_RELOAD_LISTENER = manager -> {
-        ModifierManager.INSTANCE.getAllValues().forEach(modifier -> modifier.clearCache(PackType.CLIENT_RESOURCES));
-    };
-    private static boolean wasJumping;
+    private static final ISafeManagerReloadListener MODIFIER_RELOAD_LISTENER = manager -> ModifierManager.INSTANCE.getAllValues().forEach(modifier -> modifier.clearCache(PackType.CLIENT_RESOURCES));
     public ToolClientEvents() {
     }
     @SubscribeEvent
@@ -34,9 +32,8 @@ public class ToolClientEvents extends ClientEventBase {
         DynamicTextureLoader.init(manager);
         manager.registerReloadListener(MODIFIER_RELOAD_LISTENER);
     }
-
     @SubscribeEvent
-    static void clientSetupEvent(FMLClientSetupEvent event) {
+    static void clientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             TinkerItemProperties.registerToolProperties(ModItems.paxel.get().asItem());
             TinkerItemProperties.registerToolProperties(ModItems.knife.get().asItem());

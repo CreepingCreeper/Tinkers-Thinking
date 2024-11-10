@@ -3,6 +3,7 @@
     {
       "type": "tconstruct:base_stats",
       "stats": {
+        "tconstruct:tank_capacity": 3000
       }
     },
     {
@@ -19,8 +20,8 @@
           "level": 1
         },
         {
-          "name": "tconstruct:tank",
-          "level": 3
+          "name": "tinkers_thinking:forever",
+          "level": 1
         }
       ]
     },

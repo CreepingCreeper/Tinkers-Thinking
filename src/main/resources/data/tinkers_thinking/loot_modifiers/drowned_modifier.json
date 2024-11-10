@@ -1,0 +1,25 @@
+{
+  "type": "mantle:add_entry",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/drowned"
+    },
+    {
+      "condition": "minecraft:killed_by_player"
+    },
+    {
+      "condition": "minecraft:random_chance_with_looting",
+       "chance": 0.18,
+       "looting_multiplier": 0.06
+    }
+  ],
+  "entry": {
+    "type": "minecraft:item",
+    "name": "tinkers_thinking:surging_wellspring"
+  },
+  "functions": [
+  ],
+  "post_conditions": [
+  ]
+}

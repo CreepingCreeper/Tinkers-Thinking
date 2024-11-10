@@ -1,10 +1,4 @@
 { 
- "conditions": [
-    {
-      "modid": "clay_no_more_balanced",
-      "type": "forge:mod_loaded"
-    }
-  ],
   "minecraft:unbreaking": "tconstruct:reinforced",
   "minecraft:protection": "tconstruct:protection",
   "minecraft:fire_protection": "tconstruct:fire_protection",

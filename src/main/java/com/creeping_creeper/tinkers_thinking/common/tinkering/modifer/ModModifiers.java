@@ -33,6 +33,11 @@ public abstract class ModModifiers {
     public static final StaticModifier<Modifier> Density = MODIFIERS.register("density",DensityModifier::new);
     public static final StaticModifier<Modifier> Spiky = MODIFIERS.register("spiky",SpikyModifier::new);
     public static final StaticModifier<Modifier> Hungriness = MODIFIERS.register("hungriness",HungrinessModifier::new);
+    public static final StaticModifier<Modifier> BurningOut = MODIFIERS.register("burning_out", BurningOutModifier::new);
+    public static final StaticModifier<Modifier> Reburning = MODIFIERS.register("reburning", ReburningModifier::new);
+    public static final StaticModifier<Modifier> LightlyAttack = MODIFIERS.register("lightly_attack",LightlyAttackModifier::new);
+    public static final StaticModifier<Modifier> test = MODIFIERS.register("test", TestModifier::new);
+    public static final StaticModifier<Modifier> test2 = MODIFIERS.register("test_a", Test2Modifier::new);
 
     public static void regeisters(IEventBus eventBus) {
         MODIFIERS.register(eventBus);}

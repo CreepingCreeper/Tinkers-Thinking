@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:white_chocolate" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_white_chocolate",
+    "amount": 90
+  },
+  "temperature": 80,
+  "time": 40
+}

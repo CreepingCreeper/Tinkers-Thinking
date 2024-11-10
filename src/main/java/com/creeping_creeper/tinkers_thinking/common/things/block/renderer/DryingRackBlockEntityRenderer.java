@@ -1,4 +1,5 @@
 package com.creeping_creeper.tinkers_thinking.common.things.block.renderer;
+
 import com.creeping_creeper.tinkers_thinking.common.things.block.DryingRackBlock;
 import com.creeping_creeper.tinkers_thinking.common.things.block.entity.DryingRackBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -27,13 +28,21 @@ public void render(DryingRackBlockEntity pBlockEntity, float pPartialTick, PoseS
         ItemRenderer renderer = Minecraft.getInstance().getItemRenderer();
         ItemStack itemStack = pBlockEntity.getRenderStack();
         pPoseStack.pushPose();
-        pPoseStack.translate(0.5f,0.5f,0.345f);
         pPoseStack.scale(1f, 1f, 1f);
         switch (pBlockEntity.getBlockState().getValue(DryingRackBlock.FACING)){
-        case NORTH -> pPoseStack.mulPose(Vector3f.YP.rotationDegrees(0));
-        case EAST -> pPoseStack.mulPose(Vector3f.YP.rotationDegrees(90));
-        case SOUTH -> pPoseStack.mulPose(Vector3f.YP.rotationDegrees(180));
-        case WEST -> pPoseStack.mulPose(Vector3f.YP.rotationDegrees(270));
+        case NORTH ->pPoseStack.translate(0.5f,0.5f,0.345f);
+        case EAST -> {
+                pPoseStack.translate(0.345f,0.5f,0.5f);
+                pPoseStack.mulPose(Vector3f.YP.rotationDegrees(90));
+        }
+        case SOUTH -> {
+                pPoseStack.translate(0.5f,0.5f,0.655f);
+                pPoseStack.mulPose(Vector3f.YP.rotationDegrees(180));
+        }
+        case WEST -> {
+                pPoseStack.translate(0.655f,0.5f,0.5f);
+                pPoseStack.mulPose(Vector3f.YP.rotationDegrees(270));
+        }
         }
         renderer.renderStatic(itemStack, ItemTransforms.TransformType.FIXED,
         getLightLevel(Objects.requireNonNull(pBlockEntity.getLevel()),pBlockEntity.getBlockPos()),

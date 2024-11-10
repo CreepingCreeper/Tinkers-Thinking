@@ -11,6 +11,12 @@
     }
   },
     {
+      "type": "tconstruct:multiply_stats",
+      "multipliers": {
+        "tconstruct:tank_capacity": 5.0
+      }
+    },
+    {
       "type": "tconstruct:modifier_slots",
       "slots": {
         "upgrades": 2,
@@ -25,12 +31,8 @@
           "level": 1
         },
         {
-          "name": "tconstruct:tank",
-          "level": 5
-        },
-        {
-          "name": "tconstruct:unbreakable",
-          "level": 5
+          "name": "tinkers_thinking:forever",
+          "level": 1
         }
       ]
     },

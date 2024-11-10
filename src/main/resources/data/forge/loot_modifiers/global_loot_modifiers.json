@@ -1,7 +1,9 @@
 {
   "entries": [
     "tinkers_thinking:lustrous/ardite",
-    "tinkers_thinking:lustrous/chlorophyll"
+    "tinkers_thinking:lustrous/chlorophyll",
+    "tinkers_thinking:drowned_modifier",
+    "tinkers_thinking:piglin_modifier"
   ],
   "replace": false
 }

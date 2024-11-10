@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:durability_color",
+      "color": "FFFFFF"
+    },
+    {
+      "type": "tconstruct:reduce_tool_damage",
+      "flat": 1.0
+    }
+  ],
+  "priority": 175,
+  "tooltip_display": "never"
+}

@@ -52,11 +52,11 @@ public class ModItems {
     public static final RegistryObject<Item>  lightite_compound= ITEMS.register("lightite_compound", ModItems::register);
     public static final RegistryObject<Item>  beetron_ingot= ITEMS.register("beetron_ingot", ModItems::register);
     public static final RegistryObject<Item>  beetron_nugget= ITEMS.register("beetron_nugget", ModItems::register);
-    public static final RegistryObject<Item>  lightite_reinforcement= ITEMS.register("lightite_reinforcement", ModItems::register);
 
     public static final RegistryObject<Item>  silky_jewel= ITEMS.register("silky_jewel", ModItems::register);
     public static final RegistryObject<Item>  stone_stick= ITEMS.register("stone_stick", ModItems::register);
     public static final RegistryObject<Item> surging_wellspring = ITEMS.register("surging_wellspring", ModItems::register);
+    public static final RegistryObject<Item> ashes = ITEMS.register("ashes", ModItems::register);
 
     public static final RegistryObject<Item>  tinkers_bronze_ingot= ITEMS.register("tinkers_bronze_ingot", ModItems::register);
     public static final RegistryObject<Item>  tinkers_bronze_nugget= ITEMS.register("tinkers_bronze_nugget", ModItems::register);
@@ -124,6 +124,8 @@ public class ModItems {
     public static final RegistryObject<Item>  stone_torch = ITEMS.register("stone_torch", () -> new StandingAndWallBlockItem(ModBlocks.stone_torch.get(), ModBlocks.wall_stone_torch.get(), CommonItem));
     public static final RegistryObject<Item>  stone_soul_torch = ITEMS.register("stone_soul_torch", () -> new StandingAndWallBlockItem(ModBlocks.stone_soul_torch.get(), ModBlocks.wall_stone_soul_torch.get(), CommonItem));
     public static final RegistryObject<Item>  drying_rack = ITEMS.register("drying_rack", () -> new BlockItem( ModBlocks.drying_rack.get(), CommonItem));
+    public static final RegistryObject<Item>  seared_spitter = ITEMS.register("seared_spitter", () -> new BlockItem( ModBlocks.seared_spitter.get(), CommonItem));
+    public static final RegistryObject<Item>  scorched_spitter = ITEMS.register("scorched_spitter", () -> new BlockItem( ModBlocks.scorched_spitter.get(), CommonItem));
     //Buckets
     public static final RegistryObject<Item>  molten_ardite_bucket= ITEMS.register("molten_ardite_bucket", () -> new BucketItem(ModFluids.source_molten_ardite, Stack1Item));
     public static final RegistryObject<Item>  molten_tinkers_bronze_bucket= ITEMS.register("molten_tinkers_bronze_bucket", () -> new BucketItem(ModFluids.source_molten_tinkers_bronze, Stack1Item));

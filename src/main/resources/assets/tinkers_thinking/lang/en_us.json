@@ -16,8 +16,7 @@
   "item.tinkers_thinking.clay_crystal": "Clay Crytstal",
   "item.tinkers_thinking.magma_crystal": "Magma Crytstal", 
   "item.tinkers_thinking.quartz_crystal": "Quartz Crystal",
-  "item.tinkers_thinking.chromatic_crystal": "Chromatic Crytstal", 
-  "item.tinkers_thinking.lightite_reinforcement": "Lightite Reinforcement",
+  "item.tinkers_thinking.chromatic_crystal": "Chromatic Crytstal",
 
   "item.tinkers_thinking.stone_stick": "Stone Stick",
   "item.tinkers_thinking.stone_torch": "Stone Torch",
@@ -54,6 +53,7 @@
   "item.tinkers_thinking.black_chocolate": "Black Chocolate",
 
   "item.tinkers_thinking.surging_wellspring": "Surging Wellspring",
+  "item.tinkers_thinking.ashes": "Ashes",
 
   "item.tinkers_thinking.tinkers_bronze_ingot": "Tinkers' Bronze Ingot",
   "item.tinkers_thinking.tinkers_bronze_nugget":"Tinkers' Bronze Nugget",
@@ -75,6 +75,9 @@
 
   "block.tinkers_thinking.drying_rack": "Drying Rack",
   "jei.tconstruct.drying_rack": "Drying Rack",
+
+  "block.tinkers_thinking.seared_spitter": "Seared Spitter",
+  "block.tinkers_thinking.scorched_spitter": "Scorched Spitter",
 
   "item.tinkers_thinking.lightite_compound": "Lightite Compound",
   "item.tinkers_thinking.lightite_ingot": "Lightite Ingot",
@@ -214,16 +217,16 @@
 
   "material.tinkers_thinking.lightite": "Lightite",
   "material.tinkers_thinking.lightite.flavor": "Lighter than the air",
-  "material.tinkers_thinking.lightite.encyclopedia": "+0.25 using item speed,5% velocity and 5% moving speed per level",
-  "material.tinkers_thinking.lightite.armor": "+10% moving speed per level",
+  "material.tinkers_thinking.lightite.encyclopedia": "",
+  "material.tinkers_thinking.lightite.ranged": "",
 
   "material.tinkers_thinking.black_chocolate": "Black Chocolate",
   "material.tinkers_thinking.black_chocolate.flavor": "Dark Oak Trapdoor?",
-  "material.tinkers_thinking.black_chocolate.encyclopedia": "While attacking a target, there has a 25% chance to get Strength III for 6 seconds, damage 5 durability",
+  "material.tinkers_thinking.black_chocolate.encyclopedia": "After attacking a target, there has a 25% chance to get Strength III for 6 seconds, damage 5 durability",
 
   "material.tinkers_thinking.white_chocolate": "White Chocolate",
   "material.tinkers_thinking.white_chocolate.flavor": "Birch Trapdoor?",
-  "material.tinkers_thinking.white_chocolate.encyclopedia": "While mining a block, there has a 25% chance to get Haste III for 6 seconds, damage 5 durability",
+  "material.tinkers_thinking.white_chocolate.encyclopedia": "After mining a block, there has a 25% chance to get Haste III for 6 seconds, damage 5 durability",
 
   "material.tinkers_thinking.chlorophyte": "Chlorophyte",
   "material.tinkers_thinking.chlorophyte.flavor": "Life Essence",
@@ -253,8 +256,7 @@
 
   "material.tinkers_thinking.echo_bronze": "Echo Bronze",
   "material.tinkers_thinking.echo_bronze.flavor": "Not to be confused with Tinkers' Bronze",
-  "material.tinkers_thinking.echo_bronze.encyclopedia": "While having Sculk Power,boost mining speed and melee speed of 20%",
-  "material.tinkers_thinking.echo_bronze.ranged":"While having Sculk Power,boost draw speed and velocity of 20%",
+  "material.tinkers_thinking.echo_bronze.encyclopedia": "While having Sculk Power,boost mining speed and draw speed of 20%",
 
   "material.tinkers_thinking.verdant_frogcroaking": "Verdant Frogcroaking",
   "material.tinkers_thinking.verdant_frogcroaking.flavor": "Wind Sculk",
@@ -334,15 +336,11 @@
 
   "modifier.tinkers_thinking.stimulation": "Stimulation",
   "modifier.tinkers_thinking.stimulation.flavor": "Stimulation!",
-  "modifier.tinkers_thinking.stimulation.description": "Target will get strength",
+  "modifier.tinkers_thinking.stimulation.description": "After attacking a target,there has a chance to get Strength by chance,and damage some durability",
 
   "modifier.tinkers_thinking.inspired": "Inspired",
   "modifier.tinkers_thinking.inspired.flavor": "Inspired!",
-  "modifier.tinkers_thinking.inspired.description": "Target will get regeneration",
-
-  "modifier.tinkers_thinking.lightly_speed": "Lightly Speed",
-  "modifier.tinkers_thinking.lightly_speed.flavor": "Almost no resistance!",
-  "modifier.tinkers_thinking.lightly_speed.description": "Boost using item speed,velocity and moving speed",
+  "modifier.tinkers_thinking.inspired.description": "After mining a block,there has a chance to get Haste by chance,and damage some durability",
 
   "modifier.tinkers_thinking.symbiotic": "Symbiotic",
   "modifier.tinkers_thinking.symbiotic.flavor": "The Healing Power of Friendship!",
@@ -381,7 +379,7 @@
 
   "modifier.tinkers_thinking.sculk_boost": "Sculk Boost",
   "modifier.tinkers_thinking.sculk_boost.flavor": "A good grounding ensures success in what one does",
-  "modifier.tinkers_thinking.sculk_boost.description": "While having Sculk Power,boost mining speed,melee speed,draw speed and velocity",
+  "modifier.tinkers_thinking.sculk_boost.description": "While having Sculk Power,boost mining speed and draw speed",
   "modifier.tconstruct.sculk_boost.boost": "Sculk Boost Reinforcement",
 
   "modifier.tinkers_thinking.sculk_levitate": "Sculk Levitate",
@@ -408,9 +406,10 @@
   "modifier.tinkers_thinking.sprinting.flavor": "Sprinting! Sprinting!",
   "modifier.tinkers_thinking.sprinting.description": "Sprinting fast in horizontal direction,with no gravity temporarily",
 
-  "modifier.tinkers_thinking.extra_tank": "Extra Tank",
-  "modifier.tinkers_thinking.extra_tank.flavor": "bigger! Better!",
-  "modifier.tinkers_thinking.extra_tank.description": "Extra Tank",
+  "modifier.tinkers_thinking.forever": "Forever Reinforced",
+  "modifier.tinkers_thinking.forever.flavor": "",
+  "modifier.tinkers_thinking.forever.description": "",
+
 
   "modifier.tinkers_thinking.countermeasures": "Countermeasures",
   "modifier.tinkers_thinking.countermeasures.flavor": "Comprehensive protection",
@@ -427,10 +426,28 @@
   "modifier.tconstruct.hungriness.mining_speed": "Hungriness Mining Speed",
   "modifier.tconstruct.hungriness.velocity": "Hungriness Velocity",
 
+  "modifier.tinkers_thinking.burning_out": "Burning Out",
+  "modifier.tinkers_thinking.burning_out.flavor": "",
+  "modifier.tinkers_thinking.burning_out.description": "攻击命中着火目标后，根据其剩余着火时间造成额外伤害，然后熄灭其身上的火焰",
+  "modifier.tinkers_thinking.reburning": "Reburning",
+  "modifier.tinkers_thinking.reburning.flavor": "",
+  "modifier.tinkers_thinking.reburning.description": "着火时受到非火焰伤害后，根据自身剩余着火时间恢复生命值，然后熄灭其身上的火焰",
+
+  "modifier.tinkers_thinking.lightly_attack": "Lightly Attack",
+  "modifier.tinkers_thinking.lightly_attack.flavor": "",
+  "modifier.tinkers_thinking.lightly_attack.description": "快捷栏没有其他物品时，攻击命中后暂时提升攻击速度",
+  "modifier.tinkers_thinking.lightly_attack.ranged": "快捷栏没有其他物品时提升拉弓速度",
+  "modifier.tconstruct.lightly_attack.draw_speed": "轻袭拉弓速度",
+
+  "modifier.tinkers_thinking.test": "名称没想好",
+  "modifier.tinkers_thinking.test.flavor": "",
+  "modifier.tinkers_thinking.test.description": "受到伤害后根据伤害值暂时提升生命上限",
+
   "effect.tinkers_thinking.overweight": "Overweight",
   "effect.tinkers_thinking.weightless": "Weightless",
   "effect.tinkers_thinking.sculk_power": "Sculk Power",
   "effect.tinkers_thinking.modifier_immune": "Modifier Immune",
+  "effect.tinkers_thinking.lightly_attack": "Lightly Attack",
   "item.minecraft.potion.effect.overweight_potion": "Potion of Overweight",
   "item.minecraft.potion.effect.overweight_potion_strong": "Potion of Overweight",
   "item.minecraft.potion.effect.overweight_potion_long": "Potion of Overweight",
@@ -440,6 +457,9 @@
   "item.minecraft.lingering_potion.effect.overweight_potion": "Lingering Potion of Overweight",
   "item.minecraft.lingering_potion.effect.overweight_potion_strong": "Lingering Potion of Overweight",
   "item.minecraft.lingering_potion.effect.overweight_potion_long": "Lingering Potion of Overweight",
+  "item.minecraft.tipped_arrow.effect.overweight_potion": "Arrow of Overweight",
+  "item.minecraft.tipped_arrow.effect.overweight_potion_long": "Arrow of Overweight",
+  "item.minecraft.tipped_arrow.effect.overweight_potion_strong": "Arrow of Overweight",
   "item.minecraft.potion.effect.weightless_potion": "Potion of Weightless",
   "item.minecraft.potion.effect.weightless_potion_strong": "Potion of Weightless",
   "item.minecraft.potion.effect.weightless_potion_long": "Potion of Weightless",
@@ -449,12 +469,17 @@
   "item.minecraft.lingering_potion.effect.weightless_potion": "Lingering Potion of Weightless",
   "item.minecraft.lingering_potion.effect.weightless_potion_strong": "Lingering Potion of Weightless",
   "item.minecraft.lingering_potion.effect.weightless_potion_long": "Lingering Potion of Weightless",
+  "item.minecraft.tipped_arrow.effect.weightless_potion": "Arrow of Weightless",
+  "item.minecraft.tipped_arrow.effect.weightless_potion_long": "Arrow of Weightless",
+  "item.minecraft.tipped_arrow.effect.weightless_potion_strong": "Arrow of Weightless",
   "item.minecraft.potion.effect.enderference_potion": "Potion of Enderference",
   "item.minecraft.potion.effect.enderference_potion_long": "Potion of Enderference",
   "item.minecraft.splash_potion.effect.enderference_potion": "Splash Potion of Enderference",
   "item.minecraft.splash_potion.effect.enderference_potion_long": "Splash Potion of Enderference",
   "item.minecraft.lingering_potion.effect.enderference_potion": "Lingering Potion of Enderference",
   "item.minecraft.lingering_potion.effect.enderference_potion_long": "Lingering Potion of Enderference",
+  "item.minecraft.tipped_arrow.effect.enderference_potion": "Enderference of Arrow",
+  "item.minecraft.tipped_arrow.effect.enderference_potion_long": "Enderference of Arrow",
 
   "recipe.tinkers_thinking.modifier.backstabbing.level_2": "Backstabbing II requires a different recipe for the first level",
   "recipe.tinkers_thinking.modifier.backstabbing.level_3": "Backstabbing III requires a different recipe for the first level"

@@ -3,11 +3,17 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tinkers_thinking:narrow_blade",
+        {
+          "item": "tinkers_thinking:narrow_blade",
+          "scale": 0.5
+        },
         "tconstruct:tool_handle",
-        "tinkers_thinking:narrow_blade"
+        {
+          "item": "tinkers_thinking:narrow_blade",
+          "scale": 0.5
+        }
       ],
-      "stat_provider": "tconstruct:melee_harvest"
+      "primary_part": 0
     },
     {
       "type": "tconstruct:default_materials",

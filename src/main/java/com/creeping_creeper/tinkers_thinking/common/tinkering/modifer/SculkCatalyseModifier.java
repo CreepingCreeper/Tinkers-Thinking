@@ -25,12 +25,13 @@ public class SculkCatalyseModifier extends NoLevelsModifier implements ToolDamag
     public void onPlayerPickupXp(PlayerXpEvent.PickupXp event) {
         var orb = event.getOrb().getValue();
         var player = event.getEntity();
-        boolean sculk = getModifierLevel(player.getItemInHand(InteractionHand.MAIN_HAND), ModModifiers.SculkCatalyse.get().getId()) +
-                getModifierLevel(player.getItemInHand(InteractionHand.OFF_HAND), ModModifiers.SculkCatalyse.get().getId()) +
-                getModifierLevel(player.getItemBySlot(EquipmentSlot.HEAD), ModModifiers.SculkCatalyse.get().getId())+
-                getModifierLevel(player.getItemBySlot(EquipmentSlot.CHEST), ModModifiers.SculkCatalyse.get().getId())+
-                getModifierLevel(player.getItemBySlot(EquipmentSlot.LEGS), ModModifiers.SculkCatalyse.get().getId())+
-                getModifierLevel(player.getItemBySlot(EquipmentSlot.FEET), ModModifiers.SculkCatalyse.get().getId())
+        var id = ModModifiers.SculkCatalyse.getId();
+        boolean sculk = getModifierLevel(player.getItemInHand(InteractionHand.MAIN_HAND), id) +
+                getModifierLevel(player.getItemInHand(InteractionHand.OFF_HAND), id) +
+                getModifierLevel(player.getItemBySlot(EquipmentSlot.HEAD), id)+
+                getModifierLevel(player.getItemBySlot(EquipmentSlot.CHEST), id)+
+                getModifierLevel(player.getItemBySlot(EquipmentSlot.LEGS), id)+
+                getModifierLevel(player.getItemBySlot(EquipmentSlot.FEET), id)
                 > 0;
             if (sculk) {
                 int time = orb * 60;

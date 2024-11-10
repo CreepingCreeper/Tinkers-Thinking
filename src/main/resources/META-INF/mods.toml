@@ -5,8 +5,8 @@ logoFile="logo.png"
 license="MIT"
 [[mods]]
 modId="tinkers_thinking"
-version="0.1.3.0"
-displayName="Thinkers' Thinking"
+version="0.1.3.2"
+displayName="Tinkers' Thinking"
 authors="Creeping Creeper"
 description='''
 An addon mod for Tinkers' Construct.
