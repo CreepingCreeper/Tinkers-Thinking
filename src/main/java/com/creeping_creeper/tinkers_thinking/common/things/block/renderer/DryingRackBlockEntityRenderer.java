@@ -21,7 +21,6 @@ import java.util.Objects;
 
 public class DryingRackBlockEntityRenderer implements BlockEntityRenderer<DryingRackBlockEntity> {
 public DryingRackBlockEntityRenderer(BlockEntityRendererProvider.Context context){
-
         }
 @Override
 public void render(DryingRackBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
@@ -30,16 +29,17 @@ public void render(DryingRackBlockEntity pBlockEntity, float pPartialTick, PoseS
         pPoseStack.pushPose();
         pPoseStack.scale(1f, 1f, 1f);
         switch (pBlockEntity.getBlockState().getValue(DryingRackBlock.FACING)){
-        case NORTH ->pPoseStack.translate(0.5f,0.5f,0.345f);
-        case EAST -> {
-                pPoseStack.translate(0.345f,0.5f,0.5f);
-                pPoseStack.mulPose(Vector3f.YP.rotationDegrees(90));
-        }
+        case NORTH ->
+                pPoseStack.translate(0.5f,0.5f,0.345f);
         case SOUTH -> {
                 pPoseStack.translate(0.5f,0.5f,0.655f);
                 pPoseStack.mulPose(Vector3f.YP.rotationDegrees(180));
         }
         case WEST -> {
+                pPoseStack.translate(0.345f,0.5f,0.5f);
+                pPoseStack.mulPose(Vector3f.YP.rotationDegrees(90));
+        }
+        case EAST -> {
                 pPoseStack.translate(0.655f,0.5f,0.5f);
                 pPoseStack.mulPose(Vector3f.YP.rotationDegrees(270));
         }

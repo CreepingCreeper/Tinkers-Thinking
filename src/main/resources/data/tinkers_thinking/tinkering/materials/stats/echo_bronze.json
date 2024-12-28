@@ -1,6 +1,7 @@
 {
   "stats": {
     "tconstruct:binding": {},
+    "tconstruct:maille": {},
     "tconstruct:handle": {
       "durability": -0.1,
       "mining_speed": -0.1,
@@ -23,6 +24,25 @@
       "durability": -0.1,
       "accuracy": 0.05,
       "melee_damage": 2.25
+    },
+    "tconstruct:plating_boots": {
+      "armor": 1.5,
+      "durability": 260
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 4.5,
+      "durability": 320
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 1.5,
+      "durability": 220
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 3.0,
+      "durability": 300
+    },
+    "tconstruct:plating_shield": {
+      "durability": 360
     }
   }
 }

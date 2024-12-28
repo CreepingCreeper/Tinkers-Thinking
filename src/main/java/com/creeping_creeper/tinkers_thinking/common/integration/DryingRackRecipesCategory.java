@@ -2,7 +2,7 @@ package com.creeping_creeper.tinkers_thinking.common.integration;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.recipes.DryingRackRecipes;
-import com.creeping_creeper.tinkers_thinking.common.things.ModBlocks;
+import com.creeping_creeper.tinkers_thinking.common.things.ModItems;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -15,7 +15,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
-import slimeknights.tconstruct.TConstruct;
 
 public class DryingRackRecipesCategory implements IRecipeCategory<DryingRackRecipes> {
     public static final ResourceLocation UID = new ResourceLocation(TinkersThinking.MODID,
@@ -28,7 +27,7 @@ public class DryingRackRecipesCategory implements IRecipeCategory<DryingRackReci
     // 构造方法
     public DryingRackRecipesCategory(IGuiHelper helper){
         this.background  = helper.createDrawable(TEXTURE,0,0,90,42);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK,new ItemStack(ModBlocks.drying_rack.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK,new ItemStack(ModItems.drying_rack));
 
     }
     @Override
@@ -37,7 +36,7 @@ public class DryingRackRecipesCategory implements IRecipeCategory<DryingRackReci
     }
     @Override
     public @NotNull Component getTitle() {
-        return TConstruct.makeTranslation("jei", "drying_rack");
+        return TinkersThinking.makeTranslation("jei", "drying_rack");
     }
     //
     @Override

@@ -26,19 +26,13 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
         this.recipeItems = recipeItems;
         DryingRackRecipes.category = category;
     }
-    // 为了能够通过管理器获得配方，match必须返回true
-    // 此方法用于管理容器是否输入有效。
-    // 通过代用test检测
-    // 检查容器内的物品和配方是否匹配。
     @Override
     public boolean matches(@NotNull SimpleContainer pContainer, Level pLevel) {
         if(pLevel.isClientSide()){
             return false;
         }
-        // 如果recipeItems的第0个和container中的第一个匹配那么返回true
         return recipeItems.get(0).test(pContainer.getItem(0));
     }
-    // 获得合成表所需要的item stacks
     @Override
     public @NotNull NonNullList<Ingredient> getIngredients() {
         return recipeItems;
@@ -61,9 +55,6 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
     public boolean canCraftInDimensions(int p_43999_, int p_44000_) {
         return false;
     }
-
-    // 这个方法用于判断合成表是否可以在指定的dimensions合成。
-    // 获得合成表物品的copy()
     @Override
     public @NotNull ItemStack getResultItem() {
         return output.copy();
@@ -74,7 +65,6 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
     public @NotNull ResourceLocation getId() {
         return id;
     }
-    // 返回Serializer 必须返回
     @Override
     public @NotNull RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
@@ -85,16 +75,12 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    // 注册新的合成的type
     public static class Type implements RecipeType<DryingRackRecipes>{
         private Type(){}
         public static final Type INSTANCE = new Type();
         // 标识了合成的类型，和json文件中的type一致
         public static final String ID = "drying_rack";
     }
-
-    // 负责解码JSON并通过网络通信
-    // 需要注册
     public static class Serializer implements RecipeSerializer<DryingRackRecipes> {
         public static final Serializer INSTANCE = new Serializer();
         public static final  ResourceLocation ID =
@@ -111,7 +97,6 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
             }
             return new DryingRackRecipes(pRecipeId,output,inputs, category);
         }
-        // 从服务器中发送的数据中解码recipe，配方标识符不需要解码。
         @Override
         public @Nullable DryingRackRecipes fromNetwork(@NotNull ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(),Ingredient.EMPTY);

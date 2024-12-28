@@ -44,7 +44,6 @@ public class Test2Modifier extends Modifier implements ModifierRemovalHook,Toolt
             context.getAttacker().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,600,1));
             persistentData.remove(this.KEY);
             persistentData.putBoolean(this.KEY, false);
-            persistentData.contains(KEY,1);
         }
     }
     @Override

@@ -3,9 +3,15 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tconstruct:bow_grip",
+        {
+          "item": "tconstruct:bow_grip",
+          "scale": 0.5
+        },
         "tconstruct:bow_limb",
-        "tconstruct:bow_grip"
+        {
+          "item": "tconstruct:bow_grip",
+          "scale": 0.5
+        }
       ],
       "stat_provider": "tconstruct:ranged"
     },

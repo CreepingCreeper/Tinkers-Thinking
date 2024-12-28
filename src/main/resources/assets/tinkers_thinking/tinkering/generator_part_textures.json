@@ -29,6 +29,12 @@
     { "path": "tinkers_thinking:item/tool/quartz_staff/large/high",      "stat_type": "tconstruct:handle" },
     { "path": "tinkers_thinking:item/tool/mace/plate",      "stat_type": "tconstruct:head" },
     { "path": "tinkers_thinking:item/tool/mace/handle",      "stat_type": "tconstruct:handle" },
-    { "path": "tinkers_thinking:item/tool/mace/broken_handle",      "stat_type": "tconstruct:handle" }
+    { "path": "tinkers_thinking:item/tool/mace/broken_handle",      "stat_type": "tconstruct:handle" },
+    { "path": "tinkers_thinking:item/tool/repeating_crossbow/limb",      "stat_type": "tconstruct:limb" },
+    { "path": "tinkers_thinking:item/tool/repeating_crossbow/body",      "stat_type": "tconstruct:grip" },
+    { "path": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_1",      "stat_type": "tconstruct:bowstring" },
+    { "path": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_2",      "stat_type": "tconstruct:bowstring" },
+    { "path": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_3",      "stat_type": "tconstruct:bowstring" },
+    { "path": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_broken",      "stat_type": "tconstruct:bowstring" }
   ]
 }

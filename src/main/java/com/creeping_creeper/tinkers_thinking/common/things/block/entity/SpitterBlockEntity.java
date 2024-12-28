@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class SpitterBlockEntity extends BlockEntity{
     public SpitterBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.Seared_Spitter.get(),pos,state);
+        super(ModBlockEntities.Spitter.get(),pos,state);
     }
     private final FluidTank FLUID_TANK = new FluidTank(4000){
     };

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_thinking:arrow_thrower"
+    "tinkers_thinking:arrow_thrower",
+    "tinkers_thinking:repeating_crossbow"
   ]
 }

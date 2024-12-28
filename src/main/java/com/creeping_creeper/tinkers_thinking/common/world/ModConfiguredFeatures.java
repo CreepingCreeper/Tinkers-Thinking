@@ -1,7 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.world;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.things.ModBlocks;
+import com.creeping_creeper.tinkers_thinking.common.things.ModItems;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
@@ -19,11 +19,11 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY,TinkersThinking.MODID);
     public static final Supplier<List<OreConfiguration.TargetBlockState>> NETHER_ARDITE_ORES = Suppliers.memoize(()-> List.of(
-            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, ModBlocks.ardite_ore.get().defaultBlockState())
+            OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, ModItems.ardite_ore.get().defaultBlockState())
     ));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_CHLOROPHYLL_ORES = Suppliers.memoize(()-> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.chlorophyll_ore.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.deepslate_chlorophyll_ore.get().defaultBlockState())
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModItems.chlorophyll_ore.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModItems.deepslate_chlorophyll_ore.get().defaultBlockState())
     ));
     public static final RegistryObject<ConfiguredFeature<?,?>>NETHER_ARDITE_ORE = CONFIGURED_FEATURES.register("nether_ardite_ore",
             () -> new ConfiguredFeature<>(Feature.ORE,new OreConfiguration(NETHER_ARDITE_ORES.get(),4)));

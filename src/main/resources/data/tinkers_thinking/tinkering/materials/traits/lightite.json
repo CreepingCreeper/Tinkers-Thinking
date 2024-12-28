@@ -14,14 +14,14 @@
     ],
     "tconstruct:armor": [
       {
-        "name": "tconstruct:speedy",
+        "name": "tinkers_thinking:hurried",
         "level": 1
       }
     ],
     "tconstruct:plating_shield": [
       {
         "level": 1,
-        "name": "tinkers_thinking:lightly_attack"
+        "name": "tinkers_thinking:hurried"
       }
     ]
   }

@@ -14,6 +14,8 @@
     "overeat":       "#d28155",
     "overdose":      "#4118cf",
     "lightly_attack": "#ddd8d8",
+    "hurried": "#ddd8d8",
+    "lightly_speed": "#ddd8d8",
     "symbiotic":     "#75d813",
     "broad":         "#7c83ee",
     "disarm":        "#c1bc4e",
@@ -33,7 +35,10 @@
     "sculk_levitate":"#bde1b7",
     "sculk_gravity":"#f7df92",
     "sculk_teleport":"#d4bfc8",
-    "hungriness": "#b6484c"
+    "hungriness": "#b6484c",
+    "burning_out": "#8a2f13",
+    "reburning": "#8a2f13",
+    "sinistral": "#A6846A"
   },
   "material.tinkers_thinking": 
   {
@@ -53,10 +58,11 @@
     "shroomite":     "#008cf4",
     "obsidian_bronze":"#a28b48",
     "electrical_steel":"#b4b499",
-    "iecho_bronze":   "#009295",
+    "echo_bronze":   "#009295",
     "verdant_frogcroaking":"#bde1b7",
     "ochre_frogcroaking":"#f7df92",
     "pearlescent_frogcroaking":"#d4bfc8",
-    "beetron": "#b6484c"
+    "beetron": "#b6484c",
+    "burnt_ashes": "#8a2f13"
   }
 }

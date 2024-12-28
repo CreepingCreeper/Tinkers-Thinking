@@ -1,14 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-    "conditions": [
-          {
-            "value": {
-                "modid": "clay_no_more_balanced",
-                "type": "forge:mod_loaded"
-            },
-            "type": "forge:not"
-          }
-        ],
   "pattern": [
     "AWA",
     " I ",

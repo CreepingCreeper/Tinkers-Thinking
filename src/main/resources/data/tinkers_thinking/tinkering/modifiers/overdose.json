@@ -29,10 +29,6 @@
         "flat": 100.0,
         "random": 25.0
       }
-    },
-   {
-      "type": "tconstruct:volatile_flag",
-      "flag": "tconstruct:overslime_friend"
     }
   ],
   "tooltip_display": "always"

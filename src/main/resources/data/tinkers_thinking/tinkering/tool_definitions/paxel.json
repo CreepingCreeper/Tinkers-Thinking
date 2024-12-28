@@ -3,9 +3,15 @@
     {
       "type": "tconstruct:part_stats",
       "parts": [
-        "tconstruct:small_axe_head",
+        {
+          "item": "tconstruct:small_axe_head",
+          "scale": 0.5
+        },
         "tconstruct:tool_handle",
-        "tconstruct:pick_head"
+        {
+          "item": "tconstruct:pick_head",
+          "scale": 0.5
+        }
       ],
       "stat_provider": "tconstruct:melee_harvest"
     },
