@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": -0.15,
+      "operation": "multiply_base",
+      "stat": "tconstruct:draw_speed"
+    }
+  ],
+  "tooltip_display": "always"
+}

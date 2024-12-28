@@ -1,0 +1,28 @@
+{
+  "name": "minecraft:chests/stronghold_corridor",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "tconstruct:add_tool_data",
+              "materials": [
+                {
+                  "type": "tconstruct:random"
+                },
+                {
+                  "type": "tconstruct:random"
+                }
+              ]
+            }
+          ],
+          "name": "tinkers_thinking:repeating_crossbow",
+          "weight": 10
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:ashes" },
+  "result": {
+    "fluid": "tinkers_thinking:reburn_ashes",
+    "amount": 25
+  },
+  "temperature": 1500,
+  "time": 200
+}

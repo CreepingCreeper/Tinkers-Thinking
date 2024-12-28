@@ -1,0 +1,5 @@
+{
+  "color": "FFd8d8d8",
+  "flowing": "tconstruct:fluid/molten/compat_ore/aluminum/flowing",
+  "still": "tconstruct:fluid/molten/compat_ore/aluminum/still"
+}

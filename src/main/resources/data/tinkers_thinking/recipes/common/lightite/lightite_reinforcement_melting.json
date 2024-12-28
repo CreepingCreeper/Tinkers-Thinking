@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:lightite_reinforcement"
+  },
+  "result": {
+    "fluid": "tinkers_thinking:molten_lightite",
+    "amount": 30
+  },
+  "temperature": 450,
+  "time": 15,
+  "byproducts": [
+    {
+      "fluid": "tconstruct:molten_obsidian",
+      "amount": 250
+    }
+  ]
+}
