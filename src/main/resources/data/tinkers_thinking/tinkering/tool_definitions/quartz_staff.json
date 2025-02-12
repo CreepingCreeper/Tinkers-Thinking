@@ -1,0 +1,70 @@
+{
+  "modules": [
+    {
+      "type": "tconstruct:part_stats",
+      "parts": [
+        {
+          "item": "tconstruct:tough_handle",
+          "scale": 0.5
+        },
+        {
+          "item": "tconstruct:tough_handle",
+          "scale": 0.5
+        },
+        "tconstruct:large_plate"
+       ],
+         "primary_part": 0
+    },
+    {
+      "type": "tconstruct:default_materials",
+      "materials": [
+        {
+          "type": "tconstruct:random",
+          "tier": 1
+        },
+        {
+          "type": "tconstruct:random",
+          "tier": 1
+        },
+        {
+          "type": "tconstruct:random",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "type": "tconstruct:base_stats",
+      "stats": {
+        "tconstruct:durability": 125.0,
+        "tconstruct:block_amount": 17.5,
+        "tconstruct:use_item_speed": 0.4,
+        "tconstruct:attack_damage": 1.5,
+        "tconstruct:attack_speed": 1.8
+      }
+    },
+    {
+      "type": "tconstruct:modifier_slots",
+      "slots": {
+        "upgrades": 3,
+        "abilities": 2
+      }
+    },
+    {
+      "type": "tconstruct:traits",
+      "traits": [
+        {
+          "name": "tinkers_thinking:targeted",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "type": "tconstruct:circle_aoe",
+      "3D": false,
+      "diameter": 1
+    },
+    {
+      "type": "tconstruct:dual_option_interaction"
+    }
+  ]
+}

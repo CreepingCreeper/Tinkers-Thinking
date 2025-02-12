@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:beetron",
+  "temperature": 900,
+  "result": {
+    "fluid": "tinkers_thinking:molten_beetron",
+    "amount": 90
+  }
+}

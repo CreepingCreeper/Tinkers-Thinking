@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tinkers_thinking:block/wall_stone_soul_torch"
+    },
+    "facing=north": {
+      "model": "tinkers_thinking:block/wall_stone_soul_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "tinkers_thinking:block/wall_stone_soul_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "tinkers_thinking:block/wall_stone_soul_torch",
+      "y": 180
+    }
+  }
+}

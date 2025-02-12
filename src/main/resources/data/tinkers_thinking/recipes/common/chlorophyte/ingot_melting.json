@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:ingots/chlorophyte" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_chlorophyte",
+    "amount": 90
+  },
+  "temperature": 600,
+  "time": 15
+}

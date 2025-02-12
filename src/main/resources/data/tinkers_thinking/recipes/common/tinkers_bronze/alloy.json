@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "tconstruct:molten_copper",   "amount":   180 },
+    { "tag": "tconstruct:molten_glass", "amount":  1000 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_tinkers_bronze",
+    "amount": 180
+  },
+  "temperature": 550
+}

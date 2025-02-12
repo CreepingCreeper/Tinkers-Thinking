@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:incremental_modifier",
+  "input": {
+    "item": "tinkers_thinking:lightite_reinforcement"
+  },
+  "amount_per_item": 1,
+  "needed_per_level": 5,
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  },
+  "slots": {
+    "upgrades": 1
+  },
+  "allow_crystal": true,
+  "result": "tinkers_thinking:lightly_speed"
+}

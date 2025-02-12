@@ -1,0 +1,10 @@
+{
+  "tool": "tinkers_thinking:clay_staff",
+  "text": [
+    { "text": "黏土手杖是一种高度娱乐化的武器。" }
+  ],
+  "properties": [
+   "+100 近战伤害",
+   "-99 攻击范围"
+  ]
+}

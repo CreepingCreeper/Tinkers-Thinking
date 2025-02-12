@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_table",
+  "fluid": {
+    "fluid": "tinkers_thinking:syrup",
+    "amount": 250
+  },
+  "result": "minecraft:sugar",
+  "cooling_time": 100
+}

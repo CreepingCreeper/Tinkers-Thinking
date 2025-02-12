@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "tinkers_thinking:block/scorched_spitter",
+    "side": "tconstruct:block/foundry/scorched/bricks"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_electrical_steel",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:electrical_steel_block",
+  "cooling_time": 300
+}

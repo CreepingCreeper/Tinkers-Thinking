@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:ingots/echo_bronze" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_echo_bronze",
+    "amount": 90
+  },
+  "temperature": 150,
+  "time": 20
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ingots/tinkers_bronze",
+    "#forge:ingots/ardite",
+    "#forge:ingots/lightite",
+    "#forge:ingots/black_chocolate",
+    "#forge:ingots/white_chocolate",
+    "#forge:ingots/chlorophyte",
+    "#forge:ingots/spectre",
+    "#forge:ingots/shroomite",
+    "#forge:ingots/obsidian_bronze",
+    "#forge:ingots/electrical_steel",
+    "#forge:ingots/echo_bronze",
+    "#forge:ingots/beetron"
+  ]
+}

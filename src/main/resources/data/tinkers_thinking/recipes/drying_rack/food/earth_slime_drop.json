@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "tag": "forge:slimeball/earth"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:earth_slime_drop"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+    {
+      "item": "tconstruct:ichor_slime_crystal"
+    },
+    {
+      "item": "tinkers_thinking:magma_crystal"
+    },
+    {
+      "item": "tconstruct:earth_slime_crystal"
+    },
+    {
+      "item": "tinkers_thinking:quartz_crystal"
+    },
+    {
+      "item": "tinkers_thinking:clay_crystal"
+    },
+    {
+      "item": "tconstruct:sky_slime_crystal"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "tconstruct:ender_slime_crystal"
+    }
+  ],
+  "result": {
+    "item": "tinkers_thinking:chromatic_crystal"
+  }
+}

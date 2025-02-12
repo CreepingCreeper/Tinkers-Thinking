@@ -1,0 +1,30 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/crossbow",
+  "textures": {
+    "limb": "tinkers_thinking:item/tool/repeating_crossbow/limb",
+    "body": "tinkers_thinking:item/tool/repeating_crossbow/body",
+    "bowstring": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_3",
+    "ammo": "tinkers_thinking:item/tool/repeating_crossbow/arrow"
+  },
+  "modifier_roots": [
+    "tinkers_thinking:item/tool/repeating_crossbow/modifiers/"
+  ],
+  "parts": [
+    {
+      "name": "limb",
+      "index": 0
+    },
+    {
+      "name": "body",
+      "index": 1
+    },
+    {
+      "name": "bowstring",
+      "index": 2
+    },
+    {
+      "name": "ammo"
+    }
+  ]
+}

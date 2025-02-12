@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "magma_crystal",
+  "ingredient": {
+    "item":"minecraft:magma_block"
+  },
+  "result": "tinkers_thinking:magma_crystal",
+  "experience": 0.1,
+  "cookingtime": 400
+}

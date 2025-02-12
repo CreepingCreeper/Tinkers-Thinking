@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:chlorophyll_ore"
+  },
+  "result": {
+    "fluid": "tinkers_thinking:molten_chlorophyte",
+    "amount": 180
+  },
+  "temperature": 600,
+  "time": 30,
+  "byproducts": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ]
+}

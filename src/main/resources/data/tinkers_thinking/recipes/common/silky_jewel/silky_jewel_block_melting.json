@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:silky_jewel_block"
+  },
+  "result": {
+    "fluid": "tconstruct:molten_gold",
+    "amount": 12960
+  },
+  "temperature": 700,
+  "time": 1600,
+  "byproducts": [
+    {
+      "fluid": "tconstruct:molten_rose_gold",
+      "amount": 3240
+    },
+   {
+      "fluid": "tconstruct:molten_emerald",
+      "amount": 900
+    }
+  ]
+}

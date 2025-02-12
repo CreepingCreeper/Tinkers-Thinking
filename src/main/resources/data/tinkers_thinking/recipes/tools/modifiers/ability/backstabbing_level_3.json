@@ -1,0 +1,32 @@
+{  
+"conditions": [
+    {
+      "modid": "farmersdelight",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "inputs": [
+    {
+      "tag": "forge:ingots/pig_iron"
+    },
+    {
+      "item": "farmersdelight:honey_glazed_ham_block"
+    },
+    {
+      "tag": "forge:ingots/pig_iron"
+    },
+   {
+      "tag": "forge:ingots/pig_iron"
+    },
+   {
+      "tag": "forge:ingots/pig_iron"
+    }
+  ],
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  },
+  "level": 3,
+  "allow_crystal": true,
+  "result": "tinkers_thinking:backstabbing"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/single_use/nugget" },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_electrical_steel",
+    "amount": 10
+  },
+  "result": "tinkers_thinking:electrical_steel_nugget",
+  "cooling_time": 8
+}

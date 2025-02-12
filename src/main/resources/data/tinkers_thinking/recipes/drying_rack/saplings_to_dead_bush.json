@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "output": {
+    "item": "minecraft:dead_bush"
+  }
+}

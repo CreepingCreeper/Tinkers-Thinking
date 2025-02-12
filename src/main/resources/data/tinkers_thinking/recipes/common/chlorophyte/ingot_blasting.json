@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "chlorophyte_ingot",
+  "ingredient": {
+    "item": "tinkers_thinking:chlorophyte_compound"
+  },
+  "result": "tinkers_thinking:chlorophyte_ingot",
+  "experience": 1.2,
+  "cookingtime": 100
+}

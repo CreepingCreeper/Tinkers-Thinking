@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "tinkers_thinking:item/obsidian_bronze/obsidian_bronze_ingot"
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "fluid": {
+    "tag": "tconstruct:molten_white_chocolate",
+    "amount": 50
+  },
+  "effects": [
+    {
+      "type": "tconstruct:restore_hunger",
+      "hunger": 0.5,
+      "saturation": 0.1
+    },
+   {
+      "type": "tconstruct:effect",
+      "name": "minecraft:haste",
+      "time": 5,
+      "level": 3
+    },
+    {
+      "type": "tconstruct:add_insomnia",
+      "amount": 6000
+    }
+  ]
+}

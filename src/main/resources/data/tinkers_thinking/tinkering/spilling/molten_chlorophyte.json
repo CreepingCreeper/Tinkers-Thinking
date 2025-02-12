@@ -1,0 +1,14 @@
+{
+  "fluid": {
+    "tag": "tconstruct:molten_chlorophyte",
+    "amount": 50
+  },
+  "effects": [
+   {
+      "type": "tconstruct:effect",
+      "name": "minecraft:regeneration",
+      "time": 5,
+      "level": 3
+    }
+  ]
+}

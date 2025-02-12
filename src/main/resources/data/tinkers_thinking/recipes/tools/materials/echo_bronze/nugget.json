@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:nuggets/echo_bronze"
+  },
+  "value": 1,
+  "needed": 9,
+  "material": "tinkers_thinking:echo_bronze"
+}

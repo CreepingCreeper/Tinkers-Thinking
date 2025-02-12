@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_obsidian_bronze",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:obsidian_bronze_block",
+  "cooling_time": 320
+}

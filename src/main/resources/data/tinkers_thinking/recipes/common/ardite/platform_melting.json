@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "tinkers_thinking:ardite_platform"
+  },
+  "result": {
+    "fluid": "tinkers_thinking:molten_ardite",
+    "amount": 100
+  },
+  "temperature": 1296,
+  "time": 68
+}

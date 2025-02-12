@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:nuggets/electrical_steel" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_electrical_steel",
+    "amount": 10
+  },
+  "temperature": 900,
+  "time": 3
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tinkers_thinking:cactus",
+  "fluid": {
+    "tag": "tconstruct:venom",
+    "amount": 250
+  },
+  "temperature": 10,
+  "output": "tinkers_thinking:dusk"
+}

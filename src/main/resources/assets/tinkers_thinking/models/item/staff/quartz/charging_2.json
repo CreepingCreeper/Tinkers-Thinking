@@ -1,0 +1,26 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/staff_charging",
+  "textures": {
+    "low":     "tinkers_thinking:item/tool/quartz_staff/low",
+    "high":    "tinkers_thinking:item/tool/quartz_staff/high",
+    "grip":    "tinkers_thinking:item/tool/quartz_staff/grip",
+    "crystal": "tinkers_thinking:item/tool/quartz_staff/crystal_2",
+    
+    "large_low":     "tinkers_thinking:item/tool/quartz_staff/large/low",
+    "large_high":    "tinkers_thinking:item/tool/quartz_staff/large/high",
+    "large_grip":    "tinkers_thinking:item/tool/quartz_staff/large/grip",
+    "large_crystal": "tinkers_thinking:item/tool/quartz_staff/large/crystal_2"
+  },
+  "large": true,
+  "modifier_roots": {
+    "small": [ "tconstruct:item/tool/staff/modifiers/" ],
+    "large": [ "tconstruct:item/tool/staff/large_modifiers/" ]
+  },
+  "parts": [
+    { "name": "low",    "index": 0 },
+    { "name": "high",   "index": 1 },
+    { "name": "grip",   "index": 2 },
+    { "name": "crystal" }
+  ]
+}

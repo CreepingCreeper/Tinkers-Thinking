@@ -1,0 +1,14 @@
+{
+  "fluid": {
+    "tag": "tconstruct:molten_spectre",
+    "amount": 50
+  },
+  "effects": [
+   {
+      "type": "tconstruct:effect",
+      "name": "minecraft:darkness",
+      "time": 5,
+      "level": 1
+    }
+  ]
+}

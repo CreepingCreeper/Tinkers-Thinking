@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [{ "item": "tinkers_thinking:beetron_block" }],
+  "result": {
+    "item": "tinkers_thinking:beetron_ingot",
+    "count": 9
+  }
+}

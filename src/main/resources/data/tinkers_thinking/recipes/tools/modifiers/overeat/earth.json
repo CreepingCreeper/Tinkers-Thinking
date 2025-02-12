@@ -1,0 +1,8 @@
+{
+  "type": "tconstruct:modifier_repair",
+  "modifier": "tinkers_thinking:overeat",
+  "ingredient": {
+    "item": "tinkers_thinking:earth_slime_drop"
+  },
+  "repair_amount": 30
+}

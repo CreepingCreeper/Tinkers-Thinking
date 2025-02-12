@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "item": "minecraft:pufferfish"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:pufferfish_jerky"
+  }
+}

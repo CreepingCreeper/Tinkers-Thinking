@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:black_chocolate",
+  "temperature": 90,
+  "result": {
+    "fluid": "tinkers_thinking:molten_black_chocolate",
+    "amount": 90
+  }
+}

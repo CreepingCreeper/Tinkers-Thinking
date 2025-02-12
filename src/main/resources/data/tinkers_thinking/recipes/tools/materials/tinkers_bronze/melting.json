@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:tinkers_bronze",
+  "temperature": 550,
+  "result": {
+    "fluid": "tinkers_thinking:molten_tinkers_bronze",
+    "amount": 90
+  }
+}

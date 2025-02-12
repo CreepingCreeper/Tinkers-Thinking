@@ -1,0 +1,51 @@
+{
+  "modules": [
+    {
+      "type": "tconstruct:base_stats",
+      "stats": {
+        "tconstruct:durability": 250.0,
+        "tconstruct:block_amount": 6.6,
+        "tconstruct:use_item_speed": 0.9,
+        "tconstruct:attack_damage": 1.0,
+        "tconstruct:attack_speed": 1.2
+      }
+    },
+    {
+      "type": "tconstruct:modifier_slots",
+      "slots": {
+        "upgrades": 1,
+        "abilities": 1
+      }
+    },
+    {
+      "type": "tconstruct:traits",
+      "traits": [
+        {
+          "name": "tconstruct:overslime_friend",
+          "level": 1
+        },
+        {
+          "name": "tinkers_thinking:clay",
+          "level": 1
+        },
+        {
+          "name": "tconstruct:shiny",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "type": "tconstruct:material_repair",
+      "material": "tconstruct:clay",
+      "stat_type": "tconstruct:limb"
+    },
+    {
+      "type": "tconstruct:circle_aoe",
+      "3D": false,
+      "diameter": 1
+    },
+    {
+      "type": "tconstruct:dual_option_interaction"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "forge:molten_copper",   "amount":   180 },
+    { "tag": "forge:molten_obsidian", "amount":  1000 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_obsidian_bronze",
+    "amount": 180
+  },
+  "temperature": 950
+}

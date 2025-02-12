@@ -1,0 +1,14 @@
+{
+  "fluid": {
+    "tag": "tconstruct:molten_shroomite",
+    "amount": 50
+  },
+  "effects": [
+   {
+      "type": "tconstruct:effect",
+      "name": "minecraft:glowing",
+      "time": 5,
+      "level": 1
+    }
+  ]
+}

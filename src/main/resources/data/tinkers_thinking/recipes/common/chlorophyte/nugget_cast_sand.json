@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/single_use/nugget" },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_chlorophyte",
+    "amount": 10
+  },
+  "result": "tinkers_thinking:chlorophyte_nugget",
+  "cooling_time": 6
+}

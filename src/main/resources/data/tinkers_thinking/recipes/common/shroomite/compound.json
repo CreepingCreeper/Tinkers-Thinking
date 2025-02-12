@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [
+
+{
+ "item": "tinkers_thinking:chlorophyll_b"
+},
+{
+ "item": "minecraft:warped_fungus"
+},
+{
+ "item": "minecraft:glow_ink_sac"
+}
+],
+  "result": {
+    "item": "tinkers_thinking:shroomite_compound"
+  }
+}

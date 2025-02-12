@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#.#",
+    ". .",
+    "#.#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/ardite"
+    },
+    ".": {
+      "tag": "forge:nuggets/ardite"
+    }
+  },
+  "result": {
+    "item": "tinkers_thinking:ardite_platform",
+    "count": 4
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "blade_left":         "tinkers_thinking:item/tool/knife/blade_left",
+    "blade_right":        "tinkers_thinking:item/tool/knife/blade_right",
+    "handle":      "tinkers_thinking:item/tool/knife/handle"
+  },
+  "modifier_roots": [ "tinkers_thinking:item/tool/knife/modifiers/" ],
+  "parts": [
+    { "name": "handle", "index": 1 },
+    { "name": "blade_left", "index": 0 },
+    { "name": "blade_right", "index": 2 }
+  ],
+  "overrides": [{
+    "predicate": { "tconstruct:charging": 2 },
+    "model": "tinkers_thinking:item/blocking/knife"
+  },
+  {
+    "predicate": { "tconstruct:broken": 1  },
+    "model": "tinkers_thinking:item/broken/knife"
+  }]
+}

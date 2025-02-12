@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/single_use/ingot" },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_white_chocolate",
+    "amount": 90
+  },
+  "result": "tinkers_thinking:white_chocolate",
+  "cooling_time": 45
+}

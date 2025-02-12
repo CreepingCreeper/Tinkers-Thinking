@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:obsidian_bronze_block" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_obsidian_bronze",
+    "amount": 810
+  },
+  "temperature": 950,
+  "time": 120
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "spectre_ingot",
+  "ingredient": {
+    "item": "tinkers_thinking:spectre_compound"
+  },
+  "result": "tinkers_thinking:spectre_ingot",
+  "experience": 1.2,
+  "cookingtime": 100
+}

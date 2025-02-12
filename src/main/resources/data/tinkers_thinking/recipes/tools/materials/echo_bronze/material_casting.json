@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_echo_bronze",
+    "amount": 90
+  },
+  "temperature": 150,
+  "output": "tinkers_thinking:echo_bronze"
+}

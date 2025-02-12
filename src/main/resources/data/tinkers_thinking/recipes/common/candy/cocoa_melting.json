@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "minecraft:cocoa_beans" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_cocoa",
+    "amount": 250
+  },
+  "temperature": 100,
+  "time": 40
+}

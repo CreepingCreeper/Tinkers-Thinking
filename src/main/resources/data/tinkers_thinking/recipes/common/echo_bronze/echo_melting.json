@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "minecraft:echo_shard" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_echo",
+    "amount": 100
+  },
+  "temperature": 50,
+  "time": 40
+}

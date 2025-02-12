@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "item": "minecraft:magma_cream"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:magma_slime_drop"
+  }
+}

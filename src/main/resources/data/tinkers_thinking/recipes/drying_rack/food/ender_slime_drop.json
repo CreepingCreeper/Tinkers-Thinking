@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "tag": "forge:slimeball/ender"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:ender_slime_drop"
+  }
+}

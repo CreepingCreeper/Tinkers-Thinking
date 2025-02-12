@@ -1,0 +1,37 @@
+{
+  "translation_key": "item.tinkers_thinking.arrow_thrower",
+  "icon": {
+    "item": "tinkers_thinking:arrow_thrower",
+    "nbt": "{Damage:0,tic_broken:0b,tic_display:1b,tic_materials:[\"tconstruct:ui_render#head\",\"tconstruct:ui_render#handle\",\"tconstruct:ui_render#extra\",\"tconstruct:ui_render#large\",\"tconstruct:ui_render#extra_large\"]}"
+  },
+  "sortIndex": 14,
+  "input_slots": [
+     {
+      "icon": "tconstruct:bow_grip",
+      "translation_key": "item.tconstruct.bow_grip",
+      "x": 25,
+      "y": 30,
+      "filter": {
+        "item": "tconstruct:bow_grip"
+      }
+    },
+    {
+      "icon": "tconstruct:bow_limb",
+      "translation_key": "item.tconstruct.bow_limb",
+      "x": 45,
+      "y": 50,
+      "filter": {
+        "item": "tconstruct:bow_limb"
+      }
+    },
+    {
+      "icon": "tconstruct:bow_grip",
+      "translation_key": "item.tconstruct.bow_grip",
+      "x": 65,
+      "y": 70,
+      "filter": {
+        "item": "tconstruct:bow_grip"
+      }
+    }
+  ]
+}

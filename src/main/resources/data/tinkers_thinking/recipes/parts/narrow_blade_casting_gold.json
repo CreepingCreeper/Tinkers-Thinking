@@ -1,0 +1,8 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/narrow_blade"
+  },
+  "item_cost": 1,
+  "result": "tinkers_thinking:narrow_blade"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:nuggets/lightite" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_lightite",
+    "amount": 10
+  },
+  "temperature": 450,
+  "time": 8
+}

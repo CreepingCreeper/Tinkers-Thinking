@@ -1,0 +1,14 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinkers_thinking:overdose",
+        "level": 1
+      },
+      { 
+        "name": "tconstruct:overslime",
+        "level": 1
+      }
+    ]
+  }
+}

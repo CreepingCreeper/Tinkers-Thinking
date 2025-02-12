@@ -1,0 +1,14 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinkers_thinking:sculk_catalyse",
+        "level": 1
+      },
+      {
+        "name": "tinkers_thinking:sculk_levitate",
+        "level": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "item": "minecraft:salmon"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:salmon_jerky"
+  }
+}

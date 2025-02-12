@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    {
+      "tag": "forge:gems/silky_jewel"
+    }
+  ],
+  "tools": {
+    "tag": "tconstruct:modifiable/bonus_slots"
+  },
+  "level": 1,
+  "allow_crystal": true,
+  "result":  "tinkers_thinking:repayed"
+}

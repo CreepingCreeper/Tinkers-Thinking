@@ -1,0 +1,20 @@
+{
+  "conditions": [
+        {
+          "value": {
+            "tag": "forge:molten_titanium",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+        "type": "tconstruct:casting_table",
+        "cast": { "item": "minecraft:phantom_membrane" },
+        "cast_consumed": true,
+        "fluid": {
+          "tag": "forge:molten_titanium",
+          "amount": 90
+        },
+        "result": "tinkers_thinking:lightite_compound",
+        "cooling_time": 35
+ }

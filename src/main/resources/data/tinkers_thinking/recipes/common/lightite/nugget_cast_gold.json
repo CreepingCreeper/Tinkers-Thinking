@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/multi_use/nugget" },
+  "cast_consumed": false,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_lightite",
+    "amount": 10
+  },
+  "result": "tinkers_thinking:lightite_nugget",
+  "cooling_time": 5
+}

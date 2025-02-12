@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/multi_use/ingot" },
+  "cast_consumed": false,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_electrical_steel",
+    "amount": 90
+  },
+  "result": "tinkers_thinking:electrical_steel_ingot",
+  "cooling_time": 100
+}

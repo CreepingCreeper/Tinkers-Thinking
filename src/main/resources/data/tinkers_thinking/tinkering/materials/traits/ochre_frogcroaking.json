@@ -1,0 +1,14 @@
+{
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "tinkers_thinking:sculk_catalyse",
+        "level": 1
+      },
+      {
+        "name": "tinkers_thinking:sculk_gravity",
+        "level": 1
+      }
+    ]
+  }
+}

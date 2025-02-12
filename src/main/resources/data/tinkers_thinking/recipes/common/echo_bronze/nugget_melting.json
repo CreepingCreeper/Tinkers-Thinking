@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:nuggets/echo_bronze" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_echo_bronze",
+    "amount": 10
+  },
+  "temperature": 150,
+  "time": 2
+}

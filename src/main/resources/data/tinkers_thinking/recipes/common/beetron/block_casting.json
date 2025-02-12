@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_beetron",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:beetron_block",
+  "cooling_time": 100
+}

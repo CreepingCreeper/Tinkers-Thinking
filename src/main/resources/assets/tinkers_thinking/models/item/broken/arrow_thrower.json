@@ -1,0 +1,14 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/bow",
+  "textures": {
+    "grip_bottom":      "tinkers_thinking:item/tool/arrow_thrower/grip_bottom_1",
+    "grip_top":         "tinkers_thinking:item/tool/arrow_thrower/grip_top_1",
+    "limb":             "tinkers_thinking:item/tool/arrow_thrower/broken_limb"
+  },
+  "parts": [
+    { "name": "grip_bottom", "index": 1 },
+    { "name": "grip_top",    "index": 1 },
+    { "name": "limb",        "index": 2 }
+  ]
+}

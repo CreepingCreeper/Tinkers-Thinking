@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tinkers_thinking:ardite",
+  "fluid": {
+    "tag": "forge:rabbit_stew",
+    "amount": 125
+  },
+  "temperature": 100,
+  "output": "tinkers_thinking:stewium"
+}

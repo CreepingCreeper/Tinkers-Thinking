@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_spectre",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:spectre_block",
+  "cooling_time": 105
+}

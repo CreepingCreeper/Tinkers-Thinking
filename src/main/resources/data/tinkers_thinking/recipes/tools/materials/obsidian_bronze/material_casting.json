@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_obsidian_bronze",
+    "amount": 90
+  },
+  "temperature": 950,
+  "output": "tinkers_thinking:obsidian_bronze"
+}

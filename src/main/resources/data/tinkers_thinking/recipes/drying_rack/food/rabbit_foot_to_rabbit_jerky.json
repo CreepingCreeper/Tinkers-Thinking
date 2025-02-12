@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "item": "minecraft:rabbit_foot"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:rabbit_jerky"
+  }
+}

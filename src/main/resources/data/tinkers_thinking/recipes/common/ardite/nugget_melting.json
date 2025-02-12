@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:nuggets/ardite" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_ardite",
+    "amount": 10
+  },
+  "temperature": 1296,
+  "time": 10
+}

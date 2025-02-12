@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_thinking:tinkers_bronze_block",
+    "tinkers_thinking:silky_jewel_block",
+    "tinkers_thinking:lightite_block",
+    "tinkers_thinking:electrical_steel_block",
+    "tinkers_thinking:beetron_block"
+  ]
+}

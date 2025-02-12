@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:nuggets/tinkers_bronze",
+    "#forge:nuggets/ardite",
+    "#forge:nuggets/lightite",
+    "#forge:nuggets/chlorophyte",
+    "#forge:nuggets/spectre",
+    "#forge:nuggets/shroomite",
+    "#forge:nuggets/obsidian_bronze",
+    "#forge:nuggets/electrical_steel",
+    "#forge:nuggets/echo_bronze",
+    "#forge:nuggets/beetron"
+  ]
+}

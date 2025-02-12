@@ -1,0 +1,48 @@
+{
+  "modules": [
+    {
+    "type": "tconstruct:base_stats",
+    "stats": {
+      "tconstruct:block_amount": 5,
+      "tconstruct:use_item_speed": 0.9,
+      "tconstruct:attack_damage": 2.5,
+      "tconstruct:attack_speed": 2.0,
+      "tconstruct:durability": 100
+    }
+  },
+    {
+      "type": "tconstruct:multiply_stats",
+      "multipliers": {
+        "tconstruct:tank_capacity": 5.0
+      }
+    },
+    {
+      "type": "tconstruct:modifier_slots",
+      "slots": {
+        "upgrades": 2,
+        "abilities": 1
+      }
+    },
+    {
+      "type": "tconstruct:traits",
+      "traits": [
+        {
+          "name": "tconstruct:bucketing",
+          "level": 1
+        },
+        {
+          "name": "tinkers_thinking:forever",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "type": "tconstruct:circle_aoe",
+      "3D": false,
+      "diameter": 1
+    },
+    {
+      "type": "tconstruct:dual_option_interaction"
+    }
+    ]
+}

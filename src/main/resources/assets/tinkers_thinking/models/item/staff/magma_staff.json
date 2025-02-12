@@ -1,0 +1,62 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/staff",
+  "textures": {
+    "tool":         "tinkers_thinking:item/tool/magma_staff/staff",
+    "broken":       "tinkers_thinking:item/tool/magma_staff/staff_broken",
+    "large_tool":   "tinkers_thinking:item/tool/magma_staff/staff_large",
+    "large_broken": "tinkers_thinking:item/tool/magma_staff/staff_large_broken"
+  },
+  "large": true,
+  "first_modifiers": [ "tconstruct:dyed", "tconstruct:embellishment" ],
+  "modifier_roots": {
+    "small": [ "tconstruct:item/tool/staff/modifiers/" ],
+    "large": [ "tconstruct:item/tool/staff/large_modifiers/" ]
+},
+  "overrides": [ 
+    {
+     "predicate": { "tconstruct:charging": 1 },
+     "model": "tinkers_thinking:item/staff/magma/charging_1"
+    },
+    {
+      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.4 },
+      "model": "tinkers_thinking:item/staff/magma/charging_2"
+    },
+    {
+      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.7 },
+      "model": "tinkers_thinking:item/staff/magma/charging_3"
+    },
+    {
+      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.9 },
+      "model": "tinkers_thinking:item/staff/magma/charging_4"
+    },
+    {
+      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 1.0 },
+      "model": "tinkers_thinking:item/staff/magma/charging_5"
+    },
+    {
+      "predicate": { "tconstruct:charging": 2 },
+      "model": "tinkers_thinking:item/staff/magma/blocking"
+    },
+    {
+      "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.05 },
+      "model": "tinkers_thinking:item/staff/magma/blocking_1"
+    },
+    {
+      "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.4 },
+      "model": "tinkers_thinking:item/staff/magma/blocking_2"
+    },
+    {
+      "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.7 },
+      "model": "tinkers_thinking:item/staff/magma/blocking_3"
+    },
+    {
+      "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.9 },
+      "model": "tinkers_thinking:item/staff/magma/blocking_4"
+    },
+    {
+      "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 1.0 },
+      "model": "tinkers_thinking:item/staff/magma/blocking_5"
+    }
+  ]
+}

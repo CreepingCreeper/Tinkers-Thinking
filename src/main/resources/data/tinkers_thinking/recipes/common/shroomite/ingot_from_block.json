@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [{ "item": "tinkers_thinking:shroomite_block" }],
+  "result": {
+    "item": "tinkers_thinking:shroomite_ingot",
+    "count": 9
+  }
+}

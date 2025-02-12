@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:ingots/steel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:true"
+    }
+  ],
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "forge:molten_steel",   "amount":   90 },
+    { "tag": "forge:molten_quartz", "amount":  100 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_electrical_steel",
+    "amount": 90
+  },
+  "temperature": 900
+}

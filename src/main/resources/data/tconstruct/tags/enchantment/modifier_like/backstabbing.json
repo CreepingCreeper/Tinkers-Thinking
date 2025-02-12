@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "conditions": [
+    {
+      "modid": "farmersdelight",
+      "type": "forge:mod_loaded"
+    }
+ ],
+  "values": [
+    {
+      "id": "farmersdelight:backstabbing",
+      "required": false
+    }
+  ]
+}

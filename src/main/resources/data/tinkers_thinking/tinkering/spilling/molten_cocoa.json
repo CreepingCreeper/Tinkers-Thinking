@@ -1,0 +1,29 @@
+{
+  "fluid": {
+    "tag": "tconstruct:molten_cocoa",
+    "amount": 50
+  },
+  "effects": [
+    {
+      "type": "tconstruct:restore_hunger",
+      "hunger": 1,
+      "saturation": 0.02
+    },
+    {
+      "type": "tconstruct:remove_effect",
+      "effect": "minecraft:slowness"
+    },
+    {
+      "type": "tconstruct:remove_effect",
+      "effect": "minecraft:weakness"
+    },
+    {
+      "type": "tconstruct:remove_effect",
+      "effect": "minecraft:mining_fatigue"
+    },
+    {
+      "type": "tconstruct:remove_effect",
+      "effect": "minecraft:hunger"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_lightite",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:lightite_block",
+  "cooling_time": 145
+}

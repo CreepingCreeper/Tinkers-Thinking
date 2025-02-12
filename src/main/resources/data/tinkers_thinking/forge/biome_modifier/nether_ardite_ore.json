@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": [
+    "tinkers_thinking:ardite_ore_small",
+    "tinkers_thinking:ardite_ore_large"
+  ],
+  "step": "underground_decoration"
+}

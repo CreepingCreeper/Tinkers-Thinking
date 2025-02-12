@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_black_chocolate",
+    "amount": 90
+  },
+  "temperature": 90,
+  "output": "tinkers_thinking:black_chocolate"
+}

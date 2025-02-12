@@ -1,0 +1,9 @@
+{
+	"loader": "mantle:colored_block",
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "tinkers_thinking:block/ardite_top",
+        "top":    "tinkers_thinking:block/ardite_top",
+        "side":   "tinkers_thinking:block/ardite"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:lightite_block" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_lightite",
+    "amount": 810
+  },
+  "temperature": 450,
+  "time": 50
+}

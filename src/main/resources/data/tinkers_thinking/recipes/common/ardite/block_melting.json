@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:ardite_block" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_ardite",
+    "amount": 810
+  },
+  "temperature": 1296,
+  "time": 80
+}

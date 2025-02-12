@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 100.0,
+      "percent": false,
+      "target":
+      {
+        "type": "mantle:tag",
+        "tag": "minecraft:boat"
+      }
+    }
+  ],
+  "tooltip_display": "never"
+}

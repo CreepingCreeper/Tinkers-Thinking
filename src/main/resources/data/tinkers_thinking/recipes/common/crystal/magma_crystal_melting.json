@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { 
+    "item": "tinkers_thinking:magma_crystal" },
+  "result": {
+    "fluid": "tconstruct:magma",
+    "amount": 250
+  },
+  "temperature": 36,
+  "time": 40
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:part_builder",
+  "pattern": "tinkers_thinking:narrow_blade",
+  "pattern_item": [
+    { "tag": "tconstruct:patterns/default" },
+    { "item": "tinkers_thinking:narrow_blade_cast" }
+  ],
+  "cost": 1,
+  "result": { "item": "tinkers_thinking:narrow_blade" }
+}

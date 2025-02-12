@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "minecraft:sugar_cane" },
+  "result": {
+    "fluid": "tinkers_thinking:syrup",
+    "amount": 500
+  },
+  "temperature": 75,
+  "time": 32
+}

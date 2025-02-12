@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:shroomite",
+  "temperature": 600,
+  "result": {
+    "fluid": "tinkers_thinking:molten_shroomite",
+    "amount": 90
+  }
+}

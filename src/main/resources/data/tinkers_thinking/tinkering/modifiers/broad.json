@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 0.30,
+      "operation": "add",
+      "stat": "tconstruct:block_angle"
+    }
+  ],
+  "tooltip_display": "always"
+}

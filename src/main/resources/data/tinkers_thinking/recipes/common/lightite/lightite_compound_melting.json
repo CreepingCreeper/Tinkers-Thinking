@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:lightite_compound"
+  },
+  "result": {
+    "fluid": "tinkers_thinking:molten_lightite",
+    "amount": 120
+  },
+  "temperature": 450,
+  "time": 20
+}

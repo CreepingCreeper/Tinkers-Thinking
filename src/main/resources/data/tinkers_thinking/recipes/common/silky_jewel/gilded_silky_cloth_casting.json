@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "item": "tconstruct:silky_cloth" },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "forge:molten_gold",
+    "amount": 720
+  },
+  "result": "tinkers_thinking:gilded_silky_cloth",
+  "cooling_time": 140
+}

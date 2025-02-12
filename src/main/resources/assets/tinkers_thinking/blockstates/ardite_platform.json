@@ -1,0 +1,37 @@
+{
+  "multipart": [
+    {
+      "when": { "up": "false", "down": "false" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/both" }
+    },
+    {
+      "when": { "up": "false", "down": "true" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/top" }
+    },
+    {
+      "when": { "up": "true", "down": "false" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/bottom" }
+    },
+    {
+      "when": { "up": "true", "down": "true" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/neither" }
+    },
+
+    {
+      "when": { "north": "true" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/side", "y": 180 }
+    },
+    {
+      "when": { "east": "true" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/side", "y": 270 }
+    },
+    {
+      "when": { "south": "true" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/side" }
+    },
+    {
+      "when": { "west": "true" },
+      "apply": { "model": "tinkers_thinking:block/ardite_platform/side", "y": 90 }
+    }
+  ]
+}

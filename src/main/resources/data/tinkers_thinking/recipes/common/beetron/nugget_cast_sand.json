@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/single_use/nugget" },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_beetron",
+    "amount": 10
+  },
+  "result": "tinkers_thinking:beetron_nugget",
+  "cooling_time": 8
+}

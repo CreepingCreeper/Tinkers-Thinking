@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_ardite",
+    "amount": 90
+  },
+  "temperature": 1296,
+  "output": "tinkers_thinking:ardite"
+}

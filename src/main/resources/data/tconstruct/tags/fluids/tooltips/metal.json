@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "#tconstruct:molten_tinkers_bronze",
+    "#tconstruct:molten_ardite",
+    "#tconstruct:molten_lightite",
+    "#tconstruct:molten_black_chocolate",
+    "#tconstruct:molten_white_chocolate",
+    "#tconstruct:molten_chlorophyte",
+    "#tconstruct:molten_spectre",
+    "#tconstruct:molten_shroomite",
+    "#tconstruct:molten_obsidian_bronze",
+    "#tconstruct:molten_electrical_steel",
+    "#tconstruct:molten_echo_bronze",
+    "#tconstruct:molten_beetron"
+  ]
+}

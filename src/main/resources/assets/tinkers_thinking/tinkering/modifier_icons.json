@@ -1,0 +1,8 @@
+{
+  "tinkers_thinking:withernic":  ["tinkers_thinking:gui/wither", "tconstruct:gui/modifiers/plus"],
+  "tinkers_thinking:repayed":  ["tinkers_thinking:item/silky_jewel", "tconstruct:gui/modifiers/plus"],
+  "tinkers_thinking:lightly_speed":  ["tinkers_thinking:item/lightite/lightite_reinforcement", "tconstruct:gui/modifiers/book"],
+  "tinkers_thinking:broad":  ["tinkers_thinking:gui/broad"],
+  "tinkers_thinking:backstabbing":  ["tinkers_thinking:gui/backstabbing"],
+  "tinkers_thinking:sprinting":  ["tinkers_thinking:gui/blood_slime_sling", "tconstruct:gui/modifiers/book"]
+}

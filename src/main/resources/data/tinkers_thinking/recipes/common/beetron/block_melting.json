@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:beetron_block" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_beetron",
+    "amount": 810
+  },
+  "temperature": 400,
+  "time": 100
+}

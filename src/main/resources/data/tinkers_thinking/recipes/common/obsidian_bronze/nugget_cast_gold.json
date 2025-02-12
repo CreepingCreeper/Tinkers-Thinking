@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/multi_use/nugget" },
+  "cast_consumed": false,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_obsidian_bronze",
+    "amount": 10
+  },
+  "result": "tinkers_thinking:obsidian_bronze_nugget",
+  "cooling_time": 10
+}

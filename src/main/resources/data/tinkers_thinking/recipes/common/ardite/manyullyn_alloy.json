@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "tconstruct:molten_cobalt",   "amount":   90 },
+    { "tag": "tconstruct:molten_ardite", "amount":  90 }
+  ],
+  "result": {
+    "fluid": "tconstruct:molten_manyullyn",
+    "amount": 90
+  },
+  "temperature": 1200
+}

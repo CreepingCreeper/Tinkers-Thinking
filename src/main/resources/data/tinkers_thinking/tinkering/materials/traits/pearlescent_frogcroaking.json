@@ -1,0 +1,24 @@
+{
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "tinkers_thinking:sculk_catalyse",
+        "level": 1
+      },
+      {
+        "name": "tinkers_thinking:sculk_teleport",
+        "level": 1
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinkers_thinking:sculk_catalyse",
+        "level": 1
+      },
+      {
+        "name": "tinkers_thinking:sculk_teleport",
+        "level": 1
+      }
+    ]
+  }
+}

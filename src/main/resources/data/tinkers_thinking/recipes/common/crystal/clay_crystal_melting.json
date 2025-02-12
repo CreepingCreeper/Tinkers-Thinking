@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { 
+    "item": "tinkers_thinking:clay_crystal" },
+  "result": {
+    "fluid": "tconstruct:molten_clay",
+    "amount": 250
+  },
+  "temperature": 400,
+  "time": 120
+}

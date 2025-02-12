@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [
+{ 
+ "item": "tinkers_thinking:chlorophyll_a"
+ },
+{
+ "item": "minecraft:ghast_tear"
+},
+{
+ "item": "minecraft:crying_obsidian"
+}
+],
+  "result": {
+    "item": "tinkers_thinking:spectre_compound",
+    "count": 2
+  }
+}

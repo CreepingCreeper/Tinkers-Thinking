@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_white_chocolate",
+    "amount": 90
+  },
+  "temperature": 80,
+  "output": "tinkers_thinking:white_chocolate"
+}

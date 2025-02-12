@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [{ "item": "tinkers_thinking:spectre_ingot" }],
+  "result": {
+    "item": "tinkers_thinking:spectre_nugget",
+    "count": 9
+  }
+}

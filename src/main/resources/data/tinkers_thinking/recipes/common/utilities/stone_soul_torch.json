@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#",
+    "S"
+  ],
+  "key": {
+    "X": {
+        "tag": "minecraft:coals"
+      },
+    "#": {
+      "item": "tinkers_thinking:stone_stick"
+    },
+    "S": {
+      "tag": "minecraft:soul_fire_base_blocks"
+    }
+  },
+  "result": {
+    "item": "tinkers_thinking:stone_soul_torch",
+    "count": 4
+  }
+}

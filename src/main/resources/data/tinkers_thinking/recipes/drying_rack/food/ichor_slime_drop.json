@@ -1,0 +1,11 @@
+{
+  "type": "tinkers_thinking:drying_rack",
+  "ingredient": [
+    {
+      "tag": "forge:slimeball/ichor"
+    }
+  ],
+  "output": {
+    "item": "tinkers_thinking:ichor_slime_drop"
+  }
+}

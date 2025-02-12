@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:surging_wellspring" },
+  "result": {
+    "fluid": "tconstruct:molten_copper",
+    "amount": 90
+  },
+  "temperature": 500,
+  "time": 120
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tinkers_thinking:block/stone_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tinkers_thinking:block/stone_ladder"
+    },
+    "facing=south": {
+      "model": "tinkers_thinking:block/stone_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tinkers_thinking:block/stone_ladder",
+      "y": 270
+    }
+  }
+}

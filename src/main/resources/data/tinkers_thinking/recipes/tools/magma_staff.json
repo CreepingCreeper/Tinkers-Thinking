@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AWA",
+    " I ",
+    " W "
+  ],
+  "key": {
+    "A": {
+      "item": "tinkers_thinking:magma_crystal"
+    },
+    "W": {
+      "item": "tconstruct:blazing_bone"
+    },
+    "I":   [
+      {
+         "item": "tconstruct:seared_brick"
+      },
+      {
+         "item": "tconstruct:scorched_brick"
+      }
+    ]
+  },
+  "result": {
+    "item": "tinkers_thinking:magma_staff"
+  }
+}

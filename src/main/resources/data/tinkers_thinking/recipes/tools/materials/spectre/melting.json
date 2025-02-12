@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:spectre",
+  "temperature": 600,
+  "result": {
+    "fluid": "tinkers_thinking:molten_spectre",
+    "amount": 90
+  }
+}

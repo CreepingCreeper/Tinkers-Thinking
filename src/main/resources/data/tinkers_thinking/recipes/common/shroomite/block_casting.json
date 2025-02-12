@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_shroomite",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:shroomite_block",
+  "cooling_time": 105
+}

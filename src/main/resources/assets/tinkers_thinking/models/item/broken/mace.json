@@ -1,0 +1,14 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tinkers_thinking:item/base/mace",
+  "textures": {
+    "plate":         "tinkers_thinking:item/tool/mace/plate",
+    "head":         "tinkers_thinking:item/tool/mace/head",
+    "handle":       "tinkers_thinking:item/tool/mace/broken_handle"
+  },
+  "parts": [
+    { "name": "plate", "index": 0 },
+    { "name": "handle", "index": 1 },
+    { "name": "head"}
+  ]
+}

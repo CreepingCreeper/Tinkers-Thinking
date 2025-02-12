@@ -1,0 +1,16 @@
+{ 
+  "type": "tconstruct:composable",
+  "condition":  {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:constant_enchantment",
+      "level": 1,
+      "name": "farmersdelight:backstabbing"
+    }
+  ],
+  "tooltip_display": "always"
+}

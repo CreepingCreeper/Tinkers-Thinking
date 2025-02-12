@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [{ "item": "tinkers_thinking:silky_jewel_block" }],
+  "result": {
+    "item": "tinkers_thinking:silky_jewel",
+    "count": 9
+  }
+}

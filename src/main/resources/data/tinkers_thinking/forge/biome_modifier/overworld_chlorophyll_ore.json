@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#tinkers_thinking:chlorophyll_ore_spawn",
+  "features": [
+    "tinkers_thinking:chlorophyll_ore_small",
+    "tinkers_thinking:chlorophyll_ore_large"
+  ],
+  "step": "underground_decoration"
+}

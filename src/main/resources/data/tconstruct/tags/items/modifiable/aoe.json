@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_thinking:clay_staff",
+    "tinkers_thinking:quartz_staff", 
+    "tinkers_thinking:magma_staff",
+    "tinkers_thinking:paxel",
+    "tinkers_thinking:knife",
+    "tinkers_thinking:battle_bucket"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/staff",
+  "textures": {
+    "tool":         "tinkers_thinking:item/tool/clay_staff/staff_broken",
+    "large_tool":   "tinkers_thinking:item/tool/clay_staff/staff_large_broken"
+  },
+  "large": true,
+  "first_modifiers": [ "tconstruct:dyed", "tconstruct:embellishment" ],
+  "modifier_roots": {
+    "small": [ "tconstruct:item/tool/staff/modifiers/" ],
+    "large": [ "tconstruct:item/tool/staff/large_modifiers/" ]
+}
+}

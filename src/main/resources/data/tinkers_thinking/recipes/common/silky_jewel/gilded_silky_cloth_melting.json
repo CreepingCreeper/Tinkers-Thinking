@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:gilded_silky_cloth"
+  },
+  "result": {
+    "fluid": "tconstruct:molten_gold",
+    "amount": 720
+  },
+  "temperature": 700,
+  "time": 100,
+  "byproducts": [
+    {
+      "fluid": "tconstruct:molten_rose_gold",
+      "amount": 180
+    }
+  ]
+}

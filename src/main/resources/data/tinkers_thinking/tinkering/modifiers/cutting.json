@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "blocks": {
+        "type": "mantle:or",
+        "predicates": [
+       {
+        "type": "mantle:tag",
+        "tag": "forge:stone"
+      },
+      {
+        "type": "mantle:tag",
+        "tag": "forge:blackstone"
+      },
+     {
+        "type": "mantle:tag",
+        "tag": "forge:cobblestone"
+      },
+     {
+        "type": "mantle:tag",
+        "tag": "tinkers_thinking:cuttable_blocks"
+     }
+     ]
+      },
+      "each_level": 5,
+      "entity": "mantle:any",
+      "percent": false,
+      "require_effective": false
+    }
+  ],
+  "tooltip_display": "always"
+}

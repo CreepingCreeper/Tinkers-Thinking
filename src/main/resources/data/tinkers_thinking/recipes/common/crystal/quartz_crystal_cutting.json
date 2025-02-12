@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+     "tag": "forge:gems/quartz"
+  },
+  "result": "tinkers_thinking:quartz_crystal",
+  "count": 1
+}

@@ -1,0 +1,6 @@
+{
+  "default": [
+    { "name": "tconstruct:writable", "level": 2 },
+    { "name": "tinkers_thinking:soft", "level": 1 }
+  ]
+}

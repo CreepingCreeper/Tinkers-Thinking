@@ -1,0 +1,13 @@
+{
+  "modifier_id": "tinkers_thinking:backstabbing",
+  "text": [
+    {
+      "text": "增加从后攻击目标时的伤害"
+    }
+  ],
+  "more_text_space": true,
+  "effects": [
+    "第1 级需要1 个能力槽",
+    "第2 级和第3 级无需槽位"
+  ]
+}

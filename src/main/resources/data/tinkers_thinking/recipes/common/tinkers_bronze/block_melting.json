@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:tinkers_bronze_block" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_tinkers_bronze",
+    "amount": 810
+  },
+  "temperature": 550,
+  "time": 60
+}

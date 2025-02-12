@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+issueTrackerURL="https://github.com/CreepingCreeper/Tinkers-Thinking/issues"
+logoFile="logo.png"
+license="MIT"
+[[mods]]
+modId="tinkers_thinking"
+version="0.1.5.0"
+displayName="Tinkers' Thinking"
+authors="Creeping Creeper"
+description='''
+An addon mod for Tinkers' Construct.
+    '''
+  displayURL="https://www.curseforge.com/minecraft/mc-mods/tinkers-thinking"
+
+[[dependencies.tinkers_thinking]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tinkers_thinking]]
+modId="forge"
+mandatory=true
+versionRange="[47.1.40,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tinkers_thinking]]
+modId="tconstruct"
+mandatory=true
+versionRange="[3.9.1.17,)"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "fluid": "tinkers_thinking:molten_black_chocolate",   "amount":  500 },
+    { "tag": "forge:milk", "amount":  250 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_white_chocolate",
+    "amount": 500
+  },
+  "temperature": 80
+}

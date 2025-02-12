@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:raw_ardite"
+  },
+  "result": {
+    "fluid": "tinkers_thinking:molten_ardite",
+    "amount": 90
+  },
+  "temperature": 1296,
+  "time": 22,
+  "byproducts": [
+    {
+      "fluid": "tconstruct:molten_gold",
+      "amount": 30
+    }
+  ]
+}
