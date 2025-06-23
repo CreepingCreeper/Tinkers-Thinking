@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [
+    {
+      "tag": "tinkers_thinking:pulp_ingredient_large"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+],
+  "result": {
+    "item": "tinkers_thinking:pulp_bucket"
+  }
+}

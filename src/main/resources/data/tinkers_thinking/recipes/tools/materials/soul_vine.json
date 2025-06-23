@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "tinkers_thinking:soul_vine"
+  },
+  "value": 1,
+  "needed": 1,
+  "material": "tinkers_thinking:soul_vine"
+}

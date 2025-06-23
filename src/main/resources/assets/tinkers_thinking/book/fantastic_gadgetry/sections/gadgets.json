@@ -1,0 +1,22 @@
+[
+  {
+    "name": "index",
+    "type": "mantle:index",
+    "data": "gadgets/index.json"
+  },
+  {
+    "name": "stone_item",
+    "type": "mantle:image_text",
+    "data": "gadgets/stone_item.json"
+  },
+  {
+    "name": "drying_rack",
+    "type": "mantle:image_text",
+    "data": "gadgets/drying_rack.json"
+  },
+  {
+    "name": "waste_fluid_cylinder",
+    "type": "mantle:image_text",
+    "data": "gadgets/waste_fluid_cylinder.json"
+  }
+]

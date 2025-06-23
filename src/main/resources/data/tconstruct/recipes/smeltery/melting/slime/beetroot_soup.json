@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 50,
+      "fluid": "tinkers_thinking:syrup"
+    }
+  ],
+  "ingredient": {
+    "item": "minecraft:beetroot"
+  },
+  "result": {
+    "amount": 50,
+    "tag": "forge:beetroot_soup"
+  },
+  "temperature": 75,
+  "time": 32
+}

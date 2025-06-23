@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_table",
+  "fluid": {
+    "fluid": "tinkers_thinking:pulp",
+    "amount": 100
+  },
+  "result": "minecraft:paper",
+  "cooling_time": 20
+}

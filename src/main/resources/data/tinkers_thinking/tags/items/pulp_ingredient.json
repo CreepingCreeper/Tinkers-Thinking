@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:paper",
+    "minecraft:sugar_cane",
+    {
+      "id": "#forge:sawdust",
+      "required": false
+    },
+    {
+      "id": "#forge:dusts/wood",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tree_bark",
+      "required": false
+    }
+  ]
+}

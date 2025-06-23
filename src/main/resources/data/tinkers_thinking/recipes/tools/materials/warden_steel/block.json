@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/warden_steel"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_thinking:warden_steel",
+  "leftover": {
+    "tag": "forge:ingots/warden_steel"
+  }
+}

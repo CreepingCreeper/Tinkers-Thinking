@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:part_builder_tool_recycling",
+  "parts": [
+    "tconstruct:bow_limb",
+    "tconstruct:bow_grip",
+    "tconstruct:bowstring"
+  ],
+  "pattern": {
+    "tag": "tconstruct:patterns/default"
+  },
+  "tools": {
+    "item": "tinkers_thinking:repeating_crossbow"
+  }
+}

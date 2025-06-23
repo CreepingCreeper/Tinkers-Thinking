@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tinkers_thinking:obsidian_bronze_ingot"
+  },
+  "base": {
+    "item": "tinkers_thinking:ancient_compound"
+  },
+  "result": {
+    "item": "tconstruct:battlesign"
+  },
+  "template": {
+    "item": "minecraft:snout_armor_trim_smithing_template"
+  }
+}

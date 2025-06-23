@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tinkers_thinking:obsidian_bronze_ingot"
+  },
+  "base": {
+    "item": "tinkers_thinking:ancient_compound"
+  },
+  "result": {
+    "item": "tinkers_thinking:mace"
+  },
+  "template": [
+    {
+      "item": "minecraft:ward_armor_trim_smithing_template"
+    },
+    {
+      "item": "minecraft:silence_armor_trim_smithing_template"
+    }
+  ]
+}

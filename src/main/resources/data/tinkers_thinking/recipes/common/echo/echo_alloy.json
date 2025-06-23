@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "modid": "tinkers_ingenious",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "mantle:water",   "amount":   100 },
+    { "tag": "forge:sculk_gene", "amount":  45 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_echo",
+    "amount": 100
+  },
+  "temperature": 50
+}

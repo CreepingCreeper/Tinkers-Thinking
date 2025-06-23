@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tconstruct:crossbow",
+    "tinkers_thinking:repeating_crossbow",
+    {
+      "id": "tinkers_things:blowpipe",
+      "required": false
+    }
+  ]
+}

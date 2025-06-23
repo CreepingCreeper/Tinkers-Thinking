@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:bookshelf_books",
+    "minecraft:map",
+    "minecraft:filled_map",
+    {
+      "id": "create:pulp",
+      "required": false
+    }
+  ]
+}

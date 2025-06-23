@@ -1,0 +1,13 @@
+{
+  "title": "废液缸",
+  "image": {
+	"file": "tinkers_thinking:book/images/waste_fluid_cylinder.png",
+    "width": 180,
+    "height": 104
+  },
+  "text": [
+    {
+      "text": "我尝试将幽匿的吞噬力量作用于冶炼废液处理，看起来效果不错。"
+    }
+  ]
+}

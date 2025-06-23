@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "item": "minecraft:compass" },
+  "fluid": {
+    "fluid": "tinkers_thinking:pulp",
+    "amount": 800
+  },
+  "result": "minecraft:map",
+  "cooling_time": 60
+}

@@ -1,0 +1,13 @@
+{
+  "title": "晾干架",
+  "image": {
+	"file": "tinkers_thinking:book/images/drying_rack.png",
+    "width": 180,
+    "height": 104
+  },
+  "text": [
+    {
+      "text": "历史记载，在营火发明之前，人们在没有燃料时常用这种装置加工生肉和泥巴。"
+    }
+  ]
+}

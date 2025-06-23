@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:waste_fluid_cylinder" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_electrical_steel",
+    "amount": 450
+  },
+  "temperature": 900,
+  "time": 100
+}

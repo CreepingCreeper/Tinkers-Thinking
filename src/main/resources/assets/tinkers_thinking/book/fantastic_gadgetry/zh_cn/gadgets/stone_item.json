@@ -1,0 +1,13 @@
+{
+  "title": "石头制品",
+  "image": {
+	"file": "tinkers_thinking:book/images/stone_item.png",
+    "width": 180,
+    "height": 104
+  },
+  "text": [
+    {
+      "text": "考古学家从地下挖出了用石头做成的梯子和火把，虽然没那么结实，但还应该能用。"
+    }
+  ]
+}

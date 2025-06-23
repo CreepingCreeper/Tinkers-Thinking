@@ -1,0 +1,22 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinkers_thinking:bane_of_pigs",
+        "level": 1
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "tinkers_thinking:antibrute",
+        "level": 1
+      }
+    ],
+    "tconstruct:plating_shield": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:antibrute"
+      }
+    ]
+  }
+}

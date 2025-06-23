@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "forge:molten_steel",   "amount":   90 },
+    { "tag": "forge:molten_ardite",   "amount":   90 },
+    { "tag": "forge:molten_echo", "amount":  200 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_warden_steel",
+    "amount": 180
+  },
+  "temperature": 750
+}

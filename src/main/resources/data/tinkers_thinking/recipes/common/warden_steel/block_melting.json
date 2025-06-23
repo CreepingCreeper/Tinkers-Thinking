@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:warden_steel_block" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_warden_steel",
+    "amount": 810
+  },
+  "temperature": 1050,
+  "time": 250
+}

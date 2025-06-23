@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:symbiotic",
+      "each_level": 0.15
+    }
+    ],
+  "tooltip_display": "always"
+}

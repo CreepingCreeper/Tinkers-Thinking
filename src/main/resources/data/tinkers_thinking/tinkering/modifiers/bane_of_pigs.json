@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:composable",
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 5.0,
+      "percent": false,
+      "target":
+          {
+            "type": "mantle:tag",
+            "tag": "tinkers_thinking:pig_like"
+          }
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "effect": "minecraft:weakness",
+      "target": {
+            "type": "mantle:tag",
+            "tag": "tinkers_thinking:pig_like"
+      },
+      "hooks": [
+        "tconstruct:melee_hit"
+      ],
+      "level": {
+        "flat": 2.0
+      },
+      "time": {
+        "flat": 80.0,
+        "random": 20.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

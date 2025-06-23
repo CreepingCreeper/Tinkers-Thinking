@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#.#",
+    ". .",
+    "..."
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sculk_vein"
+    },
+    ".": {
+      "tag": "forge:ingots/electrical_steel"
+    }
+  },
+  "result": {
+    "item": "tinkers_thinking:waste_fluid_cylinder"
+  }
+}

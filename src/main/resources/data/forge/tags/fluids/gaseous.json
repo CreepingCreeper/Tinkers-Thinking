@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#tconstruct:syrup",
+    {
+      "id": "thermal:syrup",
+      "required": false
+    }
+  ]
+}

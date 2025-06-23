@@ -1,0 +1,5 @@
+{
+  "color": "FFe1e1e3",
+  "flowing": "tconstruct:fluid/food/stew/flowing",
+  "still": "tconstruct:fluid/food/stew/still"
+}

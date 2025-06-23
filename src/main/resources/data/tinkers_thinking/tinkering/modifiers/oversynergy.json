@@ -1,0 +1,12 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:overgrowth",
+      "chance": {
+        "each_level": 0.002
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

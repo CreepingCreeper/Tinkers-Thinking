@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:part_builder_tool_recycling",
+  "parts": [
+    "tconstruct:repair_kit",
+    "tconstruct:tool_handle"
+  ],
+  "pattern": {
+    "tag": "tconstruct:patterns/default"
+  },
+  "tools": {
+    "item": "tinkers_thinking:mace"
+  }
+}

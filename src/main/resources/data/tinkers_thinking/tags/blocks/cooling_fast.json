@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:ice",
+    "minecraft:snow_block",
+    "minecraft:powder_snow",
+    "tconstruct:budding_sky_slime_crystal",
+    "tconstruct:sky_slime_crystal_block",
+    "tconstruct:sky_congealed_slime",
+    "tconstruct:sky_slime"
+  ]
+}

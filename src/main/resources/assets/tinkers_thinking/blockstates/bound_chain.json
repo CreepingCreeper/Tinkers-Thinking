@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "tinkers_thinking:block/bound_chain",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "tinkers_thinking:block/bound_chain"
+    },
+    "axis=z": {
+      "model": "tinkers_thinking:block/bound_chain",
+      "x": 90
+    }
+  }
+}

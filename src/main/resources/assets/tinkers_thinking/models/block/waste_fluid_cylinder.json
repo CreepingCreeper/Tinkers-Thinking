@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable_with_bottom",
+  "textures": {
+    "front": "tinkers_thinking:block/waste_fluid_cylinder/front",
+    "side": "tinkers_thinking:block/waste_fluid_cylinder/side",
+    "top": "tinkers_thinking:block/waste_fluid_cylinder/top",
+    "bottom": "tinkers_thinking:block/electrical_steel_block"
+  }
+}
