@@ -7,14 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-public class WrappedHandler implements IItemHandlerModifiable {
+public class WrappedHandler  implements IItemHandlerModifiable {
     private final IItemHandlerModifiable handler;
     private final Predicate<Integer> extract;
     private final BiPredicate<Integer, ItemStack> insert;
 
     public WrappedHandler(IItemHandlerModifiable handler,Predicate<Integer> extract,BiPredicate<Integer,ItemStack> insert){
         this.handler = handler;
-        this.extract =extract;
+        this.extract = extract;
         this.insert = insert;
     }
 

@@ -8,9 +8,9 @@ import slimeknights.tconstruct.tools.modifiers.effect.NoMilkEffect;
 
 import java.util.UUID;
 
-public class TestEffect extends NoMilkEffect {
-    private static final UUID ATTRIBUTE_BONUS = UUID.fromString("2307DE5E-7CE8-4030-940E-514C1F170001");
-    public TestEffect(MobEffectCategory typeIn, int color, boolean show) {
+public class SculkPowerEffect extends NoMilkEffect {
+    private static final UUID ATTRIBUTE_SculkBreed = UUID.fromString("2307DE5E-7CE8-4030-940E-514C1F170001");
+    public SculkPowerEffect(MobEffectCategory typeIn, int color, boolean show) {
         super(typeIn, color, show);
     }
     @Override
@@ -20,9 +20,9 @@ public class TestEffect extends NoMilkEffect {
     
     @Override
     public void applyEffectTick(LivingEntity living, int amplifier) {
-        AttributeInstance attribute = living.getAttribute(Attributes.MAX_HEALTH);
-        if (attribute != null && attribute.getModifier(ATTRIBUTE_BONUS) != null) {
-            attribute.removeModifier(ATTRIBUTE_BONUS);
+        AttributeInstance attribute1 = living.getAttribute(Attributes.MAX_HEALTH);
+        if (attribute1 != null && attribute1.getModifier(ATTRIBUTE_SculkBreed) != null) {
+            attribute1.removeModifier(ATTRIBUTE_SculkBreed);
             if (living.getHealth()>living.getMaxHealth()){
                 living.setHealth(living.getMaxHealth());
             }

@@ -1,15 +1,17 @@
 package com.creeping_creeper.tinkers_thinking;
 
+import com.creeping_creeper.tinkers_thinking.common.world.ClientEvents;
+import com.creeping_creeper.tinkers_thinking.common.world.OnDeath;
+import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.common.modifer.durability.SculkCatalyseModifier;
 import com.creeping_creeper.tinkers_thinking.common.networking.ModMessages;
 import com.creeping_creeper.tinkers_thinking.common.recipes.ModRecipes;
 import com.creeping_creeper.tinkers_thinking.common.things.block.entity.ModBlockEntities;
 import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
-import com.creeping_creeper.tinkers_thinking.common.things.entity.ModEntityTypes;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModPotions;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModToolItems;
-import com.creeping_creeper.tinkers_thinking.common.tinkering.modifer.ModModifiers;
-import com.creeping_creeper.tinkers_thinking.common.tinkering.modifer.durability.SculkCatalyseModifier;
+import com.creeping_creeper.tinkers_thinking.common.things.ModModule;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -17,9 +19,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -38,31 +39,24 @@ public class TinkersThinking
     public TinkersThinking()
     {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModCommonItems.registers(bus);
-        ModToolItems.registers(bus);
-        ModBlockEntities.registers(bus);
         ModRecipes.registers(bus);
-        ModEntityTypes.registers(bus);
-        ModEffects.registers(bus);
         ModPotions.registers(bus);
         bus.register(new ModModifiers());
         bus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         ModModifiers.initRegisters();
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientEvents::onConstruct);
+        bus.register(new ModCommonItems());
+        bus.register(new ModToolItems());
+        bus.register(new ModEffects());
+        bus.register(new ModBlockEntities());
+        ModModule.initRegisters();
     }
     public void commonSetup(final FMLCommonSetupEvent event) {
         ModMessages.register();
         MinecraftForge.EVENT_BUS.register(new SculkCatalyseModifier());
+        MinecraftForge.EVENT_BUS.register(new OnDeath());
         ModPotions.setup();
-    }
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-
-        {
-        }
     }
     public static String makeTranslationKey(String base, String name) {
         return Util.makeTranslationKey(base, getResource(name));

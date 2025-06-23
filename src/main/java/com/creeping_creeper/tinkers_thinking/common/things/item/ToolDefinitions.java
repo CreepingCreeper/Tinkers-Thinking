@@ -1,4 +1,4 @@
-package com.creeping_creeper.tinkers_thinking.common.tinkering;
+package com.creeping_creeper.tinkers_thinking.common.things.item;
 
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModToolItems;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
@@ -15,5 +15,4 @@ public final class ToolDefinitions {
     public static final ToolDefinition SEARED_BUCKET = ToolDefinition.create(ModToolItems.seared_bucket);
     public static final ToolDefinition TINKERS_BRONZE_BUCKET = ToolDefinition.create(ModToolItems.tinkers_bronze_bucket);
     public static final ToolDefinition BATTLE_BUCKET = ToolDefinition.create(ModToolItems.battle_bucket);
-    public static final ToolDefinition TINKERS_BRUSH = ToolDefinition.create(ModToolItems.tinkers_brush);
 }

@@ -56,7 +56,6 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
     public boolean canCraftInDimensions(int p_43999_, int p_44000_) {
         return false;
     }
-
     @Override
     public ItemStack getResultItem(RegistryAccess p_267052_) {
         return output.copy();

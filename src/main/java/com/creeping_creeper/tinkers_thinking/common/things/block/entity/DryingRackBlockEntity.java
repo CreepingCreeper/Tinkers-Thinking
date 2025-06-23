@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.inventory.ContainerData;
@@ -22,22 +23,28 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.block.entity.MantleBlockEntity;
 
 import java.util.Map;
 import java.util.Optional;
 
-public class DryingRackBlockEntity extends BlockEntity {
-
-    public  final ItemStackHandler itemStackHandler = new ItemStackHandler(2) {
+public class DryingRackBlockEntity extends MantleBlockEntity {
+    public final ItemStackHandler itemStackHandler = new ItemStackHandler(2) {
+        @Override
+        public int getSlotLimit(int slot)
+        {
+            return 1;
+        }
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> true;
+                case 0 -> getStackInSlot(1).isEmpty();
                 case 1 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
     };
+
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
                 Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemStackHandler, (i) -> i == 1,
                                 (i, s) -> false)),
@@ -116,7 +123,7 @@ public class DryingRackBlockEntity extends BlockEntity {
         lazyItemHandler.invalidate();
     }
     @Override
-    protected void saveAdditional(CompoundTag nbt) {
+    public void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory",itemStackHandler.serializeNBT());
         nbt.putInt("drying_rack.progress",this.progress);
         super.saveAdditional(nbt);

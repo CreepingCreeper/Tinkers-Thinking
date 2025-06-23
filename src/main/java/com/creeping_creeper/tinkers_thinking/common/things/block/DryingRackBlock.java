@@ -96,7 +96,6 @@ public class DryingRackBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        // 为指定的实体创建一个新的BlockEntityticker
         return createTickerHelper(type, ModBlockEntities.Drying_Rack.get(),
                 DryingRackBlockEntity::tick);
     }
