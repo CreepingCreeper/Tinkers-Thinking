@@ -1,5 +1,4 @@
 {
-  "type": "tconstruct:composable",
   "level_display": "tconstruct:default",
   "modules": [
     {
@@ -15,7 +14,7 @@
     {
       "type": "tconstruct:mob_effect",
       "effect": "minecraft:poison",
-      "entity": {
+      "target": {
             "type": "mantle:tag",
             "tag": "forge:slimes"
       },
@@ -23,11 +22,11 @@
         "tconstruct:melee_hit"
       ],
       "level": {
-        "flat": 1.0
+        "flat": 3.0
       },
       "time": {
-        "flat": 100.0,
-        "random": 25.0
+        "flat": 120.0,
+        "random": 20.0
       }
     }
   ],

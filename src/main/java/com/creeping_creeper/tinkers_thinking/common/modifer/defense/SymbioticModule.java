@@ -1,6 +1,5 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
-import com.creeping_creeper.tinkers_thinking.common.modifer.durability.NetheriteModule;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -32,7 +31,7 @@ import java.util.List;
 
 import static slimeknights.tconstruct.library.modifiers.Modifier.RANDOM;
 
-public record SymbioticModule(LevelingValue amount) implements ModifierModule,  MeleeHitModifierHook, ProjectileLaunchModifierHook, OnAttackedModifierHook {
+public record SymbioticModule(LevelingValue amount) implements ModifierModule,  MeleeHitModifierHook, ProjectileLaunchModifierHook, ModifyDamageModifierHook {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SymbioticModule> LOADER;
 
@@ -47,7 +46,7 @@ public record SymbioticModule(LevelingValue amount) implements ModifierModule,  
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity entity = context.getPlayerAttacker();
         float level = modifier.getEffectiveLevel();
-        if (RANDOM.nextFloat() < (level * amount.eachLevel()) && entity!=null&&entity.getHealth()<entity.getMaxHealth()&& !tool.isBroken()) {
+        if (!context.isExtraAttack() && context.isFullyCharged()&&RANDOM.nextFloat() < (level * amount.eachLevel()) && entity!=null&&entity.getHealth()<entity.getMaxHealth()&& !tool.isBroken()) {
             eat(tool, modifier, entity);
         }
     }
@@ -59,18 +58,19 @@ public record SymbioticModule(LevelingValue amount) implements ModifierModule,  
         }
     }
     @Override
-    public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float damageAmount, boolean isDirectDamage) {
+    public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, net.minecraft.world.entity.EquipmentSlot slotType, DamageSource source, float damage, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
         float level = modifier.getEffectiveLevel();
         if (RANDOM.nextFloat() < (level * amount.eachLevel()) && living.getHealth() < living.getMaxHealth() && !tool.isBroken()) {
             eat(tool, modifier, living);
         }
+        return damage;
     }
     private void eat(IToolStackView tool, ModifierEntry modifier, LivingEntity entity) {
         if (entity instanceof Player player) {
             // eat the food
             int level = modifier.getLevel();
-            player.heal(Math.max(level, player.getMaxHealth() * 0.2f));
+            player.heal(Math.max(level, (player.getMaxHealth()-player.getHealth()) * 0.3f));
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), Sounds.NECROTIC_HEAL.getSound(), SoundSource.PLAYERS, 1.0f, 1.0f);
             // take a bit of extra damage to heal
             // 8 damage for a bite per level, does not process reinforced/overslime, your teeth are tough
@@ -83,7 +83,7 @@ public record SymbioticModule(LevelingValue amount) implements ModifierModule,  
         return this.amount;
     }
     static {
-        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_LAUNCH,ModifierHooks.ON_ATTACKED);
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MELEE_HIT, ModifierHooks.PROJECTILE_LAUNCH, ModifierHooks.MODIFY_DAMAGE);
         LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(SymbioticModule::amount), SymbioticModule::new);
     }
 }

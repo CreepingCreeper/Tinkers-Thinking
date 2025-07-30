@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "tinkers_thinking:echo_bronze_block"
+    "tinkers_thinking:echo_bronze_block",
+    "tinkers_thinking:waste_fluid_cylinder",
+    "tinkers_thinking:warden_steel_block",
+    "tinkers_thinking:soul_vine"
   ]
 }

@@ -1,17 +1,18 @@
 package com.creeping_creeper.tinkers_thinking;
 
-import com.creeping_creeper.tinkers_thinking.common.world.ClientEvents;
-import com.creeping_creeper.tinkers_thinking.common.world.OnDeath;
+import com.creeping_creeper.tinkers_thinking.common.library.OnDeath;
+import com.creeping_creeper.tinkers_thinking.common.library.Onhurt;
 import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.SculkCatalyseModifier;
 import com.creeping_creeper.tinkers_thinking.common.networking.ModMessages;
 import com.creeping_creeper.tinkers_thinking.common.recipes.ModRecipes;
+import com.creeping_creeper.tinkers_thinking.common.things.ModModule;
 import com.creeping_creeper.tinkers_thinking.common.things.block.entity.ModBlockEntities;
 import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModPotions;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModToolItems;
-import com.creeping_creeper.tinkers_thinking.common.things.ModModule;
+import com.creeping_creeper.tinkers_thinking.common.world.ClientEvents;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -56,6 +57,7 @@ public class TinkersThinking
         ModMessages.register();
         MinecraftForge.EVENT_BUS.register(new SculkCatalyseModifier());
         MinecraftForge.EVENT_BUS.register(new OnDeath());
+        MinecraftForge.EVENT_BUS.register(new Onhurt());
         ModPotions.setup();
     }
     public static String makeTranslationKey(String base, String name) {

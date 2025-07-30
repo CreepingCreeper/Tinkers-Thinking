@@ -16,16 +16,20 @@
       "materials": [
         {
           "type": "tconstruct:random",
-          "tier": {
-            "max": 4,
-            "min": 2
+          "allow_hidden": true,
+          "material": {
+            "type": "mantle:inverted",
+            "inverted_type": "mantle:tag",
+            "tag": "tconstruct:exclude_from_loot"
           }
         },
         {
           "type": "tconstruct:random",
-          "tier": {
-            "max": 4,
-            "min": 2
+          "allow_hidden": true,
+          "material": {
+            "type": "mantle:inverted",
+            "inverted_type": "mantle:tag",
+            "tag": "tconstruct:exclude_from_loot"
           }
         }
       ]

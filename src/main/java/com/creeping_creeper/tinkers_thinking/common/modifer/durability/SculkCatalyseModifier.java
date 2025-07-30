@@ -1,6 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.durability;
 
-import com.creeping_creeper.tinkers_thinking.common.library.FindBySlot;
+import com.creeping_creeper.tinkers_thinking.common.library.ModUtils;
 import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
 import net.minecraft.network.chat.Component;
@@ -27,7 +27,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.Objects;
 
-public class SculkCatalyseModifier extends NoLevelsModifier implements ToolDamageModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook, ModifierRemovalHook, FindBySlot {
+public class SculkCatalyseModifier extends NoLevelsModifier implements ToolDamageModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook, ModifierRemovalHook, ModUtils {
     private static final ResourceLocation KEY = new ResourceLocation("tinkers_thinking", "sculk_catalyse");
     @SubscribeEvent
     public void onPlayerPickupXp(PlayerXpEvent.PickupXp event) {
@@ -49,12 +49,12 @@ public class SculkCatalyseModifier extends NoLevelsModifier implements ToolDamag
     }
     @Override
     public int getPriority() {
-        return 200;
+        return 220;
     }
     @Override
     public int onDamageTool(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
         if (holder!= null&&holder.hasEffect(ModEffects.sculk_power.get())){
-            amount = 0;
+            amount -= 1;
         }
         return amount;
     }

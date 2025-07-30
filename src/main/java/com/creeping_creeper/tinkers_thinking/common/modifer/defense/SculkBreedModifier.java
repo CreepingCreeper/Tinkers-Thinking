@@ -1,7 +1,9 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
+import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -30,6 +32,7 @@ import java.util.UUID;
 public class SculkBreedModifier extends Modifier implements ModifyDamageModifierHook, EquipmentChangeModifierHook, TooltipModifierHook {
     private static final UUID ATTRIBUTE_BONUS = UUID.fromString("2307DE5E-7CE8-4030-940E-514C1F170001");
     private static final Component Boost = TinkersThinking.makeTranslation("modifier", "sculk_breed.boost");
+    private final ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "sculk_breed");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MODIFY_DAMAGE,ModifierHooks.EQUIPMENT_CHANGE,ModifierHooks.TOOLTIP);
@@ -38,18 +41,17 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
         AttributeInstance attribute = living.getAttribute(Attributes.MAX_HEALTH);
-        if (attribute == null) {
-            return amount;
-        }
-        if (!tool.isBroken()&& attribute.getModifier(ATTRIBUTE_BONUS) == null) {
-            attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed", (float)(amount *modifier.getLevel()*0.5),
+        float x = (float)(amount * modifier.getLevel() * 0.5);
+        if (living.hasEffect(ModEffects.sculk_power.get()) && attribute != null && !tool.isBroken()) {
+            if (attribute.getModifier(ATTRIBUTE_BONUS) == null) {
+            attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed", x,
                     AttributeModifier.Operation.ADDITION));
-        }
-        if (!tool.isBroken()&& attribute.getModifier(ATTRIBUTE_BONUS)!= null) {
-            float x = amount+(float)Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount();
-            attribute.removeModifier(ATTRIBUTE_BONUS);
-            attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed",x,
+            }
+            if (attribute.getModifier(ATTRIBUTE_BONUS) != null&&x > Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount()) {
+                attribute.removeModifier(ATTRIBUTE_BONUS);
+                attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed", x,
                     AttributeModifier.Operation.ADDITION));
+            }
         }
         return amount;
     }
@@ -76,7 +78,7 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
             if (attribute!= null && attribute.getModifier(ATTRIBUTE_BONUS) != null) {
                 x = (float) Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount();
             }
+            TooltipModifierHook.addFlatBoost(this,Boost,x,tooltip);
         }
-        TooltipModifierHook.addFlatBoost(this,Boost,x,tooltip);
     }
 }

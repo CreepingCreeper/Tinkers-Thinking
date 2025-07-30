@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-   "tinkers_thinking:stone_ladder"
+    "tinkers_thinking:stone_ladder",
+    "tinkers_thinking:soul_vine"
   ]
 }

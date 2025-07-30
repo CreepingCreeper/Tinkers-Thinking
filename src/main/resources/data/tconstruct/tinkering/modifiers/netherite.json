@@ -1,29 +1,6 @@
 {
-  "type": "tconstruct:composable",
   "level_display": "tconstruct:no_levels",
   "modules": [
-    {
-      "type": "tinkers_thinking:netherite",
-      "each_level": 1.0
-    },
-    {
-      "type": "tconstruct:requirements",
-      "display_modifiers": [
-        {
-          "level": 1,
-          "name": "tconstruct:diamond"
-        }
-      ],
-      "requirement": {
-        "type": "tconstruct:has_modifier",
-        "check": "upgrades",
-        "modifier": {
-          "type": "tconstruct:tag",
-          "tag": "tconstruct:gems"
-        }
-      },
-      "translation_key": "modifier.tconstruct.netherite.requirements"
-    },
     {
       "type": "tconstruct:rarity",
       "rarity": "rare"
@@ -31,6 +8,11 @@
     {
       "type": "tconstruct:volatile_flag",
       "flag": "tconstruct:indestructible"
+    },
+    {
+      "type": "tinkers_thinking:netherite",
+      "_comment": "Chance",
+      "each_level": 1.0
     },
     {
       "type": "tconstruct:stat_boost",
@@ -74,6 +56,5 @@
       "stat": "tconstruct:velocity"
     }
   ],
-  "priority": 999,
   "tooltip_display": "always"
 }

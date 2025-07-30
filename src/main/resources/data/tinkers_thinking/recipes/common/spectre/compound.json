@@ -3,7 +3,7 @@
   "group": "tconstruct:cobalt_ingot",
   "ingredients": [
 { 
- "item": "tinkers_thinking:chlorophyll_a"
+ "item": "tinkers_thinking:chlorophyll_b"
  },
 {
  "item": "minecraft:ghast_tear"
@@ -13,7 +13,6 @@
 }
 ],
   "result": {
-    "item": "tinkers_thinking:spectre_compound",
-    "count": 2
+    "item": "tinkers_thinking:spectre_compound"
   }
 }

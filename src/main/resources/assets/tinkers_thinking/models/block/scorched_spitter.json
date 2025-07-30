@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "tinkers_thinking:block/scorched_spitter",
-    "top":  "tconstruct:block/foundry/scorched/bricks",
-    "side": "tconstruct:block/foundry/scorched/bricks"
-  }
-}

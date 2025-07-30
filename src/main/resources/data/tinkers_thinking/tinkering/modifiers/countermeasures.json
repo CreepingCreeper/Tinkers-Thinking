@@ -1,11 +1,13 @@
 {
-  "type": "tconstruct:composable",
   "level_display": "tconstruct:default",
   "modules": [
     {
       "type": "tconstruct:protection",
-      "damage_source":"mantle:can_protect",
-      "each_level": 0.75
+      "damage_source":  {
+        "type": "mantle:tag",
+        "tag": "minecraft:bypasses_armor"
+      },
+      "each_level": 2
     }
   ],
   "tooltip_display": "always"

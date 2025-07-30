@@ -2,7 +2,7 @@
   "type": "tconstruct:alloy",
   "inputs": [
     { "fluid": "tinkers_thinking:molten_cocoa",   "amount":  500 },
-    { "tag": "forge:syrup", "amount":  250 }
+    { "tag": "forge:syrup", "amount":  200 }
   ],
   "result": {
     "fluid": "tinkers_thinking:molten_black_chocolate",

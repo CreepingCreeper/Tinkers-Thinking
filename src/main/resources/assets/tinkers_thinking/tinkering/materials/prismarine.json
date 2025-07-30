@@ -41,12 +41,12 @@
         ]
       }
     },
-    "supportedStats": [
+    "supported_stats": [
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:extra",
       "tconstruct:repair_kit"
     ],
-    "ignoreMaterialStats": false
+    "ignoreMaterial_stats": false
   }
 }

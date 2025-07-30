@@ -1,12 +1,9 @@
 package com.creeping_creeper.tinkers_thinking.common.things.block.entity;
 
-import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.things.ModModule;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
-import slimeknights.mantle.registration.deferred.BlockEntityTypeDeferredRegister;
 
 public class ModBlockEntities extends ModModule {
     public static final RegistryObject<BlockEntityType<DryingRackBlockEntity>> Drying_Rack =

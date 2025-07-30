@@ -41,10 +41,10 @@
         ]
       }
     },
-    "supportedStats": [
+    "supported_stats": [
       "tconstruct:extra",
       "tconstruct:bowstring"
     ],
-    "ignoreMaterialStats": false
+    "ignoreMaterial_stats": false
   }
 }

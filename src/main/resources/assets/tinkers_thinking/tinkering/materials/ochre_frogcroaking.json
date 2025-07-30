@@ -41,11 +41,11 @@
         ]
       }
     },
-    "supportedStats": [
-       "tconstruct:repair_kit",
+    "supported_stats": [
+      "tconstruct:repair_kit",
       "tconstruct:limb",
       "tconstruct:grip"
     ],
-    "ignoreMaterialStats": false
+    "ignoreMaterial_stats": false
   }
 }

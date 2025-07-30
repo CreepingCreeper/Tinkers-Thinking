@@ -10,6 +10,7 @@
     "#forge:nuggets/obsidian_bronze",
     "#forge:nuggets/electrical_steel",
     "#forge:nuggets/echo_bronze",
-    "#forge:nuggets/beetron"
+    "#forge:nuggets/beetron",
+    "#forge:nuggets/warden_steel"
   ]
 }

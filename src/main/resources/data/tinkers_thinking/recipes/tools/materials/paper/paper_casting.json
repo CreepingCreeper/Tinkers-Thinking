@@ -2,7 +2,7 @@
   "type": "tconstruct:material_fluid",
   "fluid": {
     "fluid": "tinkers_thinking:pulp",
-    "amount": 90
+    "amount": 30
   },
   "temperature": 15,
   "output": "tinkers_thinking:paper"

@@ -31,8 +31,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class SculkDashModifier extends Modifier implements MeleeHitModifierHook, MeleeDamageModifierHook, ModifierRemovalHook, TooltipModifierHook {
-    private static final Component Boost = TinkersThinking.makeTranslation("modifier", "sculk_dash.boost");
-    private final ResourceLocation KEY = new ResourceLocation("tinkers_thinking", "sculk_dash");
+    private static final Component Times = TinkersThinking.makeTranslation("modifier", "sculk_dash.times");
+    private final ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "sculk_dash");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT,ModifierHooks.MELEE_DAMAGE, ModifierHooks.REMOVE,ModifierHooks.TOOLTIP);
@@ -52,8 +52,9 @@ public class SculkDashModifier extends Modifier implements MeleeHitModifierHook,
     @Nullable
     @Override
     public Component onRemoved(IToolStackView tool, Modifier modifier) {
-        ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
-        persistentData.remove(KEY);
+        if (tool.getModifierLevel(this.getId()) == 0) {
+            tool.getPersistentData().remove(KEY);
+        }
         return null;
     }
 
@@ -71,7 +72,7 @@ public class SculkDashModifier extends Modifier implements MeleeHitModifierHook,
         ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
         if (player!=null) {
             int x = persistentData.getInt(KEY);
-            tooltip.add(applyStyle(Component.literal(Util.COMMA_FORMAT.format(x) + " ").append(Boost)));
+            tooltip.add(applyStyle(Component.literal(Util.COMMA_FORMAT.format(x) + " ").append(Times)));
         }
     }
 }

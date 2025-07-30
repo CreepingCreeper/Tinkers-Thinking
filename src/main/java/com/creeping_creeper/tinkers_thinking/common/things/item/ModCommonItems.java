@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.common.things.item;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.things.ModModule;
+import com.creeping_creeper.tinkers_thinking.common.things.block.ChlorophyllOreBlock;
 import com.creeping_creeper.tinkers_thinking.common.things.block.DryingRackBlock;
 import com.creeping_creeper.tinkers_thinking.common.things.block.WasteFluidCylinderBlock;
 import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
@@ -76,13 +78,20 @@ public class ModCommonItems extends ModModule {
     public static final ItemObject<Block> raw_ardite_block = BLOCKS.register("raw_ardite_block", () -> new Block(builder(MapColor.COLOR_ORANGE, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f).explosionResistance(1200)), FIRE_BLOCK_ITEM);
     public static final ItemObject<Item> raw_ardite = ITEMS.register("raw_ardite",() -> new Item(new Item.Properties().fireResistant()));
     public static final ItemObject<Item>  lightite_compound= ITEMS.register("lightite_compound", GENERAL_PROPS);
-    public static final ItemObject<Block> chlorophyll_ore = BLOCKS.register("chlorophyll_ore", () -> new Block(builder(MapColor.STONE, STONE).requiresCorrectToolForDrops().strength(8F).explosionResistance(400)), GENERAL_TOOLTIP_BLOCK_ITEM);
-    public static final ItemObject<Block> deepslate_chlorophyll_ore = BLOCKS.register("deepslate_chlorophyll_ore", () -> new Block(builder(MapColor.DEEPSLATE, SoundType.DEEPSLATE).requiresCorrectToolForDrops().strength(8f).explosionResistance(400)), GENERAL_TOOLTIP_BLOCK_ITEM);
+
+    public static final ItemObject<ChlorophyllOreBlock>chlorophyll_ore = BLOCKS.register("chlorophyll_ore", () -> new ChlorophyllOreBlock(builder(MapColor.DEEPSLATE, SoundType.DEEPSLATE).requiresCorrectToolForDrops().strength(12f).explosionResistance(400).randomTicks()), GENERAL_TOOLTIP_BLOCK_ITEM);
+
+    public static final ItemObject<ChlorophyllOreBlock> deepslate_chlorophyll_ore = BLOCKS.register("deepslate_chlorophyll_ore", () -> new ChlorophyllOreBlock(builder(MapColor.DEEPSLATE, SoundType.DEEPSLATE).requiresCorrectToolForDrops().strength(12f).explosionResistance(400).randomTicks()), GENERAL_TOOLTIP_BLOCK_ITEM);
+    public static final ItemObject<ChlorophyllOreBlock> mud_chlorophyll_ore = BLOCKS.register("mud_chlorophyll_ore", () -> new ChlorophyllOreBlock(builder(MapColor.TERRACOTTA_CYAN, MUD).requiresCorrectToolForDrops().strength(4f).explosionResistance(200).randomTicks()), GENERAL_TOOLTIP_BLOCK_ITEM);
+
     public static final ItemObject<Item>  chlorophyll_a= ITEMS.register("chlorophyll_a", TOOLTIP_ITEM);
     public static final ItemObject<Item>  chlorophyll_b= ITEMS.register("chlorophyll_b", TOOLTIP_ITEM);
     public static final ItemObject<Item>  chlorophyte_compound= ITEMS.register("chlorophyte_compound", GENERAL_PROPS);
     public static final ItemObject<Item>  spectre_compound= ITEMS.register("spectre_compound", GENERAL_PROPS);
-    public static final ItemObject<Item>  shroomite_compound= ITEMS.register("shroomite_compound", GENERAL_PROPS);//Other Materials
+    public static final ItemObject<Item>  shroomite_compound= ITEMS.register("shroomite_compound", GENERAL_PROPS);
+    public static final ItemObject<Item>  chillslime_cryogel= ITEMS.register("chillslime_cryogel", GENERAL_PROPS);
+    public static final ItemObject<Item>  stabilized_gunpowder= ITEMS.register("stabilized_gunpowder", GENERAL_PROPS);
+    //Other Materials
     public static final ItemObject<Item>  magma_crystal= ITEMS.register("magma_crystal", GENERAL_PROPS);
     public static final ItemObject<Item>  quartz_crystal= ITEMS.register("quartz_crystal", GENERAL_PROPS);
     public static final ItemObject<Item>  clay_crystal= ITEMS.register("clay_crystal", GENERAL_PROPS);
@@ -118,6 +127,7 @@ public class ModCommonItems extends ModModule {
     public static final ItemObject<Block> ardite_platform = BLOCKS.register("ardite_platform", () -> new PlatformBlock(BlockBehaviour.Properties.of().mapColor(COLOR_ORANGE).strength(30f).explosionResistance(1200).requiresCorrectToolForDrops().sound(ANCIENT_DEBRIS)), GENERAL_BLOCK_ITEM);
     public static final ItemObject<DryingRackBlock> drying_rack = BLOCKS.register("drying_rack", () -> new DryingRackBlock(BlockBehaviour.Properties.of().strength(0.6f).sound(WOOD)), GENERAL_BLOCK_ITEM);
     public static final ItemObject<WasteFluidCylinderBlock> waste_fluid_cylinder = BLOCKS.register("waste_fluid_cylinder", () -> new WasteFluidCylinderBlock(BlockBehaviour.Properties.of().strength(1.2f).sound(BASALT)), GENERAL_TOOLTIP_BLOCK_ITEM);
+    public static final ItemObject<BrushableBlock> suspicious_soul_sand = BLOCKS.register("suspicious_soul_sand", () -> new BrushableBlock(Blocks.SOUL_SAND, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(0.25F).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY), SoundEvents.BRUSH_SAND, SoundEvents.BRUSH_SAND_COMPLETED),GENERAL_BLOCK_ITEM);
     //Foods
     public static final ItemObject<Item>  Beef_Jerky= ITEMS.register("beef_jerky", () -> new Item(new Item.Properties().food(ModFoods.Beef_Jerky)));
     public static final ItemObject<Item>  Pork_Jerky= ITEMS.register("pork_jerky", () -> new Item(new Item.Properties().food(ModFoods.Beef_Jerky)));
@@ -149,11 +159,13 @@ public class ModCommonItems extends ModModule {
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_beetron   = FLUIDS.register("molten_beetron").type(hot().temperature(400).lightLevel(15)).block(createBurning(MapColor.COLOR_RED,15, 10, 4f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_echo_bronze   = FLUIDS.register("molten_echo_bronze").type(hot().temperature(150).lightLevel(3)).block(createBurning(MapColor.COLOR_BLACK,3, 10, 3f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_warden_steel   = FLUIDS.register("molten_warden_steel").type(hot().temperature(750).lightLevel(12)).block(createBurning(MapColor.COLOR_BLACK,12, 10, 3f)).bucket().flowing();
+   public static final FlowingFluidObject<ForgeFlowingFluid> molten_tempered_glass   = FLUIDS.register("molten_tempered_glass").type(hot().temperature(950).lightLevel(14)).block(createBurning(MapColor.COLOR_LIGHT_GRAY,14, 10, 4f)).bucket().flowing();
 
     //
     public static final FlowingFluidObject<ForgeFlowingFluid> reburn_ashes   = FLUIDS.register("reburn_ashes").type(hot().temperature(1500).lightLevel(15)).block(createBurning(MapColor.COLOR_RED,15, 10, 9f)).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> molten_echo  = FLUIDS.register("molten_echo").type(common().temperature(50).lightLevel(3)).block(createEffect(MapColor.COLOR_BLACK,3, () -> new MobEffectInstance(MobEffects.DARKNESS, 100))).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> liquid_sculk_power  = FLUIDS.register("liquid_sculk_power").type(common().temperature(50).lightLevel(3)).block(createEffect(MapColor.COLOR_BLACK,3, () -> new MobEffectInstance(ModEffects.sculk_power.get(), 80))).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> chillslime   = FLUIDS.register("chillslime").type(common().temperature(10).lightLevel(9)).block(createEffect(MapColor.COLOR_LIGHT_BLUE,3, () -> new MobEffectInstance(ModEffects.freezing_cold.get(), 20))).bucket().flowing();
 
     public static final FlowingFluidObject<ForgeFlowingFluid> syrup  = FLUIDS.register("syrup").type(common().temperature(75).lightLevel(0)).block(createEffect(MapColor.COLOR_ORANGE,0, () -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100))).bucket().flowing();
     public static final FlowingFluidObject<ForgeFlowingFluid> pulp  = FLUIDS.register("pulp").type(common().temperature(25).lightLevel(0)).block(createEffect(MapColor.COLOR_LIGHT_GRAY,0, () -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100))).bucket().flowing();
@@ -197,11 +209,15 @@ public class ModCommonItems extends ModModule {
         output.accept(lightite_reinforcement);
         output.accept(chlorophyll_ore);
         output.accept(deepslate_chlorophyll_ore);
+        output.accept(mud_chlorophyll_ore);
         output.accept(chlorophyll_a);
         output.accept(chlorophyll_b);
         output.accept(chlorophyte_compound);
         output.accept(spectre_compound);
         output.accept(shroomite_compound);
+        output.accept(chillslime_cryogel);
+        output.accept(stabilized_gunpowder);
+
         output.accept(clay_crystal);
         output.accept(quartz_crystal);
         output.accept(magma_crystal);
@@ -226,6 +242,8 @@ public class ModCommonItems extends ModModule {
         output.accept(ardite_platform);
         output.accept(drying_rack);
         output.accept(waste_fluid_cylinder);
+        output.accept(suspicious_soul_sand);
+
         output.accept(Fried_Egg);
         output.accept(Beef_Jerky);
         output.accept(Chicken_Jerky);
@@ -256,10 +274,12 @@ public class ModCommonItems extends ModModule {
         output.accept(molten_beetron);
         output.accept(molten_echo_bronze);
         output.accept(molten_warden_steel);
+        output.accept(molten_tempered_glass);
 
         output.accept(reburn_ashes);
         output.accept(molten_echo);
         output.accept(liquid_sculk_power);
+        output.accept(chillslime);
         output.accept(syrup);
         output.accept(pulp);
 

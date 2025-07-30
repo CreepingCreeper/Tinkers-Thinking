@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "minecraft:paper"
-  },
-  "value": 1,
-  "needed": 3,
-  "material": "tinkers_thinking:paper"
-}

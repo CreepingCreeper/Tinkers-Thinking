@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:material_fluid",
-  "input": "tinkers_thinking:cactus",
+  "input": "tconstruct:cactus",
   "fluid": {
     "tag": "tconstruct:venom",
     "amount": 250

@@ -15,22 +15,22 @@
       "melee_attack": 2.5
     },
     "tconstruct:plating_boots": {
-      "armor": 3.5,
+      "armor": 2,
       "durability": 330,
       "toughness": 1.5
     },
     "tconstruct:plating_chestplate": {
-      "armor": 7.5,
+      "armor": 7,
       "durability": 480,
       "toughness": 1.5
     },
     "tconstruct:plating_helmet": {
-      "armor": 3.5,
+      "armor": 2,
       "durability": 390,
       "toughness": 1.5
     },
     "tconstruct:plating_leggings": {
-      "armor": 5.5,
+      "armor": 5,
       "durability": 450,
       "toughness": 1.5
     },

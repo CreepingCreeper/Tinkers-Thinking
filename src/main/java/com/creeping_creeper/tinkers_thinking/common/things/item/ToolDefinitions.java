@@ -1,6 +1,5 @@
 package com.creeping_creeper.tinkers_thinking.common.things.item;
 
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModToolItems;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 
 public final class ToolDefinitions {

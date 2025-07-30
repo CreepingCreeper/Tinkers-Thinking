@@ -39,6 +39,15 @@
               "formula": "minecraft:ore_drops"
             },
             {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
               "function": "minecraft:explosion_decay"
             }
           ],
@@ -76,6 +85,15 @@
               "function": "minecraft:apply_bonus",
               "enchantment": "minecraft:fortune",
               "formula": "minecraft:ore_drops"
+            },
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
             },
             {
               "function": "minecraft:explosion_decay"

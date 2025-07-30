@@ -56,9 +56,9 @@ public class ModToolItems extends ModModule {
         acceptTool(output,tinkers_bronze_bucket);
         acceptTool(output,battle_bucket);
         acceptPart(output,narrow_blade);
-        addCasts(tab, CastItemObject::get);
-        addCasts(tab, CastItemObject::getSand);
-        addCasts(tab, CastItemObject::getRedSand);
+        output.accept(narrow_blade_cast.get().getDefaultInstance());
+        output.accept(narrow_blade_cast.getSand().getDefaultInstance());
+        output.accept(narrow_blade_cast.getRedSand().getDefaultInstance());
     }
     private static void addCasts(CreativeModeTab.Output output, Function<CastItemObject,ItemLike> getter) {
         acceptCast(output,getter,narrow_blade_cast);

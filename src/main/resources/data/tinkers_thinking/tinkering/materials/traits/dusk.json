@@ -9,6 +9,12 @@
         "name": "tconstruct:overslime",
         "level": 1
       }
+    ],
+    "tconstruct:shield_core": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:spiky"
+      }
     ]
   }
 }

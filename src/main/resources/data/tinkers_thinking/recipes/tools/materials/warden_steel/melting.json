@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:warden_steel",
+  "temperature": 750,
+  "result": {
+    "fluid": "tinkers_thinking:molten_warden_steel",
+    "amount": 90
+  }
+}

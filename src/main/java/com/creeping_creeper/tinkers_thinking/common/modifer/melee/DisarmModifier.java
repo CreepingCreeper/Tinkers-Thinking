@@ -24,8 +24,8 @@ public class DisarmModifier extends Modifier implements MeleeHitModifierHook{
         if (!context.isExtraAttack() && context.isFullyCharged()) {
             LivingEntity target = context.getLivingTarget();
             if (target!=null&&!target.hasEffect(ModEffects.modifier_immune.get())) {
-                target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 160, 5,true,true));
-                target.addEffect(new MobEffectInstance(ModEffects.modifier_immune.get(), 360/modifier.getLevel(), 1));
+                target.addEffect(new MobEffectInstance(ModEffects.disarm.get(), 160, 0,true,true));
+                target.addEffect(new MobEffectInstance(ModEffects.modifier_immune.get(), 360/modifier.getLevel(), 0));
             }
         }
     }

@@ -2,11 +2,11 @@
   "type": "tconstruct:alloy",
   "inputs": [
     { "tag": "forge:honey",   "amount":   250 },
-    { "tag": "mantle:water", "amount":  500 }
+    { "tag": "mantle:water", "amount":  250 }
   ],
   "result": {
     "fluid": "tinkers_thinking:syrup",
-    "amount": 750
+    "amount": 300
   },
-  "temperature": 50
+  "temperature": 75
 }

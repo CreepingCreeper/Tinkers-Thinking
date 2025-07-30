@@ -1,10 +1,9 @@
 {
-  "type": "tconstruct:composable",
   "level_display": "tconstruct:single_level",
   "modules": [
     {
       "type": "tconstruct:modifier_slot",
-      "count": 1,
+      "each_level": 1,
       "name": "abilities"
     }
   ],

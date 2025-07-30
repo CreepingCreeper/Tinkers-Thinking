@@ -1,11 +1,9 @@
 {
   "replace": false,
-  "conditions": [
-    {
-      "modid": "farmersdelight",
-      "type": "forge:mod_loaded"
-    }
- ],
+  "condition":  {
+    "type": "forge:mod_loaded",
+    "modid": "farmersdelight"
+  },
   "values": [
     {
       "id": "farmersdelight:backstabbing",

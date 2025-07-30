@@ -10,6 +10,7 @@
     "#forge:ingots/obsidian_bronze",
     "#forge:ingots/electrical_steel",
     "#forge:ingots/echo_bronze",
-    "#forge:ingots/beetron"
+    "#forge:ingots/beetron",
+    "#forge:ingots/warden_steel"
   ]
 }

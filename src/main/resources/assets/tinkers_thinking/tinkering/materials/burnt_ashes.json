@@ -41,7 +41,7 @@
         ]
       }
     },
-    "supportedStats": [
+    "supported_stats": [
       "tconstruct:head",
       "tconstruct:handle",
       "tconstruct:extra",
@@ -56,6 +56,6 @@
       "tconstruct:maille",
       "tconstruct:armor_maille"
     ],
-    "ignoreMaterialStats": false
+    "ignoreMaterial_stats": false
   }
 }

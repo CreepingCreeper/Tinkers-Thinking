@@ -30,7 +30,7 @@ public class BurningOutModifier extends Modifier implements MeleeDamageModifierH
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         int fire = Objects.requireNonNull(context.getLivingTarget()).getRemainingFireTicks()/20;
-        if (context.isFullyCharged()&&fire > 0) {
+        if (!context.isExtraAttack() && context.isFullyCharged()&&fire > 0) {
             damage += fire*0.5*modifier.getLevel();
             context.getLivingTarget().setRemainingFireTicks(0);
         }

@@ -1,8 +1,8 @@
 {
   "modifier.tinkers_thinking": 
   {
+    "soft":       "#e1e1e3",
     "prickly":       "#639631",
-    "spiky":         "#639631",
     "hellish":       "#562121",
     "withernic":     "#562121",
     "repayed":       "#FFCA18",
@@ -13,6 +13,7 @@
     "deposition":    "#cd4400",
     "overeat":       "#d28155",
     "overdose":      "#4118cf",
+    "spiky":         "#4118cf",
     "lightly_attack": "#ddd8d8",
     "hurried": "#ddd8d8",
     "lightly_speed": "#ddd8d8",
@@ -38,11 +39,21 @@
     "hungriness": "#b6484c",
     "burning_out": "#8a2f13",
     "reburning": "#8a2f13",
-    "sinistral": "#A6846A"
+    "bane_of_pigs": "#e17022",
+    "antibrute": "#e17022",
+    "sinistral": "#A6846A",
+    "sculk_struggle": "#a2af86",
+    "sculk_breed": "#20b519",
+    "sculk_dash": "#bf9c81",
+    "silk_ward": "#fdf55f",
+    "cataclysm": "#95D78E",
+    "magic_transform": "#5A575A",
+    "durable": "#d2d4d4",
+    "overfreeze": "#7cf6fc"
   },
   "material.tinkers_thinking": 
   {
-    "cactus":        "#639631",
+    "paper":        "#e1e1e3",
     "prismarine":    "#5D9A91",
     "netherrack":    "#562121",
     "tinkers_bronze":"#f9cf72",
@@ -63,6 +74,15 @@
     "ochre_frogcroaking":"#f7df92",
     "pearlescent_frogcroaking":"#d4bfc8",
     "beetron": "#b6484c",
-    "burnt_ashes": "#8a2f13"
+    "burnt_ashes": "#8a2f13",
+    "bacium": "#e17022",
+    "warden_steel": "#a2af86",
+    "soul_vine": "#20b519",
+    "bound_chain": "#bf9c81",
+    "gilded_silky_cloth": "#fdf55f",
+    "stabilized_gunpowder": "#95D78E",
+    "metherite": "#5A575A",
+    "tempered_glass": "#d2d4d4",
+    "chillslime_cryogel": "#7cf6fc"
   }
 }

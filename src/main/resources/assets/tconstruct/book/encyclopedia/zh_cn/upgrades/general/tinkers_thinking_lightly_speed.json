@@ -2,7 +2,7 @@
   "modifier_id": "tinkers_thinking:lightly_speed",
   "text": [
     {
-      "text": "每级+0.25使用时速度，+5%移动速度"
+      "text": "每级+0.25使用时速度，-10%重力"
     }
   ],
   "more_text_space": true,

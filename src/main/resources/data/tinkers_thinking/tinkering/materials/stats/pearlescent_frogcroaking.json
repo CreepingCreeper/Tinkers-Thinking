@@ -1,8 +1,6 @@
 {
   "stats": {
-    "tconstruct:binding": {
-   },
-    "tconstruct:bowstring": {
-   }
+    "tconstruct:binding": {},
+    "tconstruct:bowstring": {}
   }
 }

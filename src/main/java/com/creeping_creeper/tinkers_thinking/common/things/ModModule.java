@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.common.things;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;

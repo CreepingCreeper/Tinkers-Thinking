@@ -3,6 +3,7 @@
   "modules": [
     {
       "type": "tinkers_thinking:symbiotic",
+      "_comment": "Chance per level",
       "each_level": 0.15
     }
     ],

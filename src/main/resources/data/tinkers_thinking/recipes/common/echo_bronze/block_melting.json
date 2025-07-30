@@ -1,8 +1,8 @@
 {
   "type": "tconstruct:melting",
-  "ingredient": { "item": "tinkers_thinking:obsidian_bronze_block" },
+  "ingredient": { "item": "tinkers_thinking:echo_bronze_block" },
   "result": {
-    "fluid": "tinkers_thinking:molten_obsidian_bronze",
+    "fluid": "tinkers_thinking:molten_echo_bronze",
     "amount": 810
   },
   "temperature": 1050,

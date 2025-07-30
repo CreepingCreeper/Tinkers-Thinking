@@ -12,6 +12,7 @@
       "mining_speed": 4.5,
       "mining_tier": "minecraft:iron",
       "melee_attack": 2.25
-    }
+    },
+    "tconstruct:shield_core": {}
   }
 }

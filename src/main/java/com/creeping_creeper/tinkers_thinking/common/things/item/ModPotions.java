@@ -16,8 +16,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import slimeknights.tconstruct.shared.TinkerEffects;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 public class ModPotions{
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, TinkersThinking.MODID);

@@ -12,7 +12,13 @@
       "tag": "tinkers_thinking:pulp_ingredient"
     },
     {
+      "tag": "tinkers_thinking:pulp_ingredient"
+    },
+    {
       "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:bucket"
     }
 ],
   "result": {

@@ -2,7 +2,7 @@
   "fallbacks": [
     "rock"
   ],
-  "color": "F8F8FF",
+  "color": "e1e1e3",
   "luminosity": 0,
   "generator": {
     "transformer": {
@@ -28,24 +28,27 @@
           },
           {
             "grey": 178,
-            "color": "FFe1e1e3"
+            "color": "FFd1d1d1"
           },
           {
             "grey": 216,
-            "color": "FFF8F8FF"
+            "color": "FFe1e1e3"
           },
           {
             "grey": 255,
-            "color": "FFe2e2e2"
+            "color": "FFF8F8FF"
           }
         ]
       }
     },
-    "supportedStats": [
+    "supported_stats": [
       "tconstruct:extra",
+      "tconstruct:repair_kit",
+      "tconstruct:shield_core",
       "tconstruct:maille",
-      "tconstruct:armor_maille"
+      "tconstruct:armor_maille",
+      "tconstruct:bowstring"
     ],
-    "ignoreMaterialStats": false
+    "ignoreMaterial_stats": false
   }
 }

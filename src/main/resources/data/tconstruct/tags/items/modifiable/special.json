@@ -4,6 +4,6 @@
     "tinkers_thinking:quartz_staff", 
     "tinkers_thinking:magma_staff",
     "tinkers_thinking:clay_staff",
-    "#tinkers_thinking:modifiable/bucket"
+    "#tconstruct:modifiable/bucket"
   ]
 }

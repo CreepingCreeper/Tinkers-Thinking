@@ -1,5 +1,4 @@
 {
-  "type": "tconstruct:composable",
   "level_display": "tconstruct:default",
   "modules": [
     {
@@ -7,6 +6,17 @@
       "flat": 0.25,
       "operation": "add",
       "stat": "tconstruct:use_item_speed"
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:entity_gravity",
+      "each_level": 0.1,
+      "operation": "multiply_total",
+      "slots": [
+        "mainhand",
+        "offhand"
+      ],
+      "tooltip_style": "percent"
     }
   ],
   "tooltip_display": "always"

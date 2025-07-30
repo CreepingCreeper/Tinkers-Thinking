@@ -20,7 +20,10 @@
     "tinkers_thinking:wall_stone_torch",
     "tinkers_thinking:stone_soul_torch",
     "tinkers_thinking:wall_stone_soul_torch",
-    "tinkers_thinking:seared_spitter",
-    "tinkers_thinking:scorched_spitter"
+    "tinkers_thinking:echo_bronze_block",
+    "tinkers_thinking:waste_fluid_cylinder",
+    "tinkers_thinking:warden_steel_block",
+    "tinkers_thinking:soul_vine",
+    "tinkers_thinking:bound_chain"
   ]
 }
