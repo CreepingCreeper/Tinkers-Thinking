@@ -1,0 +1,7 @@
+{
+    "parent": "forge:item/bucket_drip",
+    "flip_gas": true,
+    "fluid": "tinkers_thinking:emptiness",
+    "loader": "tconstruct:fluid_container"
+}
+

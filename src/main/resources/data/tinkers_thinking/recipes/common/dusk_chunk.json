@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:cactus"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "tconstruct:venom",
+    "amount": 250
+  },
+  "result": "tinkers_thinking:dusk_chunk",
+  "cooling_time": 30
+}

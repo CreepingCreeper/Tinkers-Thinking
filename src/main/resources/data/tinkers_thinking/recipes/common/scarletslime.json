@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "forge:molten_quartz",   "amount":   100 },
+    { "fluid": "tconstruct:ichor",   "amount":   250 },
+    { "fluid": "tconstruct:meat_soup",   "amount":   250 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:scarletslime",
+    "amount": 500
+  },
+  "temperature": 1100
+}

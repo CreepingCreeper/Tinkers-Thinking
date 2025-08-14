@@ -1,6 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.things.item;
 
-import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import lombok.Getter;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -293,7 +294,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
     return ItemStack.EMPTY;
   }
   static ItemStack consumeAmmo(IToolStackView tool, ItemStack bow, LivingEntity living, @Nullable Player player, Predicate<ItemStack> predicate) {
-    int projectilesDesired = (3+tool.getModifierLevel(ModModifiers.RepeatingAdvanced.get()))*(1+(2*tool.getModifierLevel(TinkerModifiers.multishot.getId())));
+    int projectilesDesired = (3+tool.getModifierLevel(ModModifierIds.RepeatingAdvanced))*(1+(2*tool.getModifierLevel(TinkerModifiers.multishot.getId())));
     ResourceLocation SKIP_INVENTORY_AMMO = TConstruct.getResource("skip_inventory_ammo");
     // treat client side as creative, no need to shrink the stacks clientside
     Level level = living.level();

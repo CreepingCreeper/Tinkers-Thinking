@@ -1,6 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.misc;
 
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;

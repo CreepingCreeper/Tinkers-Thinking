@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_ancient_ceramic",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:ancient_ceramic_block",
+  "cooling_time": 250
+}

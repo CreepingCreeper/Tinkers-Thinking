@@ -36,7 +36,7 @@ public class ShadowingModifier extends Modifier implements TooltipModifierHook, 
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         Level world =context.getEntity().getCommandSenderWorld();
-        amount+=((float) (world.getBrightness(LightLayer.SKY, context.getEntity().blockPosition()) - world.getSkyDarken()) /-15)*modifier.getLevel();
+        amount+=((float) (15-world.getBrightness(LightLayer.SKY, context.getEntity().blockPosition()) - world.getSkyDarken()) /-15)*modifier.getLevel();
         return amount;
     }
     @Override

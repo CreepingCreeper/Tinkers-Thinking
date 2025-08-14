@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [
+    {
+      "tag": "tinkers_thinking:pulp_ingredient"
+    },
+    {
+      "type": "forge:partial_nbt",
+      "item": "minecraft:potion",
+      "nbt": "{Potion:\"minecraft:water\"}"
+    }
+],
+  "result": {
+    "item": "tinkers_thinking:pulp_bottle"
+  }
+}

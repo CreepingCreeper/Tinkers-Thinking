@@ -2,16 +2,13 @@ package com.creeping_creeper.tinkers_thinking;
 
 import com.creeping_creeper.tinkers_thinking.common.library.OnDeath;
 import com.creeping_creeper.tinkers_thinking.common.library.Onhurt;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.SculkCatalyseModifier;
 import com.creeping_creeper.tinkers_thinking.common.networking.ModMessages;
 import com.creeping_creeper.tinkers_thinking.common.recipes.ModRecipes;
-import com.creeping_creeper.tinkers_thinking.common.things.ModModule;
-import com.creeping_creeper.tinkers_thinking.common.things.block.entity.ModBlockEntities;
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModPotions;
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModToolItems;
+import com.creeping_creeper.tinkers_thinking.common.register.*;
+import com.creeping_creeper.tinkers_thinking.common.register.ModBlockEntities;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.common.world.ClientEvents;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
@@ -51,6 +48,7 @@ public class TinkersThinking
         bus.register(new ModToolItems());
         bus.register(new ModEffects());
         bus.register(new ModBlockEntities());
+        bus.register(new ModEntities());
         ModModule.initRegisters();
     }
     public void commonSetup(final FMLCommonSetupEvent event) {

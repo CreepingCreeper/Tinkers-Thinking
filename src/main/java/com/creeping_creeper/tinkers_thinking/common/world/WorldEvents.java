@@ -1,8 +1,8 @@
 package com.creeping_creeper.tinkers_thinking.common.world;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +21,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class WorldEvents {
+public class WorldEvents{
     @SubscribeEvent
     static void mobKilled(LivingDropsEvent event) {
         DamageSource source = event.getSource();

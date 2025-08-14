@@ -1,0 +1,11 @@
+{
+  "type": "mantle:empty_item",
+  "fluid": {
+    "amount": 250,
+    "tag": "forge:pulp"
+  },
+  "input": {
+    "item": "tinkers_thinking:pulp_bottle"
+  },
+  "result": "minecraft:glass_bottle"
+}

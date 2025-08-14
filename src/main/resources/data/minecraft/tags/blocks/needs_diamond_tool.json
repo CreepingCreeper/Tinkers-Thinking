@@ -9,6 +9,8 @@
     "tinkers_thinking:spectre_block",
     "tinkers_thinking:shroomite_block",
     "tinkers_thinking:obsidian_bronze_block",
-    "tinkers_thinking:ardite_platform"
+    "tinkers_thinking:ardite_platform",
+    "tinkers_thinking:tempered_glass",
+    "tinkers_thinking:tempered_glass_pane"
   ]
 }

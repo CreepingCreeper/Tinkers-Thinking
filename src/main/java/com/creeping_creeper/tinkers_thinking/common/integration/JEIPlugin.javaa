@@ -2,7 +2,7 @@ package com.creeping_creeper.tinkers_thinking.common.integration;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.recipes.DryingRackRecipes;
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.RecipeType;

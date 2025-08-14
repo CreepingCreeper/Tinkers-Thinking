@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "crossroads"
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {    "item": "crossroads:nugget_copshowium" },
+  "result": {
+    "fluid": "crossroads:molten_copshowium",
+    "amount": 10
+  },
+  "temperature": 950,
+  "time": 16
+}

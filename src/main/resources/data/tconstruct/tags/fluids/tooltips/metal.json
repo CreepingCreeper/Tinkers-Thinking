@@ -13,6 +13,11 @@
     "#tconstruct:molten_electrical_steel",
     "#tconstruct:molten_echo_bronze",
     "#tconstruct:molten_beetron",
-    "#tconstruct:molten_warden_steel"
+    "#tconstruct:molten_warden_steel",
+    "tinkers_thinking:molten_ancient_ceramic",
+    {
+      "id": "#forge:molten_copshowium",
+      "required": false
+    }
   ]
 }

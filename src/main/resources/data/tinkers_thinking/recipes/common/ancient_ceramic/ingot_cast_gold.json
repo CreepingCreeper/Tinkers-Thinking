@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/multi_use/ingot" },
+  "cast_consumed": false,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_ancient_ceramic",
+    "amount": 90
+  },
+  "result": "tinkers_thinking:ancient_ceramic",
+  "cooling_time": 55
+}

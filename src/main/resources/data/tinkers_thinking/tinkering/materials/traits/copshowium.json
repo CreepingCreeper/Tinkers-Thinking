@@ -1,0 +1,44 @@
+{
+ "perStat": {
+  "tconstruct:ranged": [
+   {
+    "name": "tinkers_thinking:reverse",
+    "level": 1
+   },
+   {
+    "name": "tinkers_thinking:rederangement",
+    "level": 1
+   }
+  ],
+  "tconstruct:melee_harvest": [
+   {
+    "name": "tinkers_thinking:reverse",
+    "level": 1
+   },
+   {
+    "name": "tinkers_thinking:rederangement",
+    "level": 1
+   }
+  ],
+  "tconstruct:armor": [
+   {
+    "name": "tinkers_thinking:reverse",
+    "level": 1
+   },
+   {
+    "name": "tinkers_thinking:retransit",
+    "level": 1
+   }
+  ],
+  "tconstruct:plating_shield": [
+   {
+    "level": 1,
+    "name": "tinkers_thinking:reverse"
+   },
+   {
+    "name": "tinkers_thinking:retransit",
+    "level": 1
+   }
+  ]
+ }
+}

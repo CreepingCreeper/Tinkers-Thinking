@@ -121,7 +121,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     /* other minecraft dependencies are here */
-
+    compileOnly fileTree(dir: 'lib',includes: ['*.jar'])
     // compile against the JEI API but do not include it at runtime
     implementation "org.spongepowered:mixin:0.8.5"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

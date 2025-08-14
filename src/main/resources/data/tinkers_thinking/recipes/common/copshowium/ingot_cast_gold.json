@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "crossroads"
+    }
+  ],
+  "type": "tconstruct:casting_table",
+  "cast": { "tag": "tconstruct:casts/multi_use/ingot" },
+  "cast_consumed": false,
+  "fluid": {
+    "fluid": "crossroads:molten_copshowium",
+    "amount": 90
+  },
+  "result": {
+    "item": "crossroads:ingot_copshowium"
+  },
+  "cooling_time": 110
+}

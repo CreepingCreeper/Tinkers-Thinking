@@ -3,7 +3,7 @@
   "level": 1,
   "modifier": "tinkers_thinking:sprinting",
   "slots": {
-    "upgrades": 1
+    "abilities": 1
   },
   "tools": {
     "type": "forge:intersection",

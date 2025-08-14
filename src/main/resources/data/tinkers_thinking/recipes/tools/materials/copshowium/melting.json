@@ -1,0 +1,15 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "crossroads"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:copshowium",
+  "temperature": 950,
+  "result": {
+    "fluid": "crossroads:molten_copshowium",
+    "amount": 90
+  }
+}

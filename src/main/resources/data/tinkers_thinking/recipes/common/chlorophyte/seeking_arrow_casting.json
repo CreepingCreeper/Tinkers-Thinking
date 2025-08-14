@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": { "item": "minecraft:arrow" },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_chlorophyte",
+    "amount": 10
+  },
+  "result": "tinkers_thinking:seeking_arrow",
+  "cooling_time": 8
+}

@@ -1,0 +1,10 @@
+{
+  "condition":  {
+    "type": "forge:mod_loaded",
+    "modid": "tinker_transplant"
+  },
+  "craftable": true,
+  "tier": 3,
+  "sortOrder": 9,
+  "hidden": false
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_thinking:ancient_ceramic",
+  "temperature": 1200,
+  "result": {
+    "fluid": "tinkers_thinking:molten_ancient_ceramic",
+    "amount": 80
+  }
+}

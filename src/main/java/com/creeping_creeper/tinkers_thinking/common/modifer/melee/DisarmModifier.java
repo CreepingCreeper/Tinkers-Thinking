@@ -1,8 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;

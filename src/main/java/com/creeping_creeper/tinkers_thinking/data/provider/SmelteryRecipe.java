@@ -1,7 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.data.provider;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.things.item.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;

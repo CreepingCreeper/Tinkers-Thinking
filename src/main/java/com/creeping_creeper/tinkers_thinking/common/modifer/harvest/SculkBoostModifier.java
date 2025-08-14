@@ -1,7 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.harvest;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;

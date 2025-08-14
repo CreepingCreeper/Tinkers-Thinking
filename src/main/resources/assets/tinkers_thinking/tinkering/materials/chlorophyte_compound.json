@@ -1,0 +1,33 @@
+{
+  "fallbacks": [
+    "metal"
+  ],
+  "color": "75d813",
+  "luminosity": 5,
+  "generator": {
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": [
+          {
+            "grey": 0,
+            "color": "FF0c3e3a"
+          },
+          {
+            "grey": 178,
+            "color": "FF5dbe08"
+          },
+          {
+            "grey": 255,
+            "color": "FFafeb48"
+          }
+        ]
+      }
+    },
+    "supported_stats": [
+      "tinker_transplant:arrow_fletching"
+    ],
+    "ignoreMaterial_stats": false
+  }
+}

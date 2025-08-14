@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "crossroads"
+    }
+  ],
+  "type": "tconstruct:casting_table",
+  "cast": {    "item": "crossroads:nugget_copshowium" },
+  "cast_consumed": false,
+  "fluid": {
+    "fluid": "crossroads:molten_copshowium",
+    "amount": 10
+  },
+  "result": {
+    "tag": "forge:nuggets/copshowium"
+  },
+  "cooling_time": 10
+}

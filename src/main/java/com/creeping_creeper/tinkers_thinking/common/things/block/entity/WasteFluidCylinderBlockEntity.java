@@ -1,5 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.things.block.entity;
 
+import com.creeping_creeper.tinkers_thinking.common.register.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.entity.BlockEntity;

@@ -1,6 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.mixins;
 
-import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;

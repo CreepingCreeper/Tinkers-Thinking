@@ -1,0 +1,14 @@
+{
+  "parent": "tconstruct:block/template/pane/side",
+  "connection": {
+    "predicate": "pane",
+    "textures": {
+      "pane": "cornerless_full"
+    }
+  },
+  "loader": "mantle:connected",
+  "textures": {
+    "edge": "tinkers_thinking:block/tempered_glass_top",
+    "pane": "tinkers_thinking:block/tempered_glass"
+  }
+}

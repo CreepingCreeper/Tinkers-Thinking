@@ -3,7 +3,7 @@
   "level": 1,
   "modifier": "tinkers_thinking:backstabbing",
   "slots": {
-    "upgrades": 1
+    "abilities": 1
   },
   "tools": {
     "tag": "tconstruct:modifiable/melee"

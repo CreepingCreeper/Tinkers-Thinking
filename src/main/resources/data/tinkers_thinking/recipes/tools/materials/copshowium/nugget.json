@@ -1,0 +1,15 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "crossroads"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "crossroads:nugget_copshowium"
+  },
+  "value": 1,
+  "needed": 9,
+  "material": "tinkers_thinking:copshowium"
+}

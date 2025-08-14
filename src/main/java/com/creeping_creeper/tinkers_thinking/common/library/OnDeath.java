@@ -1,9 +1,12 @@
 package com.creeping_creeper.tinkers_thinking.common.library;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
+import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.data.ModDamageTypes;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -16,17 +19,18 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class OnDeath implements ModUtils {
+public class OnDeath implements ModifierUtils {
     @SubscribeEvent
     public void onLivingDying(LivingDeathEvent event){
         LivingEntity living = event.getEntity();
         DamageSource source = event.getSource();
         if (living instanceof Player player&&!source.is(DamageTypeTags.BYPASSES_RESISTANCE)&&!source.is(ModDamageTypes.last_effort)) {
-            int modifierLevel = getItemModifierLevel(player, ModModifiers.SculkStruggle.getId());
+            int modifierLevel = getArmorModifierLevel(player, ModModifiers.SculkStruggle.getId());
             if (player.hasEffect(ModEffects.sculk_power.get())&&modifierLevel>0&&!player.hasEffect(ModEffects.last_effort.get())) {
                 event.setCanceled(true);
                 player.setHealth(1);
-                player.addEffect(new MobEffectInstance(ModEffects.last_effort.get(), modifierLevel * 30 + 90, 1));
+                player.addEffect(new MobEffectInstance(ModEffects.last_effort.get(), modifierLevel * 60 + 180, 1));
+                Minecraft.getInstance().gameRenderer.displayItemActivation(ModCommonItems.warden_steel.getIngot().getDefaultInstance());
             }
             if (player.hasEffect(ModEffects.last_effort.get())) {
                 event.setCanceled(true);

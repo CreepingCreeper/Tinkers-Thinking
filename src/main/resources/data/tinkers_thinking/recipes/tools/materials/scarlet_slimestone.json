@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tconstruct:rock",
+  "fluid": {
+    "tag": "tinkers_thinking:scarletslime",
+    "amount": 250
+  },
+  "temperature": 1100,
+  "output": "tinkers_thinking:scarlet_slimestone"
+}

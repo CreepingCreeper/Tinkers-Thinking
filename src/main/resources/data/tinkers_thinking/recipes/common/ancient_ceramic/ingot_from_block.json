@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tconstruct:cobalt_ingot",
+  "ingredients": [{ "item": "tinkers_thinking:ancient_ceramic_block" }],
+  "result": {
+    "item": "tinkers_thinking:ancient_ceramic",
+    "count": 9
+  }
+}

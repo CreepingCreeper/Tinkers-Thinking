@@ -2,7 +2,7 @@
   "modifier.tinkers_thinking": 
   {
     "soft":       "#e1e1e3",
-    "prickly":       "#639631",
+    "prickly":       "#FDF55F",
     "hellish":       "#562121",
     "withernic":     "#562121",
     "repayed":       "#FFCA18",
@@ -18,6 +18,7 @@
     "hurried": "#ddd8d8",
     "lightly_speed": "#ddd8d8",
     "symbiotic":     "#75d813",
+    "seeking":     "#75d813",
     "broad":         "#7c83ee",
     "disarm":        "#c1bc4e",
     "stimulation":   "#4f2b19",
@@ -49,7 +50,13 @@
     "cataclysm": "#95D78E",
     "magic_transform": "#5A575A",
     "durable": "#d2d4d4",
-    "overfreeze": "#7cf6fc"
+    "overfreeze": "#7cf6fc",
+    "overdisintegrate": "#A52548",
+    "reverse": "#00E7B5",
+    "recalamity": "#00E7B5",
+    "rederangement": "#FF9727",
+    "retransit": "#FF9727",
+    "sculk_siphon": "#3C8EB0"
   },
   "material.tinkers_thinking": 
   {
@@ -65,6 +72,7 @@
     "black_chocolate": "#4f2b19",
     "white_chocolate": "#dba76d",
     "chlorophyte":   "#75d813",
+    "chlorophyte_compound":   "#75d813",
     "spectre":       "#58dbff",
     "shroomite":     "#008cf4",
     "obsidian_bronze":"#a28b48",
@@ -83,6 +91,10 @@
     "stabilized_gunpowder": "#95D78E",
     "metherite": "#5A575A",
     "tempered_glass": "#d2d4d4",
-    "chillslime_cryogel": "#7cf6fc"
+    "chillslime_cryogel": "#7cf6fc",
+    "scarlet_slimestone": "#A52548",
+    "solidified_emptiness": "#00E7B5",
+    "copshowium": "#FF9727",
+    "ancient_ceramic": "#3C8EB0"
   }
 }

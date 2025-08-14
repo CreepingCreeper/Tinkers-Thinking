@@ -1,8 +1,8 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.durability;
 
-import com.creeping_creeper.tinkers_thinking.common.library.ModUtils;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ModModifiers;
-import com.creeping_creeper.tinkers_thinking.common.things.effect.ModEffects;
+import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
+import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,7 +27,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.Objects;
 
-public class SculkCatalyseModifier extends NoLevelsModifier implements ToolDamageModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook, ModifierRemovalHook, ModUtils {
+public class SculkCatalyseModifier extends NoLevelsModifier implements ToolDamageModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook, ModifierRemovalHook, ModifierUtils {
     private static final ResourceLocation KEY = new ResourceLocation("tinkers_thinking", "sculk_catalyse");
     @SubscribeEvent
     public void onPlayerPickupXp(PlayerXpEvent.PickupXp event) {

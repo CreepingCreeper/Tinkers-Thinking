@@ -1,0 +1,7 @@
+{
+  "parent": "tconstruct:block/template/pane/noside_edge",
+  "textures": {
+    "edge": "tinkers_thinking:block/tempered_glass_top",
+    "pane": "tinkers_thinking:block/tempered_glass"
+  }
+}

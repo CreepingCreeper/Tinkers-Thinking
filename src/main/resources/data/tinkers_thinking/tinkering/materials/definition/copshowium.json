@@ -1,0 +1,10 @@
+{
+  "condition":  {
+    "type": "forge:mod_loaded",
+    "modid": "crossroads"
+  },
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 17,
+  "hidden": false
+}
