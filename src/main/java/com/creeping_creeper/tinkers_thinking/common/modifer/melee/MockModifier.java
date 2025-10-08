@@ -1,6 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
+import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -29,7 +30,7 @@ import slimeknights.tconstruct.library.utils.Util;
 
 import java.util.List;
 
-public class MockModifier extends Modifier implements  TooltipModifierHook, MeleeDamageModifierHook,MeleeHitModifierHook, ProjectileHitModifierHook {
+public class MockModifier extends Modifier implements  TooltipModifierHook, MeleeDamageModifierHook,MeleeHitModifierHook, ProjectileHitModifierHook, ModifierUtils {
     private static final Component ATTACK_DAMAGE = TinkersThinking.makeTranslation("modifier", "mock.attack_damage");
     public int getPriority() {
         return 90;
@@ -58,18 +59,17 @@ public class MockModifier extends Modifier implements  TooltipModifierHook, Mele
     }
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target) {
-        if (target != null  && projectile instanceof AbstractArrow) {
+        if (target != null) {
             target.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0, true, true));
          }
-        if (target != null && target.isAlive() && target.hasEffect(MobEffects.INVISIBILITY) && projectile instanceof AbstractArrow arrow) {
-            arrow.setBaseDamage(arrow.getBaseDamage() * ((float) (modifier.getLevel() * 0.2) + 1));
+        if (target != null && target.isAlive() && target.hasEffect(MobEffects.INVISIBILITY)) {
+            setPower(projectile, (float) (modifier.getLevel() * 0.2));
         }
         return false;
     }
 
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
-            tooltip.add(applyStyle(Component.literal(Util.PERCENT_BOOST_FORMAT.format((float) (0.20 * modifier.getLevel())) + " ").append(ATTACK_DAMAGE)));
+        tooltip.add(applyStyle(Component.literal(Util.PERCENT_BOOST_FORMAT.format((float) (0.20 * modifier.getLevel())) + " ").append(ATTACK_DAMAGE)));
     }
-
 }

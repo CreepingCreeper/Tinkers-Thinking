@@ -7,6 +7,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.events.teleport.EnderdodgingTeleportEvent;
+import slimeknights.tconstruct.library.events.teleport.ModifierTeleportEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
@@ -22,7 +23,6 @@ import slimeknights.tconstruct.library.utils.TeleportHelper;
 import javax.annotation.Nullable;
 
 public class SculkTeleportModifier extends NoLevelsModifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
-    private static final TeleportHelper.ITeleportEventFactory FACTORY = EnderdodgingTeleportEvent::new;
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -34,14 +34,14 @@ public class SculkTeleportModifier extends NoLevelsModifier implements MeleeHitM
             LivingEntity attacker = context.getAttacker();
             LivingEntity target = context.getLivingTarget();
             if (attacker.hasEffect(ModEffects.sculk_power.get())&&target!=null) {
-                TeleportHelper.randomNearbyTeleport(target, FACTORY);
+                TeleportHelper.randomNearbyTeleport(target, (e, x, y, z) -> new EnderdodgingTeleportEvent(e, x, y, z, modifier));
             }
         }
     }
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
         if (target!=null&&projectile instanceof AbstractArrow &&attacker!=null&&attacker.hasEffect(ModEffects.sculk_power.get())) {
-               TeleportHelper.randomNearbyTeleport(target, FACTORY);
+            TeleportHelper.randomNearbyTeleport(target, (e, x, y, z) -> new EnderdodgingTeleportEvent(e, x, y, z, modifier));
         }
         return false;
     }

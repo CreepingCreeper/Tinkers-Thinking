@@ -4,22 +4,14 @@ import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.modifer.OverbearModifier;
 import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.HungrinessModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.InspiredModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.SculkBoostModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.ShadyModifier;
+import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.melee.*;
-import com.creeping_creeper.tinkers_thinking.common.modifer.misc.HurriedModule;
-import com.creeping_creeper.tinkers_thinking.common.modifer.misc.SprintingModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.HealthRepairModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.ResistingModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.SeekingModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.SinistralModifier;
+import com.creeping_creeper.tinkers_thinking.common.modifer.misc.*;
+import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -34,9 +26,6 @@ import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 public class ModModifiers{
     public ModModifiers(){
         MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        if (ModList.get().isLoaded("tinker_transplant")){
-            TTP_MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        }
     }
     public static void initRegisters(){
         IEventBus bus =FMLJavaModLoadingContext.get().getModEventBus();
@@ -84,10 +73,12 @@ public class ModModifiers{
     public static final StaticModifier<ReverseModifier> Reverse = MODIFIERS.register("reverse", ReverseModifier::new);
     public static final StaticModifier<RecalamityModifier> Recalamity = MODIFIERS.register("recalamity", RecalamityModifier::new);
     public static final StaticModifier<SculkSiphonModifier> SculkSiphon = MODIFIERS.register("sculk_siphon", SculkSiphonModifier::new);
+    public static final StaticModifier<SeekingModifierOld> Seeking = MODIFIERS.register("seeking", SeekingModifierOld::new);
     public static final StaticModifier<ResistingModifier> Resisting = MODIFIERS.register("resisting", ResistingModifier::new);
-    public static final StaticModifier<HealthRepairModifier> HealthRepair = MODIFIERS.register("health_repair", HealthRepairModifier::new);
-    private static final ModifierDeferredRegister TTP_MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
-    public static final StaticModifier<SeekingModifier> Seeking = TTP_MODIFIERS.register("seeking", SeekingModifier::new);
+    public static final StaticModifier<BoomModifier> Boom = MODIFIERS.register("boom", BoomModifier::new);
+    public static final StaticModifier<RidingShootModifier> RidingShoot = MODIFIERS.register("riding_shoot", RidingShootModifier::new);
+    public static final StaticModifier<FrozenModifier> Frozen = MODIFIERS.register("frozen", FrozenModifier::new);
+    public static final StaticModifier<BackModifier> Back = MODIFIERS.register("back", BackModifier::new);
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
@@ -99,6 +90,8 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("hurried"), HurriedModule.LOADER);
             ModifierModule.LOADER.register(getResource("rederangement"), RederangementModule.LOADER);
             ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
+            ModifierModule.LOADER.register(getResource("nonsense"), NonsenseModule.LOADER);
+            ModifierModule.LOADER.register(getResource("boomerang"), BoomerangModule.LOADER);
         }
     }
 }

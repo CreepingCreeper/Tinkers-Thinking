@@ -3,12 +3,13 @@
   "values": [
     "tinkers_thinking:knife",
     "tinkers_thinking:paxel",
+    "tinkers_thinking:arrow_thrower",
     "tinkers_thinking:mace",
     "tinkers_thinking:repeating_crossbow",
     "tinkers_thinking:tinkers_bronze_bucket",
     "tinkers_thinking:seared_bucket",
     "tinkers_thinking:battle_bucket",
     "tinkers_thinking:quartz_staff",
-    "tinkers_thinking:arrow_thrower"
+    "tinkers_thinking:magma_staff"
   ]
 }

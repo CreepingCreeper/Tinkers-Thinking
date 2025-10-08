@@ -46,13 +46,13 @@ public class ShadyModifier extends Modifier implements ConditionalStatModifierHo
             return;
         }
         Level world =event.getEntity().getCommandSenderWorld();
-        event.setNewSpeed((float) (event.getNewSpeed()*( 1+(world.getBrightness(LightLayer.SKY, event.getEntity().blockPosition()) - world.getSkyDarken())*0.015)*modifier.getLevel()));
+        event.setNewSpeed((float) (event.getNewSpeed()*( 1+(15-(world.getBrightness(LightLayer.SKY, event.getEntity().blockPosition())-world.getSkyDarken()))*0.015*modifier.getLevel())));
     }
     @Override
     public float modifyStat(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull LivingEntity living, @NotNull FloatToolStat stat, float baseValue, float multiplier) {
         if (stat == ToolStats.VELOCITY) {
-            Level world =living.getCommandSenderWorld();
-            return (float) (baseValue*( 1+(world.getBrightness(LightLayer.SKY, living.blockPosition()) - world.getSkyDarken())*0.015)*modifier.getLevel());
+            Level world = living.getCommandSenderWorld();
+            return (float) (baseValue*( 1+(15-(world.getBrightness(LightLayer.SKY, living.blockPosition())-world.getSkyDarken()))*0.01*modifier.getLevel()));
         }
         return baseValue;
     }
@@ -60,11 +60,10 @@ public class ShadyModifier extends Modifier implements ConditionalStatModifierHo
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
         boolean harvest = tool.hasTag(TinkerTags.Items.HARVEST);
-        Level world;
         if ((harvest || tool.hasTag(TinkerTags.Items.RANGED))&&player!=null) {
             Component prefix = harvest ? MINING_SPEED : VELOCITY;
-            world = player.getCommandSenderWorld();
-            float boost = (float) ((world.getBrightness(LightLayer.SKY, player.blockPosition()) - world.getSkyDarken()) * 0.015 * modifier.getLevel());
+            Level world = player.getCommandSenderWorld();
+            double boost = (15-(world.getBrightness(LightLayer.SKY, player.blockPosition())-world.getSkyDarken()))*(harvest?0.015:0.01)*modifier.getLevel();
             TooltipModifierHook.addPercentBoost(this, prefix, boost, tooltip);
         }
     }

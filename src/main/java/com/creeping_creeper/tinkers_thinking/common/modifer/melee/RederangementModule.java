@@ -1,17 +1,11 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
-import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
-import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
@@ -23,15 +17,12 @@ import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileHitModifi
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
-import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
-import slimeknights.tconstruct.shared.TinkerEffects;
 
 import java.util.List;
-import java.util.Objects;
 
 public record RederangementModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, ProjectileHitModifierHook,ModifierUtils {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
@@ -72,8 +63,8 @@ public record RederangementModule(LevelingValue amount) implements ModifierModul
     }
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target) {
-        if (target != null && attacker != null && projectile instanceof AbstractArrow arrow && target.level() instanceof ServerLevel level) {
-                derangement(level,target,attacker,reverseArrow(arrow),modifier.getLevel());
+        if (target != null && attacker != null  && target.level() instanceof ServerLevel level) {
+                derangement(level,target,attacker, reverseProjectile(projectile),modifier.getLevel());
         }
         return false;
     }

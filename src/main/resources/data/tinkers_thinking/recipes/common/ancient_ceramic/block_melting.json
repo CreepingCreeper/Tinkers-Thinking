@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:melting",
-  "ingredient": { "item": "tinkers_thinking:lightite_block" },
+  "ingredient": { "item": "tinkers_thinking:ancient_ceramic_block" },
   "result": {
     "fluid": "tinkers_thinking:molten_ancient_ceramic",
     "amount": 810

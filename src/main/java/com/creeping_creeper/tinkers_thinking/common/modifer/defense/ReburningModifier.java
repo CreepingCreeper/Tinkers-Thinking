@@ -1,6 +1,8 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -20,9 +22,10 @@ public class ReburningModifier extends Modifier implements OnAttackedModifierHoo
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
         int fire = living.getRemainingFireTicks() /20;
-        if (living.getHealth()<living.getMaxHealth()) {
+        if (!living.hasEffect(MobEffects.FIRE_RESISTANCE)) {
             living.heal(fire);
-            living.setRemainingFireTicks(0);
+            living.clearFire();
+            living.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE,80));
         }
     }
 }

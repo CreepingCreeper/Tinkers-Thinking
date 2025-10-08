@@ -2,9 +2,7 @@ package com.creeping_creeper.tinkers_thinking.common.register;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -13,13 +11,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.mantle.item.BlockTooltipItem;
 import slimeknights.mantle.item.TooltipItem;
-import slimeknights.mantle.registration.deferred.BlockEntityTypeDeferredRegister;
-import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
-import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
-import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
-import slimeknights.tconstruct.TConstruct;
+import slimeknights.mantle.registration.deferred.*;
 import slimeknights.tconstruct.common.registration.BlockDeferredRegisterExtension;
-import slimeknights.tconstruct.common.registration.EnumDeferredRegister;
+
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 
 import java.util.function.Function;

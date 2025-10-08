@@ -52,7 +52,7 @@ public record SymbioticModule(LevelingValue amount) implements ModifierModule,  
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
         float level = modifier.getEffectiveLevel();
-        if (RANDOM.nextFloat() < (level * amount.eachLevel()) && shooter.getHealth()<shooter.getMaxHealth()&& !tool.isBroken()) {
+        if (primary&&RANDOM.nextFloat() < (level * amount.eachLevel()) && shooter.getHealth()<shooter.getMaxHealth()&& !tool.isBroken()) {
             eat(tool, modifier, shooter);
         }
     }

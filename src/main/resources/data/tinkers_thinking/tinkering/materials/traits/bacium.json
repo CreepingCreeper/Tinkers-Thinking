@@ -17,6 +17,12 @@
         "level": 1,
         "name": "tinkers_thinking:antibrute"
       }
+    ],
+    "tconstruct:arrow_shaft": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:resisting"
+      }
     ]
   }
 }

@@ -26,7 +26,6 @@ public class ShadowingModifier extends Modifier implements TooltipModifierHook, 
 
     @Override
     public int getPriority() {
-        // run this last as we boost original speed, adds to existing boosts
         return 75;
     }
     @Override
@@ -36,16 +35,16 @@ public class ShadowingModifier extends Modifier implements TooltipModifierHook, 
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         Level world =context.getEntity().getCommandSenderWorld();
-        amount+=((float) (15-world.getBrightness(LightLayer.SKY, context.getEntity().blockPosition()) - world.getSkyDarken()) /-15)*modifier.getLevel();
-        return amount;
+        amount-=((float) (15-world.getBrightness(LightLayer.SKY, context.getEntity().blockPosition())+world.getSkyDarken())/7.5)*modifier.getLevel();
+        return amount>0?amount:0;
     }
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
         Level world;
         if(player!=null){
             world = player.getCommandSenderWorld();
-            float boost = (float) ((world.getBrightness(LightLayer.SKY, player.blockPosition()) - world.getSkyDarken())/15 * modifier.getLevel());
-            TooltipModifierHook.addFlatBoost(this,Resistance , boost, tooltip);;
+            float boost = (float) (((float) (15-world.getBrightness(LightLayer.SKY, player.blockPosition())+world.getSkyDarken())/7.5)*modifier.getLevel());
+            TooltipModifierHook.addFlatBoost(this, Resistance , boost, tooltip);;
         }
     }
 

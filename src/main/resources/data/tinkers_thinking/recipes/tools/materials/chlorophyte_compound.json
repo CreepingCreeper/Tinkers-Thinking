@@ -1,11 +1,5 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "tinker_transplant"
-    }
-  ],
   "ingredient": {
     "item": "tinkers_thinking:chlorophyte_compound"
   },

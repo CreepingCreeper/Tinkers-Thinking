@@ -2,8 +2,11 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
+import slimeknights.tconstruct.common.TinkerTags;
 
 import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
@@ -27,5 +30,12 @@ public class ModTags {
             return TagKey.create(Registries.BLOCK, getResource(name));
         }
         private static TagKey<Block> common(String name) {return TagKey.create(Registries.BLOCK, commonResource(name));}
+    }
+    public static class EntityTypes {
+        public static final TagKey<EntityType<?>> resisting = local("resisting");
+        private static TagKey<EntityType<?>> local(String name) {
+            return TagKey.create(Registries.ENTITY_TYPE, getResource(name));
+        }
+        private static TagKey<EntityType<?>> common(String name) {return TagKey.create(Registries.ENTITY_TYPE, commonResource(name));}
     }
 }

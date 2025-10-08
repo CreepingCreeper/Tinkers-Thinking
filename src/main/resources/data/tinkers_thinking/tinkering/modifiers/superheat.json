@@ -1,0 +1,12 @@
+{
+  "level_display": "tconstruct:single_level",
+  "modules": [
+      {
+      "type": "tconstruct:conditional_power",
+      "each_level": 0.75,
+      "percent": false,
+      "target": "mantle:on_fire"
+    }
+  ],
+  "tooltip_display": "always"
+}

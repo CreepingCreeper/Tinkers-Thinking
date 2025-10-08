@@ -1,12 +1,14 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.ranged;
 
+import com.creeping_creeper.tinkers_thinking.data.ModTags;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -24,6 +26,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class ResistingModifier extends Modifier implements ProjectileHitModifierHook {
     @Override
@@ -31,13 +34,12 @@ public class ResistingModifier extends Modifier implements ProjectileHitModifier
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.PROJECTILE_HIT);
     }
-
     @Override
-    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (target != null)
-
-            // endermen are hardcoded to not take arrow damage, so disagree by reimplementing arrow damage right here
-            if (target.getType() == EntityType.WITHER && projectile instanceof AbstractArrow arrow && attacker != null) {
+            target.invulnerableTime=0;
+            // wither are hardcoded to not take arrow damage, so disagree by reimplementing arrow damage right here
+        if (target.getType().is(ModTags.EntityTypes.resisting) && projectile instanceof AbstractArrow arrow && attacker != null) {
                 // first, give up if we reached pierce capacity, and ensure list are created
                 if (arrow.getPierceLevel() > 0) {
                     if (arrow.piercingIgnoreEntityIds == null) {
@@ -92,23 +94,23 @@ public class ResistingModifier extends Modifier implements ProjectileHitModifier
 
                     arrow.doPostHurtEffects(target);
 
-                    //if (!target.isAlive() && arrow.piercedAndKilledEntities != null) {
-                    //    arrow.piercedAndKilledEntities.add(target);
-                    // }
+                    if (!target.isAlive() && arrow.piercedAndKilledEntities != null) {
+                        arrow.piercedAndKilledEntities.add(target);
+                    }
+                }
 
-                    // if (!level.isClientSide && arrow.shotFromCrossbow() && owner instanceof ServerPlayer player) {
-                    //     if (arrow.piercedAndKilledEntities != null) {
-                    //         CriteriaTriggers.KILLED_BY_CROSSBOW.trigger(player, arrow.piercedAndKilledEntities);
-                    //     } else if (!target.isAlive()) {
-                    //        CriteriaTriggers.KILLED_BY_CROSSBOW.trigger(player, List.of(target));
-                    //     }
-                    // }
-
+                 if (!level.isClientSide && arrow.shotFromCrossbow() && owner instanceof ServerPlayer player) {
+                     if (arrow.piercedAndKilledEntities != null) {
+                         CriteriaTriggers.KILLED_BY_CROSSBOW.trigger(player, arrow.piercedAndKilledEntities);
+                     } else if (!target.isAlive()) {
+                         CriteriaTriggers.KILLED_BY_CROSSBOW.trigger(player, List.of(target));
+                     }
+                 }
                     arrow.playSound(arrow.soundEvent, 1.0F, 1.2F / (RANDOM.nextFloat() * 0.2F + 0.9F));
                     if (arrow.getPierceLevel() <= 0) {
                         arrow.discard();
                     }
-                } else {
+                    else {
                     // reset fire and drop the arrow
                     target.setRemainingFireTicks(remainingFire);
                     arrow.setDeltaMovement(arrow.getDeltaMovement().scale(-0.1D));

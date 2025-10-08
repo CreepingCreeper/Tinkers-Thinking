@@ -12,11 +12,27 @@
         "palette": [
           {
             "grey": 0,
-            "color": "FF0c3e3a"
+            "color": "FF000000"
+          },
+          {
+            "grey": 63,
+            "color": "FF2a4c0d"
+          },
+          {
+            "grey": 102,
+            "color": "FF47821e"
+          },
+          {
+            "grey": 140,
+            "color": "FF248900"
           },
           {
             "grey": 178,
             "color": "FF5dbe08"
+          },
+          {
+            "grey": 216,
+            "color": "FF75d813"
           },
           {
             "grey": 255,
@@ -26,7 +42,7 @@
       }
     },
     "supported_stats": [
-      "tinker_transplant:arrow_fletching"
+      "tconstruct:arrow_head"
     ],
     "ignoreMaterial_stats": false
   }

@@ -2,13 +2,10 @@ package com.creeping_creeper.tinkers_thinking;
 
 import com.creeping_creeper.tinkers_thinking.common.library.OnDeath;
 import com.creeping_creeper.tinkers_thinking.common.library.Onhurt;
-import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.SculkCatalyseModifier;
 import com.creeping_creeper.tinkers_thinking.common.networking.ModMessages;
 import com.creeping_creeper.tinkers_thinking.common.recipes.ModRecipes;
 import com.creeping_creeper.tinkers_thinking.common.register.*;
-import com.creeping_creeper.tinkers_thinking.common.register.ModBlockEntities;
-import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.common.world.ClientEvents;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
@@ -32,7 +29,7 @@ public class TinkersThinking
     // Define mod id in a common place for everything to reference
     public static final String MODID = "tinkers_thinking";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
  
     public TinkersThinking()
     {

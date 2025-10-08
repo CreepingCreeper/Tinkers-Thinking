@@ -19,6 +19,7 @@ public class ModEffects extends ModModule {
     public static final RegistryObject<MobEffect> armor = MOB_EFFECTS.register("armor",() -> new NoMilkEffect(MobEffectCategory.BENEFICIAL, 0xff7d86,true).addAttributeModifier(Attributes.ARMOR,"2307DE5E-7CE8-4030-940E-514C1F160004",1,AttributeModifier.Operation.ADDITION));
     public static final RegistryObject<MobEffect> cataclysm = MOB_EFFECTS.register("cataclysm",() -> new NoMilkEffect(MobEffectCategory.BENEFICIAL, 0x727272,true));
     public static final RegistryObject<MobEffect> freezing_cold = MOB_EFFECTS.register("freezing_cold",() -> new FreezingColdEffect(MobEffectCategory.HARMFUL, 0x7cf6fc,true));
+
     public static final RegistryObject<MobEffect> disintegration = MOB_EFFECTS.register("disintegration",() -> new DisintegrationEffect(MobEffectCategory.HARMFUL, 0xA52548,true));
 
     public static final RegistryObject<MobEffect> disarm = MOB_EFFECTS.register("disarm",() -> new NoMilkEffect(MobEffectCategory.HARMFUL, 0xc1bc4e,true).addAttributeModifier(Attributes.ATTACK_DAMAGE,"2307DE5E-7CE8-4030-940E-514C1F160005",-1,AttributeModifier.Operation.MULTIPLY_BASE));

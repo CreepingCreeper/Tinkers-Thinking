@@ -4,12 +4,11 @@ import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
+import slimeknights.tconstruct.library.modifiers.entity.ProjectileWithPower;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -49,9 +48,28 @@ public interface ModifierUtils {
         ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
         return !persistentData.contains(reverse_key);
     }
-    default boolean reverseArrow(AbstractArrow arrow){
-        ModDataNBT data = PersistentDataCapability.getOrWarn(arrow);
+    default boolean reverseProjectile(Projectile projectile){
+        ModDataNBT data = PersistentDataCapability.getOrWarn(projectile);
         CompoundTag tag = data.getCompound(reverse_key);
         return !tag.getBoolean("reverse");
+    }
+    default void setPower(Projectile projectile,float multiple){
+        float x= 1+multiple;
+        if (projectile instanceof AbstractArrow arrow){
+            arrow.setBaseDamage(arrow.getBaseDamage()*x);
+            return;
+        }
+        if (projectile instanceof ProjectileWithPower){
+            ((ProjectileWithPower) projectile).setPower(((ProjectileWithPower) projectile).getPower()*x);
+        }
+    }
+    default void addPower(Projectile projectile,float addition){
+        if (projectile instanceof AbstractArrow arrow){
+            arrow.setBaseDamage(arrow.getBaseDamage()+addition);
+            return;
+        }
+        if (projectile instanceof ProjectileWithPower projectile1){
+            projectile1.setPower(projectile1.getPower()+addition);
+        }
     }
 }

@@ -3,12 +3,16 @@ package com.creeping_creeper.tinkers_thinking.common.world;
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModBlockEntities;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEntities;
-import com.creeping_creeper.tinkers_thinking.common.things.block.renderer.DryingRackBlockEntityRenderer;
 import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
-import com.creeping_creeper.tinkers_thinking.common.things.entity.renderer.SeekingArrowEntityRenderer;
+import com.creeping_creeper.tinkers_thinking.common.things.block.renderer.DryingRackBlockEntityRenderer;
+import com.creeping_creeper.tinkers_thinking.common.things.entity.ThrownBoomerang;
+import com.creeping_creeper.tinkers_thinking.common.things.entity.renderer.ThrownBoomerangRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.font.FontManager;
+import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,15 +20,21 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import slimeknights.tconstruct.common.ClientEventBase;
 import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
-import slimeknights.tconstruct.tools.TinkerTools;
-import slimeknights.tconstruct.tools.client.CrystalshotRenderer;
+import slimeknights.tconstruct.tools.client.ThrownShurikenRenderer;
+
+import java.util.Objects;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 
-public class ClientEvents extends ClientEventBase  {
+public class ClientEvents {
     public static void onConstruct() {
         ModBook.initBook();
+    }
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
+        event.registerEntityRenderer(ModEntities.thrownBoomerang.get(), ThrownBoomerangRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.Drying_Rack.get(), DryingRackBlockEntityRenderer::new);
     }
     @SubscribeEvent
     static void clientSetup(final FMLClientSetupEvent event) {
@@ -37,6 +47,7 @@ public class ClientEvents extends ClientEventBase  {
             TinkerItemProperties.registerToolProperties(ModToolItems.quartz_staff.asItem());
             TinkerItemProperties.registerToolProperties(ModToolItems.clay_staff.asItem());
             TinkerItemProperties.registerCrossbowProperties(ModToolItems.repeating_crossbow.asItem());
+            EntityRenderDispatcher renderDispatcher = Minecraft.getInstance().getEntityRenderDispatcher();
         });
         ModBook.FANTASTIC_GADGETRY.fontRenderer = unicodeFontRender();
     }
@@ -49,10 +60,5 @@ public class ClientEvents extends ClientEventBase  {
             }, false);
 
         return unicodeRenderer;
-    }
-    @SubscribeEvent
-    public static void registerRenderes(EntityRenderersEvent.RegisterRenderers event){
-        event.registerBlockEntityRenderer(ModBlockEntities.Drying_Rack.get(), DryingRackBlockEntityRenderer::new);
-        event.registerEntityRenderer(ModEntities.Seeking_Arrow.get(), SeekingArrowEntityRenderer::new);
     }
 }

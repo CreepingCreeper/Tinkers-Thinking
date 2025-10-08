@@ -8,6 +8,7 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.capacity.OverslimeModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -25,12 +26,11 @@ public class OvereatModifier extends Modifier implements InventoryTickModifierHo
         // update 1 times a second, but skip when active (messes with pulling bow back)
         if (!world.isClientSide && holder.tickCount % 20 == 0 && holder.getUseItem() != stack) {
             // ensure we have overslime
-            OverslimeModifier overslime = TinkerModifiers.overslime.get();
             // has a 15% chance of restoring each second per level
-            if (0 < overslime.getShield(tool) && 0 < tool.getDamage() &&RANDOM.nextFloat() <(modifier.getLevel() * 0.15)) {
+            if (0 < OverslimeModule.INSTANCE.getAmount(tool) && 0 < tool.getDamage() &&RANDOM.nextFloat() <(modifier.getLevel() * 0.15)) {
                 ToolDamageUtil.repair(tool, 1);
                 if (RANDOM.nextFloat() < 0.33){
-                    overslime.addOverslime(tool, modifier,-1);
+                    OverslimeModule.INSTANCE.removeAmount(tool, modifier,1);
                 }
             }
         }

@@ -17,6 +17,7 @@ import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModif
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.capacity.OverslimeModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -30,7 +31,7 @@ import java.util.List;
 public class OverbearModifier extends Modifier implements ConditionalStatModifierHook, BreakSpeedModifierHook, MeleeDamageModifierHook, TooltipModifierHook {
     private static final Component Debuff = TinkersThinking.makeTranslation("modifier", "overbear.debuff");
     private boolean hasOverSlime(IToolStackView tool){
-        return 0 < TinkerModifiers.overslime.get().getShield(tool);
+        return 0 < OverslimeModule.INSTANCE.getAmount(tool);
     }
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {

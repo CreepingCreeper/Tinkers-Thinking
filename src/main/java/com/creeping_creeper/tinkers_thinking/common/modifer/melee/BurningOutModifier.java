@@ -1,17 +1,25 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
+import com.creeping_creeper.tinkers_thinking.data.ModDamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.tconstruct.common.TinkerDamageTypes;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileHitModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
@@ -19,34 +27,38 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 import java.util.Objects;
 
-public class BurningOutModifier extends Modifier implements MeleeDamageModifierHook, ProjectileHitModifierHook {
+public class BurningOutModifier extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook {
     public int getPriority() {
         return 85;
     }
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this,  ModifierHooks.PROJECTILE_HIT,  ModifierHooks.MELEE_DAMAGE);
+        hookBuilder.addHook(this,  ModifierHooks.MELEE_HIT,ModifierHooks.PROJECTILE_HIT);
     }
     @Override
-    public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        int fire = Objects.requireNonNull(context.getLivingTarget()).getRemainingFireTicks()/20;
-        if (!context.isExtraAttack() && context.isFullyCharged()&&fire > 0) {
-            damage += fire*0.5*modifier.getLevel();
-            context.getLivingTarget().setRemainingFireTicks(0);
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+        LivingEntity target = context.getLivingTarget();
+        if (!context.isExtraAttack() && context.isFullyCharged() && target!=null) {
+            burn(context.getAttacker(),target,modifier.getLevel());
         }
-        return damage;
     }
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target) {
-        int fire = 0;
-        if (target != null && target.isAlive() &&projectile instanceof AbstractArrow) {
-            fire = target.getRemainingFireTicks()/20;
-        }
-        if  (fire > 0) {
-            AbstractArrow arrow = (AbstractArrow) projectile;
-            arrow.setBaseDamage(arrow.getBaseDamage() + (fire*0.5*modifier.getLevel()));
-            target.setRemainingFireTicks(0);
+        if (target != null && attacker != null) {
+            burn(attacker,target,modifier.getLevel());
         }
         return false;
+    }
+    private void burn(LivingEntity attacker,LivingEntity target,int level) {
+        if (target.isAlive()&&!target.fireImmune()&&!target.hasEffect(MobEffects.FIRE_RESISTANCE)) {
+            int fire = target.getRemainingFireTicks() / 20;
+            if (fire > 0) {
+                DamageSource source = TinkerDamageTypes.source(target.level().registryAccess(), DamageTypes.ON_FIRE, attacker);
+                ToolAttackUtil.attackEntitySecondary(source, (float) (fire * 0.3 * level), target, target, true);
+                target.invulnerableTime = 0;
+                target.clearFire();
+                target.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 80));
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
+import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
-public class PricklyModifier extends Modifier implements MeleeDamageModifierHook, ProjectileHitModifierHook {
+public class PricklyModifier extends Modifier implements MeleeDamageModifierHook, ProjectileHitModifierHook, ModifierUtils {
 
     public int getPriority() {
         return 95;
@@ -38,9 +39,7 @@ public class PricklyModifier extends Modifier implements MeleeDamageModifierHook
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target) {
         float bonus = (float) (RANDOM.nextFloat()*0.12*modifier.getLevel());
-        if (projectile instanceof AbstractArrow arrow) {
-            arrow.setBaseDamage(arrow.getBaseDamage() * 1.0f + bonus);
-        }
+        setPower(projectile,bonus);
         return false;
     }
 }

@@ -1,0 +1,17 @@
+{
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tconstruct:craft_count",
+      "multiplier": {
+        "flat": 3
+      }
+    },
+    {
+      "type": "tinkers_thinking:nonsense",
+      "_comment": "Chance to discard",
+      "each_level": 0.5
+    }
+  ],
+  "tooltip_display": "always"
+}
