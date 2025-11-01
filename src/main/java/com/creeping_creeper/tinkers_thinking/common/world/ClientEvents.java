@@ -5,24 +5,16 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModBlockEntities;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEntities;
 import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
 import com.creeping_creeper.tinkers_thinking.common.things.block.renderer.DryingRackBlockEntityRenderer;
-import com.creeping_creeper.tinkers_thinking.common.things.entity.ThrownBoomerang;
-import com.creeping_creeper.tinkers_thinking.common.things.entity.renderer.ThrownBoomerangRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.font.FontManager;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
-import net.minecraft.client.renderer.entity.EntityRenderer;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import slimeknights.tconstruct.common.ClientEventBase;
 import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
-import slimeknights.tconstruct.tools.client.ThrownShurikenRenderer;
-
-import java.util.Objects;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -33,7 +25,6 @@ public class ClientEvents {
     }
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
-        event.registerEntityRenderer(ModEntities.thrownBoomerang.get(), ThrownBoomerangRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.Drying_Rack.get(), DryingRackBlockEntityRenderer::new);
     }
     @SubscribeEvent

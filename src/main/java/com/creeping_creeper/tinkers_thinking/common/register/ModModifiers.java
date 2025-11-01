@@ -73,7 +73,7 @@ public class ModModifiers{
     public static final StaticModifier<ReverseModifier> Reverse = MODIFIERS.register("reverse", ReverseModifier::new);
     public static final StaticModifier<RecalamityModifier> Recalamity = MODIFIERS.register("recalamity", RecalamityModifier::new);
     public static final StaticModifier<SculkSiphonModifier> SculkSiphon = MODIFIERS.register("sculk_siphon", SculkSiphonModifier::new);
-    public static final StaticModifier<SeekingModifierOld> Seeking = MODIFIERS.register("seeking", SeekingModifierOld::new);
+    public static final StaticModifier<SeekingModifier> Seeking = MODIFIERS.register("seeking", SeekingModifier::new);
     public static final StaticModifier<ResistingModifier> Resisting = MODIFIERS.register("resisting", ResistingModifier::new);
     public static final StaticModifier<BoomModifier> Boom = MODIFIERS.register("boom", BoomModifier::new);
     public static final StaticModifier<RidingShootModifier> RidingShoot = MODIFIERS.register("riding_shoot", RidingShootModifier::new);
@@ -91,7 +91,6 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("rederangement"), RederangementModule.LOADER);
             ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
             ModifierModule.LOADER.register(getResource("nonsense"), NonsenseModule.LOADER);
-            ModifierModule.LOADER.register(getResource("boomerang"), BoomerangModule.LOADER);
         }
     }
 }

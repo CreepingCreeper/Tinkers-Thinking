@@ -29,7 +29,9 @@ public class SeekingArrow extends ModifiableArrow {
     public SeekingArrow(Level level, double x, double y, double z) {
         super(level,x, y, z);
     }
-
+    public SeekingArrow(Level level, LivingEntity shooter) {
+        super(level,shooter);
+    }
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
