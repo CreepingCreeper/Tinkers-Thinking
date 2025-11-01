@@ -1,0 +1,25 @@
+{
+  "perStat": {
+    "tconstruct:ranged": [
+      {
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "name": "tconstruct:overslime"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "name": "tconstruct:overslime"
+      }
+    ],
+    "tconstruct:arrow_head": [
+      {
+        "name": "tinkers_thinking:frozen"
+      }
+    ]
+  }
+}
