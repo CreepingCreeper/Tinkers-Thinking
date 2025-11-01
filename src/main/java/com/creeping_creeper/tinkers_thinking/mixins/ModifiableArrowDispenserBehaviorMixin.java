@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.mixins;
 
 import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.things.entity.SeekingArrow;
+import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.core.Position;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -18,7 +19,7 @@ import slimeknights.tconstruct.tools.logic.ModifiableArrowDispenserBehavior;
 public class ModifiableArrowDispenserBehaviorMixin {
     @Inject(method = "getProjectile",at = @At(value = "HEAD"),cancellable = true)
     protected void getProjectile(Level level, Position position, ItemStack stack, CallbackInfoReturnable<Projectile> cir) {
-        if (ToolStack.from(stack).getModifierLevel(ModModifiers.Seeking.get())>0) {
+        if (ToolStack.from(stack).getModifierLevel(ModModifierIds.Seeking)>0) {
             SeekingArrow arrow = new SeekingArrow(level, position.x(), position.y(), position.z());
             arrow.onCreate(stack, null);
             arrow.pickup = AbstractArrow.Pickup.ALLOWED;

@@ -1,0 +1,21 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "entity": {
+        "type": "mantle:has_effect",
+        "effect": "minecraft:invisibility"
+      },
+      "each_level": 1.0,
+      "percent": false,
+      "stat": "tconstruct:projectile_damage"
+    },
+    {
+      "type": "tinkers_thinking:coercion",
+      "_comment": "No use",
+      "each_level": 0
+    }
+  ],
+  "tooltip_display": "always"
+}

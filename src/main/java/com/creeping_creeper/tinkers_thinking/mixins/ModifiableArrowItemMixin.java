@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.mixins;
 
 import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.things.entity.SeekingArrow;
+import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +18,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 public class ModifiableArrowItemMixin {
     @Inject(method = "createArrow",at = @At(value = "HEAD"),cancellable = true)
     public void createArrow(Level level, ItemStack stack, LivingEntity shooter, CallbackInfoReturnable<AbstractArrow> cir) {
-        if (ToolStack.from(stack).getModifierLevel(ModModifiers.Seeking.get())>0) {
+        if (ToolStack.from(stack).getModifierLevel(ModModifierIds.Seeking)>0) {
             SeekingArrow arrow = new SeekingArrow(level, shooter);
             arrow.onCreate(stack, shooter);
             cir.setReturnValue(arrow);

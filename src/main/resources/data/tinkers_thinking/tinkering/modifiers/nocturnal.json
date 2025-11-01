@@ -1,0 +1,23 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "entity": {
+        "type": "mantle:inverted",
+        "inverted_type": "tinkers_thinking:is_day"
+      },
+      "flat": 0.25,
+      "percent": false,
+      "stat": "tconstruct:velocity"
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "entity": "tinkers_thinking:is_day",
+      "flat": -0.25,
+      "percent": false,
+      "stat": "tconstruct:velocity"
+    }
+  ],
+  "tooltip_display": "always"
+}

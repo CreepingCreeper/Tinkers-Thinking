@@ -14,6 +14,8 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
+import java.util.Objects;
+
 public class RidingShootModifier extends Modifier implements ProjectileShootModifierHook,ModifierUtils {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -22,7 +24,7 @@ public class RidingShootModifier extends Modifier implements ProjectileShootModi
     }
     @Override
     public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, @Nullable LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        if (shooter!=null&&shooter.isPassenger()){
+        if (shooter!=null&&shooter.isPassenger()&& Objects.requireNonNull(shooter.getVehicle()).getDeltaMovement().length()>0.000001){
             addPower(projectile, modifier.getLevel());
         }
     }

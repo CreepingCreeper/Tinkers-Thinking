@@ -59,7 +59,7 @@ public class SculkBoostModifier extends Modifier implements TooltipModifierHook 
     }
     @Override
     public float getProtectionModifier(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float modifierValue) {
-        if (context.getEntity().hasEffect(ModEffects.sculk_power.get())&&DamageSourcePredicate.CAN_PROTECT.matches(source) && tool.hasTag(TinkerTags.Items.ARMOR)){
+        if (context.getEntity().hasEffect(ModEffects.sculk_power.get())){
             modifierValue*=1+(0.2*modifier.getLevel());
         }
    return modifierValue;
