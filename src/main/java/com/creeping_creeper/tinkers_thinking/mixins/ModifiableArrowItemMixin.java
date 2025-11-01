@@ -1,6 +1,5 @@
 package com.creeping_creeper.tinkers_thinking.mixins;
 
-import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.things.entity.SeekingArrow;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.world.entity.LivingEntity;
