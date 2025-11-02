@@ -18,25 +18,13 @@
       "function": "tconstruct:add_tool_data",
       "materials": [
         {
-          "type": "tconstruct:random",
-          "allow_hidden": true,
-          "material": {
-            "type": "tconstruct:ancient"
-          }
+          "type": "tconstruct:ancient"
         },
         {
-          "type": "tconstruct:random",
-          "allow_hidden": true,
-          "material": {
-            "type": "tconstruct:ancient"
-          }
+          "type": "tconstruct:ancient"
         },
         {
-          "type": "tconstruct:random",
-          "allow_hidden": true,
-          "material": {
-            "type": "tconstruct:ancient"
-          }
+          "type": "tconstruct:ancient"
         }
       ]
     },

@@ -58,7 +58,7 @@ public record LightlyAttackModule(LevelingValue amount) implements ModifierModul
     public float modifyStat(IToolStackView tool, ModifierEntry modifier, LivingEntity living, FloatToolStat stat, float baseValue, float multiplier) {
           if (isAllEmpty(living)) {
               if (stat == ToolStats.DRAW_SPEED) {
-                  return (float) (baseValue * (1 + (amount.eachLevel() * modifier.getLevel())));
+                  return baseValue * (1 + (amount.eachLevel() * modifier.getLevel()));
               }
           }
         return baseValue;

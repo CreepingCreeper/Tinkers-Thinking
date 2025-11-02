@@ -53,10 +53,11 @@ public class HungrinessModifier extends Modifier implements ConditionalStatModif
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
         boolean harvest = tool.hasTag(TinkerTags.Items.HARVEST);
-        float boost = 0;
+        float boost;
         if ((harvest || tool.hasTag(TinkerTags.Items.RANGED))&&player!=null) {
             Component prefix = harvest ? MINING_SPEED : VELOCITY;
             boost = (float) ((20 - (player.getFoodData().getFoodLevel())) * 0.02 * modifier.getLevel());
             TooltipModifierHook.addPercentBoost(this, prefix, boost, tooltip);
-        }    }
+        }
+    }
 }

@@ -2,7 +2,7 @@
   "fallbacks": [
     "metal"
   ],
-  "color": "75d813",
+  "color": "58dbff",
   "luminosity": 5,
   "generator": {
     "transformer": {
@@ -16,39 +16,33 @@
           },
           {
             "grey": 63,
-            "color": "FF2a4c0d"
+            "color": "FF066aff"
           },
           {
             "grey": 102,
-            "color": "FF47821e"
+            "color": "FF3392d9"
           },
           {
             "grey": 140,
-            "color": "FF248900"
+            "color": "FF44a9f5"
           },
           {
             "grey": 178,
-            "color": "FF5dbe08"
+            "color": "FF17b3fb"
           },
           {
             "grey": 216,
-            "color": "FF75d813"
+            "color": "FF58dbff"
           },
           {
             "grey": 255,
-            "color": "FFafeb48"
+            "color": "FF95f7ff"
           }
         ]
       }
     },
     "supported_stats": [
-      "tconstruct:fletching",
-      "tconstruct:extra",
-      "tconstruct:repair_kit",
-      "tconstruct:shield_core",
-      "tconstruct:maille",
-      "tconstruct:armor_maille",
-      "tconstruct:bowstring"
+      "tconstruct:fletching"
     ],
     "ignoreMaterial_stats": false
   }

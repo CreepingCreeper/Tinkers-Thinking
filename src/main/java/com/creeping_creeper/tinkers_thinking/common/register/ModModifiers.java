@@ -58,7 +58,6 @@ public class ModModifiers{
     public static final StaticModifier<SculkBoostModifier> SculkBoost = MODIFIERS.register("sculk_boost", SculkBoostModifier::new);
     public static final StaticModifier<SculkTeleportModifier> SculkTeleport = MODIFIERS.register("sculk_teleport", SculkTeleportModifier::new);
     public static final StaticModifier<FallingAttackModifier> FallingAttack = MODIFIERS.register("falling_attack", FallingAttackModifier::new);
-    public static final StaticModifier<Modifier> DensityAdvanced = MODIFIERS.register("density_advanced",Modifier::new);
     public static final StaticModifier<SpikyModifier> Spiky = MODIFIERS.register("spiky", SpikyModifier::new);
     public static final StaticModifier<HungrinessModifier> Hungriness = MODIFIERS.register("hungriness", HungrinessModifier::new);
     public static final StaticModifier<BurningOutModifier> BurningOut = MODIFIERS.register("burning_out", BurningOutModifier::new);
@@ -97,6 +96,7 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
             ModifierModule.LOADER.register(getResource("nonsense"), NonsenseModule.LOADER);
             ModifierModule.LOADER.register(getResource("coercion"), CoercionModule.LOADER);
+            ModifierModule.LOADER.register(getResource("nocturnal"), NocturnalModule.LOADER);
 
             LivingEntityPredicate.LOADER.register(getResource("is_day"), ModPredicate.IS_DAY.getLoader());
         }

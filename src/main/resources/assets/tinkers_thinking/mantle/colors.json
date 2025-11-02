@@ -28,8 +28,10 @@
     "backstabbing":  "#b1b1b1",
     "mock":          "#58dbff",
     "concealing":          "#58dbff",
+    "coercion":          "#58dbff",
     "shady":         "#008cf4",
     "shadowing":         "#008cf4",
+    "nocturnal":         "#008cf4",
     "sprinting":     "#EF6F05",
     "duritae":       "#a28b48",
     "repulsive":     "#b4b499",
@@ -65,7 +67,6 @@
   },
   "material.tinkers_thinking": 
   {
-    "paper":        "#e1e1e3",
     "netherrack":    "#562121",
     "magma":    "#eaa727",
     "sugar_cane":    "#7ccc35",
@@ -81,7 +82,9 @@
     "chlorophyte":   "#75d813",
     "chlorophyte_compound":   "#75d813",
     "spectre":       "#58dbff",
+    "spectre_compound":       "#58dbff",
     "shroomite":     "#008cf4",
+    "shroomite_compound":     "#008cf4",
     "obsidian_bronze":"#a28b48",
     "electrical_steel":"#b4b499",
     "echo_bronze":   "#009295",

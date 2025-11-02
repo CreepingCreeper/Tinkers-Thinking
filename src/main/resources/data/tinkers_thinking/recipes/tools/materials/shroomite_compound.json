@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "tinkers_thinking:shroomite_compound"
+  },
+  "value": 1,
+  "needed": 1,
+  "material": "tinkers_thinking:shroomite_compound"
+}
