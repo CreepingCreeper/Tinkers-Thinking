@@ -24,9 +24,9 @@ public class DuritaeModifier extends Modifier implements ToolDamageModifierHook{
     public int onDamageTool(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, int amount, @Nullable LivingEntity holder)  {
                float chance1 = (float) Math.pow(0.70,modifier.getLevel());
                float chance2 =  (float) Math.pow(0.95,modifier.getLevel());
-                int maxDamage = amount;
-                // for each damage we will take, if the random number is below chance, reduce
-                for (int i = 0; i < maxDamage; i++) {
+               int maxDamage = amount;
+               // for each damage we will take, if the random number is below chance, reduce
+               for (int i = 0; i < maxDamage; i++) {
                     if (RANDOM.nextFloat() > chance1) {
                         amount--;
                     }

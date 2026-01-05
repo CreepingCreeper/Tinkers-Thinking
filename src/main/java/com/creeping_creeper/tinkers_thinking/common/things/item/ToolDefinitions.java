@@ -8,6 +8,7 @@ public final class ToolDefinitions {
     public static final ToolDefinition KNIFE = ToolDefinition.create(ModToolItems.knife);
     public static final ToolDefinition ARROW_THROWER = ToolDefinition.create(ModToolItems.arrow_thrower);
     public static final ToolDefinition MACE = ToolDefinition.create(ModToolItems.mace);
+    public static final ToolDefinition CUTLASS = ToolDefinition.create(ModToolItems.cutlass);
     public static final ToolDefinition REPEATING_CROSSBOW = ToolDefinition.create(ModToolItems.repeating_crossbow);
     public static final ToolDefinition MAGMA_STAFF = ToolDefinition.create(ModToolItems.magma_staff);
     public static final ToolDefinition CLAY_STAFF = ToolDefinition.create(ModToolItems.clay_staff);

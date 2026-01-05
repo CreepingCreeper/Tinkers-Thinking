@@ -16,8 +16,9 @@ import javax.annotation.Nonnull;
 
 public class WasteFluidCylinderBlockEntity extends BlockEntity {
     //The code in Da-Technomancer's CrossRoads mod was used.
+    //https://github.com/Crossroads-Development/Crossroads/blob/1.20.1/src/main/java/com/Da_Technomancer/crossroads/blocks/fluid/FluidVoidTileEntity.java
     public WasteFluidCylinderBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.New.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.Waste_Fluid_Cylinder.get(), p_155229_, p_155230_);
     }
     @SuppressWarnings("unchecked")
     @Override

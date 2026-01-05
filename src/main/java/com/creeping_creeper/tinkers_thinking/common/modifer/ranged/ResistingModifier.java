@@ -36,8 +36,9 @@ public class ResistingModifier extends Modifier implements ProjectileHitModifier
     }
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
-        if (target != null)
+        if (target != null){
             target.invulnerableTime=0;
+        }else return false;
             // wither are hardcoded to not take arrow damage, so disagree by reimplementing arrow damage right here
         if (target.getType().is(ModTags.EntityTypes.resisting) && projectile instanceof AbstractArrow arrow && attacker != null) {
                 // first, give up if we reached pierce capacity, and ensure list are created
@@ -120,7 +121,6 @@ public class ResistingModifier extends Modifier implements ProjectileHitModifier
                         if (arrow.pickup == AbstractArrow.Pickup.ALLOWED) {
                             arrow.spawnAtLocation(arrow.getPickupItem(), 0.1F);
                         }
-
                         arrow.discard();
                     }
                 }

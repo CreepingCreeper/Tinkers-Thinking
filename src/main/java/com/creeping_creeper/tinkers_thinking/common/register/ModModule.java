@@ -14,15 +14,16 @@ import slimeknights.mantle.item.TooltipItem;
 import slimeknights.mantle.registration.deferred.*;
 import slimeknights.tconstruct.common.registration.BlockDeferredRegisterExtension;
 
+import slimeknights.tconstruct.common.registration.FluidDeferredRegisterExtension;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public abstract class ModModule {
+public class ModModule {
     protected static final BlockDeferredRegisterExtension BLOCKS = new BlockDeferredRegisterExtension(TinkersThinking.MODID);
     protected static final ItemDeferredRegisterExtension ITEMS = new ItemDeferredRegisterExtension(TinkersThinking.MODID);
-    protected static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(TinkersThinking.MODID);
+    protected static final FluidDeferredRegisterExtension FLUIDS = new FluidDeferredRegisterExtension(TinkersThinking.MODID);
     protected static final SynchronizedDeferredRegister<CreativeModeTab> CREATIVE_TABS = SynchronizedDeferredRegister.create(Registries.CREATIVE_MODE_TAB, TinkersThinking.MODID);
     protected static final EnumDeferredRegister<MobEffect> MOB_EFFECTS = new EnumDeferredRegister<>(Registries.MOB_EFFECT, TinkersThinking.MODID);
     protected static final EntityTypeDeferredRegister ENTITIES = new EntityTypeDeferredRegister(TinkersThinking.MODID);

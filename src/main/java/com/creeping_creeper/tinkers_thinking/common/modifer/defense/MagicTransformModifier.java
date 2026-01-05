@@ -4,6 +4,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.TinkerDamageTypes;
@@ -15,7 +16,6 @@ import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifier
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class MagicTransformModifier extends Modifier implements MeleeDamageModifierHook, ModifyDamageModifierHook {
@@ -33,7 +33,7 @@ public class MagicTransformModifier extends Modifier implements MeleeDamageModif
     }
 
     @Override
-    public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, net.minecraft.world.entity.EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
+    public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
          Entity attacker = source.getEntity();
          LivingEntity living = context.getEntity();
         if (living.isAlive() && attacker!=null && !source.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
@@ -43,15 +43,13 @@ public class MagicTransformModifier extends Modifier implements MeleeDamageModif
     }
     private float transform(Entity attacker,LivingEntity target,float value,int level){
         float x = value;
-        value *=  Math.max(1-level*0.2,0);
+        value *= (float) Math.max(1-level*0.2,0);
         float y = (float) ((x-value)*0.75);
         int z = target.invulnerableTime;
         target.invulnerableTime=0;
         DamageSource damageSource = TinkerDamageTypes.source(target.level().registryAccess(), DamageTypes.INDIRECT_MAGIC, attacker);
         target.hurt(damageSource,y);
-        if (value>0) {
-            target.invulnerableTime = z;
-        }
+        target.invulnerableTime = z;
         return value;
     }
 }

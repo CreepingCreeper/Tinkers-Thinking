@@ -15,6 +15,7 @@ import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.item.ranged.ModifiableBowItem;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tools.item.ModifiableSwordItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import java.util.function.Consumer;
@@ -32,6 +33,7 @@ public class ModToolItems extends ModModule {
     public static final ItemObject<ModifiableItem>  knife = ITEMS.register( "knife", () -> new ModifiableItem(Stack1Item, ToolDefinitions.KNIFE));
     public static final ItemObject<ModifiableBowItem> arrow_thrower = ITEMS.register("arrow_thrower", () -> new ModifiableBowItem(Stack1Item,  ToolDefinitions.ARROW_THROWER,true));
     public static final ItemObject<ModifiableItem>  mace = ITEMS.register( "mace", () -> new ModifiableItem(Stack1Item, ToolDefinitions.MACE));
+    public static final ItemObject<ModifiableSwordItem> cutlass = ITEMS.register( "cutlass", () -> new ModifiableSwordItem(Stack1Item, ToolDefinitions.CUTLASS));
     public static final ItemObject<ModifiableRepeatingCrossbowItem>  repeating_crossbow = ITEMS.register( "repeating_crossbow", () -> new ModifiableRepeatingCrossbowItem(Stack1Item,ToolDefinitions.REPEATING_CROSSBOW));
     public static final ItemObject<ModifiableItem> magma_staff = ITEMS.register("magma_staff", () -> new ModifiableItem(Stack1Item, ToolDefinitions.MAGMA_STAFF));
     public static final ItemObject<ModifiableItem> clay_staff = ITEMS.register("clay_staff", () -> new ModifiableItem(Stack1Item, ToolDefinitions.CLAY_STAFF));
@@ -41,7 +43,9 @@ public class ModToolItems extends ModModule {
     public static final ItemObject<ModifiableItem> battle_bucket = ITEMS.register("battle_bucket", () -> new ModifiableItem(Stack1Item.fireResistant(), ToolDefinitions.BATTLE_BUCKET));
     public static final ItemObject<ToolPartItem> narrow_blade = ITEMS.register("narrow_blade", () -> new ToolPartItem(GENERAL_PROPS, HeadMaterialStats.ID));
     public static final CastItemObject narrow_blade_cast = ITEMS.registerCast(narrow_blade,GENERAL_PROPS);
+    @Deprecated(forRemoval = true)
     public static final ItemObject<Item> seeking_arrow = ITEMS.register("seeking_arrow", GENERAL_PROPS);
+    @Deprecated(forRemoval = true)
     public static final ItemObject<Item> roving_arrow = ITEMS.register("roving_arrow", GENERAL_PROPS);
     private static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
         Consumer<ItemStack> tab = output::accept;
@@ -49,6 +53,7 @@ public class ModToolItems extends ModModule {
         acceptTool(tab,knife);
         acceptTool(tab,arrow_thrower);
         acceptTool(tab,mace);
+        acceptTool(tab,cutlass);
         acceptTool(tab,repeating_crossbow);
         acceptTool(tab,clay_staff);
         acceptTool(tab,quartz_staff);

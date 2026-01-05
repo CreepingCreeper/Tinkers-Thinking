@@ -2,9 +2,7 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:rederangement",
-      "_comment": "No use",
-      "each_level": 0
+      "type": "tinkers_thinking:rederangement"
     },
     {
       "type": "tconstruct:attribute",

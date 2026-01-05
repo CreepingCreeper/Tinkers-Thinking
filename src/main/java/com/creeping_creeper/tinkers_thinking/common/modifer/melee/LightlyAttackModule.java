@@ -1,9 +1,9 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
+import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public record LightlyAttackModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, ConditionalStatModifierHook {
+public record LightlyAttackModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, ConditionalStatModifierHook, ModifierUtils {
     private static final Component Boost = TinkersThinking.makeTranslation("modifier", "lightly_attack.draw_speed");
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<LightlyAttackModule> LOADER;
@@ -50,7 +50,7 @@ public record LightlyAttackModule(LevelingValue amount) implements ModifierModul
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack()) {
             if (isAllEmpty(context.getAttacker())) {
-                context.getAttacker().addEffect(new MobEffectInstance(ModEffects.quick_attack.get(),60,modifier.getLevel()));
+                addEffect(context.getAttacker(),ModEffects.quick_attack.get(), 60, modifier.getLevel()*3-1);
             }
         }
     }
@@ -58,7 +58,7 @@ public record LightlyAttackModule(LevelingValue amount) implements ModifierModul
     public float modifyStat(IToolStackView tool, ModifierEntry modifier, LivingEntity living, FloatToolStat stat, float baseValue, float multiplier) {
           if (isAllEmpty(living)) {
               if (stat == ToolStats.DRAW_SPEED) {
-                  return (float) (baseValue * (1 + (amount.eachLevel() * modifier.getLevel())));
+                  return baseValue * (1 + (amount.eachLevel() * modifier.getLevel()));
               }
           }
         return baseValue;

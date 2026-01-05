@@ -2,5 +2,10 @@
   "default": [
     {"name": "tinkers_thinking:sculk_catalyse", "level": 1},
     {"name": "tinkers_thinking:sculk_struggle", "level": 1}
-  ]
+  ],
+  "perStat": {
+    "tinkers_ingenuity:curio": [
+      {"name": "tinkers_thinking:sculk_catalyse_curio"},
+      {"name": "tinkers_thinking:sculk_struggle_curio"}]
+  }
 }

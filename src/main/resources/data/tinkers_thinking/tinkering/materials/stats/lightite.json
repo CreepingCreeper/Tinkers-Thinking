@@ -48,6 +48,15 @@
     "tconstruct:plating_shield": {
       "durability": 408,
       "toughness": 1.0
+    },
+    "tinkers_ingenuity:curio_extra": {
+      "optional": true
+    },
+    "tinkers_ingenuity:curio_main": {
+      "curio_armor": 0.05,
+      "curio_max_health": 15.0,
+      "curio_movement_speed": 0.1,
+      "optional": true
     }
   }
 }

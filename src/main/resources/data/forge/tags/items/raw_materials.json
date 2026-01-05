@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#forge:raw_materials/ardite"
+    "#forge:raw_materials/ardite",
+    "#forge:raw_materials/zith"
   ]
 }

@@ -1,6 +1,6 @@
 {
  "default": [
-  { "name": "tinkers_thinking:reverse", "level": 1 },
-  { "name": "tinkers_thinking:recalamity", "level": 1 }
+   { "name": "tinkers_thinking:reverse", "level": 1 },
+   { "name": "tinkers_thinking:recalamity", "level": 1 }
  ]
 }

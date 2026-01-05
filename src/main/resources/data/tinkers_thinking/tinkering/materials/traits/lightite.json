@@ -23,6 +23,9 @@
         "level": 1,
         "name": "tinkers_thinking:hurried"
       }
+    ],
+    "tinkers_ingenuity:curio": [
+      {"name": "tinkers_thinking:lightly_speed_curio"}
     ]
   }
 }

@@ -1,8 +1,8 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
+import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class ConcealingModifier extends Modifier implements TooltipModifierHook, ModifyDamageModifierHook, ProtectionModifierHook {
+public class ConcealingModifier extends Modifier implements TooltipModifierHook, ModifyDamageModifierHook, ProtectionModifierHook, ModifierUtils {
     public int getPriority() {
         return 90;
     }
@@ -36,15 +36,15 @@ public class ConcealingModifier extends Modifier implements TooltipModifierHook,
     @Override
     public float modifyDamageTaken(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull EquipmentContext context, @NotNull EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         if (source.getEntity() != null) {
-            context.getEntity().addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0, true, true));
+            addEffect(context.getEntity(),MobEffects.INVISIBILITY, 200, 0);
         }
         return amount;
     }
 
     @Override
     public float getProtectionModifier(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull EquipmentContext context, @NotNull EquipmentSlot slotType, @NotNull DamageSource source, float modifierValue) {
-        if (context.getEntity().hasEffect(MobEffects.INVISIBILITY)&&DamageSourcePredicate.CAN_PROTECT.matches(source) && tool.hasTag(TinkerTags.Items.ARMOR)) {
-            modifierValue += modifier.getLevel()*1.5;
+        if (context.getEntity().hasEffect(MobEffects.INVISIBILITY)&&DamageSourcePredicate.CAN_PROTECT.matches(source)) {
+            modifierValue += (float) (modifier.getLevel()*1.5);
         }
         return modifierValue;
     }

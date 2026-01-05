@@ -7,12 +7,12 @@
     },
     {
       "condition": "minecraft:random_chance",
-       "chance": 0.10
+       "chance": 0.08
     }
   ],
   "entry": {
     "type": "minecraft:loot_table",
-    "name": "tinkers_thinking/loot_tables/gameplay/piglin_modifier"
+    "name": "tinkers_thinking/loot_tables/modifiers/piglin_modifier"
   },
   "functions": [
   ],

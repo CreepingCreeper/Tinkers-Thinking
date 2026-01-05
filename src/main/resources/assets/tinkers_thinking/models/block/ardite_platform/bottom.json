@@ -1,6 +1,5 @@
 {
     "parent": "tconstruct:block/platform/bottom",
-	"render_type": "cutout_mipped",
 	"textures": {
 		"side": "tinkers_thinking:block/platform/ardite_side",
 		"top":  "tinkers_thinking:block/platform/ardite_top"

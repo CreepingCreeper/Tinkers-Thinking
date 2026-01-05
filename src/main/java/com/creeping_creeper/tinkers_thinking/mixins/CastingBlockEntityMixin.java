@@ -24,13 +24,13 @@ public class CastingBlockEntityMixin {
     }
     @Getter private int timer;
     @Getter private int coolingTime;
-    @Inject(method = "serverTick",at = @At(value = "INVOKE", target = "Lslimeknights/tconstruct/smeltery/block/entity/tank/CastingFluidHandler;getFluid()Lnet/minecraftforge/fluids/FluidStack;",shift = At.Shift.BY,by = 2),remap = false)
+    @Inject(method = "serverTick",at = @At(value = "INVOKE", target = "Lslimeknights/tconstruct/smeltery/block/entity/tank/CastingFluidHandler;getFluid()Lnet/minecraftforge/fluids/FluidStack;", shift = At.Shift.BY, by = 2),remap = false)
     private void serverTick(Level level, BlockPos pos, CallbackInfo ci) {
         if (isFaceBlock(level, pos)) {
             ++this.timer;
         }
     }
-    @Inject(method = "clientTick",at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fluids/FluidStack;isEmpty()Z",shift = At.Shift.BY,by = 1),remap = false)
+    @Inject(method = "clientTick",at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fluids/FluidStack;isEmpty()Z", shift = At.Shift.BY, by = 1),remap = false)
     private void clientTick(Level level, BlockPos pos, CallbackInfo ci) {
         if (isFaceBlock(level, pos)) {
             ++this.timer;

@@ -77,10 +77,6 @@
       "type": "tconstruct:is_effective",
       "predicate_type": "mantle:tag",
       "tag": "tinkers_thinking:mineable/knife"
-    },
-    {
-      "type": "tconstruct:sweep_melee",
-      "range": 1.0
     }
   ]
 }

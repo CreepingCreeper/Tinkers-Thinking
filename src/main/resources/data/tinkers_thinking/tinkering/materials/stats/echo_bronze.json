@@ -27,22 +27,38 @@
     },
     "tconstruct:plating_boots": {
       "armor": 1.5,
-      "durability": 260
+      "durability": 260,
+      "toughness": 1.5
     },
     "tconstruct:plating_chestplate": {
       "armor": 4.5,
-      "durability": 320
+      "durability": 320,
+      "toughness": 1.5
     },
     "tconstruct:plating_helmet": {
       "armor": 1.5,
-      "durability": 220
+      "durability": 220,
+      "toughness": 1.5
     },
     "tconstruct:plating_leggings": {
       "armor": 3.0,
-      "durability": 300
+      "durability": 300,
+      "toughness": 1.5
     },
     "tconstruct:plating_shield": {
-      "durability": 360
+      "durability": 360,
+      "toughness": 1.5
+    },
+    "tinkers_ingenuity:curio_extra": {
+      "optional": true
+    },
+    "tinkers_ingenuity:curio_main": {
+      "curio_armor": 0.1,
+      "curio_max_health": 5.0,
+      "curio_melee_attack": 0.1,
+      "curio_movement_speed": 0.15,
+      "curio_projectile_attack": 0.1,
+      "optional": true
     }
   }
 }

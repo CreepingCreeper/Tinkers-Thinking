@@ -4,8 +4,9 @@
     "tinkers_thinking:tinkers_bronze_block",
     "tinkers_thinking:ardite_block",
     "tinkers_thinking:ardite_ore",
-    "tinkers_thinking:silky_jewel_block",
     "tinkers_thinking:raw_ardite_block",
+    "tinkers_thinking:ardite_platform",
+    "tinkers_thinking:silky_jewel_block",
     "tinkers_thinking:lightite_block",
     "#forge:ores/chlorophyll",
     "tinkers_thinking:chlorophyte_block",
@@ -14,7 +15,6 @@
     "tinkers_thinking:obsidian_bronze_block",
     "tinkers_thinking:electrical_steel_block",
     "tinkers_thinking:beetron_block",
-    "tinkers_thinking:ardite_platform",
     "tinkers_thinking:stone_ladder",
     "tinkers_thinking:stone_torch",
     "tinkers_thinking:wall_stone_torch",
@@ -27,6 +27,10 @@
     "tinkers_thinking:bound_chain",
     "tinkers_thinking:tempered_glass",
     "tinkers_thinking:tempered_glass_pane",
-    "tinkers_thinking:ancient_ceramic_block"
+    "tinkers_thinking:ancient_ceramic_block",
+    "tinkers_thinking:zith_block",
+    "tinkers_thinking:zith_ore",
+    "tinkers_thinking:raw_zith_block",
+    "tinkers_thinking:zith_platform"
   ]
 }

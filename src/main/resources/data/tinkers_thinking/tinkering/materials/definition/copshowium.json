@@ -1,10 +1,19 @@
 {
-  "condition":  {
-    "type": "forge:mod_loaded",
-    "modid": "crossroads"
+  "condition": {
+    "type": "forge:or",
+    "values": [
+      {
+        "type": "tconstruct:config",
+        "prop": "force_integration_materials"
+      },
+      {
+        "type": "forge:mod_loaded",
+        "modid": "crossroads"
+      }
+    ]
   },
   "craftable": false,
   "tier": 4,
-  "sortOrder": 17,
+  "sortOrder": 5,
   "hidden": false
 }

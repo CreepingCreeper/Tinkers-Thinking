@@ -1,5 +1,10 @@
 {
   "perStat": {
+    "tconstruct:arrow_head": [
+      {
+        "name": "tinkers_thinking:riding_shoot"
+      }
+    ],
     "tconstruct:melee_harvest": [
       {
         "name": "tinkers_thinking:overdose",

@@ -10,9 +10,7 @@
       "flag": "tconstruct:indestructible"
     },
     {
-      "type": "tinkers_thinking:netherite",
-      "_comment": "Chance",
-      "each_level": 1.0
+      "type": "tinkers_thinking:netherite"
     },
     {
       "type": "tconstruct:stat_boost",

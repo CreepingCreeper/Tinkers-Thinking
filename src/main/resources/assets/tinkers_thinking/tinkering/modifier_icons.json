@@ -4,5 +4,19 @@
   "tinkers_thinking:lightly_speed":  ["tinkers_thinking:item/lightite/lightite_reinforcement", "tconstruct:gui/modifiers/book"],
   "tinkers_thinking:broad":  "tinkers_thinking:gui/modifiers/broad",
   "tinkers_thinking:backstabbing":  "tinkers_thinking:gui/modifiers/backstabbing",
-  "tinkers_thinking:sprinting":  ["tinkers_thinking:gui/modifiers/blood_slime_sling", "tconstruct:gui/modifiers/book"]
+  "tinkers_thinking:sprinting":  ["tinkers_thinking:gui/modifiers/magma_slime_sling"],
+  "tinkers_thinking:ceramic":  ["tinkers_thinking:item/ancient_ceramic", "tconstruct:gui/modifiers/plus"],
+  "tinkers_thinking:bronze":  ["tconstruct:item/tool/parts/ingot_tconstruct_bronze", "tconstruct:gui/modifiers/plus"],
+  "tinkers_thinking:battle_advanced":  ["tconstruct:item/tool/battlesign/head_tconstruct_iron", "tconstruct:item/tool/battlesign/handle_tinkers_thinking_obsidian_bronze", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:charge_advanced":  ["tconstruct:item/tool/war_pick/limb_tconstruct_iron", "tconstruct:item/tool/war_pick/body_tconstruct_wood", "tconstruct:item/tool/war_pick/bowstring_tconstruct_skyslime_vine", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:melt_advanced":  ["tconstruct:item/tool/melting_pan/handle_tconstruct_wood", "tconstruct:item/tool/melting_pan/head_tconstruct_iron", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:swash_advanced":  ["tconstruct:item/tool/swasher/blade_tconstruct_iron", "tconstruct:item/tool/swasher/barrel_tconstruct_cobalt", "tconstruct:item/tool/swasher/handle_tconstruct_wood", "tconstruct:item/tool/swasher/modifiers/tconstruct_tank", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:attack_advanced":  ["tconstruct:item/tool/pickaxe/handle_tconstruct_cobalt", "tconstruct:item/tool/minotaur_axe/back_tconstruct_wood", "tconstruct:item/tool/minotaur_axe/front_tconstruct_iron", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:density_advanced":  ["tinkers_thinking:item/tool/mace/plate_tconstruct_iron", "tinkers_thinking:item/tool/mace/head", "tinkers_thinking:item/tool/mace/handle_tconstruct_wood", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:repeating_advanced":  ["tinkers_thinking:item/tool/repeating_crossbow/limb_tconstruct_iron", "tinkers_thinking:item/tool/repeating_crossbow/body_tconstruct_wood", "tinkers_thinking:item/tool/repeating_crossbow/bowstring_1_tconstruct_skyslime_vine", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:counter_advanced":  ["tinkers_thinking:item/tool/cutlass/blade_tconstruct_iron", "tinkers_thinking:item/tool/cutlass/handle_tconstruct_cobalt", "tinkers_thinking:item/tool/cutlass/binding_tconstruct_wood", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:glow_advanced":  ["tinkers_thinking:gui/modifiers/glow", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:teleport_advanced":  ["tinkers_thinking:gui/modifiers/teleport", "tconstruct:gui/modifiers/tier"],
+  "tinkers_thinking:ancient_upgrade":  ["tinkers_thinking:item/crystal/clay_crystal", "tconstruct:gui/modifiers/plus"],
+  "tinkers_thinking:ancient_ability":  ["tinkers_thinking:item/crystal/magma_crystal", "tconstruct:gui/modifiers/plus"]
 }

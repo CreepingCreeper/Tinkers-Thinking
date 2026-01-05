@@ -27,6 +27,6 @@
     "tag": "tconstruct:modifiable/melee"
   },
   "level": 3,
-  "allow_crystal": true,
+  "allow_crystal": false,
   "result": "tinkers_thinking:backstabbing"
 }

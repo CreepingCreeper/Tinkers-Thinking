@@ -2,7 +2,6 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.durability;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,6 +14,7 @@ import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -22,6 +22,7 @@ import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifier
 import slimeknights.tconstruct.library.modifiers.hook.behavior.ToolDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MonsterMeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.DurabilityDisplayModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BlockBreakModifierHook;
@@ -39,16 +40,16 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import java.util.List;
 import java.util.Objects;
 
-public class ReverseModifier extends NoLevelsModifier implements ToolDamageModifierHook, DurabilityDisplayModifierHook, ModifierRemovalHook, TooltipModifierHook, MeleeHitModifierHook, BlockBreakModifierHook, LauncherHitModifierHook, ProjectileLaunchModifierHook, ModifyDamageModifierHook, ModifierUtils {
+public class ReverseModifier extends NoLevelsModifier implements ToolDamageModifierHook, DurabilityDisplayModifierHook, ModifierRemovalHook, TooltipModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, BlockBreakModifierHook, LauncherHitModifierHook, ProjectileLaunchModifierHook, ModifyDamageModifierHook, ModifierUtils {
     private static final Component n1 = TinkersThinking.makeTranslation("modifier", "reverse.1");
     private static final Component n2 = TinkersThinking.makeTranslation("modifier", "reverse.2");
     @Override
     public int getPriority() {
-        return 230;
+        return 225;
     }
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.TOOL_DAMAGE,ModifierHooks.DURABILITY_DISPLAY,ModifierHooks.TOOLTIP,ModifierHooks.MELEE_HIT,ModifierHooks.BLOCK_BREAK,ModifierHooks.LAUNCHER_HIT,ModifierHooks.PROJECTILE_LAUNCH,ModifierHooks.MODIFY_DAMAGE);
+        hookBuilder.addHook(this, ModifierHooks.TOOL_DAMAGE,ModifierHooks.DURABILITY_DISPLAY,ModifierHooks.TOOLTIP,ModifierHooks.MELEE_HIT,ModifierHooks.MONSTER_MELEE_HIT,ModifierHooks.BLOCK_BREAK,ModifierHooks.LAUNCHER_HIT,ModifierHooks.PROJECTILE_LAUNCH,ModifierHooks.MODIFY_DAMAGE);
     }
     @Override
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
@@ -71,30 +72,22 @@ public class ReverseModifier extends NoLevelsModifier implements ToolDamageModif
         if (primary) {
             change(tool);
             ModDataNBT data = PersistentDataCapability.getOrWarn(projectile);
-            CompoundTag tag = new CompoundTag();
-            tag.putBoolean("reverse", reverse(tool));
-            data.put(reverse_key, tag);
+            data.putBoolean(reverse_key, reverse(tool));
         }
     }
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, net.minecraft.world.entity.EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
-        change(tool);
+       if(tool.hasTag((TinkerTags.Items.ARMOR))){
+           change(tool);
+       }
         return amount;
-    }
-    private void change(IToolStackView tool){
-        ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
-        if (reverse(tool)){
-            persistentData.putBoolean(reverse_key, true);
-        } else {
-            persistentData.remove(reverse_key);
-        }
     }
     @Override
     public Component onRemoved(IToolStackView tool, Modifier modifier) {
         if (tool.getModifierLevel(this.getId()) == 0) {
             tool.getPersistentData().remove(reverse_key);
         }
-        return null;
+        return n1;
     }
     @Override
     public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {

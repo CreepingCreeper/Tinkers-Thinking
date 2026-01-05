@@ -9,6 +9,7 @@
     "#forge:storage_blocks/obsidian_bronze",
     "#forge:storage_blocks/electrical_steel",
     "#forge:storage_blocks/echo_bronze",
-    "#forge:storage_blocks/beetron"
+    "#forge:storage_blocks/beetron",
+    "#forge:storage_blocks/warden_steel"
   ]
 }

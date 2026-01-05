@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class SeekingArrow extends ModifiableArrow {
     //The code in AlexModGuy's AlexsCaves mod was used and modified.
+    //https://github.com/AlexModGuy/AlexsCaves/blob/main/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/SeekingArrowEntity.java
     private static final EntityDataAccessor<Integer> ARC_TOWARDS_ENTITY_ID = SynchedEntityData.defineId(SeekingArrow.class, EntityDataSerializers.INT);
     private boolean stopSeeking;
 
@@ -29,7 +30,9 @@ public class SeekingArrow extends ModifiableArrow {
     public SeekingArrow(Level level, double x, double y, double z) {
         super(level,x, y, z);
     }
-
+    public SeekingArrow(Level level, LivingEntity shooter) {
+        super(level,shooter);
+    }
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
@@ -51,7 +54,7 @@ public class SeekingArrow extends ModifiableArrow {
                     float boxExpandBy = Math.min(10, 3 + (this.tickCount / 4));
                     ArrayList<Entity> list = new ArrayList<>(this.level().getEntities(this, this.getBoundingBox().inflate(boxExpandBy), this::canHitEntity));
                     for (Entity entity : list) {
-                        if ((closest == null || entity.distanceTo(this) < closest.distanceTo(this)) && entity instanceof LivingEntity living&& !ownedBy(entity) && (owner == null || !entity.isAlliedTo(owner))&&!living.hasEffect(MobEffects.INVISIBILITY)) {
+                        if ((closest == null || entity.distanceTo(this) < closest.distanceTo(this)) && entity instanceof LivingEntity living && !ownedBy(entity) && (owner == null || !entity.isAlliedTo(owner))&&!living.hasEffect(MobEffects.INVISIBILITY)) {
                             closest = living;
                         }
                     }

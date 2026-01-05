@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -26,8 +27,17 @@ public class ModTags {
     public static class Blocks {
         /** Any Blocks that can speed up cooling */
         public static final TagKey<Block> cooling_fast = local("cooling_fast");
+        public static final TagKey<Block> zith = local("zith");
         private static TagKey<Block> local(String name) {
             return TagKey.create(Registries.BLOCK, getResource(name));
+        }
+        private static TagKey<Block> common(String name) {return TagKey.create(Registries.BLOCK, commonResource(name));}
+    }
+    public static class DamageTypes {
+        /** Any DamageTypes that make blaze drop ashes */
+        public static final TagKey<DamageType> drop_ashes = local("drop_ashes");
+        private static TagKey<DamageType> local(String name) {
+            return TagKey.create(Registries.DAMAGE_TYPE, getResource(name));
         }
         private static TagKey<Block> common(String name) {return TagKey.create(Registries.BLOCK, commonResource(name));}
     }

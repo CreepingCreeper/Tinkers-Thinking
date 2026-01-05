@@ -19,6 +19,11 @@
       {
         "name": "tinkers_thinking:countermeasures"
       }
+    ],
+    "tinkers_ingenuity:curio": [
+      {
+        "name": "tinkers_thinking:cutting_curio"
+      }
     ]
   }
 }

@@ -16,6 +16,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MonsterMeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
@@ -26,12 +27,12 @@ import slimeknights.tconstruct.library.utils.Util;
 import java.util.List;
 import java.util.Objects;
 
-public class SculkDashModifier extends Modifier implements MeleeHitModifierHook, MeleeDamageModifierHook, ModifierRemovalHook, TooltipModifierHook {
+public class SculkDashModifier extends Modifier implements MeleeHitModifierHook, MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ModifierRemovalHook, TooltipModifierHook {
     private static final Component Times = TinkersThinking.makeTranslation("modifier", "sculk_dash.times");
     private final ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "sculk_dash");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT,ModifierHooks.MELEE_DAMAGE, ModifierHooks.REMOVE,ModifierHooks.TOOLTIP);
+        hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.REMOVE, ModifierHooks.TOOLTIP);
     }
     @Override
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
@@ -59,7 +60,7 @@ public class SculkDashModifier extends Modifier implements MeleeHitModifierHook,
         ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
         if (context.isFullyCharged()&&!context.isExtraAttack()&&persistentData.contains(KEY,3)&&persistentData.getInt(KEY)>0){
             persistentData.putInt(KEY,persistentData.getInt(KEY)-1);
-            damage *= 1.25;
+            damage *= 1.25F;
         }
         return damage;
     }

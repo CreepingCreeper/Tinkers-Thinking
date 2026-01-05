@@ -1,6 +1,9 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "tinkers_thinking:item/tool/battle_bucket"
-    }
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default",
+  "textures": {
+    "tool": "tinkers_thinking:item/tool/bucket/battle_bucket"
+  },
+  "modifier_roots": [ "tinkers_thinking:item/tool/bucket/modifiers/" ],
+  "first_modifiers": [{ "name": "tconstruct:tank", "forced": true }]
 }

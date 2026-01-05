@@ -256,7 +256,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
     // find ammo and store it on the bow
     Player player = living instanceof Player p ? p : null;
     int projectilesDesired = (3+tool.getModifierLevel(ModModifierIds.RepeatingAdvanced))*(1+(2*tool.getModifierLevel(TinkerModifiers.multishot.getId())));
-    ItemStack ammo = BowAmmoModifierHook.consumeAmmo(tool, bow, living, player, this.getSupportedHeldProjectiles(),projectilesDesired);
+    ItemStack ammo = BowAmmoModifierHook.consumeAmmo(tool, bow, living, player, this.getSupportedHeldProjectiles(), projectilesDesired);
     if (!ammo.isEmpty()) {
       level.playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.CROSSBOW_LOADING_END, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.5F + 1.0F) + 0.2F);
       if (!level.isClientSide) {

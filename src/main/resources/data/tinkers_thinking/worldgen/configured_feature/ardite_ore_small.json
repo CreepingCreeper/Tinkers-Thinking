@@ -9,8 +9,8 @@
           "Name": "tinkers_thinking:ardite_ore"
         },
         "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:base_stone_nether"
+          "block": "minecraft:netherrack",
+          "predicate_type": "minecraft:block_match"
         }
       }
     ]

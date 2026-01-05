@@ -24,7 +24,7 @@ public class ModPotions{
     public static final RegistryObject<Potion> weightless_potion = POTIONS.register("weightless_potion", () -> new Potion(new MobEffectInstance(ModEffects.weightless.get(), 1200, 0)));
     public static final RegistryObject<Potion> weightless_potion_strong = POTIONS.register("weightless_potion_strong", () -> new Potion(new MobEffectInstance(ModEffects.weightless.get(), 400, 1)));
     public static final RegistryObject<Potion> weightless_potion_long = POTIONS.register("weightless_potion_long", () -> new Potion(new MobEffectInstance(ModEffects.weightless.get(), 2400, 0)));
-    public static void setup() {
+    public static void init() {
         potionBrewing(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.AWKWARD),ModPotions.overweight_potion.get(), ModCommonItems.clay_crystal.get());
         potionBrewing(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.overweight_potion.get()),ModPotions.overweight_potion_strong.get(), Items.GLOWSTONE_DUST);
         potionBrewing(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.overweight_potion.get()),ModPotions.overweight_potion_long.get(), Items.REDSTONE);

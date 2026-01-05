@@ -12,12 +12,20 @@
       "each_level": -0.1,
       "operation": "multiply_total",
       "slots": [
+        "mainhand",
+        "offhand",
         "feet",
         "legs",
         "chest",
         "head"
       ],
       "tooltip_style": "percent"
+    },
+    {
+      "type": "tconstruct:armor_level",
+      "allow_broken": false,
+      "held_tag": "tconstruct:modifiable/armor/held",
+      "key": "tinkers_thinking:retransit"
     }
     ],
   "tooltip_display": "always"

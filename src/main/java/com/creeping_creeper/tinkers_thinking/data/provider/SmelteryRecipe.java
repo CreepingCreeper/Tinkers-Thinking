@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data.provider;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -53,17 +54,17 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         metalCrafting(consumer, ModCommonItems.warden_steel, folder);
     }
     private void addTagRecipes(Consumer<FinishedRecipe> consumer) {
-        metal(consumer, ModCommonItems.molten_ardite).metal().ore(Byproduct.GOLD);
-        metal(consumer, ModCommonItems.molten_tinkers_bronze).metal();
-        metal(consumer, ModCommonItems.molten_lightite).metal();
-        metal(consumer, ModCommonItems.molten_chlorophyte).metal();
-        metal(consumer, ModCommonItems.molten_spectre).metal();
-        metal(consumer, ModCommonItems.molten_shroomite).metal();
-        metal(consumer, ModCommonItems.molten_beetron).metal();
-        metal(consumer, ModCommonItems.molten_obsidian_bronze).metal();
-        metal(consumer, ModCommonItems.molten_echo_bronze).metal();
-        metal(consumer, ModCommonItems.molten_electrical_steel).metal();
-        metal(consumer, ModCommonItems.molten_warden_steel).metal();
+        metal(consumer, ModFluids.molten_ardite).metal().ore(Byproduct.GOLD);
+        metal(consumer, ModFluids.molten_tinkers_bronze).metal();
+        metal(consumer, ModFluids.molten_lightite).metal();
+        metal(consumer, ModFluids.molten_chlorophyte).metal();
+        metal(consumer, ModFluids.molten_spectre).metal();
+        metal(consumer, ModFluids.molten_shroomite).metal();
+        metal(consumer, ModFluids.molten_beetron).metal();
+        metal(consumer, ModFluids.molten_obsidian_bronze).metal();
+        metal(consumer, ModFluids.molten_echo_bronze).metal();
+        metal(consumer, ModFluids.molten_electrical_steel).metal();
+        metal(consumer, ModFluids.molten_warden_steel).metal();
     }
 
 }

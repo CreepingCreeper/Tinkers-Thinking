@@ -2,7 +2,7 @@
   "modules": [
     {
       "type": "tconstruct:material_stats",
-      "primary_part": -1,
+      "primary_part": 0,
       "stat_types": [
         "tconstruct:head",
         "tconstruct:handle"
@@ -24,8 +24,8 @@
       "hooks": [
         "tconstruct:rebalanced_trait"
       ],
-      "material_index": 0,
-      "stat_type": "tconstruct:head"
+      "material_index": 1,
+      "stat_type": "tconstruct:handle"
     },
     {
       "type": "tconstruct:base_stats",
@@ -52,7 +52,6 @@
       "type": "tconstruct:traits",
       "traits": [
         {
-          "level": 1,
           "name": "tinkers_thinking:falling_attack"
         }
       ]

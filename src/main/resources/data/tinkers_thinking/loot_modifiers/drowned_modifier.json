@@ -7,11 +7,6 @@
     },
     {
       "condition": "minecraft:killed_by_player"
-    },
-    {
-      "condition": "minecraft:random_chance_with_looting",
-       "chance": 0.18,
-       "looting_multiplier": 0.06
     }
   ],
   "entry": {
@@ -19,6 +14,24 @@
     "name": "tinkers_thinking:surging_wellspring"
   },
   "functions": [
+    {
+      "add": false,
+      "count": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": -8.0
+      },
+      "function": "minecraft:set_count"
+    },
+    {
+      "count": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 1.0
+      },
+      "function": "minecraft:looting_enchant",
+      "limit": 1
+    }
   ],
   "post_conditions": [
   ]

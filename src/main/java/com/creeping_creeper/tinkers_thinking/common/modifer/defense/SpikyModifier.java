@@ -1,10 +1,10 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
+import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -17,7 +17,7 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class SpikyModifier extends Modifier implements OnAttackedModifierHook {
+public class SpikyModifier extends Modifier implements OnAttackedModifierHook, ModifierUtils {
     @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -28,7 +28,7 @@ public class SpikyModifier extends Modifier implements OnAttackedModifierHook {
         if (source.getEntity() instanceof LivingEntity attacker&&!attacker.hasEffect(ModEffects.modifier_immune.get())&&attacker!=context.getEntity()&&(!(source.getDirectEntity() instanceof AbstractArrow arrow) || arrow.getPierceLevel() == 0)) {
             attacker.hurt(context.getEntity().damageSources().thorns(context.getEntity()),amount);
             context.getEntity().level().playSound(null, context.getEntity().getX(), context.getEntity().getY(), context.getEntity().getZ(), SoundEvents.THORNS_HIT, SoundSource.PLAYERS, 1.0F, 1.0F);
-            attacker.addEffect(new MobEffectInstance(ModEffects.modifier_immune.get(), 60/modifier.getLevel(), 1));
+            addEffect(attacker,ModEffects.modifier_immune.get(), 60/modifier.getLevel());
         }
     }
 }

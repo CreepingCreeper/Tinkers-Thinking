@@ -1,5 +1,11 @@
 {
   "color": "FF00E7B5",
-  "flowing": "tconstruct:fluid/food/stew/flowing",
+  "fog": {
+    "calculate_color": true,
+    "end": 2.0,
+    "shape": "sphere",
+    "start": 0.25
+  },
+  "flowing": "tinkers_thinking:fluid/common/flowing",
   "still": "tconstruct:fluid/food/stew/still"
 }

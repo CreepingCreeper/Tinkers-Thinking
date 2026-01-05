@@ -24,7 +24,7 @@ public abstract class PlayerRendererMixin {
         }
     }
     @Redirect( method = "getArmPose", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getItem()Lnet/minecraft/world/item/Item;"))
-    private static net.minecraft.world.item.Item getArmPose1(ItemStack stack) {
+    private static net.minecraft.world.item.Item getItem(ItemStack stack) {
         if (stack.is(ModTags.Items.LOADING_ANIMATION)) {
             return Items.CROSSBOW;
         }else return stack.getItem();

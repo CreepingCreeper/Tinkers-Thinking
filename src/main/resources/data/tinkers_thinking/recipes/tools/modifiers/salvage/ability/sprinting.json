@@ -1,6 +1,5 @@
 {
   "type": "tconstruct:modifier_salvage",
-  "level": 1,
   "modifier": "tinkers_thinking:sprinting",
   "slots": {
     "abilities": 1

@@ -1,5 +1,11 @@
 {
   "color": "FFcc4418",
+  "fog": {
+    "calculate_color": true,
+    "end": 2.0,
+    "shape": "sphere",
+    "start": 0.25
+  },
   "flowing": "tconstruct:fluid/molten/compat_ore/aluminum/flowing",
   "still": "tconstruct:fluid/molten/compat_ore/aluminum/still"
 }

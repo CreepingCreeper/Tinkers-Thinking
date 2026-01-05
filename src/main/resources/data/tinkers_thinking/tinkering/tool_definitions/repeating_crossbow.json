@@ -2,7 +2,7 @@
   "modules": [
     {
       "type": "tconstruct:material_stats",
-      "primary_part": -1,
+      "primary_part": 0,
       "stat_types": [
         "tconstruct:limb",
         "tconstruct:grip",
@@ -28,8 +28,8 @@
       "hooks": [
         "tconstruct:rebalanced_trait"
       ],
-      "material_index": 0,
-      "stat_type":  "tconstruct:limb"
+      "material_index": 1,
+      "stat_type":  "tconstruct:grip"
     },
     {
       "type": "tconstruct:base_stats",

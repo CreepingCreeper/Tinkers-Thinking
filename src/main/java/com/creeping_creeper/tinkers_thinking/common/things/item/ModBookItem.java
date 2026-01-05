@@ -1,6 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.things.item;
 
-import com.creeping_creeper.tinkers_thinking.common.world.ModBook;
+import com.creeping_creeper.tinkers_thinking.common.client.ModBooks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -52,14 +52,14 @@ public class ModBookItem extends LecternBookItem {
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (world.isClientSide) {
-            ModBook.getBook().openGui(hand, stack);
+            ModBooks.getBook().openGui(hand, stack);
         }
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
     }
 
     @Override
     public void openLecternScreenClient(BlockPos pos, ItemStack stack) {
-        ModBook.getBook().openGui(pos, stack);
+        ModBooks.getBook().openGui(pos, stack);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class ModBookItem extends LecternBookItem {
             if (player.level().isClientSide) {
                 player.containerMenu.resumeRemoteUpdates();
                 player.closeContainer();
-                ModBook.getBook().openGui(slot.getSlotIndex(), stack);
+                ModBooks.getBook().openGui(slot.getSlotIndex(), stack);
             }
             return true;
         }

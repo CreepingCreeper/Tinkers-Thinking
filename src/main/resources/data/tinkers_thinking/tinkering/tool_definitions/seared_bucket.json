@@ -16,8 +16,7 @@
       "type": "tconstruct:traits",
       "traits": [
         {
-          "name": "tconstruct:bucketing",
-          "level": 1
+          "name": "tconstruct:bucketing"
         }
       ]
     },

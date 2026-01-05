@@ -30,9 +30,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class SculkBreedModifier extends Modifier implements ModifyDamageModifierHook, EquipmentChangeModifierHook, TooltipModifierHook {
-    private static final UUID ATTRIBUTE_BONUS = UUID.fromString("2307DE5E-7CE8-4030-940E-514C1F170001");
+    public static final UUID ATTRIBUTE_BONUS = UUID.fromString("2307DE5E-7CE8-4030-940E-514C1F170001");
     private static final Component Boost = TinkersThinking.makeTranslation("modifier", "sculk_breed.boost");
-    private final ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "sculk_breed");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MODIFY_DAMAGE,ModifierHooks.EQUIPMENT_CHANGE,ModifierHooks.TOOLTIP);
@@ -42,10 +41,11 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
         LivingEntity living = context.getEntity();
         AttributeInstance attribute = living.getAttribute(Attributes.MAX_HEALTH);
         float x = (float)(amount * modifier.getLevel() * 0.5);
-        if (living.hasEffect(ModEffects.sculk_power.get()) && attribute != null && !tool.isBroken()) {
+        if (living.hasEffect(ModEffects.sculk_power.get()) && !tool.isBroken()) {
             if (attribute.getModifier(ATTRIBUTE_BONUS) == null) {
             attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed", x,
                     AttributeModifier.Operation.ADDITION));
+            attribute.getModifier(ATTRIBUTE_BONUS).getAmount();
             }
             if (attribute.getModifier(ATTRIBUTE_BONUS) != null&&x > Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount()) {
                 attribute.removeModifier(ATTRIBUTE_BONUS);
@@ -59,16 +59,16 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
     public void onUnequip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
         // remove boost when boots are removed
         LivingEntity living = context.getEntity();
-            IToolStackView newTool = context.getReplacementTool();
-            if (newTool == null || newTool.isBroken() || newTool.getModifier(this).getLevel() <= modifier.getLevel()) {
-                AttributeInstance attribute = living.getAttribute(Attributes.MAX_HEALTH);
-                if (attribute!= null && attribute.getModifier(ATTRIBUTE_BONUS) != null) {
-                    attribute.removeModifier(ATTRIBUTE_BONUS);
-                    if (living.getHealth()>living.getMaxHealth()){
-                        living.setHealth(living.getMaxHealth());
-                    }
+        IToolStackView newTool = context.getReplacementTool();
+        if (newTool == null || newTool.isBroken() || newTool.getModifier(this).getLevel() < modifier.getLevel()) {
+            AttributeInstance attribute = living.getAttribute(Attributes.MAX_HEALTH);
+            if (attribute.getModifier(ATTRIBUTE_BONUS) != null) {
+                attribute.removeModifier(ATTRIBUTE_BONUS);
+                if (living.getHealth()>living.getMaxHealth()){
+                    living.setHealth(living.getMaxHealth());
                 }
             }
+        }
     }
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey key, TooltipFlag tooltipFlag) {

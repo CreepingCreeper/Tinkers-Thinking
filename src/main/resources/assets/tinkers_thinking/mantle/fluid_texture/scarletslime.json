@@ -1,5 +1,11 @@
 {
   "color": "FFA52548",
+  "fog": {
+    "calculate_color": true,
+    "end": 2.0,
+    "shape": "sphere",
+    "start": 0.25
+  },
   "flowing": "tconstruct:fluid/liquid/flowing",
   "still": "tconstruct:fluid/liquid/still"
 }
