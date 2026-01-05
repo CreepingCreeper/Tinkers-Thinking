@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      { "name": "tinkers_thinking:reverse"},
+      { "name": "tinkers_thinking:repercussion"}
+    ],
+    "tconstruct:armor": [
+      { "name": "tinkers_thinking:reverse"},
+      { "name": "tinkers_thinking:remisdirection"}
+    ],
+    "tconstruct:plating_shield": [
+      { "name": "tinkers_thinking:reverse"},
+      { "name": "tinkers_thinking:remisdirection"}
+    ]
+  }
+}

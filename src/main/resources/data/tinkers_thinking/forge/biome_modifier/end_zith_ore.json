@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": [
+    "tinkers_thinking:zith_ore_small",
+    "tinkers_thinking:zith_ore_large"
+  ],
+  "step": "underground_decoration"
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "tconstruct:block/platform/top",
+	"textures": {
+		"side": "tinkers_thinking:block/platform/zith_side",
+		"top":  "tinkers_thinking:block/platform/zith_top"
+	}
+}

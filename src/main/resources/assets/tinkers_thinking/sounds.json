@@ -1,0 +1,8 @@
+{
+  "damage_blocking": {
+    "sounds": [
+      "tinkers_thinking:damage_blocking"
+    ],
+    "subtitle": "subtitles.tinkers_thinking.damage_blocking"
+  }
+}

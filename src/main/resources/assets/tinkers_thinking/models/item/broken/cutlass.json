@@ -1,0 +1,15 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "blade":         "tinkers_thinking:item/tool/cutlass/broken_blade",
+    "binding":        "tinkers_thinking:item/tool/cutlass/binding",
+    "handle":      "tinkers_thinking:item/tool/cutlass/handle"
+  },
+  "modifier_roots": [ "tinkers_thinking:item/tool/cutlass/modifiers/" ],
+  "parts": [
+    { "name": "handle", "index": 2 },
+    { "name": "blade", "index": 0 },
+    { "name": "binding", "index": 1 }
+  ]
+}

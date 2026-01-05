@@ -1,0 +1,15 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:antibrute"
+    },
+    {
+      "type": "tconstruct:armor_level",
+      "allow_broken": false,
+      "held_tag": "tconstruct:modifiable/armor/held",
+      "key": "tinkers_thinking:antibrute"
+    }
+  ],
+  "tooltip_display": "always"
+}

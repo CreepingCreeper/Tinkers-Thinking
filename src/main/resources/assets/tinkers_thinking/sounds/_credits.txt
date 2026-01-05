@@ -1,0 +1,7 @@
+All sounds that were not in ogg format were transcoded to Ogg Vorbis.
+All sounds are licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/3.0/) or CC0.
+
+Damage-Blocking:
+Sword_Hit_LightAttack_Block.wav by gronnie
+ -- https://freesound.org/s/563166/
+ -- License: Attribution 4.0

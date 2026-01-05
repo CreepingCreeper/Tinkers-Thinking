@@ -1,0 +1,31 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "forge:ingots/amethyst_bronze"
+    },
+    {
+      "tag": "forge:ingots/tinkers_bronze"
+    },
+    {
+      "tag": "forge:ingots/obsidian_bronze"
+    },
+    {
+      "tag": "forge:ingots/echo_bronze"
+    }
+  ],
+  "level": 1,
+  "result": "tinkers_thinking:bronze",
+  "tools": {
+    "type": "forge:intersection",
+    "children": [
+      {
+        "tag": "tconstruct:modifiable/ancient"
+      },
+      {
+        "tag": "tconstruct:modifiable/bonus_slots"
+      }
+    ]
+  }
+}

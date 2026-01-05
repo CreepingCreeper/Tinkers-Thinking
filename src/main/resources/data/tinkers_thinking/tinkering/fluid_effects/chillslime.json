@@ -1,0 +1,27 @@
+{
+  "block_effects": [
+    {
+      "type": "tconstruct:mob_effect_cloud",
+      "effects": [
+        {
+          "effect": "tinkers_thinking:freezing_cold",
+          "level": 1,
+          "time": 80
+        }
+      ]
+    }
+  ],
+  "entity_effects": [
+    {
+      "type": "tconstruct:mob_effect",
+      "action": "set",
+      "effect": "tinkers_thinking:freezing_cold",
+      "level": 1,
+      "time": 80
+    }
+  ],
+  "fluid": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:chillslime"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:nuggets/zith" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_zith",
+    "amount": 10
+  },
+  "temperature": 1500,
+  "time": 27
+}

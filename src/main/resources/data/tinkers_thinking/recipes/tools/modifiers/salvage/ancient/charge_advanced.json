@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:modifier_salvage",
+  "tools": {
+    "item": "tconstruct:war_pick"
+  },
+  "slots": {
+    "ancient": 1
+  },
+  "modifier": "tinkers_thinking:charge_advanced"
+}

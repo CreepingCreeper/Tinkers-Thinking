@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:nocturnal",
+      "each_level": 0.35
+    }
+  ],
+  "tooltip_display": "always"
+}

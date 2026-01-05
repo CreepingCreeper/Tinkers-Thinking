@@ -1,0 +1,27 @@
+{
+  "block_effects": [
+    {
+      "type": "tconstruct:mob_effect_cloud",
+      "effects": [
+        {
+          "effect": "tinkers_thinking:sculk_power",
+          "level": 1,
+          "time": 160
+        }
+      ]
+    }
+  ],
+  "entity_effects": [
+    {
+      "type": "tconstruct:mob_effect",
+      "action": "add",
+      "effect": "tinkers_thinking:sculk_power",
+      "level": 1,
+      "time": 160
+    }
+  ],
+  "fluid": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:liquid_sculk_power"
+  }
+}

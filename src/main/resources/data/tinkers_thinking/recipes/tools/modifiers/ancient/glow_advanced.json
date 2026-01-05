@@ -1,0 +1,34 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "tinkers_waste"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "inputs": [
+    {
+      "tag": "forge:ingots/amethyst_bronze"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "tag": "forge:ingots/amethyst_bronze"
+    },
+    {
+      "item": "tinkers_thinking:surging_wellspring"
+    },
+    {
+      "item": "tinkers_thinking:surging_wellspring"
+    }
+  ],
+  "tools": {
+    "item": "tinkers_waste:litboard"
+  },
+  "slots": {
+    "ancient": 1
+  },
+  "allow_crystal": true,
+  "result": "tinkers_thinking:glow_advanced"
+}

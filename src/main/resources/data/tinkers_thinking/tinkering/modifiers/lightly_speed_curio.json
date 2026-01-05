@@ -1,0 +1,24 @@
+{
+  "condition":  {
+    "type": "forge:mod_loaded",
+    "modid": "tinkers_ingenuity"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_ingenuity:curio_attribute_adder",
+      "amount": 0.25,
+      "attribute": "tconstruct:player.use_item_speed",
+      "name": "tinkers_thinking:lightly_speed",
+      "operation": "multiply_base"
+    },
+    {
+      "type": "tinkers_ingenuity:curio_attribute_adder",
+      "amount": -0.1,
+      "attribute": "forge:entity_gravity",
+      "name": "tinkers_thinking:lightly_speed",
+      "operation": "multiply_total"
+    }
+  ],
+  "tooltip_display": "always"
+}

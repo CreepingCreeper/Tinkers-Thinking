@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "tconstruct:modifier_salvage",
+  "tools": {
+    "item": "tconstruct:minotaur_axe"
+  },
+  "slots": {
+    "ancient": 1
+  },
+  "modifier": "tinkers_thinking:attack_advanced"
+}

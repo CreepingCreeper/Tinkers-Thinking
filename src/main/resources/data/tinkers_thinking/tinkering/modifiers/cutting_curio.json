@@ -1,0 +1,41 @@
+{
+  "condition":  {
+    "type": "forge:mod_loaded",
+    "modid": "tinkers_ingenuity"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_ingenuity:curio_break_speed",
+      "block": {
+        "type": "mantle:or",
+        "predicates": [
+          {
+            "type": "mantle:tag",
+            "tag": "forge:stone"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "forge:blackstone"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "forge:cobblestone"
+          },
+          {
+            "type": "mantle:tag",
+            "tag": "tinkers_thinking:cuttable_blocks"
+          }
+        ]
+      },
+      "effective": false,
+      "entity": "mantle:any",
+      "modifier": {
+        "factor": 0.55,
+        "operation": "multiplier_base",
+        "single": false
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

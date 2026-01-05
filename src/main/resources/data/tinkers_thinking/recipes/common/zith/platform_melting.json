@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "tinkers_thinking:zith_platform"
+  },
+  "result": {
+    "fluid": "tinkers_thinking:molten_zith",
+    "amount": 100
+  },
+  "temperature": 1500,
+  "time": 85
+}

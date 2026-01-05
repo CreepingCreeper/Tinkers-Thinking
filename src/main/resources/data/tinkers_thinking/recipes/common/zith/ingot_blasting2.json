@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "zith_ingot",
+  "ingredient": {
+    "item": "tinkers_thinking:zith_ore"
+  },
+  "result": "tconstruct:obsidian_pane",
+  "experience": 1.2,
+  "cookingtime": 200
+}

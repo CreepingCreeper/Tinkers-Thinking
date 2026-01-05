@@ -1,0 +1,15 @@
+{
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tinkers_thinking:sculk_catalyse"
+    },
+    {
+      "type": "tconstruct:armor_level",
+      "allow_broken": false,
+      "held_tag": "tconstruct:modifiable/held",
+      "key": "tinkers_thinking:sculk_catalyse"
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "minecraft:chests/village/village_armorer",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "tconstruct:add_tool_data",
+              "materials": [
+                {
+                  "type": "tconstruct:ancient"
+                },
+                {
+                  "type": "tconstruct:ancient"
+                },
+                {
+                  "type": "tconstruct:ancient"
+                }
+              ]
+            }
+          ],
+          "name": "tinkers_thinking:cutlass",
+          "weight": 1
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

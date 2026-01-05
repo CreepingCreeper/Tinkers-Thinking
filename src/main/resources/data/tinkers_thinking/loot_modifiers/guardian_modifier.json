@@ -1,0 +1,38 @@
+{
+  "type": "mantle:add_entry",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/guardian"
+    },
+    {
+      "condition": "minecraft:killed_by_player"
+    }
+  ],
+  "entry": {
+    "type": "minecraft:item",
+    "name": "tinkers_thinking:surging_wellspring"
+  },
+  "functions": [
+    {
+      "add": false,
+      "count": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": -3.0
+      },
+      "function": "minecraft:set_count"
+    },
+    {
+      "count": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 1.0
+      },
+      "function": "minecraft:looting_enchant",
+      "limit": 1
+    }
+  ],
+  "post_conditions": [
+  ]
+}

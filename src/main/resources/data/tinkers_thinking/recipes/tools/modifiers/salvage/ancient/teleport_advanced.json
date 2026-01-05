@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "tinkersinnovation"
+    }
+  ],
+  "type": "tconstruct:modifier_salvage",
+  "tools": {
+    "item": "tinkersinnovation:teleport_staff"
+  },
+  "slots": {
+    "ancient": 1
+  },
+  "modifier": "tinkers_thinking:teleport_advanced"
+}

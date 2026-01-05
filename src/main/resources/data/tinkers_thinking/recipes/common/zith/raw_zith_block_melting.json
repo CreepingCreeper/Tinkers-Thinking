@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "rate": "metal",
+  "ingredient": {
+    "item": "tinkers_thinking:raw_zith_block"
+  },
+  "result": {
+    "fluid": "tconstruct:molten_obsidian",
+    "amount": 2250
+  },
+  "temperature": 1500,
+  "time": 241,
+  "byproducts": [
+    {
+      "fluid": "tinkers_thinking:molten_zith",
+      "amount": 3240
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:freeze",
+    "minecraft:drown",
+    "tconstruct:fluid_cold_melee",
+    "tconstruct:fluid_cold_ranged",
+    "tconstruct:water_melee",
+    "tconstruct:water_ranged"
+  ]
+}

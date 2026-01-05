@@ -1,0 +1,15 @@
+{
+  "tool": "tinkers_thinking:cutlass",
+  "text": [
+    { "text": "The Cutlass is a high-skill melee weapon and defensive tool. It can perform a block with no wind-up and a 0.5-second duration.\nAfter blocking direct damage, it will automatically counterattack, dealing double damage and knockback.\nCan be found in villages or obtained by trading with weapon smiths." }
+  ],
+  "properties": [
+    "90% durability Multiplier",
+    "+3 Attack Damage",
+    "120% Damage multiplier",
+    "0.7 Attack Speed",
+    "40 block value",
+    "60° block angle",
+    "10% block speed"
+  ]
+}

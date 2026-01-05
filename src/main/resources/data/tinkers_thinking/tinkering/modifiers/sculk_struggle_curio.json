@@ -1,0 +1,14 @@
+{
+  "condition":  {
+    "type": "forge:mod_loaded",
+    "modid": "tinkers_ingenuity"
+  },
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:curio_level",
+      "key": "tinkers_thinking:sculk_struggle"
+    }
+  ],
+  "tooltip_display": "always"
+}

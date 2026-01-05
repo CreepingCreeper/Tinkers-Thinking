@@ -1,0 +1,14 @@
+{
+  "tool": "tinkers_thinking:repeating_crossbow",
+  "text": [
+    { "text": "The Repeating Crossbow is a high-burst long-range tool that can load up to 3 arrows at a time and then fire them continuously.\nIt cannot be reloaded until all loaded arrows are fired.\nCan be found in Desert Temples, Jungle Temples, and Stronghold Rooms, or dropped by Silverfish when killed by players." }
+  ],
+  "properties": [
+    "0.80 Draw Speed",
+    "1.00 Arrow Initial Velocity",
+    "0.75 Accuracy",
+    "160% Durability Coefficient",
+    "+1.5 Melee Damage",
+    "1.2 Melee Speed"
+  ]
+}

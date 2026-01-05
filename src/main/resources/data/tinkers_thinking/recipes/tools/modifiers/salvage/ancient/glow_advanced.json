@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "tinkers_waste"
+    }
+  ],
+  "type": "tconstruct:modifier_salvage",
+  "tools": {
+    "item": "tinkers_waste:litboard"
+  },
+  "slots": {
+    "ancient": 1
+  },
+  "modifier": "tinkers_thinking:glow_advanced"
+}

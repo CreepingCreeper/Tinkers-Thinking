@@ -1,0 +1,12 @@
+{
+  "tool": "tinkers_thinking:mace",
+  "text": [
+    { "text": "The Mace is a melee weapon that increases melee damage when falling. It can also be used to mine blocks.\nFound in Ancient City or dropped by by Warden when killed by players." }
+  ],
+  "properties": [
+    "+4.0 Attack Damage",
+    "0.6 Attack Speed",
+    "80% Durability Multiplier",
+    "140% Mining Multiplier"
+  ]
+}

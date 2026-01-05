@@ -1,0 +1,12 @@
+{
+  "perStat": {
+    "tconstruct:ranged": [
+      { "name": "tinkers_thinking:reverse"},
+      { "name": "tinkers_thinking:recharge"}
+    ],
+    "tconstruct:melee_harvest": [
+      { "name": "tinkers_thinking:reverse"},
+      { "name": "tinkers_thinking:redye"}
+    ]
+  }
+}

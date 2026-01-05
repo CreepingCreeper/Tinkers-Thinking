@@ -1,0 +1,27 @@
+{
+  "block_effects": [
+    {
+      "type": "tconstruct:mob_effect_cloud",
+      "effects": [
+        {
+          "effect": "minecraft:slowness",
+          "level": 2,
+          "time": 200
+        }
+      ]
+    }
+  ],
+  "entity_effects": [
+    {
+      "type": "tconstruct:mob_effect",
+      "action": "set",
+      "effect": "minecraft:slowness",
+      "level": 2,
+      "time": 200
+    }
+  ],
+  "fluid": {
+    "amount": 50,
+    "fluid": "tinkers_thinking:pulp"
+  }
+}
