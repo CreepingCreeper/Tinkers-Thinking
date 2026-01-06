@@ -95,7 +95,7 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("coercion"), CoercionModule.LOADER);
             ModifierModule.LOADER.register(getResource("nocturnal"), NocturnalModule.LOADER);
             ModifierModule.LOADER.register(getResource("bide_time"), BideTimeModule.LOADER);
-            ModifierModule.LOADER.register(getResource("a"), A.LOADER);
+            ModifierModule.LOADER.register(getResource("sharp_circumstance"), SharpCircumstanceModule.LOADER);
             ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
             if (ModList.get().isLoaded("tinkers_ingenuity")) {
                 ModifierModule.LOADER.register(getResource("curio_level"), CurioLevelModule.LOADER);

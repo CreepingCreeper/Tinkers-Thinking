@@ -1,0 +1,13 @@
+{
+  "level_display": "tconstruct:default",
+  "priority": 15,
+  "modules": [
+
+    {
+      "type": "tinkers_thinking:sharp_circumstance",
+      "_comment": " This is melee and ranged trait's value, armor trait's value is (this - 0.045)",
+      "each_level": 0.125
+    }
+    ],
+  "tooltip_display": "always"
+}

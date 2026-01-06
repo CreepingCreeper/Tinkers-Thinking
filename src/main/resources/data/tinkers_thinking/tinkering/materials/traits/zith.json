@@ -1,24 +1,5 @@
 {
-  "perStat": {
-    "tconstruct:ranged": [
-      {
-        "name": "tinkers_thinking:a"
-      }
-    ],
-    "tconstruct:melee_harvest": [
-      {
-        "name": "tinkers_thinking:a"
-      }
-    ],
-    "tconstruct:armor": [
-      {
-        "name": "tinkers_thinking:a"
-      }
-    ],
-    "tconstruct:plating_shield": [
-      {
-        "name": "tinkers_thinking:a"
-      }
-    ]
-  }
+  "default": [
+    {"name": "tinkers_thinking:sharp_circumstance"}
+  ]
 }

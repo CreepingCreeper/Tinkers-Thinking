@@ -481,9 +481,8 @@
 
   "material.tinkers_thinking.zith": "铚",
   "material.tinkers_thinking.zithcolorite.flavor": "别忘了你是怎么获得它的",
-  "material.tinkers_thinking.zith.encyclopedia": "攻击后，若生命值占最大生命值的百分比：你>=目标，每级对目标造成伤害值*12.5%的伤害，否则每级对自己造成伤害值*12.5%的伤害",
-  "material.tinkers_thinking.zith.ranged": "",
-  "material.tinkers_thinking.zith.armor": "受到非穿甲伤害后，若生命值占最大生命值的百分比：你>=目标，每级对攻击者造成伤害值*8%的伤害，否则每级对自己造成伤害值*12.5%的伤害",
+  "material.tinkers_thinking.zith.encyclopedia": "攻击时，若生命值占最大生命值的百分比：你>=目标，每级对目标造成伤害值×12.5%的伤害，否则每级对自己造成伤害值×12.5%的伤害",
+  "material.tinkers_thinking.zith.armor": "受到非穿甲伤害后，若生命值占最大生命值的百分比：你>=目标，每级对攻击者造成伤害值×8%的伤害，否则每级对自己造成伤害值×8%的伤害",
 
   "material.tinkers_thinking.colorite": "『铯』",
   "material.tinkers_thinking.colorite.flavor": "字面意思",
@@ -831,6 +830,10 @@
   "modifier.tinkers_thinking.retransit": "穿梭",
   "modifier.tinkers_thinking.retransit.flavor": "有些事情还需要再来一次...",
   "modifier.tinkers_thinking.retransit.description": "降低重力，受到伤害一段时间后，§c奇：传送到受到伤害时的位置/§9偶：生命值调整到与受到伤害后相同",
+
+  "modifier.tinkers_thinking.sharp_circumstance": "锋势",
+  "modifier.tinkers_thinking.sharp_circumstance.flavor": "雪中送炭？倒不如——落井下石",
+  "modifier.tinkers_thinking.sharp_circumstance.description": "攻击时，若生命值占最大生命值的百分比：你>=目标，对目标造成额外伤害，否则对自己造成伤害",
 
   "modifier.tinkers_thinking.redye": "叠染",
   "modifier.tinkers_thinking.redye.flavor": "不要忘记最初的目标",

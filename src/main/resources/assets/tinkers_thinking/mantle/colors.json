@@ -83,7 +83,8 @@
     "glow_advanced":  "#A1A1A1",
     "teleport_advanced":  "#A1A1A1",
     "ancient_upgrade":  "#AFB9D6",
-    "ancient_ability":  "#652828"
+    "ancient_ability":  "#652828",
+    "sharp_circumstance": "#f793b1"
   },
   "material.tinkers_thinking": 
   {
@@ -124,7 +125,8 @@
     "scarlet_slimestone": "#A52548",
     "solidified_emptiness": "#00E7B5",
     "copshowium": "#FF9727",
-    "ancient_ceramic": "#3C8EB0"
+    "ancient_ceramic": "#3C8EB0",
+    "zith": "#f793b1"
   },
   "stat.tconstruct.slot": {
     "ancient": "#3C8EB0"
