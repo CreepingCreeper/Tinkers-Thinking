@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "forge:gunpowder"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tconstruct:powdered_snow",
+    "amount": 500
+  },
+  "result": "tinkers_thinking:stabilized_gunpowder",
+  "cooling_time": 50
+}

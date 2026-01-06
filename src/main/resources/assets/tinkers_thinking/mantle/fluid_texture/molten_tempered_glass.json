@@ -1,0 +1,11 @@
+{
+  "color": "FFd2d4d4",
+  "fog": {
+    "calculate_color": true,
+    "end": 2.0,
+    "shape": "sphere",
+    "start": 0.25
+  },
+  "flowing": "tconstruct:fluid/molten/glass/flowing",
+  "still": "tconstruct:fluid/molten/glass/still"
+}

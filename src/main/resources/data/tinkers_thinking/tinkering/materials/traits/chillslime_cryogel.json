@@ -1,0 +1,33 @@
+{
+  "perStat": {
+    "tconstruct:arrow_head": [
+      {
+        "name": "tinkers_thinking:frozen"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "name": "tconstruct:overslime"
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "name": "tconstruct:overslime"
+      }
+    ],
+    "tconstruct:plating_shield": [
+      {
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "name": "tconstruct:overslime"
+      }
+    ]
+  }
+}

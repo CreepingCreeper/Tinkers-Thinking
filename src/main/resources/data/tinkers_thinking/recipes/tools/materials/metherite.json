@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tconstruct:gold",
+  "fluid": {
+    "fluid": "tconstruct:molten_obsidian",
+    "amount": 500
+  },
+  "temperature": 850,
+  "output": "tinkers_thinking:metherite"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "forge:molten_steel",   "amount":   90 },
+    { "fluid": "tconstruct:sky_slime",   "amount":   250 },
+    { "fluid": "tconstruct:powdered_snow",   "amount":   250 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:chillslime",
+    "amount": 500
+  },
+  "temperature": 910
+}

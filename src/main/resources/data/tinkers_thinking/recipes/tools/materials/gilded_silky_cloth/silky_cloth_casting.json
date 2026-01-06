@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "modid": "tinkers_things",
+      "type": "forge:mod_loaded"
+    }
+  ],
+  "type": "tconstruct:material_fluid",
+  "input": "tinkers_things:silky_cloth",
+  "fluid": {
+    "tag": "forge:molten_gold",
+    "amount": 720
+  },
+  "temperature": 15,
+  "output": "tinkers_thinking:gilded_silky_cloth"
+}

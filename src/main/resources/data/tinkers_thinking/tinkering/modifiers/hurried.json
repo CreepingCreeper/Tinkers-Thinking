@@ -1,0 +1,24 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:hurried",
+      "_comment": "Per level",
+      "each_level": 0.0025
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:entity_gravity",
+      "each_level": -0.1,
+      "operation": "multiply_total",
+      "slots": [
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "tooltip_style": "percent"
+    }
+    ],
+  "tooltip_display": "always"
+}

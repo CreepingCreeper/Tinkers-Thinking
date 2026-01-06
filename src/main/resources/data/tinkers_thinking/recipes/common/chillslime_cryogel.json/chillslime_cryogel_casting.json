@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "tinkers_thinking:ashes"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tinkers_thinking:chillslime",
+    "amount": 250
+  },
+  "result": "tinkers_thinking:chillslime_cryogel",
+  "cooling_time": 150
+}
