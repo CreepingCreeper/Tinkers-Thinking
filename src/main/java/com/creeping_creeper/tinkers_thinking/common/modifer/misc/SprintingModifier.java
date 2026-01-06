@@ -5,14 +5,12 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.common.Sounds;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.special.sling.SlingAngleModifierHook;
@@ -21,7 +19,6 @@ import slimeknights.tconstruct.library.modifiers.hook.special.sling.SlingLaunchM
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.library.utils.SlimeBounceHandler;
 import slimeknights.tconstruct.tools.TinkerToolActions;
 import slimeknights.tconstruct.tools.modifiers.ability.sling.SlingModifier;
@@ -47,10 +44,9 @@ public class SprintingModifier extends SlingModifier implements ModifierUtils {
                     if (force > 0) {
                         Vec3 look = player.getLookAngle().add(0, 1, 0).normalize();
                         Vec3 angle = SlingAngleModifierHook.modifySlingAngle(tool, entity, entity, modifier, force, multiplier, new Vec3((look.x ), 0, (look.z )));
-                        if (player.onGround()) {
-                            player.move(MoverType.SELF, new Vec3(0, 0.02f, 0));
-                        }
-                        player.push(force * angle.x, 0, force * angle.z);
+                        Vec3 velocity = player.getDeltaMovement();
+                        player.setDeltaMovement(velocity.x, 0, velocity.z);
+                        player.push(force * angle.x, 0.02, force * angle.z);
                         int time = (int) (charge * 20);
                         addEffect(player, ModEffects.jumpless.get(), time, 0, false);
                         addEffect(player, ModEffects.weightless.get(),time, 1, false);
