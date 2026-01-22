@@ -10,7 +10,7 @@
     {
       "type": "tconstruct:material_repair",
       "durability": 120,
-      "material": "tinkers_thinking:paper"
+      "material": "tconstruct:paper"
     }
   ],
   "tooltip_display": "always"

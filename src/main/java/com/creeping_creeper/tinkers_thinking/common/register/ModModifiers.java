@@ -29,7 +29,6 @@ public class ModModifiers{
         }
     }
     private static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
-
     public static final StaticModifier<DepositionModifier> Deposition = MODIFIERS.register("deposition", DepositionModifier::new);
     public static final StaticModifier<StimulationModifier> Stimulation = MODIFIERS.register("stimulation", StimulationModifier::new);
     public static final StaticModifier<InspiredModifier> Inspired = MODIFIERS.register("inspired", InspiredModifier::new);
@@ -78,6 +77,7 @@ public class ModModifiers{
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
+            ModifierModule.LOADER.register(getResource("atlatl"), AtlatlModule.LOADER);
             ModifierModule.LOADER.register(getResource("netherite"), NetheriteModule.LOADER);
             ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_boost"), SculkBoostModule.LOADER);

@@ -12,7 +12,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
@@ -73,16 +72,13 @@ public enum SculkBoostModule implements ModifierModule, TooltipModifierHook , Co
     }
     @Override
     public void onEquip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
-        // remove boost when boots are removed
-        LivingEntity living = context.getEntity();
         IToolStackView oldTool = context.getOriginalTool();
-        if (living.hasEffect(ModEffects.sculk_power.get()) && !tool.isBroken() && (oldTool == null || oldTool.getModifier(modifier.getModifier()).getLevel() != modifier.getLevel())) {
-            reset(living);
+        if (!tool.isBroken() && (oldTool == null || oldTool.getModifier(modifier.getModifier()).getLevel() != modifier.getLevel())) {
+            reset(context.getEntity());
         }
     }
     @Override
     public void onUnequip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
-        // remove boost when boots are removed
         IToolStackView newTool = context.getReplacementTool();
         if (newTool == null || newTool.isBroken() || newTool.getModifier(modifier.getModifier()).getLevel() == 0) {
            reset(context.getEntity());
@@ -96,7 +92,7 @@ public enum SculkBoostModule implements ModifierModule, TooltipModifierHook , Co
         Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
         dataCap.ifPresent(data -> {
             int x = data.get(ModDataKeys.SculkBoost, 0);
-            if (x > 0) living.getAttribute(Attributes.ARMOR_TOUGHNESS).addPermanentModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_boost", x * 0.2f,
+            if (x > 0 && living.hasEffect(ModEffects.sculk_power.get())) living.getAttribute(Attributes.ARMOR_TOUGHNESS).addPermanentModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_boost", x * 0.2f,
                     AttributeModifier.Operation.MULTIPLY_BASE));
         }
         );

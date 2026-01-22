@@ -3,6 +3,8 @@
   "values": [
     "#forge:pulp",
     "tinkers_thinking:chillslime",
-    "tinkers_thinking:scarletslime"
+    "tinkers_thinking:scarletslime",
+    "tinkers_thinking:color_liquid",
+    "tinkers_thinking:error_liquid"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_thinking:narrow_blade"
+    "tinkers_thinking:narrow_blade",
+    "tinkers_thinking:guard"
   ]
 }

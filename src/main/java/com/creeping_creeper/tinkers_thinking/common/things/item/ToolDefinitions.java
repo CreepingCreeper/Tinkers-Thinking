@@ -6,7 +6,7 @@ import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 public final class ToolDefinitions {
     public static final ToolDefinition PAXEL = ToolDefinition.create(ModToolItems.paxel);
     public static final ToolDefinition KNIFE = ToolDefinition.create(ModToolItems.knife);
-    public static final ToolDefinition ARROW_THROWER = ToolDefinition.create(ModToolItems.arrow_thrower);
+    public static final ToolDefinition Atlatl = ToolDefinition.create(ModToolItems.atlatl);
     public static final ToolDefinition MACE = ToolDefinition.create(ModToolItems.mace);
     public static final ToolDefinition CUTLASS = ToolDefinition.create(ModToolItems.cutlass);
     public static final ToolDefinition REPEATING_CROSSBOW = ToolDefinition.create(ModToolItems.repeating_crossbow);

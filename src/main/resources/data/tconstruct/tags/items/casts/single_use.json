@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#tconstruct:casts/single_use/narrow_blade"
+    "#tconstruct:casts/single_use/narrow_blade",
+    "#tconstruct:casts/single_use/guard"
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "byproducts": [
+    {
+      "fluid": "tconstruct:molten_obsidian",
+      "amount": 500
+    }
+  ],
+  "input": "tinkers_thinking:metherite",
+  "temperature": 850,
+  "result": {
+    "tag": "tconstruct:molten_gold",
+    "amount": 90
+  }
+}

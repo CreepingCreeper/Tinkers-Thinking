@@ -1,6 +1,7 @@
 {
   "color": "FF7cf6fc",
   "fallbacks": [
+    "slime_wood",
     "crystal"
   ],
   "generator": {

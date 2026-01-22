@@ -57,7 +57,7 @@ public class DryingRackRecipes implements Recipe<SimpleContainer> {
         return false;
     }
     @Override
-    public ItemStack getResultItem(RegistryAccess p_267052_) {
+    public ItemStack getResultItem(@Nullable RegistryAccess p_267052_) {
         return output.copy();
     }
     @Override

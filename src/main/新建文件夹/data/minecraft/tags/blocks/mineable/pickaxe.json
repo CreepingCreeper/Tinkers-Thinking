@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "avaritia_integration:fake_bedrock",
+      "required": false
+    },
+    {
+      "id": "avaritia_integration:fake_end_portal",
+      "required": false
+    },
+    {
+      "id": "avaritia_integration:fake_end_portal_frame",
+      "required": false
+    }
+  ]
+}

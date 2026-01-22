@@ -31,6 +31,8 @@
     "tinkers_thinking:zith_block",
     "tinkers_thinking:zith_ore",
     "tinkers_thinking:raw_zith_block",
-    "tinkers_thinking:zith_platform"
+    "tinkers_thinking:zith_platform",
+    "tinkers_thinking:shimmerslime_block",
+    "tinkers_thinking:adamantium_block"
   ]
 }

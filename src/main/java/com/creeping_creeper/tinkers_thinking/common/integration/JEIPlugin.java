@@ -1,4 +1,3 @@
-/*
 package com.creeping_creeper.tinkers_thinking.common.integration;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
@@ -43,4 +42,3 @@ public class JEIPlugin implements IModPlugin {
         registry.addRecipeCatalyst(new ItemStack(ModCommonItems.drying_rack.get()), DryingRackRecipes_TYPE);
     }
 }
- */

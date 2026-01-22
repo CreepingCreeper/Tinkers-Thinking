@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "tag": "forge:nuggets/adamantium" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_adamantium",
+    "amount": 10
+  },
+  "temperature": 1400,
+  "time": 26
+}

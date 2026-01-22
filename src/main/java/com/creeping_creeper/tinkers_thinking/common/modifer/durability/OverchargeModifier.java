@@ -37,7 +37,7 @@ public class OverchargeModifier extends Modifier implements InventoryTickModifie
             int x =ToolEnergyCapability.getEnergy(tool);
             if (OverslimeModule.getCapacity(tool) > OverslimeModule.INSTANCE.getAmount(tool) && x >= 200) {
                 int y = Math.min(x / 200, modifier.getLevel());
-                OverslimeModule.INSTANCE.addAmount(tool, modifier,x);
+                OverslimeModule.INSTANCE.addAmount(tool, modifier, y);
                 ToolEnergyCapability.setEnergy(tool,  ToolEnergyCapability.getEnergy(tool) - 200 * y);
             }
         }

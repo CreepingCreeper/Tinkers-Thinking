@@ -201,7 +201,6 @@
   "item.tinkers_thinking.obsidian_bronze_ingot": "黑曜石青铜锭",
   "item.tinkers_thinking.obsidian_bronze_nugget": "黑曜石青铜粒",
   "block.tinkers_thinking.obsidian_bronze_block": "黑曜石青铜块",
-  "block.tinkers_thinking.obsidian_bronze_block.tooltip": "可用于建造信标基座",
   "fluid.tinkers_thinking.molten_obsidian_bronze": "熔融黑曜石青铜",
   "fluid.tinkers_thinking.flowing_molten_obsidian_bronze": "流动的熔融黑曜石青铜",
   "block.tinkers_thinking.molten_obsidian_bronze_fluid": "熔融黑曜石青铜",
@@ -219,7 +218,6 @@
   "item.tinkers_thinking.beetron_ingot": "甜菜钢锭",
   "item.tinkers_thinking.beetron_nugget": "甜菜钢粒",
   "block.tinkers_thinking.beetron_block": "甜菜钢块",
-  "block.tinkers_thinking.beetron_block.tooltip": "可用于建造信标基座",
   "fluid.tinkers_thinking.molten_beetron": "熔融甜菜钢",
   "fluid.tinkers_thinking.flowing_molten_beetron": "流动的熔融甜菜钢",
   "block.tinkers_thinking.molten_beetron_fluid": "熔融甜菜钢",
@@ -228,7 +226,6 @@
   "item.tinkers_thinking.echo_bronze_ingot": "回响青铜锭",
   "item.tinkers_thinking.echo_bronze_nugget": "回响青铜粒",
   "block.tinkers_thinking.echo_bronze_block": "回响青铜块",
-  "block.tinkers_thinking.echo_bronze_block.tooltip": "可用于建造信标基座",
   "fluid.tinkers_thinking.molten_echo_bronze": "熔融回响青铜",
   "fluid.tinkers_thinking.flowing_molten_echo_bronze": "流动的熔融回响青铜",
   "block.tinkers_thinking.molten_echo_bronze_fluid": "熔融回响青铜",
@@ -247,6 +244,33 @@
   "fluid.tinkers_thinking.flowing_molten_warden_steel": "流动的熔融监守钢",
   "block.tinkers_thinking.molten_warden_steel_fluid": "熔融监守钢",
   "item.tinkers_thinking.molten_warden_steel_bucket": "熔融监守钢桶",
+
+  "item.tinkers_thinking.shimmerslime_ingot": "微光史莱姆锭",
+  "item.tinkers_thinking.shimmerslime_nugget": "微光史莱姆粒",
+  "block.tinkers_thinking.shimmerslime_block": "微光史莱姆块",
+  "block.tinkers_thinking.shimmerslime_block.tooltip": "可用于建造信标基座",
+  "fluid.tinkers_thinking.molten_shimmerslime": "熔融微光史莱姆",
+  "fluid.tinkers_thinking.flowing_molten_shimmerslime": "流动的熔融微光史莱姆",
+  "block.tinkers_thinking.molten_shimmerslime_fluid": "熔融微光史莱姆",
+  "item.tinkers_thinking.molten_shimmerslime_bucket": "熔融微光史莱姆桶",
+
+  "item.tinkers_thinking.adamantium_ingot": "精金锭",
+  "item.tinkers_thinking.adamantium_nugget": "精金粒",
+  "block.tinkers_thinking.adamantium_block": "精金块",
+  "block.tinkers_thinking.adamantium_block.tooltip": "可用于建造信标基座",
+  "fluid.tinkers_thinking.molten_adamantium": "熔融精金",
+  "fluid.tinkers_thinking.flowing_molten_adamantium": "流动的熔融精金",
+  "block.tinkers_thinking.molten_adamantium_fluid": "熔融精金",
+  "item.tinkers_thinking.molten_adamantium_bucket": "熔融精金桶",
+
+  "fluid.tinkers_thinking.color_liquid": "三色染剂",
+  "fluid.tinkers_thinking.flowing_color_liquid": "流动的三色染剂",
+  "block.tinkers_thinking.color_liquid_fluid": "三色染剂",
+  "item.tinkers_thinking.color_liquid_bucket": "三色染剂桶",
+  "fluid.tinkers_thinking.error_liquid": "错误染剂",
+  "fluid.tinkers_thinking.flowing_error_liquid": "流动的错误染剂",
+  "block.tinkers_thinking.error_liquid_fluid": "错误染剂",
+  "item.tinkers_thinking.error_liquid_bucket": "错误染剂桶",
 
   "item.tinkers_thinking.verdant_frogcroaking": "青翠蛙鸣体",
   "item.tinkers_thinking.ochre_frogcroaking": "赭黄蛙鸣体",
@@ -280,6 +304,11 @@
   "item.tinkers_thinking.narrow_blade_sand_cast": "窄刃沙子铸模",
   "item.tinkers_thinking.narrow_blade_red_sand_cast": "窄刃红沙铸模",
   "item.tinkers_thinking.narrow_blade_cast": "窄刃金质铸模",
+  "pattern.tinkers_thinking.guard": "护手",
+  "item.tinkers_thinking.guard": "护手",
+  "item.tinkers_thinking.guard_sand_cast": "护手沙子铸模",
+  "item.tinkers_thinking.guard_red_sand_cast": "护手红沙铸模",
+  "item.tinkers_thinking.guard_cast": "护手金质铸模",
 
   "item.tinkers_thinking.paxel": "镐尖斧",
   "item.tinkers_thinking.paxel.description": "镐尖斧是一种多功能采掘工具，适用于挖掘各种方块，但对岩石和木头效果最好。\n村民肯定不喜欢这个。",
@@ -346,7 +375,7 @@
 
   "material.tinkers_thinking.black_chocolate": "黑巧克力",
   "material.tinkers_thinking.black_chocolate.flavor": "深色橡木活板门？",
-  "material.tinkers_thinking.black_chocolate.encyclopedia": "每级在攻击命中后有25%概率获得6秒快攻 II，消耗5点耐久度",
+  "material.tinkers_thinking.black_chocolate.encyclopedia": "每级在攻击命中后有25%概率获得6秒急迫，消耗5点耐久度",
 
   "material.tinkers_thinking.white_chocolate": "白巧克力",
   "material.tinkers_thinking.white_chocolate.flavor": "白桦木活板门？",
@@ -364,7 +393,7 @@
   "material.tinkers_thinking.spectre": "幽灵",
   "material.tinkers_thinking.spectre.flavor": "当然，恶魂是用猫做成的",
   "material.tinkers_thinking.spectre.encyclopedia": "攻击使目标获得10秒隐身，每级增加20%对隐身生物的伤害",
-  "material.tinkers_thinking.spectre.armor": "受到伤害后获得10秒隐身,每级隐身期间增加4%抗性",
+  "material.tinkers_thinking.spectre.armor": "受到伤害后获得10秒隐身，每级隐身期间增加4%抗性",
   "material.tinkers_thinking.spectre_compound": "幽灵混合物",
   "material.tinkers_thinking.spectre_compound.flavor": "当然，恶魂是用猫做成的",
   "material.tinkers_thinking.spectre_compound.encyclopedia": "若自身有隐身效果，箭矢的弹射物力量+1，但每次发射减少一半的隐身时间",
@@ -440,11 +469,7 @@
   "material.tinkers_thinking.copshowium": "锞",
   "material.tinkers_thinking.copshowium.flavor": "铜—闪耀—橙色—奇怪—元素",
   "material.tinkers_thinking.copshowium.encyclopedia": "-10%重力，攻击后，§c召唤闪电，伤害为特性等级三倍/§9偶：生成瞬间伤害区域效果云，效果等级与特性等级相同",
-  "material.tinkers_thinking.copshowium.armor": "-10%重力，受到伤害一段时间后触发下列效果，1级时在11秒后触发，后续每级减少1秒§c奇：传送到受到伤害时的位置/§9偶：生命值调整到与受到伤害后相同",
-
-  "material.tinkers_thinking.adamantium": "精金",
-  "material.tinkers_thinking.adamantium.flavor": "你甚至不愿意叫我一声“艾德曼”",
-  "material.tinkers_thinking.adamantium.encyclopedia": "攻击目标后20秒内护甲值+1，1级时至多叠加4层，后续每级增加2层上限",
+  "material.tinkers_thinking.copshowium.armor": "-10%重力，受到伤害一段时间后触发下列效果，全身盔甲上等级之和1级时在11秒后触发，后续每级减少1秒§c奇：传送到受到伤害时的位置/§9偶：生命值调整到与受到伤害后相同",
 
   "material.tinkers_thinking.beetron": "甜菜钢",
   "material.tinkers_thinking.beetron.flavor": "不是血， 这是甜菜汤",
@@ -467,12 +492,12 @@
   "material.tinkers_thinking.warden_steel": "监守钢",
   "material.tinkers_thinking.warden_steel.flavor": "坚持就是胜利",
   "material.tinkers_thinking.warden_steel.encyclopedia": "拥有幽匿能量效果时，杀死生物后延长5秒搏命挣扎效果，效果期间玩家不会死亡，但效果结束后立即死亡",
-  "material.tinkers_thinking.warden_steel.armor":"拥有幽匿能量效果时，受到致命伤害后获得搏命挣扎效果，效果期间玩家不会死亡，但效果结束后立即死亡。1级时持续12秒，后续每级增加3秒",
+  "material.tinkers_thinking.warden_steel.armor":"拥有幽匿能量效果时，受到致命伤害后获得搏命挣扎效果，效果期间玩家不会死亡，但效果结束后立即死亡。全身盔甲上等级之和1级时持续12秒，后续每级增加3秒",
 
   "material.tinkers_thinking.bacium": "锫根",
   "material.tinkers_thinking.bacium.flavor": "野蛮猪的克星",
   "material.tinkers_thinking.bacium.encyclopedia": "对各种猪的伤害+5，并附带虚弱Ⅲ",
-  "material.tinkers_thinking.bacium.armor": "单次受到的伤害不得大于当前生命值的一半，然后冷却12秒",
+  "material.tinkers_thinking.bacium.armor": "单次受到的伤害不得大于当前生命值的一半，然后冷却12秒，全身盔甲上等级之和会减少冷却",
   "material.tinkers_thinking.bacium.ammo": "弹药无视受击后伤害免疫（无敌帧）和凋灵立场",
 
   "material.tinkers_thinking.gilded_silky_cloth": "镀金丝绢",
@@ -480,9 +505,13 @@
   "material.tinkers_thinking.gilded_silky_cloth.encyclopedia": "+2防御槽，但-2护甲",
 
   "material.tinkers_thinking.zith": "铚",
-  "material.tinkers_thinking.zithcolorite.flavor": "别忘了你是怎么获得它的",
+  "material.tinkers_thinking.zith.flavor": "别忘了你是怎么获得它的",
   "material.tinkers_thinking.zith.encyclopedia": "攻击时，若生命值占最大生命值的百分比：你>=目标，每级对目标造成伤害值×12.5%的伤害，否则每级对自己造成伤害值×12.5%的伤害",
   "material.tinkers_thinking.zith.armor": "受到非穿甲伤害后，若生命值占最大生命值的百分比：你>=目标，每级对攻击者造成伤害值×8%的伤害，否则每级对自己造成伤害值×8%的伤害",
+
+  "material.tinkers_thinking.shimmerslime": "微光史莱姆",
+  "material.tinkers_thinking.shimmerslime.flavor": "身为萤火之光，亦当照于天下",
+  "material.tinkers_thinking.shimmerslime.encyclopedia": "增加等同于黏液覆层上限100倍的FE存储，每秒每级将200FE转化为1点黏液覆层",
 
   "material.tinkers_thinking.colorite": "『铯』",
   "material.tinkers_thinking.colorite.flavor": "字面意思",
@@ -492,7 +521,12 @@
   "material.tinkers_thinking.errorite": "『错』",
   "material.tinkers_thinking.errorite.flavor": "交给我渲染你就放心吧",
   "material.tinkers_thinking.errorite.encyclopedia": "攻击时，§c奇：此次攻击额外结算一次/§9偶：若其未死亡，一级时，你获得12秒溃散III效果，后续等级减少溃散时间",
-  "material.tinkers_thinking.errorite.armor": "§c奇：被攻击时，取消之并向前传送一段距离，然后冷却10~60秒（与伤害值和等级相关）/§9偶：无效果",
+  "material.tinkers_thinking.errorite.armor": "§c奇：被攻击时，取消之并向前传送一段距离，然后冷却10~60秒（与伤害值和全身盔甲上等级之和相关）/§9偶：无效果",
+
+  "material.tinkers_thinking.adamantium": "精金",
+  "material.tinkers_thinking.adamantium.flavor": "你甚至不愿意叫我一声“艾德曼”",
+  "material.tinkers_thinking.adamantium.encyclopedia": "攻击目标后20秒内护甲值+1，1级时至多叠加4层，后续每级增加2层上限",
+  "material.tinkers_thinking.adamantium.armor": "被攻击后20秒内护甲值+1，1级时至多叠加4层，后续每级增加2层上限",
 
   "modifier.tinkers_thinking.soft": "柔软",
   "modifier.tinkers_thinking.soft.flavor": "软弱无力",
@@ -782,10 +816,6 @@
   "modifier.tinkers_thinking.lightly_speed.flavor": "几乎没有阻力！",
   "modifier.tinkers_thinking.lightly_speed.description": "提升使用中速度并降低重力",
 
-  "modifier.tinkers_thinking.crimson": "绯色",
-  "modifier.tinkers_thinking.crimson.flavor": "来自那个时代的印记",
-  "modifier.tinkers_thinking.crimson.description": "攻击目标后临时提升护甲值",
-
   "modifier.tinkers_thinking.cataclysm": "激变",
   "modifier.tinkers_thinking.cataclysm.flavor": "炸了你又要红温",
   "modifier.tinkers_thinking.cataclysm.description": "攻击概率令目标获得激变效果",
@@ -835,6 +865,10 @@
   "modifier.tinkers_thinking.sharp_circumstance.flavor": "雪中送炭？倒不如——落井下石",
   "modifier.tinkers_thinking.sharp_circumstance.description": "攻击时，若生命值占最大生命值的百分比：你>=目标，对目标造成额外伤害，否则对自己造成伤害",
 
+  "modifier.tinkers_thinking.overcharge": "强充能",
+  "modifier.tinkers_thinking.overcharge.flavor": "你都充能了些什么？",
+  "modifier.tinkers_thinking.overcharge.description": "根据黏液覆层上限增加FE存储，随时间将FE转化为黏液覆层",
+
   "modifier.tinkers_thinking.redye": "叠染",
   "modifier.tinkers_thinking.redye.flavor": "不要忘记最初的目标",
   "modifier.tinkers_thinking.redye.description": "攻击时，§c奇：若攻击目标与你上一次相同，伤害提升/§9偶：若攻击目标与你上一次不同，也会对上一次的目标造成伤害",
@@ -848,6 +882,10 @@
   "modifier.tinkers_thinking.remisdirection": "双重误导",
   "modifier.tinkers_thinking.remisdirection.flavor": "是的，你看错了",
   "modifier.tinkers_thinking.remisdirection.description": "§c奇：被攻击时，取消之并向前传送一段距离，然后冷却一段时间/§9偶：无效果",
+
+  "modifier.tinkers_thinking.crimson": "绯色",
+  "modifier.tinkers_thinking.crimson.flavor": "来自那个时代的印记",
+  "modifier.tinkers_thinking.crimson.description": "攻击目标后临时提升护甲值",
 
   "effect.tinkers_thinking.overweight": "超重",
   "effect.tinkers_thinking.weightless": "失重",

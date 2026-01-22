@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_adamantium",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:adamantium_block",
+  "cooling_time": 233
+}

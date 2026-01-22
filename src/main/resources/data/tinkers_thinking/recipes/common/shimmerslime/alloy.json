@@ -1,0 +1,17 @@
+{
+  "condition": {
+    "type": "mantle:tag_filled",
+    "tag": "forge:glowstone"
+  },
+  "type": "tconstruct:alloy",
+  "inputs": [
+    { "tag": "forge:molten_zith", "amount":  90 },
+    { "fluid": "tconstruct:ender_slime",   "amount":   250 },
+    { "tag": "forge:glowstone", "amount":  250 }
+  ],
+  "result": {
+    "fluid": "tinkers_thinking:molten_shimmerslime",
+    "amount": 180
+  },
+  "temperature": 1300
+}

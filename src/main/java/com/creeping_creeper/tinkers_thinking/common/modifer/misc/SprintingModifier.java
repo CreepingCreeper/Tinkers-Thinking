@@ -38,31 +38,28 @@ public class SprintingModifier extends SlingModifier implements ModifierUtils {
             player.causeFoodExhaustion(0.2F);
             float charge = getCharge(tool, modifier, timeLeft);
             if (charge > 0) {
-                float multiplier = scaleKnockback(player, charge * 3.5f);
-                if (multiplier > 0) {
-                    float force = SlingForceModifierHook.modifySlingForce(tool, entity, entity, modifier, getPower(tool, player) * multiplier, multiplier);
-                    if (force > 0) {
-                        Vec3 look = player.getLookAngle().add(0, 1, 0).normalize();
-                        Vec3 angle = SlingAngleModifierHook.modifySlingAngle(tool, entity, entity, modifier, force, multiplier, new Vec3((look.x ), 0, (look.z )));
-                        Vec3 velocity = player.getDeltaMovement();
-                        player.setDeltaMovement(velocity.x, 0, velocity.z);
-                        player.push(force * angle.x, 0.02, force * angle.z);
-                        int time = (int) (charge * 20);
-                        addEffect(player, ModEffects.jumpless.get(), time, 0, false);
-                        addEffect(player, ModEffects.weightless.get(),time, 1, false);
-                        SlingLaunchModifierHook.afterSlingLaunch(tool, entity, entity, modifier, force, multiplier, angle);
-                        SlimeBounceHandler.addBounceHandler(player);
-                        if (!level.isClientSide) {
-                            level.playSound(null, player.getX(), player.getY(), player.getZ(), Sounds.SLIME_SLING.getSound(), player.getSoundSource(), 1, 1);
-                            player.causeFoodExhaustion(0.2F);
-                            player.getCooldowns().addCooldown(tool.getItem(), 3);
-                            ToolDamageUtil.damageAnimated(tool, 1, entity);
-                        }
-                        if (ModifierUtil.canPerformAction(tool, TinkerToolActions.DRILL_ATTACK)) {
-                            player.startAutoSpinAttack(20);
-                        }
-                        return;
+                float multiplier = charge * 3.5F;
+                float force = SlingForceModifierHook.modifySlingForce(tool, entity, entity, modifier, this.getPower(tool, player) * multiplier, multiplier);
+                if (force > 0) {
+                    Vec3 look = player.getLookAngle().add(0, 1, 0).normalize();
+                    Vec3 angle = SlingAngleModifierHook.modifySlingAngle(tool, entity, entity, modifier, force, multiplier, new Vec3((look.x ), 0, (look.z )));
+                    Vec3 velocity = player.getDeltaMovement();
+                    player.setDeltaMovement(velocity.x, 0, velocity.z);player.push(force * angle.x, 0.02, force * angle.z);
+                    int time = (int) (charge * 20);
+                    addEffect(player, ModEffects.jumpless.get(), time, 0, false);
+                    addEffect(player, ModEffects.weightless.get(),time, 1, false);
+                    SlingLaunchModifierHook.afterSlingLaunch(tool, entity, entity, modifier, force, multiplier, angle);
+                    SlimeBounceHandler.addBounceHandler(player);
+                    if (!level.isClientSide) {
+                        level.playSound(null, player.getX(), player.getY(), player.getZ(), Sounds.SLIME_SLING.getSound(), player.getSoundSource(), 1, 1);
+                        player.causeFoodExhaustion(0.2F);
+                        player.getCooldowns().addCooldown(tool.getItem(), 3);
+                        ToolDamageUtil.damageAnimated(tool, 1, entity);
                     }
+                    if (ModifierUtil.canPerformAction(tool, TinkerToolActions.DRILL_ATTACK)) {
+                        player.startAutoSpinAttack(20);
+                    }
+                    return;
                 }
             }
         }

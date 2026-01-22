@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": { "item": "tinkers_thinking:tempered_glass" },
+  "result": {
+    "fluid": "tinkers_thinking:molten_tempered_glass",
+    "amount": 1000
+  },
+  "temperature": 550,
+  "time": 130
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "byproducts": [
+    {
+      "fluid": "tinkers_thinking:error_liquid",
+      "amount": 250
+    }
+  ],
+  "input": "tinkers_thinking:errorite",
+  "temperature": 250,
+  "result": {
+    "tag": "tconstruct:molten_zith",
+    "amount": 90
+  }
+}

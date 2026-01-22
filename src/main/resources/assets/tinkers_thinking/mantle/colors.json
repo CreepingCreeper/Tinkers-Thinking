@@ -84,7 +84,13 @@
     "teleport_advanced":  "#A1A1A1",
     "ancient_upgrade":  "#AFB9D6",
     "ancient_ability":  "#652828",
-    "sharp_circumstance": "#f793b1"
+    "sharp_circumstance": "#f793b1",
+    "overcharge": "#fff264",
+    "crimson": "#B80000",
+    "redye": "#E88C08",
+    "recharge": "#E88C08",
+    "repercussion": "#6c006c",
+    "remisdirection": "#6c006c"
   },
   "material.tinkers_thinking": 
   {
@@ -126,7 +132,11 @@
     "solidified_emptiness": "#00E7B5",
     "copshowium": "#FF9727",
     "ancient_ceramic": "#3C8EB0",
-    "zith": "#f793b1"
+    "zith": "#f793b1",
+    "shimmerslime": "#fff264",
+    "adamantium": "#B80000",
+    "colorite": "#E88C08",
+    "errorite": "#6c006c"
   },
   "stat.tconstruct.slot": {
     "ancient": "#3C8EB0"

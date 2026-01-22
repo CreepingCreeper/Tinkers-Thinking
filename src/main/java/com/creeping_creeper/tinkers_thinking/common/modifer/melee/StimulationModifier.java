@@ -24,7 +24,7 @@ public class StimulationModifier extends Modifier implements MeleeHitModifierHoo
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack() && context.isFullyCharged() && RANDOM.nextFloat() < 0.25) {
             LivingEntity attacker = context.getAttacker();
-            addEffect(attacker, ModEffects.quick_attack.get(), 120 * modifier.getLevel(), 1);
+            addEffect(attacker, MobEffects.DIG_SPEED, 120 * modifier.getLevel());
             ToolDamageUtil.directDamage(tool,  modifier.getLevel() * 5, attacker, attacker.getUseItem());
         }
     }

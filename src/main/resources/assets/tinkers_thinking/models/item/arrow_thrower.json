@@ -1,47 +1,36 @@
 {
   "loader": "tconstruct:tool",
-  "parent": "tconstruct:item/base/bow",
+  "parent": "tconstruct:item/base/tall",
   "textures": {
-    "grip_bottom":      "tinkers_thinking:item/tool/arrow_thrower/grip_bottom_1",
-    "grip_top":         "tinkers_thinking:item/tool/arrow_thrower/grip_top_1",
-    "limb":             "tinkers_thinking:item/tool/arrow_thrower/limb_1"  },
+    "grip_top":         "tinkers_thinking:item/tool/atlatl/grip_top",
+    "grip_bottom":      "tinkers_thinking:item/tool/atlatl/grip_bottom",
+    "limb":             "tinkers_thinking:item/tool/atlatl/limb",
+    "bowstring":             "tinkers_thinking:item/tool/atlatl/bowstring",
+
+    "large_grip_top":         "tinkers_thinking:item/tool/atlatl/large/grip_top",
+    "large_grip_bottom":      "tinkers_thinking:item/tool/atlatl/large/grip_bottom",
+    "large_limb":             "tinkers_thinking:item/tool/atlatl/large/limb",
+    "large_bowstring":             "tinkers_thinking:item/tool/atlatl/large/bowstring" },
   "parts": [
-    { "name": "grip_bottom", "index": 1 },
-    { "name": "grip_top",    "index": 1 },
-    { "name": "limb",        "index": 2  }
+    { "name": "grip_top", "index": 0 },
+    { "name": "grip_bottom",    "index": 2 },
+    { "name": "limb",        "index": 1 },
+    { "name": "bowstring",        "index": 3 }
   ],
+  "large": true,
+  "large_offset": [-8, 4],
   "overrides": [
     {
       "predicate": { "tconstruct:charging": 1 },
-      "model": "tinkers_thinking:item/arrow_thrower/pulling_1"
+      "model": "tinkers_thinking:item/atlatl/pulling"
     },
     {
-      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.6 },
-      "model": "tinkers_thinking:item/arrow_thrower/pulling_2"
-    },
-    {
-      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 1.0 },
-      "model": "tinkers_thinking:item/arrow_thrower/pulling_3"
-    },
-    {
-      "predicate": { "tconstruct:charging": 2 },
-      "model": "tinkers_thinking:item/arrow_thrower/blocking"
-    },
-    {
-      "predicate": { "tconstruct:charging": 2 ,"tconstruct:charge": 0.05},
-      "model": "tinkers_thinking:item/arrow_thrower/blocking_1"
-    },
-    {
-      "predicate": { "tconstruct:charging": 2 ,"tconstruct:charge": 0.6},
-      "model": "tinkers_thinking:item/arrow_thrower/blocking_2"
-    },
-    {
-      "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 1.0},
-      "model": "tinkers_thinking:item/arrow_thrower/blocking_3"
+      "predicate": { "tconstruct:charging": 2},
+      "model": "tinkers_thinking:item/atlatl/blocking"
     },
     {
       "predicate": { "tconstruct:broken": 1 },
-      "model": "tinkers_thinking:item/broken/arrow_thrower"
+      "model": "tinkers_thinking:item/atlatl/broken"
     }
   ]
 }

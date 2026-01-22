@@ -1,20 +1,15 @@
- {
-   "conditions": [
-        {
-          "value": {
-            "tag": "forge:molten_titanium",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:true"
-        }
-      ],
-          "type": "tconstruct:casting_table",
-          "cast": { "item": "minecraft:phantom_membrane" },
-          "cast_consumed": true,
-          "fluid": {
-            "tag": "forge:molten_iron",
-            "amount": 180
-          },
-          "result": "tinkers_thinking:lightite_compound",
-          "cooling_time": 45
+{
+  "condition": {
+    "type": "forge:tag_empty",
+    "tag": "forge:molten_titanium"
+  },
+  "type": "tconstruct:casting_table",
+  "cast": { "item": "minecraft:phantom_membrane" },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "forge:molten_iron",
+    "amount": 180
+  },
+  "result": "tinkers_thinking:lightite_compound",
+  "cooling_time": 45
 }

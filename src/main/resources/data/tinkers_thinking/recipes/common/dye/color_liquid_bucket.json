@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tconstruct:venom_bucket"
+    },
+    {
+      "item": "tinkers_thinking:chromatic_crystal"
+    },
+    {
+      "tag": "forge:dusts/redstone"
+    },
+    {
+      "tag": "forge:dusts/glowstone"
+    },
+    {
+      "tag": "forge:gems/lapis"
+    }
+  ],
+  "result": {
+    "item": "tinkers_thinking:color_liquid_bucket",
+    "count": 1
+  }
+}

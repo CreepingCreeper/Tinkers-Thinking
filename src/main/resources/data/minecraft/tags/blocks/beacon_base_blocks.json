@@ -1,15 +1,14 @@
 {
   "values": [
     "tinkers_thinking:ardite_block",
-    "tinkers_thinking:tinkers_bronze_block",
     "tinkers_thinking:lightite_block",
     "tinkers_thinking:chlorophyte_block",
     "tinkers_thinking:spectre_block",
     "tinkers_thinking:shroomite_block",
-    "tinkers_thinking:obsidian_bronze_block",
     "tinkers_thinking:electrical_steel_block",
-    "tinkers_thinking:beetron_block",
-    "tinkers_thinking:echo_bronze_block",
-    "tinkers_thinking:warden_steel_block"
+    "tinkers_thinking:warden_steel_block",
+    "tinkers_thinking:zith_block",
+    "tinkers_thinking:shimmerslime_block",
+    "tinkers_thinking:adamantium_block"
   ]
 }

@@ -32,7 +32,7 @@ public class ClientEvents {
             TinkerItemProperties.registerToolProperties(ModToolItems.knife.asItem());
             TinkerItemProperties.registerToolProperties(ModToolItems.mace.asItem());
             TinkerItemProperties.registerToolProperties(ModToolItems.cutlass.asItem());
-            TinkerItemProperties.registerToolProperties(ModToolItems.arrow_thrower.asItem());
+            TinkerItemProperties.registerToolProperties(ModToolItems.atlatl.asItem());
             TinkerItemProperties.registerToolProperties(ModToolItems.magma_staff.asItem());
             TinkerItemProperties.registerToolProperties(ModToolItems.quartz_staff.asItem());
             TinkerItemProperties.registerToolProperties(ModToolItems.clay_staff.asItem());

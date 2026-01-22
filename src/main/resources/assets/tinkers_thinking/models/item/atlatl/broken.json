@@ -1,0 +1,23 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/tall",
+  "textures": {
+    "grip_top":         "tinkers_thinking:item/tool/atlatl/grip_top",
+    "grip_bottom":      "tinkers_thinking:item/tool/atlatl/grip_bottom",
+    "limb":             "tinkers_thinking:item/tool/atlatl/limb",
+    "bowstring":             "tinkers_thinking:item/tool/atlatl/bowstring_broken",
+
+    "large_grip_top":         "tinkers_thinking:item/tool/atlatl/large/grip_top",
+    "large_grip_bottom":      "tinkers_thinking:item/tool/atlatl/large/grip_bottom",
+    "large_limb":             "tinkers_thinking:item/tool/atlatl/large/limb",
+    "large_bowstring":             "tinkers_thinking:item/tool/atlatl/large/bowstring_broken"
+  },
+  "parts": [
+    { "name": "grip_top", "index": 0 },
+    { "name": "grip_bottom",    "index": 2 },
+    { "name": "limb",        "index": 1 },
+    { "name": "bowstring",        "index": 3 }
+  ],
+  "large": true,
+  "large_offset": [-8, 4]
+}

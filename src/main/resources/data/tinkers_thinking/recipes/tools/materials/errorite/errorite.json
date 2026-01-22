@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tinkers_thinking:zith",
+  "fluid": {
+    "fluid": "tinkers_thinking:error_liquid",
+    "amount": 250
+  },
+  "temperature": 250,
+  "output": "tinkers_thinking:errorite"
+}

@@ -9,8 +9,17 @@
      {
       "icon": "tconstruct:bow_grip",
       "translation_key": "item.tconstruct.bow_grip",
-      "x": 25,
-      "y": 30,
+      "x": 15,
+      "y": 20,
+      "filter": {
+        "item": "tconstruct:bow_grip"
+      }
+    },
+    {
+      "icon": "tconstruct:bow_grip",
+      "translation_key": "item.tconstruct.bow_grip",
+      "x": 35,
+      "y": 40,
       "filter": {
         "item": "tconstruct:bow_grip"
       }
@@ -18,19 +27,19 @@
     {
       "icon": "tconstruct:bow_limb",
       "translation_key": "item.tconstruct.bow_limb",
-      "x": 45,
-      "y": 50,
+      "x": 55,
+      "y": 60,
       "filter": {
         "item": "tconstruct:bow_limb"
       }
     },
     {
-      "icon": "tconstruct:bow_grip",
-      "translation_key": "item.tconstruct.bow_grip",
-      "x": 65,
-      "y": 70,
+      "icon": "tconstruct:bowstring",
+      "translation_key": "item.tconstruct.bowstring",
+      "x": 55,
+      "y": 40,
       "filter": {
-        "item": "tconstruct:bow_grip"
+        "item": "tconstruct:bowstring"
       }
     }
   ]

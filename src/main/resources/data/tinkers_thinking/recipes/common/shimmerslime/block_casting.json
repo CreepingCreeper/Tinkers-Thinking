@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "tinkers_thinking:molten_shimmerslime",
+    "amount": 810
+  },
+  "result": "tinkers_thinking:shimmerslime_block",
+  "cooling_time": 225
+}

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_thinking:narrow_blade_red_sand_cast"
+    "tinkers_thinking:narrow_blade_red_sand_cast",
+    "tinkers_thinking:guard_red_sand_cast"
   ]
 }

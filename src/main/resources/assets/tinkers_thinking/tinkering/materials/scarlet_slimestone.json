@@ -1,5 +1,6 @@
 {
   "fallbacks": [
+    "slime_wood",
     "crystal"
   ],
   "color": "A52548",

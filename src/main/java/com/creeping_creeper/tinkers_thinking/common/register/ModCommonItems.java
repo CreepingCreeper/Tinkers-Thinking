@@ -15,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.object.*;
 import slimeknights.tconstruct.shared.block.ClearGlassPaneBlock;
 import slimeknights.tconstruct.shared.block.PlatformBlock;
+import slimeknights.tconstruct.shared.block.SlimesteelBlock;
 import slimeknights.tconstruct.world.TinkerWorld;
 
 import static net.minecraft.world.level.block.SoundType.*;
@@ -48,18 +49,19 @@ public class ModCommonItems extends ModModule {
 
     //Metal Materials
     public static final MetalItemObject ardite = BLOCKS.registerMetal("ardite", builder( MapColor.COLOR_ORANGE, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30.0f,1200), FIRE_TOOLTIP_BLOCK_ITEM, FIRE_PROPS);
-    public static final MetalItemObject tinkers_bronze = BLOCKS.registerMetal("tinkers_bronze", metalBuilder(MapColor.COLOR_YELLOW), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
+    public static final MetalItemObject tinkers_bronze = BLOCKS.registerMetal("tinkers_bronze", metalBuilder(MapColor.COLOR_YELLOW), GENERAL_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject lightite = BLOCKS.registerMetal("lightite", metalBuilder(MapColor.COLOR_LIGHT_GRAY), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject chlorophyte = BLOCKS.registerMetal("chlorophyte", metalBuilder(MapColor.COLOR_GREEN), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject spectre = BLOCKS.registerMetal("spectre", metalBuilder(MapColor.COLOR_LIGHT_BLUE), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject shroomite = BLOCKS.registerMetal("shroomite", metalBuilder(MapColor.COLOR_BLUE), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
-    public static final MetalItemObject obsidian_bronze = BLOCKS.registerMetal("obsidian_bronze", metalBuilder(MapColor.COLOR_BROWN), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
+    public static final MetalItemObject obsidian_bronze = BLOCKS.registerMetal("obsidian_bronze", metalBuilder(MapColor.COLOR_BROWN), GENERAL_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject electrical_steel = BLOCKS.registerMetal("electrical_steel", metalBuilder(MapColor.COLOR_GRAY), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject beetron = BLOCKS.registerMetal("beetron", metalBuilder(MapColor.COLOR_RED), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
-    public static final MetalItemObject echo_bronze = BLOCKS.registerMetal("echo_bronze", builder(MapColor.COLOR_BLACK, SoundType.SCULK).requiresCorrectToolForDrops().strength(5f,200), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
+    public static final MetalItemObject echo_bronze = BLOCKS.registerMetal("echo_bronze", builder(MapColor.COLOR_BLACK, SoundType.SCULK).requiresCorrectToolForDrops().strength(5f,200), GENERAL_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject warden_steel = BLOCKS.registerMetal("warden_steel", builder(MapColor.COLOR_BLACK, SoundType.SCULK).requiresCorrectToolForDrops().strength(10f,500), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject zith = BLOCKS.registerMetal("zith", builder( COLOR_PINK, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30.0f,1200), FIRE_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
-
+    public static final MetalItemObject shimmerslime = BLOCKS.registerMetal("shimmerslime", () -> new SlimesteelBlock(metalBuilder(COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK).noOcclusion().lightLevel((p_50886_) -> 7)), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
+    public static final MetalItemObject adamantium = BLOCKS.registerMetal("adamantium", builder(COLOR_RED, NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(10f,500), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     //Other Materials
     public static final ItemObject<Block> ardite_ore = BLOCKS.register("ardite_ore", () -> new Block(builder(MapColor.NETHER, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f,1200)), FIRE_BLOCK_ITEM);
     public static final ItemObject<Block> raw_ardite_block = BLOCKS.register("raw_ardite_block", () -> new Block(builder(MapColor.COLOR_ORANGE, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f,1200)), FIRE_BLOCK_ITEM);
@@ -163,6 +165,8 @@ public class ModCommonItems extends ModModule {
         accept(output, echo_bronze);
         accept(output, warden_steel);
         accept(output, zith);
+        accept(output, shimmerslime);
+        accept(output, adamantium);
         output.accept(ancient_ceramic);
         output.accept(ancient_ceramic_block);
 
@@ -247,13 +251,18 @@ public class ModCommonItems extends ModModule {
         output.accept(ModFluids.molten_echo_bronze);
         output.accept(ModFluids.molten_warden_steel);
         output.accept(ModFluids.molten_zith);
+        output.accept(ModFluids.molten_shimmerslime);
+        output.accept(ModFluids.molten_adamantium);
+
         output.accept(ModFluids.molten_tempered_glass);
         output.accept(ModFluids.molten_ancient_ceramic);
         output.accept(ModFluids.reburn_ashes);
         output.accept(ModFluids.molten_echo);
         output.accept(ModFluids.liquid_sculk_power);
-        output.accept(ModFluids.chillslime);
         output.accept(ModFluids.scarletslime);
+        output.accept(ModFluids.chillslime);
+        output.accept(ModFluids.color_liquid);
+        output.accept(ModFluids.error_liquid);
         output.accept(ModFluids.syrup);
         output.accept(ModFluids.pulp);
         output.accept(ModFluids.emptiness);

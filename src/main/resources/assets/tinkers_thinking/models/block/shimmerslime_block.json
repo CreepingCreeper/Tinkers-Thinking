@@ -1,0 +1,24 @@
+{
+  "loader": "forge:composite",
+  "parent": "block/block",
+  "textures": {
+    "particle": "tinkers_thinking:block/shimmerslime"
+  },
+  "children": {
+    "metal": {
+      "render_type": "minecraft:solid",
+      "parent": "tconstruct:block/template/cube_all_14",
+      "textures": {
+        "all": "tinkers_thinking:block/shimmerslime_zith"
+      }
+    },
+    "slime": {
+      "render_type": "minecraft:translucent",
+      "parent": "block/cube_all",
+      "textures": {
+        "all": "tinkers_thinking:block/shimmerslime_slime"
+      }
+    }
+  }
+}
+

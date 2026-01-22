@@ -1,6 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.register;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
+import com.creeping_creeper.tinkers_thinking.common.things.item.ModifiableAtlatlItem;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModifiableRepeatingCrossbowItem;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ToolDefinitions;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,6 +18,7 @@ import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.item.ModifiableSwordItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -31,7 +33,7 @@ public class ModToolItems extends ModModule {
     //Tools
     public static final ItemObject<ModifiableItem> paxel = ITEMS.register( "paxel", () -> new ModifiableItem(Stack1Item, ToolDefinitions.PAXEL));
     public static final ItemObject<ModifiableItem>  knife = ITEMS.register( "knife", () -> new ModifiableItem(Stack1Item, ToolDefinitions.KNIFE));
-    public static final ItemObject<ModifiableBowItem> arrow_thrower = ITEMS.register("arrow_thrower", () -> new ModifiableBowItem(Stack1Item,  ToolDefinitions.ARROW_THROWER,true));
+    public static final ItemObject<ModifiableBowItem> atlatl = ITEMS.register("arrow_thrower", () -> new ModifiableAtlatlItem(Stack1Item,  ToolDefinitions.Atlatl, true));
     public static final ItemObject<ModifiableItem>  mace = ITEMS.register( "mace", () -> new ModifiableItem(Stack1Item, ToolDefinitions.MACE));
     public static final ItemObject<ModifiableSwordItem> cutlass = ITEMS.register( "cutlass", () -> new ModifiableSwordItem(Stack1Item, ToolDefinitions.CUTLASS));
     public static final ItemObject<ModifiableRepeatingCrossbowItem>  repeating_crossbow = ITEMS.register( "repeating_crossbow", () -> new ModifiableRepeatingCrossbowItem(Stack1Item,ToolDefinitions.REPEATING_CROSSBOW));
@@ -42,7 +44,10 @@ public class ModToolItems extends ModModule {
     public static final ItemObject<ModifiableItem> tinkers_bronze_bucket = ITEMS.register("tinkers_bronze_bucket", () -> new ModifiableItem(Stack1Item, ToolDefinitions.TINKERS_BRONZE_BUCKET));
     public static final ItemObject<ModifiableItem> battle_bucket = ITEMS.register("battle_bucket", () -> new ModifiableItem(Stack1Item.fireResistant(), ToolDefinitions.BATTLE_BUCKET));
     public static final ItemObject<ToolPartItem> narrow_blade = ITEMS.register("narrow_blade", () -> new ToolPartItem(GENERAL_PROPS, HeadMaterialStats.ID));
-    public static final CastItemObject narrow_blade_cast = ITEMS.registerCast(narrow_blade,GENERAL_PROPS);
+    public static final ItemObject<ToolPartItem> guard = ITEMS.register("guard", () -> new ToolPartItem(GENERAL_PROPS, PlatingMaterialStats.SHIELD.getId()));
+
+    public static final CastItemObject narrow_blade_cast = ITEMS.registerCast(narrow_blade, GENERAL_PROPS);
+    public static final CastItemObject guard_cast = ITEMS.registerCast(guard, GENERAL_PROPS);
     @Deprecated(forRemoval = true)
     public static final ItemObject<Item> seeking_arrow = ITEMS.register("seeking_arrow", GENERAL_PROPS);
     @Deprecated(forRemoval = true)
@@ -51,7 +56,7 @@ public class ModToolItems extends ModModule {
         Consumer<ItemStack> tab = output::accept;
         acceptTool(tab,paxel);
         acceptTool(tab,knife);
-        acceptTool(tab,arrow_thrower);
+        acceptTool(tab,atlatl);
         acceptTool(tab,mace);
         acceptTool(tab,cutlass);
         acceptTool(tab,repeating_crossbow);
@@ -62,9 +67,13 @@ public class ModToolItems extends ModModule {
         acceptTool(tab,tinkers_bronze_bucket);
         acceptTool(tab,battle_bucket);
         acceptPart(tab,narrow_blade);
+        acceptPart(tab,guard);
         tab.accept(narrow_blade_cast.get().getDefaultInstance());
         tab.accept(narrow_blade_cast.getSand().getDefaultInstance());
         tab.accept(narrow_blade_cast.getRedSand().getDefaultInstance());
+        tab.accept(guard_cast.get().getDefaultInstance());
+        tab.accept(guard_cast.getSand().getDefaultInstance());
+        tab.accept(guard_cast.getRedSand().getDefaultInstance());
     }
     private static void acceptTool(Consumer<ItemStack> output, Supplier<? extends IModifiable> tool) {
         ToolBuildHandler.addVariants(output, tool.get(),"");

@@ -14,6 +14,8 @@
     "#forge:storage_blocks/echo_bronze",
     "#forge:storage_blocks/beetron",
     "#forge:storage_blocks/warden_steel",
-    "#forge:storage_blocks/zith"
+    "#forge:storage_blocks/zith",
+    "#forge:storage_blocks/shimmerslime",
+    "#forge:storage_blocks/adamantium"
   ]
 }
