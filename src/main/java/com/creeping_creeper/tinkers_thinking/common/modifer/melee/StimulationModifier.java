@@ -1,7 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
-import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
