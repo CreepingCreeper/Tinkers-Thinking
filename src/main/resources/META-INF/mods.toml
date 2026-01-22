@@ -30,7 +30,7 @@ side="BOTH"
 [[dependencies.tinkers_thinking]]
 modId="tconstruct"
 mandatory=true
-versionRange="[3.11.1.158,)"
+versionRange="[3.11.2.166,)"
 ordering = "AFTER"
 side="BOTH"
 
