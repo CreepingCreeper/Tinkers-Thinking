@@ -459,8 +459,8 @@
 
   "material.tinkers_thinking.ancient_ceramic": "Ancient Ceramic",
   "material.tinkers_thinking.ancient_ceramic.flavor": "The 'soul' of tools originates from ancient earth and civilizations",
-  "material.tinkers_thinking.ancient_ceramic.encyclopedia": "While under the Sculk Power effect, each level generates 1 Soul Shard A after attacking. Picking up a shard restores 2 health and grants Resistance III for 3 seconds (non-stacking). Targets are immune to this trait for 10 seconds",
-  "material.tinkers_thinking.ancient_ceramic.armor": "While under the Sculk Power effect, each level generates 1 Soul Shard B after taking damage. Picking up a shard restores 2 health and grants Haste III for 3 seconds (non-stacking). Targets are immune to this trait for 10 seconds",
+  "material.tinkers_thinking.ancient_ceramic.encyclopedia": "While under the Sculk Power effect, each level generates 1 Soul Shard A after attacking. Picking up a shard restores 2 health and grants Resistance III for 3 seconds (non-stacking). The chance is always 20%",
+  "material.tinkers_thinking.ancient_ceramic.armor": "While under the Sculk Power effect, each level generates 1 Soul Shard B after taking damage. Picking up a shard restores 2 health and grants Haste III for 3 seconds (non-stacking). The chance is always 20%",
 
   "material.tinkers_thinking.solidified_emptiness": "Solidified Emptiness",
   "material.tinkers_thinking.solidified_emptiness.flavor": "Don't even think about staying out of this",
@@ -842,7 +842,7 @@
 
   "modifier.tinkers_thinking.sculk_siphon": "Sculk Siphon",
   "modifier.tinkers_thinking.sculk_siphon.flavor": "...Come, soul!",
-  "modifier.tinkers_thinking.sculk_siphon.description": "When under the Sculk Energy effect, attacking or being attacked generates soul shards. Picking up shards restores health and grants buffs. Targets are immune to this trait for a period of time",
+  "modifier.tinkers_thinking.sculk_siphon.description": "When under the Sculk Energy effect, attacking or being attacked may generates soul shards. Picking up shards restores health and grants buffs.",
 
   "modifier.tinkers_thinking.reverse": "§cRev§9erse",
   "modifier.tinkers_thinking.reverse.flavor": "§cCycle §9repeats",

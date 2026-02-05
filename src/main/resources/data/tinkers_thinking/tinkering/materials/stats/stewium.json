@@ -26,25 +26,25 @@
       "melee_damage": 2.5
     },
     "tconstruct:plating_boots": {
-      "armor": 3.5,
+      "armor": 3,
       "durability": 624,
       "toughness": 1.5,
       "knockback_resistance": 0.05
     },
     "tconstruct:plating_chestplate": {
-      "armor": 7.5,
+      "armor": 8,
       "durability": 768,
       "toughness": 1.5,
       "knockback_resistance": 0.05
     },
     "tconstruct:plating_helmet": {
-      "armor": 3.5,
+      "armor": 3,
       "durability": 528,
       "toughness": 1.5,
       "knockback_resistance": 0.05
     },
     "tconstruct:plating_leggings": {
-      "armor": 5.5,
+      "armor": 6,
       "durability": 720,
       "toughness": 1.5,
       "knockback_resistance": 0.05

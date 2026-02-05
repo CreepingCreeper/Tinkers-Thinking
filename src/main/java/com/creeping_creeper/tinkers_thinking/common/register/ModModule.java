@@ -20,7 +20,7 @@ import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class ModModule {
+public abstract class ModModule {
     protected static final BlockDeferredRegisterExtension BLOCKS = new BlockDeferredRegisterExtension(TinkersThinking.MODID);
     protected static final ItemDeferredRegisterExtension ITEMS = new ItemDeferredRegisterExtension(TinkersThinking.MODID);
     protected static final FluidDeferredRegisterExtension FLUIDS = new FluidDeferredRegisterExtension(TinkersThinking.MODID);

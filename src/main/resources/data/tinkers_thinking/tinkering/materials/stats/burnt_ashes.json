@@ -27,22 +27,26 @@
     },
     "tconstruct:plating_boots": {
       "armor": 2.5,
-      "durability": 468,
+      "durability": 299,
       "knockback_resistance": 0.10
     },
     "tconstruct:plating_chestplate": {
       "armor": 6.5,
-      "durability": 576,
+      "durability": 368,
       "knockback_resistance": 0.10
     },
     "tconstruct:plating_helmet": {
       "armor": 2.5,
-      "durability": 396,
+      "durability": 253,
       "knockback_resistance": 0.10
     },
     "tconstruct:plating_leggings": {
       "armor": 4.5,
-      "durability": 540,
+      "durability": 345,
+      "knockback_resistance": 0.10
+    },
+    "tconstruct:plating_shield": {
+      "durability": 414,
       "knockback_resistance": 0.10
     }
   }

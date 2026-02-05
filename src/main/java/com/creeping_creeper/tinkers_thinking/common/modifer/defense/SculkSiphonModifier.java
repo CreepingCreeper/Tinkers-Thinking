@@ -5,6 +5,7 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
@@ -30,22 +31,22 @@ public class SculkSiphonModifier extends Modifier implements MeleeHitModifierHoo
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity living = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
-        if (context.isFullyCharged()&&!context.isExtraAttack()&&attacker.hasEffect(ModEffects.sculk_power.get())&&living != null&&!living.hasEffect(ModEffects.modifier_immune.get())){
+        if (context.isFullyCharged() && !context.isExtraAttack() && attacker.hasEffect(ModEffects.sculk_power.get()) && living != null && RANDOM.nextFloat() < 0.2){
             dropItem(living,ModCommonItems.soul_shard_a.get(), modifier.getLevel());
         }
     }
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, net.minecraft.world.entity.EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
-       if (context.getEntity().hasEffect(ModEffects.sculk_power.get())&&source.getEntity() instanceof LivingEntity living&& living.isAlive() && !living.hasEffect(ModEffects.modifier_immune.get())){
-           dropItem(living,ModCommonItems.soul_shard_b.get(), modifier.getLevel());
+        Entity entity = source.getEntity();
+        if (context.getEntity().hasEffect(ModEffects.sculk_power.get()) && entity != null && entity.isAlive() && RANDOM.nextFloat() < 0.2){
+           dropItem(entity,ModCommonItems.soul_shard_b.get(), modifier.getLevel());
        }
         return amount;
     }
-    private void dropItem(LivingEntity living, Item item, int x){
+    private void dropItem(Entity living, Item item, int x){
         ItemEntity itementity = new ItemEntity(living.level(), living.getX(), living.getY(), living.getZ(), new ItemStack(item,x));
         itementity.setPickUpDelay(10);
         itementity.lifespan = 600;
         living.level().addFreshEntity(itementity);
-        addEffect(living,ModEffects.modifier_immune.get(),200);
     }
 }

@@ -3,7 +3,7 @@
   "modules": [
     {
       "type": "tconstruct:stat_boost",
-      "flat": 30,
+      "each_level": 30,
       "operation": "add",
       "stat": "tconstruct:block_angle"
     }

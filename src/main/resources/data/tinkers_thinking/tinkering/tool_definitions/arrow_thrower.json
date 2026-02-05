@@ -2,7 +2,6 @@
   "modules": [
     {
       "type": "tconstruct:part_stats",
-      "primary_part": 0,
       "parts": [
         "tconstruct:bow_grip",
         "tconstruct:bow_limb",
@@ -36,7 +35,6 @@
       "stats": {
         "tconstruct:accuracy": 0.65,
         "tconstruct:velocity": 1.35,
-        "tconstruct:projectile_damage": 0.65,
         "tconstruct:durability": 125,
         "tconstruct:use_item_speed": 0.60
       }
@@ -45,6 +43,7 @@
       "type": "tconstruct:multiply_stats",
       "multipliers": {
         "tconstruct:draw_speed": 1.80,
+        "tconstruct:projectile_damage": 0.65,
         "tconstruct:durability": 2.25
       }
     },

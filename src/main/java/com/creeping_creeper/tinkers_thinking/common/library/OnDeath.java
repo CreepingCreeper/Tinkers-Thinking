@@ -37,12 +37,14 @@ public class OnDeath implements ModifierUtils {
                 Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
                 dataCap.ifPresent(data -> {
                     int level = data.get(ModDataKeys.SculkStruggle, 0);
-                    if (level > 0&& player.hasEffect(ModEffects.sculk_power.get())) {
+                    if (level > 0 && player.hasEffect(ModEffects.sculk_power.get())) {
                         event.setCanceled(true);
                         player.setHealth(1);
                         block(living);
                         player.addEffect(new MobEffectInstance(ModEffects.last_effort.get(), level * 60 + 180, 1));
-                        Minecraft.getInstance().gameRenderer.displayItemActivation(ModCommonItems.warden_steel.getIngot().getDefaultInstance());
+                        if(player.level().isClientSide){
+                            Minecraft.getInstance().gameRenderer.displayItemActivation(ModCommonItems.warden_steel.getIngot().getDefaultInstance());
+                        }
                     }
                 });
             }

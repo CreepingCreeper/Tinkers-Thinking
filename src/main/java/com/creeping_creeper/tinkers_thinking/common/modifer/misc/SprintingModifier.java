@@ -44,7 +44,8 @@ public class SprintingModifier extends SlingModifier implements ModifierUtils {
                     Vec3 look = player.getLookAngle().add(0, 1, 0).normalize();
                     Vec3 angle = SlingAngleModifierHook.modifySlingAngle(tool, entity, entity, modifier, force, multiplier, new Vec3((look.x ), 0, (look.z )));
                     Vec3 velocity = player.getDeltaMovement();
-                    player.setDeltaMovement(velocity.x, 0, velocity.z);player.push(force * angle.x, 0.02, force * angle.z);
+                    player.setDeltaMovement(velocity.x, 0, velocity.z);
+                    player.push(force * angle.x, 0.02f, force * angle.z);
                     int time = (int) (charge * 20);
                     addEffect(player, ModEffects.jumpless.get(), time, 0, false);
                     addEffect(player, ModEffects.weightless.get(),time, 1, false);

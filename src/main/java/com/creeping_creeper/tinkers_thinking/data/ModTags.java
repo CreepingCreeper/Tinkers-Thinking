@@ -6,8 +6,6 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
-import slimeknights.tconstruct.common.TinkerTags;
 
 import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 import static slimeknights.mantle.Mantle.commonResource;

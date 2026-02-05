@@ -459,8 +459,8 @@
 
   "material.tinkers_thinking.ancient_ceramic": "远古陶瓷",
   "material.tinkers_thinking.ancient_ceramic.flavor": "工具之“魂”源于远古的大地和文明",
-  "material.tinkers_thinking.ancient_ceramic.encyclopedia": "拥有幽匿能量效果时，攻击后每级产生1个灵魂碎片A，每捡起1个回复自身2点生命，并获得3秒抗性提升Ⅲ（不叠加），目标在10秒内免疫此特性",
-  "material.tinkers_thinking.ancient_ceramic.armor": "拥有幽匿能量效果时，被攻击后每级产生1个灵魂碎片B，每捡起1个回复自身2点生命，并获得3秒急迫Ⅲ（不叠加），目标在10秒内免疫此特性",
+  "material.tinkers_thinking.ancient_ceramic.encyclopedia": "拥有幽匿能量效果时，攻击后每级产生1个灵魂碎片A，每捡起1个回复自身2点生命，并获得3秒抗性提升Ⅲ（不叠加），概率固定为20%",
+  "material.tinkers_thinking.ancient_ceramic.armor": "拥有幽匿能量效果时，被攻击后每级产生1个灵魂碎片B，每捡起1个回复自身2点生命，并获得3秒急迫Ⅲ（不叠加），概率固定为20%",
 
   "material.tinkers_thinking.solidified_emptiness": "固化空无",
   "material.tinkers_thinking.solidified_emptiness.flavor": "休想置身事外",
@@ -842,7 +842,7 @@
 
   "modifier.tinkers_thinking.sculk_siphon": "幽匿汲取",
   "modifier.tinkers_thinking.sculk_siphon.flavor": "...魂来！",
-  "modifier.tinkers_thinking.sculk_siphon.description": "拥有幽匿能量效果时，攻击或被攻击产生灵魂碎片，捡起后回复自身生命并获得增益效果，目标在一段时间内免疫此特性",
+  "modifier.tinkers_thinking.sculk_siphon.description": "拥有幽匿能量效果时，攻击或被攻击可能产生灵魂碎片，捡起后回复自身生命并获得增益效果",
 
   "modifier.tinkers_thinking.reverse": "§c逆§9变",
   "modifier.tinkers_thinking.reverse.flavor": "§c循环§9往复",

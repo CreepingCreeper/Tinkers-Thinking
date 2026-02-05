@@ -16,21 +16,21 @@
       }
     },
     {
-      "icon": "tconstruct:bow_grip",
-      "translation_key": "item.tconstruct.bow_grip",
-      "x": 35,
-      "y": 40,
-      "filter": {
-        "item": "tconstruct:bow_grip"
-      }
-    },
-    {
       "icon": "tconstruct:bow_limb",
       "translation_key": "item.tconstruct.bow_limb",
       "x": 55,
       "y": 60,
       "filter": {
         "item": "tconstruct:bow_limb"
+      }
+    },
+    {
+      "icon": "tconstruct:bow_grip",
+      "translation_key": "item.tconstruct.bow_grip",
+      "x": 35,
+      "y": 40,
+      "filter": {
+        "item": "tconstruct:bow_grip"
       }
     },
     {
