@@ -4,6 +4,6 @@
     "fluid": "tinkers_thinking:molten_warden_steel",
     "amount": 90
   },
-  "temperature": 750,
+  "temperature": 1100,
   "output": "tinkers_thinking:warden_steel"
 }
