@@ -10,7 +10,7 @@
     "tconstruct:head": {
       "durability": 1200,
       "mining_speed": 4,
-      "mining_tier": "minecraft:diamond",
+      "mining_tier": "minecraft:netherite",
       "melee_attack": 2.5
     },
     "tconstruct:limb": {

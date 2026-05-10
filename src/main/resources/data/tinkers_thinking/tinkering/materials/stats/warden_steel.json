@@ -11,7 +11,7 @@
     "tconstruct:head": {
       "durability": 480,
       "mining_speed": 6.5,
-      "mining_tier": "minecraft:diamond",
+      "mining_tier": "minecraft:netherite",
       "melee_attack": 2.5
     },
     "tconstruct:plating_boots": {
