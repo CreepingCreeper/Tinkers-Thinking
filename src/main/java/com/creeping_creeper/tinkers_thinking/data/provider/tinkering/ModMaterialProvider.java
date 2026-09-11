@@ -12,7 +12,7 @@ public class ModMaterialProvider extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        material(ModMaterialIds.electrical_steel).tier(3).sort(ORDER_WEAPON).craftable();
+        material(ModMaterialIds.electrical_steel).tier(3).sort(ORDER_WEAPON);
         material(ModMaterialIds.bacium).tier(3).sort(ORDER_WEAPON + ORDER_NETHER).craftable();
 
     }
