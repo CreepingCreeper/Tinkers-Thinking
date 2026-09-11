@@ -1,5 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.durability;
 
+import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
@@ -27,17 +28,21 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public enum SculkCatalyseModule implements ModifierModule, ToolDamageModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook, ModifierRemovalHook, ModifierUtils {
+public enum SculkCatalyseModule implements ModifierModule, ToolDamageModifierHook, DurabilityDisplayModifierHook, InventoryTickModifierHook, ModifierRemovalHook {
     INSTANCE;
+    private static final ResourceLocation KEY = TinkersThinking.getResource("sculk_catalyse");
+
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<SculkCatalyseModule>defaultHooks(ModifierHooks.TOOL_DAMAGE,ModifierHooks.DURABILITY_DISPLAY,ModifierHooks.INVENTORY_TICK,ModifierHooks.REMOVE);
     public static final RecordLoadable<SculkCatalyseModule> LOADER = new SingletonLoader<>(INSTANCE);
+
     public @NotNull RecordLoadable<SculkCatalyseModule> getLoader() {
         return LOADER;
     }
+
     public @NotNull List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
-    private static final ResourceLocation KEY = new ResourceLocation("tinkers_thinking", "sculk_catalyse");
+
     @Override
     public int onDamageTool(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
         if (holder!= null&&holder.hasEffect(ModEffects.sculk_power.get())){

@@ -37,6 +37,7 @@ public abstract class ModModule {
     protected static final Item.Properties Stack1Item = new Item.Properties().stacksTo(1);
     protected static final Function<Block,? extends BlockItem> GENERAL_TOOLTIP_BLOCK_ITEM = (b) -> new BlockTooltipItem(b, GENERAL_PROPS);
     protected static final Function<Block,? extends BlockItem> FIRE_TOOLTIP_BLOCK_ITEM = (b) -> new BlockTooltipItem(b, FIRE_PROPS);
+    @SuppressWarnings("removal")
     public static void initRegisters() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         BLOCKS.register(bus);

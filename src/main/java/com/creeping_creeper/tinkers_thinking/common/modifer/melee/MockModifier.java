@@ -29,7 +29,7 @@ import slimeknights.tconstruct.library.utils.Util;
 
 import java.util.List;
 
-public class MockModifier extends Modifier implements  TooltipModifierHook, MeleeDamageModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook, ModifierUtils {
+public class MockModifier extends Modifier implements  TooltipModifierHook, MeleeDamageModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook {
     private static final Component ATTACK_DAMAGE = TinkersThinking.makeTranslation("modifier", "mock.attack_damage");
     public int getPriority() {
         return 90;
@@ -52,17 +52,17 @@ public class MockModifier extends Modifier implements  TooltipModifierHook, Mele
         if (!context.isExtraAttack() && context.isFullyCharged()) {
             LivingEntity target = context.getLivingTarget();
             if (target != null) {
-                addEffect(target, MobEffects.INVISIBILITY, 200);
+                ModifierUtils.addEffect(target, MobEffects.INVISIBILITY, 200);
             }
         }
     }
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
         if (target != null) {
-            addEffect(target, MobEffects.INVISIBILITY, 200);
+            ModifierUtils.addEffect(target, MobEffects.INVISIBILITY, 200);
         }
         if (target != null && target.isAlive() && target.hasEffect(MobEffects.INVISIBILITY)) {
-            setPower(projectile, modifier.getLevel() * 0.2f);
+            ModifierUtils.setPower(projectile, modifier.getLevel() * 0.2f);
         }
         return false;
     }

@@ -6,6 +6,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 
 import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
@@ -31,13 +32,20 @@ public class ModTags {
         }
         private static TagKey<Block> common(String name) {return TagKey.create(Registries.BLOCK, commonResource(name));}
     }
+    public static class Fluids {
+        public static final TagKey<Fluid> glowstone = common("glowstone");
+        private static TagKey<Fluid> local(String name) {
+            return TagKey.create(Registries.FLUID, getResource(name));
+        }
+        private static TagKey<Fluid> common(String name) {return TagKey.create(Registries.FLUID, commonResource(name));}
+    }
     public static class DamageTypes {
         /** Any DamageTypes that make blaze drop ashes */
         public static final TagKey<DamageType> drop_ashes = local("drop_ashes");
         private static TagKey<DamageType> local(String name) {
             return TagKey.create(Registries.DAMAGE_TYPE, getResource(name));
         }
-        private static TagKey<Block> common(String name) {return TagKey.create(Registries.BLOCK, commonResource(name));}
+        private static TagKey<DamageType> common(String name) {return TagKey.create(Registries.DAMAGE_TYPE, commonResource(name));}
     }
     public static class EntityTypes {
         public static final TagKey<EntityType<?>> resisting = local("resisting");

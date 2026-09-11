@@ -12,7 +12,7 @@ import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 
 import java.util.Optional;
 
-public class TouhouLittleMaidPlugin implements ModifierUtils {
+public class TouhouLittleMaidPlugin {
     @SubscribeEvent
     public void onMaidPickupXp(MaidPickupEvent.ExperienceResult event) {
         ExperienceOrb exp = event.getExperienceOrb();
@@ -24,7 +24,7 @@ public class TouhouLittleMaidPlugin implements ModifierUtils {
                 if (maid.hasEffect(ModEffects.sculk_power.get())) {
                     time = time + maid.getEffect(ModEffects.sculk_power.get()).getDuration();
                 }
-                addEffect(maid, ModEffects.sculk_power.get(), time);
+                ModifierUtils.addEffect(maid, ModEffects.sculk_power.get(), time);
                 event.setCanceled(true);
                 exp.discard();
             }

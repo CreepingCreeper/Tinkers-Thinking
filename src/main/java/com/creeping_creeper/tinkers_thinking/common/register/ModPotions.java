@@ -1,7 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.register;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.recipes.ModBrewingRecipe;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -9,8 +8,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -35,7 +32,7 @@ public class ModPotions{
         potionBrewing(PotionUtils.setPotion(new ItemStack(Items.POTION), ModPotions.weightless_potion.get()),ModPotions.weightless_potion_long.get(), Items.REDSTONE);
     }
     private static void potionBrewing(ItemStack inputPot, Potion pot, Item item) {
-        BrewingRecipeRegistry.addRecipe(new ModBrewingRecipe(inputPot, Ingredient.of(item), PotionUtils.setPotion(new ItemStack(Items.POTION), pot)));
+       // BrewingRecipeRegistry.addRecipe(new ModBrewingRecipe(inputPot, Ingredient.of(item), PotionUtils.setPotion(new ItemStack(Items.POTION), pot)));
     }
     public static void registers(IEventBus eventBus) {
         POTIONS.register(eventBus);

@@ -17,7 +17,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public enum SculkStruggleModule implements ModifierModule, MeleeHitModifierHook, ModifierUtils {
+public enum SculkStruggleModule implements ModifierModule, MeleeHitModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<SculkStruggleModule>defaultHooks(ModifierHooks.MELEE_HIT);
     public static final RecordLoadable<SculkStruggleModule> LOADER = new SingletonLoader<>(INSTANCE);
@@ -38,7 +38,7 @@ public enum SculkStruggleModule implements ModifierModule, MeleeHitModifierHook,
                 x = attacker.getEffect(ModEffects.last_effort.get()).getDuration();
                 y = attacker.getEffect(ModEffects.last_effort.get()).getAmplifier();
             }
-            addEffect(attacker,ModEffects.last_effort.get(),100 * modifier.getLevel()+x,y);
+            ModifierUtils.addEffect(attacker,ModEffects.last_effort.get(),100 * modifier.getLevel()+x,y);
         }
     }
 }

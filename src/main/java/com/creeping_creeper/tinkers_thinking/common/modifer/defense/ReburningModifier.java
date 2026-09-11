@@ -23,7 +23,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.List;
 import java.util.Optional;
 
-public enum ReburningModifier implements ModifierModule, OnAttackedModifierHook, ModifierUtils {
+public enum ReburningModifier implements ModifierModule, OnAttackedModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<ReburningModifier>defaultHooks(ModifierHooks.ON_ATTACKED);
     public static final RecordLoadable<ReburningModifier> LOADER = new SingletonLoader<>(INSTANCE);
@@ -43,8 +43,8 @@ public enum ReburningModifier implements ModifierModule, OnAttackedModifierHook,
                 living.heal(fire * data.get(ModDataKeys.Reburning, 1));
             });
             living.clearFire();
-            particles(living.level(), living, ParticleTypes.SMOKE, 4);
-            addEffect(living,MobEffects.FIRE_RESISTANCE,80);
+            ModifierUtils.particles(living.level(), living, ParticleTypes.SMOKE, 4);
+            ModifierUtils.addEffect(living,MobEffects.FIRE_RESISTANCE,80);
         }
     }
 }

@@ -1,11 +1,8 @@
 package com.creeping_creeper.tinkers_thinking.mixins;
 
 import com.creeping_creeper.tinkers_thinking.data.ModTags;
-import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
-import net.minecraft.core.Direction.Axis;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,8 +19,8 @@ public class CastingBlockEntityMixin {
                 || level.getBlockState(pos.south()).is(ModTags.Blocks.cooling_fast)
                 || level.getBlockState(pos.north()).is(ModTags.Blocks.cooling_fast);
     }
-    @Getter private int timer;
-    @Getter private int coolingTime;
+    private int timer;
+    private int coolingTime;
     @Inject(method = "serverTick",at = @At(value = "INVOKE", target = "Lslimeknights/tconstruct/smeltery/block/entity/tank/CastingFluidHandler;getFluid()Lnet/minecraftforge/fluids/FluidStack;", shift = At.Shift.BY, by = 2),remap = false)
     private void serverTick(Level level, BlockPos pos, CallbackInfo ci) {
         if (isFaceBlock(level, pos)) {

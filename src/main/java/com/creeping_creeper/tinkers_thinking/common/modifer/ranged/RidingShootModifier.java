@@ -26,7 +26,7 @@ import slimeknights.tconstruct.library.utils.Util;
 
 import java.util.List;
 
-public class RidingShootModifier extends Modifier implements ProjectileShootModifierHook, ProjectileHitModifierHook, TooltipModifierHook, ModifierUtils {
+public class RidingShootModifier extends Modifier implements ProjectileShootModifierHook, ProjectileHitModifierHook, TooltipModifierHook {
     private static final Component POWER = TinkersThinking.makeTranslation("modifier", "riding_shoot.projectile_power");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -36,7 +36,7 @@ public class RidingShootModifier extends Modifier implements ProjectileShootModi
     @Override
     public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, @Nullable LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
         if (shooter!=null&&shooter.isPassenger()){
-            addPower(projectile, modifier.getLevel());
+            ModifierUtils.addPower(projectile, modifier.getLevel());
         }
     }
     @Override

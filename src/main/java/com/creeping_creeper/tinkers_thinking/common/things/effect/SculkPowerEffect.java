@@ -32,7 +32,7 @@ import java.util.UUID;
 
 import static slimeknights.tconstruct.TConstruct.RANDOM;
 
-public class SculkPowerEffect extends NoMilkEffect implements ModifierUtils {
+public class SculkPowerEffect extends NoMilkEffect {
     public SculkPowerEffect(MobEffectCategory typeIn, int color, boolean show) {
         super(typeIn, color, show);
         MinecraftForge.EVENT_BUS.addListener(this::onEffectAdded);
@@ -53,7 +53,7 @@ public class SculkPowerEffect extends NoMilkEffect implements ModifierUtils {
             }
             if (!level.isClientSide() && (event.getOldEffectInstance() == null || effect.getDuration() > event.getOldEffectInstance().getDuration() + 2)){
                 level.playSound(null, event.getEntity().getOnPos().above(), SoundEvents.SCULK_BLOCK_CHARGE, SoundSource.PLAYERS, 1.0F, 1.6F + RANDOM.nextFloat() * 0.4F);
-                particles(level, entity, new SculkChargeParticleOptions(0), 4);
+                ModifierUtils.particles(level, entity, new SculkChargeParticleOptions(0), 4);
             }
         }
     }

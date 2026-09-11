@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class RecalamityModifier extends Modifier implements MeleeDamageModifierHook, ProjectileHitModifierHook, ModifierUtils {
+public class RecalamityModifier extends Modifier implements MeleeDamageModifierHook, ProjectileHitModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.PROJECTILE_HIT);
@@ -53,7 +53,7 @@ public class RecalamityModifier extends Modifier implements MeleeDamageModifierH
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (!context.isExtraAttack() && context.isFullyCharged()&&target!=null&&target.isAlive()) {
-            calamity(target,context.getAttacker(),reverse(tool),damage,modifier.getLevel());
+            calamity(target,context.getAttacker(), ModifierUtils.reverse(tool),damage,modifier.getLevel());
         }
         return damage;
     }
@@ -61,7 +61,7 @@ public class RecalamityModifier extends Modifier implements MeleeDamageModifierH
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target) {
         if (target != null) {
             float damage=1;
-            setPower(projectile,calamity(target,attacker, reverseProjectile(projectile),damage,modifier.getLevel()));
+            ModifierUtils.setPower(projectile,calamity(target,attacker, ModifierUtils.reverseProjectile(projectile),damage,modifier.getLevel()));
         }
         return false;
     }

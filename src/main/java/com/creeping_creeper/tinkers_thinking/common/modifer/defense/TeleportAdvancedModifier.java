@@ -23,11 +23,11 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 
-public class TeleportAdvancedModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, MeleeHitModifierHook, ModifierUtils {
-    private final ResourceLocation X = new ResourceLocation("tinkersinnovation", "teleport_x");
-    private final ResourceLocation Y = new ResourceLocation("tinkersinnovation", "teleport_y");
-    private final ResourceLocation Z = new ResourceLocation("tinkersinnovation", "teleport_z");
-    private final ResourceLocation WORLD = new ResourceLocation("tinkersinnovation", "teleport_dimension");
+public class TeleportAdvancedModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, MeleeHitModifierHook {
+    private final ResourceLocation X = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_x");
+    private final ResourceLocation Y = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_y");
+    private final ResourceLocation Z = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_z");
+    private final ResourceLocation WORLD = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_dimension");
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -40,13 +40,13 @@ public class TeleportAdvancedModifier extends NoLevelsModifier implements Genera
     }
 
     private void applyEffect(LivingEntity living, int level){
-        addEffect(living, MobEffects.MOVEMENT_SPEED, level * 300, 1);
-        addEffect(living, ModEffects.sculk_power.get(), level * 300);
+        ModifierUtils.addEffect(living, MobEffects.MOVEMENT_SPEED, level * 300, 1);
+        ModifierUtils.addEffect(living, ModEffects.sculk_power.get(), level * 300);
     }
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (source == InteractionSource.RIGHT_CLICK && !tool.isBroken() && player.isCrouching() && !player.hasEffect(TinkerModifiers.teleportCooldownEffect.get()) && !player.hasEffect(TinkerEffects.enderference.get())) {
+        if (source == InteractionSource.RIGHT_CLICK && !tool.isBroken() && player.isCrouching() && !player.hasEffect(TinkerEffects.enderference.get()) && !player.hasEffect(TinkerEffects.enderference.get())) {
             Level world = player.level();
             ModDataNBT data = tool.getPersistentData();
             if (data.contains(X, Tag.TAG_FLOAT) && data.contains(Y, Tag.TAG_FLOAT) && data.contains(Z, Tag.TAG_FLOAT) && data.contains(WORLD, Tag.TAG_STRING)) {

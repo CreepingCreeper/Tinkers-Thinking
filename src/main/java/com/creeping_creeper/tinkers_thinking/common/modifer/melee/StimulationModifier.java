@@ -14,7 +14,7 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class StimulationModifier extends Modifier implements MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ModifierUtils {
+public class StimulationModifier extends Modifier implements MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this,  ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT);
@@ -23,7 +23,7 @@ public class StimulationModifier extends Modifier implements MeleeHitModifierHoo
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack() && context.isFullyCharged() && RANDOM.nextFloat() < 0.25) {
             LivingEntity attacker = context.getAttacker();
-            addEffect(attacker, MobEffects.DIG_SPEED, 120 * modifier.getLevel());
+            ModifierUtils.addEffect(attacker, MobEffects.DIG_SPEED, 120 * modifier.getLevel());
             ToolDamageUtil.directDamage(tool,  modifier.getLevel() * 5, attacker, attacker.getUseItem());
         }
     }

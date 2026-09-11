@@ -2,7 +2,6 @@ package com.creeping_creeper.tinkers_thinking.common.things.item;
 
 import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
-import lombok.Getter;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.nbt.CompoundTag;
@@ -17,7 +16,6 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -33,8 +31,10 @@ import org.joml.Vector3f;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.BowAmmoModifierHook;
@@ -50,7 +50,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerModifiers;
-import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -63,7 +63,6 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
   /** Key containing the stored crossbow ammo */
   public static final ResourceLocation KEY_CROSSBOW_AMMO = TConstruct.getResource("crossbow_ammo");
   private static final String PROJECTILE_KEY = "item.minecraft.crossbow.projectile";
-  @Getter
   private final Predicate<ItemStack> supportedHeldProjectiles;
   private final boolean storeDrawingItem;
   public ModifiableRepeatingCrossbowItem(Properties properties, ToolDefinition toolDefinition,Predicate<ItemStack> supportedHeldProjectiles,boolean storeDrawingItem) {
@@ -88,7 +87,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
   @Override
   public UseAnim getUseAnimation(ItemStack stack) {
     // crossbow is superhardcoded to crossbows, so use none and rely on the model
-    return BlockingModifier.blockWhileCharging(ToolStack.from(stack), UseAnim.NONE);
+    return ModifierUtil.blockWhileCharging(ToolStack.from(stack), UseAnim.NONE);
   }
   @Override
   public boolean useOnRelease(ItemStack stack) {
@@ -126,7 +125,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
               return InteractionResultHolder.fail(bow);
             }
           } else {
-            GeneralInteractionModifierHook.startDrawtime(tool, player, 1.0F);
+            GeneralInteractionModifierHook.startDrawing(tool, player, 1.0F);
             if (!ammo.isEmpty()) {
               if (this.storeDrawingItem) {
                 persistentData.put(KEY_DRAWBACK_AMMO, ammo.save(new CompoundTag()));
@@ -171,7 +170,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
       float velocity = ConditionalStatModifierHook.getModifiedStat(tool, living, ToolStats.VELOCITY);
       float inaccuracy = ModifierUtil.getInaccuracy(tool, living);
       ItemStack ammo = ItemStack.of(heldAmmo);
-      int ammoCount = Math.min(1+2*tool.getModifierLevel(TinkerModifiers.multishot.getId()),ammo.getCount());
+      int ammoCount = Math.min(1+2*tool.getModifierLevel(ModifierIds.multishot),ammo.getCount());
       float startAngle = getAngleStart(ammoCount);
       int primaryIndex = ammoCount / 2;
 
@@ -255,7 +254,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
 
     // find ammo and store it on the bow
     Player player = living instanceof Player p ? p : null;
-    int projectilesDesired = (3+tool.getModifierLevel(ModModifierIds.RepeatingAdvanced))*(1+(2*tool.getModifierLevel(TinkerModifiers.multishot.getId())));
+    int projectilesDesired = (3+tool.getModifierLevel(ModModifierIds.RepeatingAdvanced))*(1+(2*tool.getModifierLevel(ModifierIds.multishot)));
     ItemStack ammo = BowAmmoModifierHook.consumeAmmo(tool, bow, living, player, this.getSupportedHeldProjectiles(), projectilesDesired);
     if (!ammo.isEmpty()) {
       level.playSound(null, living.getX(), living.getY(), living.getZ(), SoundEvents.CROSSBOW_LOADING_END, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.5F + 1.0F) + 0.2F);

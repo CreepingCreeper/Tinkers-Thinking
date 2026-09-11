@@ -1,9 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.client;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.common.register.ModBlockEntities;
 import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
-import com.creeping_creeper.tinkers_thinking.common.things.block.renderer.DryingRackBlockEntityRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.font.FontManager;
@@ -23,7 +21,6 @@ public class ClientEvents {
     }
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
-        event.registerBlockEntityRenderer(ModBlockEntities.Drying_Rack.get(), DryingRackBlockEntityRenderer::new);
     }
     @SubscribeEvent
     static void clientSetup(final FMLClientSetupEvent event) {

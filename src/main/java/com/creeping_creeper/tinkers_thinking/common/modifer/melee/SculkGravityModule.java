@@ -21,7 +21,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public record SculkGravityModule(LevelingValue amount) implements ModifierModule, ProjectileHitModifierHook, ModifierUtils {
+public record SculkGravityModule(LevelingValue amount) implements ModifierModule, ProjectileHitModifierHook {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SculkGravityModule> LOADER;
 
@@ -35,9 +35,9 @@ public record SculkGravityModule(LevelingValue amount) implements ModifierModule
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (target!=null && !target.hasEffect(ModEffects.modifier_immune.get()) && attacker!=null && attacker.hasEffect(ModEffects.sculk_power.get())) {
-            addEffect(target,ModEffects.overweight.get(),120,5);
-            addEffect(target, ModEffects.jumpless.get(), 120, 0, false);
-            addEffect(target,ModEffects.modifier_immune.get(),(int) (amount.eachLevel()/modifier.getLevel()));
+            ModifierUtils.addEffect(target,ModEffects.overweight.get(),120,5);
+            ModifierUtils.addEffect(target, ModEffects.jumpless.get(), 120, 0, false);
+            ModifierUtils.addEffect(target,ModEffects.modifier_immune.get(),(int) (amount.eachLevel()/modifier.getLevel()));
         }
         return false;
     }

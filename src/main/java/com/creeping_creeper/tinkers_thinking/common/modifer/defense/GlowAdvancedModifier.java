@@ -21,7 +21,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.tools.modules.armor.CounterModule;
 
-public class GlowAdvancedModifier extends NoLevelsModifier implements OnAttackedModifierHook, ModifierUtils {
+public class GlowAdvancedModifier extends NoLevelsModifier implements OnAttackedModifierHook {
     @Override
     protected void registerHooks(Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -32,9 +32,9 @@ public class GlowAdvancedModifier extends NoLevelsModifier implements OnAttacked
         LivingEntity living = context.getEntity();
         Level level = living.level();
         level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, living.getRandomX(0.6), living.getRandomY() + 1, living.getRandomZ(0.6), 0.0F, 0.0F, 0.0F);
-        if (living instanceof Player player && level.getBlockState(player.blockPosition()).getBlock() == TinkerCommons.glow.get()) {
+        if (living instanceof Player player && level.getBlockState(player.blockPosition()).getBlock() == TinkerCommons.glowBlock.get()) {
             player.causeFoodExhaustion(0.1F);
-            heal(player, amount * (CounterModule.isBlocking(tool, slotType, player) ? 0.2f : 0.1f));
+            ModifierUtils.heal(player, amount * (CounterModule.isBlocking(tool, slotType, player) ? 0.2f : 0.1f));
             level.setBlockAndUpdate(player.getOnPos().above(), Blocks.AIR.defaultBlockState());
             ToolDamageUtil.damageAnimated(tool, modifier.getLevel(), player);
         }

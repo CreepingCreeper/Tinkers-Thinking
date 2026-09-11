@@ -22,7 +22,7 @@ import slimeknights.tconstruct.shared.TinkerEffects;
 import java.util.List;
 import java.util.Optional;
 
-public record RetransitModule(LevelingValue amount) implements ModifierModule, ModifyDamageModifierHook, ModifierUtils {
+public record RetransitModule(LevelingValue amount) implements ModifierModule, ModifyDamageModifierHook {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<RetransitModule> LOADER;
 
@@ -40,11 +40,11 @@ public record RetransitModule(LevelingValue amount) implements ModifierModule, M
         Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
         dataCap.ifPresent(data -> {
             int x = (int)amount().eachLevel() * data.get(ModDataKeys.Retransit, 0) *20;
-            if (reverse(tool)&&!living.hasEffect(TinkerEffects.returning.get())) {
-                addEffect(living,TinkerEffects.returning.get(),x);
+            if (ModifierUtils.reverse(tool)&&!living.hasEffect(TinkerEffects.returning.get())) {
+                ModifierUtils.addEffect(living,TinkerEffects.returning.get(),x);
             }
-            if (!reverse(tool)&&!living.hasEffect(ModEffects.reminiscence.get())) {
-                addEffect(living,ModEffects.reminiscence.get(),x);
+            if (!ModifierUtils.reverse(tool)&&!living.hasEffect(ModEffects.reminiscence.get())) {
+                ModifierUtils.addEffect(living,ModEffects.reminiscence.get(),x);
             }
         });
         return amount;

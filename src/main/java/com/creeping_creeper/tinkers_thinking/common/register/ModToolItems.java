@@ -44,10 +44,8 @@ public class ModToolItems extends ModModule {
     public static final ItemObject<ModifiableItem> tinkers_bronze_bucket = ITEMS.register("tinkers_bronze_bucket", () -> new ModifiableItem(Stack1Item, ToolDefinitions.TINKERS_BRONZE_BUCKET));
     public static final ItemObject<ModifiableItem> battle_bucket = ITEMS.register("battle_bucket", () -> new ModifiableItem(Stack1Item.fireResistant(), ToolDefinitions.BATTLE_BUCKET));
     public static final ItemObject<ToolPartItem> narrow_blade = ITEMS.register("narrow_blade", () -> new ToolPartItem(GENERAL_PROPS, HeadMaterialStats.ID));
-    public static final ItemObject<ToolPartItem> guard = ITEMS.register("guard", () -> new ToolPartItem(GENERAL_PROPS, PlatingMaterialStats.SHIELD.getId()));
 
     public static final CastItemObject narrow_blade_cast = ITEMS.registerCast(narrow_blade, GENERAL_PROPS);
-    public static final CastItemObject guard_cast = ITEMS.registerCast(guard, GENERAL_PROPS);
     @Deprecated(forRemoval = true)
     public static final ItemObject<Item> seeking_arrow = ITEMS.register("seeking_arrow", GENERAL_PROPS);
     @Deprecated(forRemoval = true)
@@ -67,13 +65,9 @@ public class ModToolItems extends ModModule {
         acceptTool(tab,tinkers_bronze_bucket);
         acceptTool(tab,battle_bucket);
         acceptPart(tab,narrow_blade);
-        acceptPart(tab,guard);
         tab.accept(narrow_blade_cast.get().getDefaultInstance());
         tab.accept(narrow_blade_cast.getSand().getDefaultInstance());
         tab.accept(narrow_blade_cast.getRedSand().getDefaultInstance());
-        tab.accept(guard_cast.get().getDefaultInstance());
-        tab.accept(guard_cast.getSand().getDefaultInstance());
-        tab.accept(guard_cast.getRedSand().getDefaultInstance());
     }
     private static void acceptTool(Consumer<ItemStack> output, Supplier<? extends IModifiable> tool) {
         ToolBuildHandler.addVariants(output, tool.get(),"");

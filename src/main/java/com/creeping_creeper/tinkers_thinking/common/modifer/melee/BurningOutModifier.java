@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 
-public class BurningOutModifier extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ModifierUtils {
+public class BurningOutModifier extends Modifier implements MeleeHitModifierHook, ProjectileHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
     public int getPriority() {
         return 85;
     }
@@ -55,8 +55,8 @@ public class BurningOutModifier extends Modifier implements MeleeHitModifierHook
                 ToolAttackUtil.attackEntitySecondary(source, (float) (fire * 0.3 * level), target, target, true);
                 target.invulnerableTime = 0;
                 target.clearFire();
-                particles(attacker.level(), target, ParticleTypes.SMOKE, 4);
-                addEffect(target,MobEffects.FIRE_RESISTANCE, 80);
+                ModifierUtils.particles(attacker.level(), target, ParticleTypes.SMOKE, 4);
+                ModifierUtils.addEffect(target,MobEffects.FIRE_RESISTANCE, 80);
             }
         }
     }

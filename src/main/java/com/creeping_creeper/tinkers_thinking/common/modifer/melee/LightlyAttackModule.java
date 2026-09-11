@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public record LightlyAttackModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, ConditionalStatModifierHook, ModifierUtils {
+public record LightlyAttackModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, ConditionalStatModifierHook {
     private static final Component Boost = TinkersThinking.makeTranslation("modifier", "lightly_attack.draw_speed");
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<LightlyAttackModule> LOADER;
@@ -50,7 +50,7 @@ public record LightlyAttackModule(LevelingValue amount) implements ModifierModul
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack()) {
             if (isAllEmpty(context.getAttacker())) {
-                addEffect(context.getAttacker(),ModEffects.quick_attack.get(), 60, modifier.getLevel()*3-1);
+                ModifierUtils.addEffect(context.getAttacker(),ModEffects.quick_attack.get(), 60, modifier.getLevel()*3-1);
             }
         }
     }

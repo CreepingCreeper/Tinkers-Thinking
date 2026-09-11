@@ -20,7 +20,7 @@ public class ModBooks extends BookData {
         addStandardData(FANTASTIC_GADGETRY, FANTASTIC_GADGETRY_ID);
     }
     private static void addStandardData(BookData book, ResourceLocation id) {
-        book.addRepository(new FileRepository(new ResourceLocation(id.getNamespace(), "book/" + id.getPath())));
+        book.addRepository(new FileRepository(ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "book/" + id.getPath())));
         book.addTransformer(BookTransformer.indexTranformer());
         book.addTransformer(TierRangeMaterialSectionTransformer.INSTANCE);
         // padding needs to be last to ensure page counts are right

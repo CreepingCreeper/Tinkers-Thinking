@@ -23,11 +23,11 @@ import slimeknights.tconstruct.library.utils.Schedule;
 import javax.annotation.Nullable;
 
 public class BackModifier extends Modifier implements ScheduledProjectileTaskModifierHook, ProjectileHitModifierHook {
-    ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "back");
+    ResourceLocation KEY = TinkersThinking.getResource("back");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.SCHEDULE_PROJECTILE_TASK,ModifierHooks.PROJECTILE_HIT);
+        hookBuilder.addHook(this, ModifierHooks.SCHEDULE_PROJECTILE_TASK, ModifierHooks.PROJECTILE_HIT);
     }
     @Override
     public void scheduleProjectileTask(IToolStackView tool, ModifierEntry modifier, ItemStack ammo, Projectile projectile, @org.jetbrains.annotations.Nullable AbstractArrow arrow, ModDataNBT persistentData, Schedule.Scheduler scheduler) {

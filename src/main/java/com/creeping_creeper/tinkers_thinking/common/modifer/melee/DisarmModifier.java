@@ -13,7 +13,7 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class DisarmModifier extends Modifier implements MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ModifierUtils {
+public class DisarmModifier extends Modifier implements MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
      @Override
     protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -24,8 +24,8 @@ public class DisarmModifier extends Modifier implements MeleeHitModifierHook, Mo
         if (!context.isExtraAttack() && context.isFullyCharged()) {
             LivingEntity target = context.getLivingTarget();
             if (target!=null&&!target.hasEffect(ModEffects.modifier_immune.get())) {
-                addEffect(target,ModEffects.disarm.get(), 160);
-                addEffect(target,ModEffects.modifier_immune.get(), 360/modifier.getLevel());
+                ModifierUtils.addEffect(target,ModEffects.disarm.get(), 160);
+                ModifierUtils.addEffect(target,ModEffects.modifier_immune.get(), 360/modifier.getLevel());
             }
         }
     }

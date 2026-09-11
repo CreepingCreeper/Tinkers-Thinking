@@ -1,5 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.durability;
 
+import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -25,7 +26,7 @@ import static net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR;
 
 public enum NetheriteModule implements ModifierModule, ToolDamageModifierHook, ModifyDamageModifierHook {
     INSTANCE;
-    private static final ResourceLocation KEY = new ResourceLocation("tinkers_thinking", "netherite");
+    private static final ResourceLocation KEY = TinkersThinking.getResource("netherite");
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<NetheriteModule>defaultHooks(ModifierHooks.TOOL_DAMAGE, ModifierHooks.MODIFY_HURT);
     public static final RecordLoadable<NetheriteModule> LOADER = new SingletonLoader<>(INSTANCE);
     public @NotNull RecordLoadable<NetheriteModule> getLoader() {

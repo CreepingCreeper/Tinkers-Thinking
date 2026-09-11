@@ -10,7 +10,7 @@ import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 
 import java.util.Optional;
 
-public class OnExpPickUp implements ModifierUtils {
+public class OnExpPickUp {
     @SubscribeEvent
     public void onPlayerPickupXp(PlayerXpEvent.PickupXp event) {
         ExperienceOrb exp = event.getOrb();
@@ -22,7 +22,7 @@ public class OnExpPickUp implements ModifierUtils {
                 if (player.hasEffect(ModEffects.sculk_power.get())) {
                     time = time + player.getEffect(ModEffects.sculk_power.get()).getDuration() ;
                 }
-                addEffect(player, ModEffects.sculk_power.get(), time);
+                ModifierUtils.addEffect(player, ModEffects.sculk_power.get(), time);
                 event.setCanceled(true);
                 exp.discard();
             }

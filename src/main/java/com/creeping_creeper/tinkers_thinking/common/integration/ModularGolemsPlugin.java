@@ -12,7 +12,7 @@ import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 
 import java.util.Optional;
 
-public class ModularGolemsPlugin implements ModifierUtils {
+public class ModularGolemsPlugin {
     @SubscribeEvent
     public void onGolemPickupXp(GolemHandleExpEvent event) {
         ExperienceOrb exp = event.getOrb();
@@ -24,7 +24,7 @@ public class ModularGolemsPlugin implements ModifierUtils {
                 if (golem.hasEffect(ModEffects.sculk_power.get())) {
                     time = time + golem.getEffect(ModEffects.sculk_power.get()).getDuration();
                 }
-                addEffect(golem, ModEffects.sculk_power.get(), time);
+                ModifierUtils.addEffect(golem, ModEffects.sculk_power.get(), time);
                 exp.discard();
             }
         });

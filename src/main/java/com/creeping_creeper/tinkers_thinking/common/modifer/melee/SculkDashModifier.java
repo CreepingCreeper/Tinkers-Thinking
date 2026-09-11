@@ -29,7 +29,7 @@ import java.util.Objects;
 
 public class SculkDashModifier extends Modifier implements MeleeHitModifierHook, MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ModifierRemovalHook, TooltipModifierHook {
     private static final Component Times = TinkersThinking.makeTranslation("modifier", "sculk_dash.times");
-    private final ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "sculk_dash");
+    private final ResourceLocation KEY = TinkersThinking.getResource("sculk_dash");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.REMOVE, ModifierHooks.TOOLTIP);

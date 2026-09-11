@@ -24,7 +24,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 
-public class CrimsonModifier extends Modifier implements MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook, ModifyDamageModifierHook, ModifierUtils {
+public class CrimsonModifier extends Modifier implements MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook, ModifyDamageModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.PROJECTILE_HIT, ModifierHooks.MODIFY_DAMAGE);
@@ -34,7 +34,7 @@ public class CrimsonModifier extends Modifier implements MeleeHitModifierHook, M
         if (living.hasEffect(ModEffects.armor.get())){
             x = living.getEffect(ModEffects.armor.get()).getAmplifier();
         }
-        addEffect(living, ModEffects.armor.get(), 400, Math.min(x + 1, level * 2 + 2));
+        ModifierUtils.addEffect(living, ModEffects.armor.get(), 400, Math.min(x + 1, level * 2 + 2));
     }
     @Override
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {

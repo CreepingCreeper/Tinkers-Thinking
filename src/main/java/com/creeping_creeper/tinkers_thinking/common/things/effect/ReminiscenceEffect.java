@@ -1,5 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.things.effect;
 
+import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,7 +14,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import static net.minecraft.nbt.Tag.TAG_COMPOUND;
 
 public class ReminiscenceEffect extends TinkerEffect {
-    private static final ResourceLocation KEY = new ResourceLocation("tinkers_thinking:n");
+    private static final ResourceLocation KEY = TinkersThinking.getResource("n");
     public ReminiscenceEffect(net.minecraft.world.effect.MobEffectCategory typeIn, boolean show) {
         super(typeIn, 0xb83dba, show);
         MinecraftForge.EVENT_BUS.addListener(this::onEffectAdded);

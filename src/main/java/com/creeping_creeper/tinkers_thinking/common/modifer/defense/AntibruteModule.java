@@ -23,7 +23,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.List;
 import java.util.Optional;
 
-public enum AntibruteModule implements ModifierModule, ModifyDamageModifierHook, ModifierUtils {
+public enum AntibruteModule implements ModifierModule, ModifyDamageModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<AntibruteModule>defaultHooks(ModifierHooks.MODIFY_HURT);
     public static final RecordLoadable<AntibruteModule> LOADER = new SingletonLoader<>(INSTANCE);
@@ -37,10 +37,9 @@ public enum AntibruteModule implements ModifierModule, ModifyDamageModifierHook,
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
         float x = living.getHealth()/2;
-        if (!source.is(DamageTypeTags.BYPASSES_RESISTANCE)&&!context.getEntity().hasEffect(ModEffects.antibrute_cooldown.get())&&amount>x) {
-            Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
-            dataCap.ifPresent(data -> addEffect(context.getEntity(), ModEffects.antibrute_cooldown.get(), 240 / data.get(ModDataKeys.Antibrute, 1)));
-            block(living);
+        if (!source.is(DamageTypeTags.BYPASSES_RESISTANCE) && !context.getEntity().hasEffect(ModEffects.antibrute_cooldown.get()) && amount>x) {
+            ModifierUtils.addEffect(context.getEntity(), ModEffects.antibrute_cooldown.get(), 160, 1);
+            ModifierUtils.block(living);
             return x;
         }
         return amount;

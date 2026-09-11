@@ -20,7 +20,6 @@ import slimeknights.tconstruct.world.TinkerWorld;
 
 import static net.minecraft.world.level.block.SoundType.*;
 import static net.minecraft.world.level.block.SoundType.STONE;
-import static net.minecraft.world.level.block.SoundType.WOOD;
 import static net.minecraft.world.level.material.MapColor.*;
 
 public class ModCommonItems extends ModModule {
@@ -130,7 +129,6 @@ public class ModCommonItems extends ModModule {
             .isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)), GENERAL_TOOLTIP_BLOCK_ITEM);
     public static final ItemObject<Block> ardite_platform = BLOCKS.register("ardite_platform", () -> new PlatformBlock(BlockBehaviour.Properties.of().mapColor(COLOR_ORANGE).strength(30f,1200).requiresCorrectToolForDrops().sound(ANCIENT_DEBRIS)), FIRE_BLOCK_ITEM);
     public static final ItemObject<Block> zith_platform = BLOCKS.register("zith_platform", () -> new PlatformBlock(BlockBehaviour.Properties.of().mapColor(COLOR_ORANGE).strength(10f,1200).requiresCorrectToolForDrops().sound(ANCIENT_DEBRIS)), GENERAL_BLOCK_ITEM);
-    public static final ItemObject<DryingRackBlock> drying_rack = BLOCKS.register("drying_rack", () -> new DryingRackBlock(BlockBehaviour.Properties.of().strength(0.6f).sound(WOOD)), GENERAL_BLOCK_ITEM);
     public static final ItemObject<WasteFluidCylinderBlock> waste_fluid_cylinder = BLOCKS.register("waste_fluid_cylinder", () -> new WasteFluidCylinderBlock(BlockBehaviour.Properties.of().strength(1.2f).sound(BASALT)), GENERAL_TOOLTIP_BLOCK_ITEM);
     //Foods
     public static final ItemObject<Item>  Beef_Jerky= ITEMS.register("beef_jerky", () -> new Item(new Item.Properties().food(ModFoods.Beef_Jerky)));
@@ -217,7 +215,6 @@ public class ModCommonItems extends ModModule {
         output.accept(tempered_glass_pane);
         output.accept(ardite_platform);
         output.accept(zith_platform);
-        output.accept(drying_rack);
         output.accept(waste_fluid_cylinder);
 
         output.accept(Fried_Egg);
@@ -239,36 +236,36 @@ public class ModCommonItems extends ModModule {
         output.accept(Black_Chocolate);
         output.accept(White_Chocolate);
 
-        output.accept(ModFluids.molten_ardite);
-        output.accept(ModFluids.molten_tinkers_bronze);
-        output.accept(ModFluids.molten_lightite);
-        output.accept(ModFluids.molten_chlorophyte);
-        output.accept(ModFluids.molten_spectre);
-        output.accept(ModFluids.molten_shroomite);
-        output.accept(ModFluids.molten_obsidian_bronze);
-        output.accept(ModFluids.molten_electrical_steel);
-        output.accept(ModFluids.molten_beetron);
-        output.accept(ModFluids.molten_echo_bronze);
-        output.accept(ModFluids.molten_warden_steel);
-        output.accept(ModFluids.molten_zith);
-        output.accept(ModFluids.molten_shimmerslime);
-        output.accept(ModFluids.molten_adamantium);
+        output.accept(ModFluids.moltenArdite);
+        output.accept(ModFluids.moltenTinkersBronze);
+        output.accept(ModFluids.moltenLightite);
+        output.accept(ModFluids.moltenChlorophyte);
+        output.accept(ModFluids.moltenSpectre);
+        output.accept(ModFluids.moltenShroomite);
+        output.accept(ModFluids.moltenObsidianBronze);
+        output.accept(ModFluids.moltenElectricalSteel);
+        output.accept(ModFluids.moltenBeetron);
+        output.accept(ModFluids.moltenEchoBronze);
+        output.accept(ModFluids.moltenWardenSteel);
+        output.accept(ModFluids.moltenZith);
+        output.accept(ModFluids.moltenShimmerslime);
+        output.accept(ModFluids.moltenAdamantium);
 
-        output.accept(ModFluids.molten_tempered_glass);
-        output.accept(ModFluids.molten_ancient_ceramic);
-        output.accept(ModFluids.reburn_ashes);
-        output.accept(ModFluids.molten_echo);
-        output.accept(ModFluids.liquid_sculk_power);
+        output.accept(ModFluids.moltenTemperedGlass);
+        output.accept(ModFluids.moltenAncientCeramic);
+        output.accept(ModFluids.reburnAshes);
+        output.accept(ModFluids.moltenEcho);
+        output.accept(ModFluids.liquidSculkPower);
         output.accept(ModFluids.scarletslime);
         output.accept(ModFluids.chillslime);
-        output.accept(ModFluids.color_liquid);
-        output.accept(ModFluids.error_liquid);
+        output.accept(ModFluids.colorLiquid);
+        output.accept(ModFluids.errorLiquid);
         output.accept(ModFluids.syrup);
         output.accept(ModFluids.pulp);
         output.accept(ModFluids.emptiness);
-        output.accept(ModFluids.molten_cocoa);
-        output.accept(ModFluids.molten_black_chocolate);
-        output.accept(ModFluids.molten_white_chocolate);
+        output.accept(ModFluids.moltenCocoa);
+        output.accept(ModFluids.moltenBlackChocolate);
+        output.accept(ModFluids.moltenWhiteChocolate);
     }
     private static void accept(CreativeModeTab.Output output, MetalItemObject metal) {
         output.accept(metal.getIngot());

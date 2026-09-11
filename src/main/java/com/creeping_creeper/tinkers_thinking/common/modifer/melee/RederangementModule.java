@@ -30,7 +30,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import java.util.List;
 
-public enum RederangementModule implements ModifierModule, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook, ModifierUtils {
+public enum RederangementModule implements ModifierModule, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<RederangementModule>defaultHooks(ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT ,ModifierHooks.PROJECTILE_HIT);
     public static final RecordLoadable<RederangementModule> LOADER = new SingletonLoader<>(INSTANCE);
@@ -70,13 +70,13 @@ public enum RederangementModule implements ModifierModule, MeleeHitModifierHook,
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
         if (!context.isExtraAttack() && target!=null) {
-            derangement(context.getLevel(), target, context.getPlayerAttacker(), reverse(tool), modifier.getLevel());
+            derangement(context.getLevel(), target, context.getPlayerAttacker(), ModifierUtils.reverse(tool), modifier.getLevel());
         }
     }
     @Override
     public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
         if (target != null && attacker != null) {
-                derangement(projectile.level(), target, attacker, reverseProjectile(projectile), modifier.getLevel());
+                derangement(projectile.level(), target, attacker, ModifierUtils.reverseProjectile(projectile), modifier.getLevel());
         }
         return false;
     }

@@ -37,7 +37,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerTools;
 import slimeknights.tconstruct.tools.modules.armor.CounterModule;
 
-public class CounterAttackModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, OnAttackedModifierHook, MeleeDamageModifierHook, ToolActionModifierHook, UsingToolModifierHook, ModifierUtils {
+public class CounterAttackModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, OnAttackedModifierHook, MeleeDamageModifierHook, ToolActionModifierHook, UsingToolModifierHook {
     private static boolean isblocking = false;
     @Override
     protected void registerHooks(Builder hookBuilder) {
@@ -67,7 +67,7 @@ public class CounterAttackModifier extends NoLevelsModifier implements GeneralIn
             }
             ToolAttackUtil.performAttack(tool, builder.build());
             isblocking = false;
-            addEffect(player, MobEffects.MOVEMENT_SPEED, 80, 3);
+            ModifierUtils.addEffect(player, MobEffects.MOVEMENT_SPEED, 80, 3);
             ToolAttackUtil.spawnAttackParticle(TinkerTools.hammerAttackParticle.get(), living, 0.6d);
             if (player instanceof ServerPlayer playerMP) {
                 TinkerNetwork.getInstance().sendVanillaPacket(new ClientboundSetEntityMotionPacket(player), playerMP);

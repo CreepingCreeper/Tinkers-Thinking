@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class ConcealingModifier extends Modifier implements TooltipModifierHook, ModifyDamageModifierHook, ProtectionModifierHook, ModifierUtils {
+public class ConcealingModifier extends Modifier implements TooltipModifierHook, ModifyDamageModifierHook, ProtectionModifierHook {
     public int getPriority() {
         return 90;
     }
@@ -36,7 +36,7 @@ public class ConcealingModifier extends Modifier implements TooltipModifierHook,
     @Override
     public float modifyDamageTaken(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull EquipmentContext context, @NotNull EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         if (source.getEntity() != null) {
-            addEffect(context.getEntity(),MobEffects.INVISIBILITY, 200, 0);
+            ModifierUtils.addEffect(context.getEntity(),MobEffects.INVISIBILITY, 200, 0);
         }
         return amount;
     }

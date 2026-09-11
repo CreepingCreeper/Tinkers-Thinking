@@ -15,7 +15,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
 import javax.annotation.Nullable;
 
-public class FrozenModifier extends Modifier implements ProjectileHitModifierHook, ModifierUtils {
+public class FrozenModifier extends Modifier implements ProjectileHitModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -24,7 +24,7 @@ public class FrozenModifier extends Modifier implements ProjectileHitModifierHoo
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (target!=null){
-            addEffect(target,MobEffects.MOVEMENT_SLOWDOWN,30*modifier.getLevel(),4);
+            ModifierUtils.addEffect(target,MobEffects.MOVEMENT_SLOWDOWN,30*modifier.getLevel(),4);
         }
         return false;
     }

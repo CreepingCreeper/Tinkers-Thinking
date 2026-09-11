@@ -31,7 +31,7 @@ import java.util.List;
 
 import static slimeknights.tconstruct.library.modifiers.Modifier.RANDOM;
 
-public record SymbioticModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileLaunchModifierHook, ModifyDamageModifierHook, ModifierUtils {
+public record SymbioticModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileLaunchModifierHook, ModifyDamageModifierHook {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SymbioticModule> LOADER;
 
@@ -70,7 +70,7 @@ public record SymbioticModule(LevelingValue amount) implements ModifierModule, M
         if (entity instanceof Player player) {
             // eat the food
             int level = modifier.getLevel();
-            heal(player, Math.max(level, (player.getMaxHealth()-player.getHealth()) * 0.3f));
+            ModifierUtils.heal(player, Math.max(level, (player.getMaxHealth()-player.getHealth()) * 0.3f));
             // take a bit of extra damage to heal
             // 8 damage for a bite per level, does not process reinforced/overslime, your teeth are tough
             if (ToolDamageUtil.directDamage(tool, 8* level, player, player.getUseItem())) {

@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import java.util.Objects;
 
-public class RepercussionModifier extends Modifier implements MeleeDamageModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook, ModifierUtils {
+public class RepercussionModifier extends Modifier implements MeleeDamageModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook {
    private static boolean repercussion = true;
     @Override
     public int getPriority() {
@@ -38,7 +38,7 @@ public class RepercussionModifier extends Modifier implements MeleeDamageModifie
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
         if (!context.isExtraAttack() && context.isFullyCharged() && target != null) {
-            if (reverse(tool) && repercussion){
+            if (ModifierUtils.reverse(tool) && repercussion){
                 ToolAttackContext.Builder builder = ToolAttackContext.attacker(attacker).target(target).hand(context.getHand()).cooldown(1);
                 if (context.getHand() == InteractionHand.MAIN_HAND) {
                     builder.applyAttributes();
@@ -53,7 +53,7 @@ public class RepercussionModifier extends Modifier implements MeleeDamageModifie
                 ToolAttackUtil.performAttack(tool, builder.build());
                 repercussion = true;
                 target.invulnerableTime = x;
-                persistentData.remove(reverse_key);
+                persistentData.remove(ModifierUtils.reverse_key);
                 if (attacker instanceof Player player) player.causeFoodExhaustion(0.1F);
                 ToolDamageUtil.damageAnimated(tool, 1, attacker);
             }
@@ -62,8 +62,8 @@ public class RepercussionModifier extends Modifier implements MeleeDamageModifie
     }
     @Override
     public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if (!context.isExtraAttack() && !reverse(tool)&& context.getTarget().isAlive()) {
-            addEffect(context.getAttacker(), ModEffects.disintegration.get(), 200 / modifier.getLevel(), 2);
+        if (!context.isExtraAttack() && !ModifierUtils.reverse(tool)&& context.getTarget().isAlive()) {
+            ModifierUtils.addEffect(context.getAttacker(), ModEffects.disintegration.get(), 200 / modifier.getLevel(), 2);
         }
     }
 }

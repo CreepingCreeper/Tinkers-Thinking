@@ -13,8 +13,8 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSou
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
+import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
 import java.util.List;
 
@@ -46,6 +46,6 @@ public enum AtlatlModule implements ModifierModule, GeneralInteractionModifierHo
 
     @Override
     public UseAnim getUseAction(IToolStackView tool, ModifierEntry modifier) {
-        return BlockingModifier.blockWhileCharging(tool, UseAnim.SPEAR);
+        return ModifierUtil.blockWhileCharging(tool, UseAnim.SPEAR);
     }
 }

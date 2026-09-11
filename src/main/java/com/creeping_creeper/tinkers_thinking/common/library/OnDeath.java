@@ -19,7 +19,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class OnDeath implements ModifierUtils {
+public class OnDeath {
     @SubscribeEvent
     public void onLivingDying(LivingDeathEvent event){
         LivingEntity living = event.getEntity();
@@ -28,7 +28,7 @@ public class OnDeath implements ModifierUtils {
             if (player.hasEffect(ModEffects.last_effort.get())) {
                 event.setCanceled(true);
                 player.setHealth(1);
-                block(living);
+                ModifierUtils.block(living);
                 if (player.getEffect(ModEffects.last_effort.get()).getAmplifier() == 0) {
                     int x = Objects.requireNonNull(player.getEffect(ModEffects.last_effort.get())).getDuration();
                     player.addEffect(new MobEffectInstance(ModEffects.last_effort.get(), x, 1));
@@ -40,7 +40,7 @@ public class OnDeath implements ModifierUtils {
                     if (level > 0 && player.hasEffect(ModEffects.sculk_power.get())) {
                         event.setCanceled(true);
                         player.setHealth(1);
-                        block(living);
+                        ModifierUtils.block(living);
                         player.addEffect(new MobEffectInstance(ModEffects.last_effort.get(), level * 60 + 180, 1));
                         if(player.level().isClientSide){
                             Minecraft.getInstance().gameRenderer.displayItemActivation(ModCommonItems.warden_steel.getIngot().getDefaultInstance());

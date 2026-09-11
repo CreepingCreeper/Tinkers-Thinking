@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class SoulShardItem extends Item implements ModifierUtils {
+public class SoulShardItem extends Item {
     public SoulShardItem(Properties properties) {
         super(properties);
     }
@@ -17,8 +17,8 @@ public class SoulShardItem extends Item implements ModifierUtils {
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
         int x = stack.getCount();
         if (entity instanceof LivingEntity living){
-            heal(living, 2*x);
-            addEffect(living,stack.getItem()==ModCommonItems.soul_shard_a.get()?MobEffects.DIG_SPEED:MobEffects.DAMAGE_RESISTANCE,60,2);
+            ModifierUtils.heal(living, 2*x);
+            ModifierUtils.addEffect(living,stack.getItem()==ModCommonItems.soul_shard_a.get()?MobEffects.DIG_SPEED:MobEffects.DAMAGE_RESISTANCE,60,2);
         }
         stack.shrink(x);
     }

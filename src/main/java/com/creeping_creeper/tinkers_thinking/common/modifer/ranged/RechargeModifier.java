@@ -17,7 +17,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public class RechargeModifier extends Modifier implements ConditionalStatModifierHook, ProjectileLaunchModifierHook, ModifierUtils {
+public class RechargeModifier extends Modifier implements ConditionalStatModifierHook, ProjectileLaunchModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
@@ -25,7 +25,7 @@ public class RechargeModifier extends Modifier implements ConditionalStatModifie
     }
     @Override
     public float modifyStat(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, LivingEntity living, @NotNull FloatToolStat stat, float baseValue, float multiplier) {
-        if (reverse(tool)) {
+        if (ModifierUtils.reverse(tool)) {
             if (stat == ToolStats.DRAW_SPEED) {
                 return (float) (baseValue*(1-(0.15*modifier.getLevel())));
             }
@@ -39,6 +39,6 @@ public class RechargeModifier extends Modifier implements ConditionalStatModifie
     }
     @Override
     public void onProjectileLaunch(IToolStackView tool, ModifierEntry modifier, LivingEntity shooter, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
-        if (!reverse(tool))setPower(projectile,0.2f);
+        if (!ModifierUtils.reverse(tool))ModifierUtils.setPower(projectile,0.2f);
     }
 }

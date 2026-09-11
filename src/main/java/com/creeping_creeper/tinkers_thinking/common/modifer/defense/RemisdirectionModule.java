@@ -23,12 +23,13 @@ import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.util.List;
 import java.util.Optional;
 
-public enum RemisdirectionModule implements ModifierModule, DamageBlockModifierHook, ModifierUtils {
+public enum RemisdirectionModule implements ModifierModule, DamageBlockModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<RemisdirectionModule>defaultHooks(ModifierHooks.DAMAGE_BLOCK);
     public static final RecordLoadable<RemisdirectionModule> LOADER = new SingletonLoader<>(INSTANCE);
@@ -41,7 +42,7 @@ public enum RemisdirectionModule implements ModifierModule, DamageBlockModifierH
     @Override
     public boolean isDamageBlocked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount) {
         LivingEntity living = context.getEntity();
-        if (source.getEntity() != null && !living.hasEffect(TinkerModifiers.teleportCooldownEffect.get()) && reverse(tool)){
+        if (source.getEntity() != null && !living.hasEffect(TinkerEffects.enderference.get()) && ModifierUtils.reverse(tool)){
             Vec3 look = living.getLookAngle();
             Level level = context.getLevel();
             double offX = look.x * 5;
@@ -69,9 +70,9 @@ public enum RemisdirectionModule implements ModifierModule, DamageBlockModifierH
                 SlingModifierTeleportEvent event = new SlingModifierTeleportEvent(living, furthestPos.getX() + 0.5f, furthestPos.getY(), furthestPos.getZ() + 0.5f, tool, modifier);
                 MinecraftForge.EVENT_BUS.post(event);
                 if (!event.isCanceled()) {
-                    block(living);
+                    ModifierUtils.block(living);
                     Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
-                    dataCap.ifPresent(data -> addEffect(living, TinkerModifiers.teleportCooldownEffect.get(), Mth.clamp((int) amount / data.get(ModDataKeys.Remisdirection, 1), 10, 60) * 20));
+                    dataCap.ifPresent(data -> ModifierUtils.addEffect(living, TinkerEffects.enderference.get(), Mth.clamp((int) amount / data.get(ModDataKeys.Remisdirection, 1), 10, 60) * 20));
                     living.teleportTo(event.getTargetX(), event.getTargetY(), event.getTargetZ());
                     return true;
                 }

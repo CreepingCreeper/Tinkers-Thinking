@@ -3,7 +3,7 @@ package com.creeping_creeper.tinkers_thinking.common.register;
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.CurioLevelModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.OverbearModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.curio.SculkHealModifier;
+import com.creeping_creeper.tinkers_thinking.common.modifer.curio.SculkHealModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.*;
@@ -21,15 +21,13 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 
+@SuppressWarnings("removal")
 public class ModModifiers{
     public static void init(){
         MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        if (ModList.get().isLoaded("tinkers_ingenuity")){
-            TIModifiers.init();
-        }
     }
+
     private static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
-    public static final StaticModifier<DepositionModifier> Deposition = MODIFIERS.register("deposition", DepositionModifier::new);
     public static final StaticModifier<StimulationModifier> Stimulation = MODIFIERS.register("stimulation", StimulationModifier::new);
     public static final StaticModifier<InspiredModifier> Inspired = MODIFIERS.register("inspired", InspiredModifier::new);
     public static final StaticModifier<MockModifier> Mock = MODIFIERS.register("mock", MockModifier::new);
@@ -38,9 +36,6 @@ public class ModModifiers{
     public static final StaticModifier<ShadowingModifier> Shadowing = MODIFIERS.register("shadowing", ShadowingModifier::new);
     public static final StaticModifier<RepulsiveModifier> Repulsive = MODIFIERS.register("repulsive", RepulsiveModifier::new);
     public static final StaticModifier<PricklyModifier> Prickly = MODIFIERS.register("prickly", PricklyModifier::new);
-    public static final StaticModifier<SprintingModifier> Sprinting = MODIFIERS.register("sprinting", SprintingModifier::new);
-    public static final StaticModifier<DuritaeModifier> Duritae = MODIFIERS.register("duritae", DuritaeModifier::new);
-    public static final StaticModifier<OvereatModifier> Overeat = MODIFIERS.register("overeat", OvereatModifier::new);
     public static final StaticModifier<DisarmModifier> Disarm = MODIFIERS.register("disarm", DisarmModifier::new);
     public static final StaticModifier<SculkProtectionModifier> SculkProtection = MODIFIERS.register("sculk_protection", SculkProtectionModifier::new);
     public static final StaticModifier<SculkTeleportModifier> SculkTeleport = MODIFIERS.register("sculk_teleport", SculkTeleportModifier::new);
@@ -55,10 +50,8 @@ public class ModModifiers{
     public static final StaticModifier<CataclysmModifier> Cataclysm = MODIFIERS.register("cataclysm", CataclysmModifier::new);
     public static final StaticModifier<MagicTransformModifier> MagicTransform = MODIFIERS.register("magic_transform", MagicTransformModifier::new);
     public static final StaticModifier<OverFreezeModifier> FreezingCold = MODIFIERS.register("overfreeze", OverFreezeModifier::new);
-    public static final StaticModifier<DurableModifier> Durable = MODIFIERS.register("durable", DurableModifier::new);
     public static final StaticModifier<OverdisintegrateModifier> Overdisintegrate = MODIFIERS.register("overdisintegrate", OverdisintegrateModifier::new);
     public static final StaticModifier<OverbearModifier> Overbear = MODIFIERS.register("overbear", OverbearModifier::new);
-    public static final StaticModifier<ReverseModifier> Reverse = MODIFIERS.register("reverse", ReverseModifier::new);
     public static final StaticModifier<RecalamityModifier> Recalamity = MODIFIERS.register("recalamity", RecalamityModifier::new);
     public static final StaticModifier<SculkSiphonModifier> SculkSiphon = MODIFIERS.register("sculk_siphon", SculkSiphonModifier::new);
     public static final StaticModifier<ResistingModifier> Resisting = MODIFIERS.register("resisting", ResistingModifier::new);
@@ -73,7 +66,7 @@ public class ModModifiers{
     public static final StaticModifier<BattleAdvancedModifier> BattleAdvanced = MODIFIERS.register("battle_advanced", BattleAdvancedModifier::new);
     public static final StaticModifier<GlowAdvancedModifier> GlowAdvanced = MODIFIERS.register("glow_advanced", GlowAdvancedModifier::new);
     public static final StaticModifier<TeleportAdvancedModifier> TeleportAdvanced = MODIFIERS.register("teleport_advanced", TeleportAdvancedModifier::new);
-    public static final StaticModifier<OverchargeModifier> Overcharge = MODIFIERS.register("overcharge", OverchargeModifier::new);
+
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
@@ -81,11 +74,9 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("netherite"), NetheriteModule.LOADER);
             ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_boost"), SculkBoostModule.LOADER);
-            ModifierModule.LOADER.register(getResource("sculk_catalyse"), SculkCatalyseModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_levitate"), SculkLevitateModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_gravity"), SculkGravityModule.LOADER);
             ModifierModule.LOADER.register(getResource("lightly_attack"), LightlyAttackModule.LOADER);
-            ModifierModule.LOADER.register(getResource("hurried"), HurriedModule.LOADER);
             ModifierModule.LOADER.register(getResource("antibrute"), AntibruteModule.LOADER);
             ModifierModule.LOADER.register(getResource("reburning"), ReburningModifier.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_struggle"), SculkStruggleModule.LOADER);
@@ -97,16 +88,26 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("bide_time"), BideTimeModule.LOADER);
             ModifierModule.LOADER.register(getResource("sharp_circumstance"), SharpCircumstanceModule.LOADER);
             ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
+
+            // durability
+            ModifierModule.LOADER.register(getResource("sculk_catalyse"), SculkCatalyseModule.LOADER);
+            ModifierModule.LOADER.register(getResource("reverse"), ReverseModule.LOADER);
+
+            ModifierModule.LOADER.register(getResource("deposition"), DepositionModule.LOADER);
+            ModifierModule.LOADER.register(getResource("duritae"), DuritaeModule.LOADER);
+            ModifierModule.LOADER.register(getResource("overeat"), OvereatModule.LOADER);
+            ModifierModule.LOADER.register(getResource("durable"), DurableModule.LOADER);
+            ModifierModule.LOADER.register(getResource("overcharge"), OverchargeModule.LOADER);
+
+            // misc
+            ModifierModule.LOADER.register(getResource("sling_sprinting"), SlingSprintingModule.LOADER);
+            ModifierModule.LOADER.register(getResource("hurried"), HurriedModule.LOADER);
+
             if (ModList.get().isLoaded("tinkers_ingenuity")) {
                 ModifierModule.LOADER.register(getResource("curio_level"), CurioLevelModule.LOADER);
+                ModifierModule.LOADER.register(getResource("sculk_heal"), SculkHealModule.LOADER);
             }
         }
     }
-    public static class TIModifiers{
-        public static void init(){
-            TI_MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        }
-        private static final ModifierDeferredRegister TI_MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
-        public static final StaticModifier<SculkHealModifier> SculkHeal = TI_MODIFIERS.register("sculk_heal", SculkHealModifier::new);
-    }
+
 }

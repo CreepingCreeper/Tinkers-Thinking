@@ -21,7 +21,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
 import java.util.List;
 
-public enum CoercionModule implements ModifierModule, ProjectileShootModifierHook, ModifierUtils {
+public enum CoercionModule implements ModifierModule, ProjectileShootModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<CoercionModule>defaultHooks(ModifierHooks.PROJECTILE_SHOT);
     public static final RecordLoadable<CoercionModule> LOADER = new SingletonLoader<>(INSTANCE);
@@ -36,7 +36,7 @@ public enum CoercionModule implements ModifierModule, ProjectileShootModifierHoo
         if (shooter != null && shooter.hasEffect(MobEffects.INVISIBILITY)) {
             int x = shooter.getEffect(MobEffects.INVISIBILITY).getDuration();
             shooter.removeEffect(MobEffects.INVISIBILITY);
-            addEffect(shooter,MobEffects.INVISIBILITY,x/2);
+            ModifierUtils.addEffect(shooter,MobEffects.INVISIBILITY,x/2);
         }
     }
 }

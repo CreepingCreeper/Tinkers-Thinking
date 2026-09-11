@@ -6,8 +6,6 @@ import com.creeping_creeper.tinkers_thinking.common.integration.TouhouLittleMaid
 import com.creeping_creeper.tinkers_thinking.common.library.OnDeath;
 import com.creeping_creeper.tinkers_thinking.common.library.OnExpPickUp;
 import com.creeping_creeper.tinkers_thinking.common.library.Onhurt;
-import com.creeping_creeper.tinkers_thinking.common.networking.ModMessages;
-import com.creeping_creeper.tinkers_thinking.common.recipes.ModRecipes;
 import com.creeping_creeper.tinkers_thinking.common.register.*;
 import com.creeping_creeper.tinkers_thinking.common.client.ClientEvents;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
@@ -18,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -36,15 +35,12 @@ public class TinkersThinking
     public static final String MODID = "tinkers_thinking";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
- 
-    public TinkersThinking()
-    {
+    @SuppressWarnings("removal")
+    public TinkersThinking() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModRecipes.registers(bus);
         ModPotions.registers(bus);
         ModSounds.SOUND_EVENTS.register(bus);
         bus.register(new ModModifiers());
-        bus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         ModModifiers.init();
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientEvents::onConstruct);
@@ -58,8 +54,9 @@ public class TinkersThinking
         ModModule.initRegisters();
         ModDataKeys.init();
     }
-    public void commonSetup(final FMLCommonSetupEvent event) {
-        ModMessages.register();
+
+    @SubscribeEvent
+    static void commonSetup(final FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(new OnExpPickUp());
         if (ModList.get().isLoaded("touhou_little_maid")){
             MinecraftForge.EVENT_BUS.register(new TouhouLittleMaidPlugin());
@@ -72,6 +69,7 @@ public class TinkersThinking
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ModSlots::init);
         ModPotions.init();
     }
+
     public static String makeTranslationKey(String base, String name) {
         return Util.makeTranslationKey(base, getResource(name));
     }
@@ -85,7 +83,7 @@ public class TinkersThinking
         return type + "." + MODID + "." + name;
     }
     public static ResourceLocation getResource(String name) {
-        return new ResourceLocation(MODID, name);
+        return ResourceLocation.fromNamespaceAndPath(MODID, name);
     }
     public static <T> TinkerDataCapability.TinkerDataKey<T> createKey(String name) {
         return TinkerDataCapability.TinkerDataKey.of(getResource(name));

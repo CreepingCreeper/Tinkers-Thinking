@@ -13,7 +13,7 @@ import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class InspiredModifier extends Modifier implements BlockBreakModifierHook, ModifierUtils {
+public class InspiredModifier extends Modifier implements BlockBreakModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.BLOCK_BREAK);
@@ -22,7 +22,7 @@ public class InspiredModifier extends Modifier implements BlockBreakModifierHook
     public void afterBlockBreak(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolHarvestContext context) {
         if (context.canHarvest() && context.isEffective() && !context.isAOE() && RANDOM.nextFloat() <  0.25) {
             LivingEntity living = context.getLiving();
-            addEffect(living,MobEffects.DIG_SPEED,20,1);
+            ModifierUtils.addEffect(living,MobEffects.DIG_SPEED,20,1);
             ToolDamageUtil.directDamage(tool, modifier.getLevel() * 5, living, living.getUseItem());
         }
     }

@@ -33,8 +33,8 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import java.util.Objects;
 import java.util.UUID;
 
-public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter,ProjectileHitModifierHook, ModifierRemovalHook, ModifierUtils {
-    private final ResourceLocation KEY = new ResourceLocation(TinkersThinking.MODID, "a");
+public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter,ProjectileHitModifierHook, ModifierRemovalHook {
+    private final ResourceLocation KEY = TinkersThinking.getResource("a");
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.PROJECTILE_HIT, ModifierHooks.REMOVE);
@@ -58,7 +58,7 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
         if (!context.isExtraAttack() && context.isFullyCharged() && target!=null && target.isAlive()) {
-            damage *= (1 + dye((ServerLevel) context.getLevel(),target,attacker,Objects.requireNonNull(tool.getPersistentData()),damage,reverse(tool),modifier.getLevel()));
+            damage *= (1 + dye((ServerLevel) context.getLevel(),target,attacker,Objects.requireNonNull(tool.getPersistentData()),damage,ModifierUtils.reverse(tool),modifier.getLevel()));
         }
         return damage;
     }
@@ -68,7 +68,7 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
             float power = 0f;
             if (projectile instanceof AbstractArrow arrow) power = (float) arrow.getBaseDamage();
             if (projectile instanceof ProjectileWithPower withPower ) power = withPower.getDamage();
-            setPower(projectile, dye((ServerLevel) target.level(),target,attacker,Objects.requireNonNull(persistentData),power,reverseProjectile(projectile),modifier.getLevel()));
+            ModifierUtils.setPower(projectile, dye((ServerLevel) target.level(),target,attacker,Objects.requireNonNull(persistentData),power, ModifierUtils.reverseProjectile(projectile),modifier.getLevel()));
         }
         return false;
     }

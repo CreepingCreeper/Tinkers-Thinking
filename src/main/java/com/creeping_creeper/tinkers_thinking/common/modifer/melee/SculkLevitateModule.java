@@ -18,7 +18,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public record SculkLevitateModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ModifierUtils {
+public record SculkLevitateModule(LevelingValue amount) implements ModifierModule, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SculkLevitateModule> LOADER;
 
@@ -35,8 +35,8 @@ public record SculkLevitateModule(LevelingValue amount) implements ModifierModul
             LivingEntity attacker = context.getAttacker();
             LivingEntity target = context.getLivingTarget();
             if (attacker.hasEffect(ModEffects.sculk_power.get())&&target!=null&&!target.hasEffect(ModEffects.modifier_immune.get())) {
-                addEffect(target,ModEffects.weightless.get(),120,2);
-                addEffect(target,ModEffects.modifier_immune.get(),(int) (amount.eachLevel()/modifier.getLevel()));
+                ModifierUtils.addEffect(target,ModEffects.weightless.get(),120,2);
+                ModifierUtils.addEffect(target,ModEffects.modifier_immune.get(),(int) (amount.eachLevel()/modifier.getLevel()));
           }
         }
     }
