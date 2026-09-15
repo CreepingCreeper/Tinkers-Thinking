@@ -1,7 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.common.client;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import slimeknights.mantle.client.model.NBTKeyModel;

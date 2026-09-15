@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:durable",
+      "max_chance": 0.9
+    }
+  ],
+  "tooltip_display": "always"
+}

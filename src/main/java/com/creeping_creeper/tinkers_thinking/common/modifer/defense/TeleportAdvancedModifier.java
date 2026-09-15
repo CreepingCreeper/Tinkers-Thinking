@@ -21,7 +21,6 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.shared.TinkerEffects;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 public class TeleportAdvancedModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, MeleeHitModifierHook {
     private final ResourceLocation X = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_x");

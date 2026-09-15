@@ -38,6 +38,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
         addMaterialStats(ModMaterialIds.electrical_steel,
                 new LimbMaterialStats(960, -0.1f, 0.1f, 0.1f),
                 new GripMaterialStats(0.05f, 0.15f, 2.75f));
+
     }
 
     private void addAmmo() {
@@ -46,11 +47,12 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
 
     private void addArmor() {
         addArmorShieldStats(ModMaterialIds.electrical_steel, PlatingMaterialStats.builder().durabilityFactor(30).armor(3, 5, 7, 3).toughness(1.5f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
-
+        addMaterialStats(ModMaterialIds.gilded_silky_cloth, StatlessMaterialStats.MAILLE);
     }
 
     private void addSlimesuit() {
         addMaterialStats(ModMaterialIds.bacium, RepairStats.shell(150));
+        addMaterialStats(ModMaterialIds.gilded_silky_cloth, RepairStats.shell(78));
     }
 
     private void addMisc() {

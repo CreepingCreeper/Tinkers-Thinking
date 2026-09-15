@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:echo_bronze_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/echo_bronze"
+    },
+    "*": {
+      "item": "tinkers_thinking:echo_bronze_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:echo_bronze_block"
+  },
+  "show_notification": true
+}

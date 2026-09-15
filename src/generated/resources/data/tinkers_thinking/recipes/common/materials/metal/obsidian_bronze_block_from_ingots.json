@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:obsidian_bronze_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/obsidian_bronze"
+    },
+    "*": {
+      "item": "tinkers_thinking:obsidian_bronze_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:obsidian_bronze_block"
+  },
+  "show_notification": true
+}

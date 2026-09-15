@@ -5,7 +5,6 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -26,11 +25,11 @@ public record RetransitModule(LevelingValue amount) implements ModifierModule, M
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<RetransitModule> LOADER;
 
-    public @NotNull RecordLoadable<RetransitModule> getLoader() {
+    public RecordLoadable<RetransitModule> getLoader() {
         return LOADER;
     }
 
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
 
@@ -40,10 +39,10 @@ public record RetransitModule(LevelingValue amount) implements ModifierModule, M
         Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
         dataCap.ifPresent(data -> {
             int x = (int)amount().eachLevel() * data.get(ModDataKeys.Retransit, 0) *20;
-            if (ModifierUtils.reverse(tool)&&!living.hasEffect(TinkerEffects.returning.get())) {
+            if (ModifierUtils.reverse(tool, modifier) && !living.hasEffect(TinkerEffects.returning.get())) {
                 ModifierUtils.addEffect(living,TinkerEffects.returning.get(),x);
             }
-            if (!ModifierUtils.reverse(tool)&&!living.hasEffect(ModEffects.reminiscence.get())) {
+            if (!ModifierUtils.reverse(tool, modifier) && !living.hasEffect(ModEffects.reminiscence.get())) {
                 ModifierUtils.addEffect(living,ModEffects.reminiscence.get(),x);
             }
         });

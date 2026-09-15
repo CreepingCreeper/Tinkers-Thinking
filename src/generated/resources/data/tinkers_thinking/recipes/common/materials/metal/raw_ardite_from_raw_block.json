@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:raw_ardite",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:raw_ardite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:raw_ardite"
+  }
+}

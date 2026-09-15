@@ -1,0 +1,9 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:duritae"
+    }
+  ],
+  "tooltip_display": "always"
+}

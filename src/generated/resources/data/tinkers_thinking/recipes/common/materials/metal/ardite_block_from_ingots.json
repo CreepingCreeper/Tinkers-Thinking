@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:ardite_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/ardite"
+    },
+    "*": {
+      "item": "tinkers_thinking:ardite_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:ardite_block"
+  },
+  "show_notification": true
+}

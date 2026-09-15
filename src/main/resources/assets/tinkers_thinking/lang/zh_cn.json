@@ -847,8 +847,8 @@
   "modifier.tinkers_thinking.reverse": "§c逆§9变",
   "modifier.tinkers_thinking.reverse.flavor": "§c循环§9往复",
   "modifier.tinkers_thinking.reverse.description": "根据工具使用次数奇偶性改变逆变系列的特性的效果。§c奇：耐久消耗翻倍/§9偶：耐久不消耗",
-  "modifier.tinkers_thinking.reverse.1": "§c状态：奇",
-  "modifier.tinkers_thinking.reverse.2": "§9状态：偶",
+  "modifier.tinkers_thinking.reverse.1": "§c——奇",
+  "modifier.tinkers_thinking.reverse.2": "§9——偶",
 
   "modifier.tinkers_thinking.recalamity": "降祸",
   "modifier.tinkers_thinking.recalamity.flavor": "大难不死，必有补刀",

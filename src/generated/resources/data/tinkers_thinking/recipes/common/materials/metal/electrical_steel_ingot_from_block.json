@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:electrical_steel_ingot",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:electrical_steel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:electrical_steel_ingot"
+  }
+}

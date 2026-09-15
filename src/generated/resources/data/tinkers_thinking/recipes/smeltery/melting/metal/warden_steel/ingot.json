@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/warden_steel"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_thinking:molten_warden_steel"
+  },
+  "temperature": 450,
+  "time": 48
+}

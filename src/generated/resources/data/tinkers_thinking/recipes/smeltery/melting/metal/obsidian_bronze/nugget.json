@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/obsidian_bronze"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:molten_obsidian_bronze"
+  },
+  "temperature": 650,
+  "time": 18
+}

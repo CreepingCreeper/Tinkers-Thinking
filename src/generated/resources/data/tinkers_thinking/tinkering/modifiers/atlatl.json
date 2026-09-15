@@ -1,0 +1,9 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:atlatl"
+    }
+  ],
+  "tooltip_display": "always"
+}

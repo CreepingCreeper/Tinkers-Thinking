@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "cooling_time": 66,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_electrical_steel"
+  },
+  "result": {
+    "tag": "forge:ingots/electrical_steel"
+  }
+}

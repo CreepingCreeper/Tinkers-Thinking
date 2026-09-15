@@ -2,12 +2,10 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
-import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -16,21 +14,19 @@ import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifier
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
-import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
-import java.util.Optional;
 
 public enum AntibruteModule implements ModifierModule, ModifyDamageModifierHook {
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<AntibruteModule>defaultHooks(ModifierHooks.MODIFY_HURT);
     public static final RecordLoadable<AntibruteModule> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<AntibruteModule> getLoader() {
+    public RecordLoadable<AntibruteModule> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override

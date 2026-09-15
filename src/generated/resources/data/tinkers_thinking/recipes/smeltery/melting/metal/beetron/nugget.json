@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/beetron"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:molten_beetron"
+  },
+  "temperature": 100,
+  "time": 11
+}

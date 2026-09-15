@@ -3,10 +3,8 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -25,15 +23,15 @@ public record SculkGravityModule(LevelingValue amount) implements ModifierModule
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SculkGravityModule> LOADER;
 
-    public @NotNull RecordLoadable<SculkGravityModule> getLoader() {
+    public RecordLoadable<SculkGravityModule> getLoader() {
         return LOADER;
     }
 
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override
-    public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (target!=null && !target.hasEffect(ModEffects.modifier_immune.get()) && attacker!=null && attacker.hasEffect(ModEffects.sculk_power.get())) {
             ModifierUtils.addEffect(target,ModEffects.overweight.get(),120,5);
             ModifierUtils.addEffect(target, ModEffects.jumpless.get(), 120, 0, false);

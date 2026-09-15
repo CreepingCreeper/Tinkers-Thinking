@@ -1,0 +1,9 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:resisting"
+    }
+  ],
+  "tooltip_display": "always"
+}

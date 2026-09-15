@@ -1,0 +1,15 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_power",
+      "each_level": 1.0,
+      "holder": "tinkers_thinking:is_riding",
+      "percent": false
+    },
+    {
+      "type": "tinkers_thinking:riding_shoot"
+    }
+  ],
+  "tooltip_display": "always"
+}

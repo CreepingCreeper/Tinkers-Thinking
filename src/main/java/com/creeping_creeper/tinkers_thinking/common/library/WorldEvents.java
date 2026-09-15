@@ -4,7 +4,6 @@ import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
-import com.creeping_creeper.tinkers_thinking.data.ModDamageTypes;
 import com.creeping_creeper.tinkers_thinking.data.ModTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;

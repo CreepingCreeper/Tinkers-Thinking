@@ -37,15 +37,15 @@ public record SharpCircumstanceModule(LevelingValue amount) implements ModifierM
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SharpCircumstanceModule> LOADER;
 
-    public @NotNull RecordLoadable<SharpCircumstanceModule> getLoader() {
+    public RecordLoadable<SharpCircumstanceModule> getLoader() {
         return LOADER;
     }
 
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override
-    public float getMeleeDamage(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
+    public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity attacker = context.getAttacker();
         LivingEntity target = context.getLivingTarget();
         if (!context.isExtraAttack() && target != null && damage > 0) {

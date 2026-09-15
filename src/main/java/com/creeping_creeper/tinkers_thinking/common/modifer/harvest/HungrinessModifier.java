@@ -7,7 +7,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -17,7 +16,6 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedModifierHook;
-import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
@@ -44,13 +42,15 @@ public class HungrinessModifier extends Modifier implements ConditionalStatModif
         }
         return baseValue;
     }
+
     @Override
-    public void onBreakSpeed(IToolStackView tool, ModifierEntry modifier, PlayerEvent.@NotNull BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+    public void onBreakSpeed(IToolStackView tool, ModifierEntry modifier, PlayerEvent.BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
         if (!isEffective||event.getEntity()==null) {
             return;
         }
         event.setNewSpeed((float) (event.getNewSpeed()*(1+(20-(event.getEntity().getFoodData().getFoodLevel()))*0.02*modifier.getLevel())));
     }
+
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
         boolean harvest = tool.hasTag(TinkerTags.Items.HARVEST);

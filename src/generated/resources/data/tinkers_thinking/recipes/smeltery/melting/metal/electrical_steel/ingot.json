@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/electrical_steel"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_electrical_steel"
+  },
+  "temperature": 996,
+  "time": 66
+}

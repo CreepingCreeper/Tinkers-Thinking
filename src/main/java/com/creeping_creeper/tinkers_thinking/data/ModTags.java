@@ -15,7 +15,7 @@ import static slimeknights.mantle.Mantle.commonResource;
 public class ModTags {
     public static class Items {
         /** Any modifiable bows or crossbows that has a loading_animation like vanilla crossbow */
-        public static final TagKey<Item> LOADING_ANIMATION = local("loading_animation");
+        public static final TagKey<Item> raw_ardite = common("raw_ardite");
         private static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
         }

@@ -13,12 +13,14 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
 import slimeknights.tconstruct.common.Sounds;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.entity.ProjectileWithPower;
+import slimeknights.tconstruct.library.modifiers.hook.special.CapacityBarHook;
+import slimeknights.tconstruct.library.modifiers.modules.capacity.CapacitySourceModule;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
-
-import java.util.Objects;
 
 public interface ModifierUtils {
     static void addEffect(LivingEntity living, MobEffect effect, int duration) {
@@ -31,22 +33,29 @@ public interface ModifierUtils {
         living.addEffect(new MobEffectInstance(effect, duration, amplifier, false, visible, visible));
     }
     ResourceLocation reverse_key = TinkersThinking.getResource("reverse");
-    static void change(IToolStackView tool){
-        ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
-        if (reverse(tool)){
-            persistentData.putBoolean(reverse_key, true);
-        } else {
-            persistentData.remove(reverse_key);
-        }
+
+    static void change(IToolStackView tool, ModifierEntry modifier){
+        int x;
+        if (reverse(tool, modifier)){
+            x = 1;
+        } else x = 0;
+        CapacitySourceModule.apply(tool, modifier, 1, x);
     }
-    static boolean reverse(IToolStackView tool){
-        ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
-        return !persistentData.contains(reverse_key);
+
+    static boolean reverse(IToolStackView tool, ModifierEntry modifier){
+        CapacityBarHook bar = modifier.getHook(ModifierHooks.CAPACITY_BAR);
+        return bar.getAmount(tool) == 0;
     }
+
     static boolean reverseProjectile(Projectile projectile){
         ModDataNBT data = PersistentDataCapability.getOrWarn(projectile);
         return !data.getBoolean(reverse_key);
     }
+
+    static boolean reverseProjectile(ModDataNBT persistentData){
+        return !persistentData.getBoolean(reverse_key);
+    }
+
     static void setPower(Projectile projectile,float multiple){
         float x= 1+multiple;
         if (projectile instanceof AbstractArrow arrow){
@@ -56,6 +65,7 @@ public interface ModifierUtils {
             withPower.setPower(withPower.getPower()*x);
         }
     }
+
     static void addPower(Projectile projectile,float addition){
         if (projectile instanceof AbstractArrow arrow){
             arrow.setBaseDamage(arrow.getBaseDamage()+addition);
@@ -64,6 +74,7 @@ public interface ModifierUtils {
             projectile1.setPower(projectile1.getPower()+addition);
         }
     }
+
     static void particles(Level level, LivingEntity living, ParticleOptions particleType){
         if (level instanceof ServerLevel server) {
             server.sendParticles(particleType, living.getRandomX(0.8), living.getRandomY() + 0.6, living.getRandomZ(0.8),0, 0.0F, 0.0F, 0.0F,0);

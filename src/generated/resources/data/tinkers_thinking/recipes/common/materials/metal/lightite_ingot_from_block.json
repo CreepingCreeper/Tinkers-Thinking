@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:lightite_ingot",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:lightite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:lightite_ingot"
+  }
+}

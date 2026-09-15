@@ -7,12 +7,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -34,10 +36,10 @@ public enum RederangementModule implements ModifierModule, MeleeHitModifierHook,
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<RederangementModule>defaultHooks(ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT ,ModifierHooks.PROJECTILE_HIT);
     public static final RecordLoadable<RederangementModule> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<RederangementModule> getLoader() {
+    public RecordLoadable<RederangementModule> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     private void derangement(Level level, LivingEntity target, LivingEntity attacker, boolean a, int l) {
@@ -66,15 +68,17 @@ public enum RederangementModule implements ModifierModule, MeleeHitModifierHook,
             target.setLastHurtByMob(attacker);
         }
     }
+
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity target = context.getLivingTarget();
-        if (!context.isExtraAttack() && target!=null) {
-            derangement(context.getLevel(), target, context.getPlayerAttacker(), ModifierUtils.reverse(tool), modifier.getLevel());
+        if (!context.isExtraAttack() && target != null) {
+            derangement(context.getLevel(), target, context.getAttacker(), ModifierUtils.reverse(tool, modifier), modifier.getLevel());
         }
     }
+
     @Override
-    public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
         if (target != null && attacker != null) {
                 derangement(projectile.level(), target, attacker, ModifierUtils.reverseProjectile(projectile), modifier.getLevel());
         }

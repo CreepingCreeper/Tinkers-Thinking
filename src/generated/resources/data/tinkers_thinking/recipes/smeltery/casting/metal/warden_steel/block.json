@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 144,
+  "fluid": {
+    "amount": 810,
+    "tag": "tinkers_thinking:molten_warden_steel"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/warden_steel"
+  }
+}

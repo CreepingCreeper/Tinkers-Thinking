@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/spectre"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:molten_spectre"
+  },
+  "temperature": 300,
+  "time": 14
+}

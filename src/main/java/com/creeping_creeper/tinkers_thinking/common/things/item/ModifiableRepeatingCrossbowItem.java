@@ -1,6 +1,5 @@
 package com.creeping_creeper.tinkers_thinking.common.things.item;
 
-import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -31,10 +30,8 @@ import org.joml.Vector3f;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
-import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.BowAmmoModifierHook;
@@ -49,7 +46,6 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import javax.annotation.Nullable;
@@ -65,7 +61,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
   private static final String PROJECTILE_KEY = "item.minecraft.crossbow.projectile";
   private final Predicate<ItemStack> supportedHeldProjectiles;
   private final boolean storeDrawingItem;
-  public ModifiableRepeatingCrossbowItem(Properties properties, ToolDefinition toolDefinition,Predicate<ItemStack> supportedHeldProjectiles,boolean storeDrawingItem) {
+  public ModifiableRepeatingCrossbowItem(Properties properties, ToolDefinition toolDefinition, Predicate<ItemStack> supportedHeldProjectiles, boolean storeDrawingItem) {
     super(properties, toolDefinition);
     this.supportedHeldProjectiles = supportedHeldProjectiles;
     this.storeDrawingItem = storeDrawingItem;
@@ -108,7 +104,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
     if (tool.isBroken()) {
       return InteractionResultHolder.fail(bow);
     } else {
-      boolean sinistral = hand == InteractionHand.MAIN_HAND && tool.getModifierLevel(ModModifiers.Sinistral.get()) > 0;
+      boolean sinistral = hand == InteractionHand.MAIN_HAND && tool.getModifierLevel(ModModifierIds.Sinistral) > 0;
       ModDataNBT persistentData = tool.getPersistentData();
       CompoundTag heldAmmo = persistentData.getCompound(KEY_CROSSBOW_AMMO);
       ItemStack ammo;
@@ -136,7 +132,7 @@ public class ModifiableRepeatingCrossbowItem extends ModifiableLauncherItem {
 
             player.startUsingItem(hand);
             if (!level.isClientSide) {
-              level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.CROSSBOW_QUICK_CHARGE_1, SoundSource.PLAYERS, 0.75F, 1.0F);
+              level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.CROSSBOW_QUICK_CHARGE_1, SoundSource.PLAYERS, 0.75F, 1.0F);
             }
 
             return InteractionResultHolder.consume(bow);

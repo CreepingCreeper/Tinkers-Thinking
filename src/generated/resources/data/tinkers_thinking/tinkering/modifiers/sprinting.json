@@ -1,0 +1,14 @@
+{
+  "level_display": "tconstruct:single_level",
+  "modules": [
+    {
+      "type": "tinkers_thinking:sling_sprinting",
+      "drawtime_multiplier": 1.5,
+      "force_multiplier": {
+        "each_level": 1.5,
+        "flat": 2.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

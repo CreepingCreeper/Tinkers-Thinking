@@ -1,0 +1,9 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:sinistral"
+    }
+  ],
+  "tooltip_display": "always"
+}

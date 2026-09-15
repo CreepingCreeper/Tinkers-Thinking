@@ -37,13 +37,13 @@ public class CrimsonModifier extends Modifier implements MeleeHitModifierHook, M
         ModifierUtils.addEffect(living, ModEffects.armor.get(), 400, Math.min(x + 1, level * 2 + 2));
     }
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack() && context.isFullyCharged()) {
             apply(context.getAttacker(), modifier.getLevel());
         }
     }
     @Override
-    public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (attacker != null) {
             apply(attacker, modifier.getLevel());
         }

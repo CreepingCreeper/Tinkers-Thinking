@@ -3,7 +3,6 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -45,9 +44,8 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
             if (attribute.getModifier(ATTRIBUTE_BONUS) == null) {
             attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed", x,
                     AttributeModifier.Operation.ADDITION));
-            attribute.getModifier(ATTRIBUTE_BONUS).getAmount();
             }
-            if (attribute.getModifier(ATTRIBUTE_BONUS) != null&&x > Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount()) {
+            if (attribute.getModifier(ATTRIBUTE_BONUS) != null && x > Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount()) {
                 attribute.removeModifier(ATTRIBUTE_BONUS);
                 attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.sculk_breed", x,
                     AttributeModifier.Operation.ADDITION));

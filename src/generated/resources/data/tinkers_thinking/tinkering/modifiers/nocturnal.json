@@ -1,0 +1,28 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$bonus",
+        "$level",
+        "*",
+        "$value",
+        "+"
+      ],
+      "percent": false,
+      "stat": "tconstruct:velocity",
+      "variables": {
+        "bonus": {
+          "type": "tconstruct:entity",
+          "condition_type": "tinkers_thinking:is_day",
+          "entity_type": "tconstruct:conditional",
+          "fallback": 0.0,
+          "if_false": 0.35,
+          "if_true": -0.35
+        }
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:raw_ardite_block",
+  "key": {
+    "#": {
+      "tag": "forge:raw_ardite"
+    },
+    "*": {
+      "item": "tinkers_thinking:raw_ardite"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:raw_ardite_block"
+  },
+  "show_notification": true
+}

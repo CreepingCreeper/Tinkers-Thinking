@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/warden_steel"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_warden_steel"
+  },
+  "temperature": 450,
+  "time": 144
+}

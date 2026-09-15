@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "cooling_time": 10,
+  "fluid": {
+    "amount": 10,
+    "tag": "tinkers_thinking:molten_echo_bronze"
+  },
+  "result": {
+    "tag": "forge:nuggets/echo_bronze"
+  }
+}

@@ -7,7 +7,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -35,15 +34,15 @@ public record SymbioticModule(LevelingValue amount) implements ModifierModule, M
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SymbioticModule> LOADER;
 
-    public @NotNull RecordLoadable<SymbioticModule> getLoader() {
+    public RecordLoadable<SymbioticModule> getLoader() {
         return LOADER;
     }
 
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity entity = context.getPlayerAttacker();
         float level = modifier.getEffectiveLevel();
         if (!context.isExtraAttack() && context.isFullyCharged()&&RANDOM.nextFloat() < (level * amount.eachLevel()) && entity!=null&&entity.getHealth()<entity.getMaxHealth()&& !tool.isBroken()) {

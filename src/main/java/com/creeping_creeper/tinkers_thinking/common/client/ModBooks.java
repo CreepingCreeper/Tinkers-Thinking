@@ -7,9 +7,6 @@ import slimeknights.mantle.client.book.BookLoader;
 import slimeknights.mantle.client.book.data.BookData;
 import slimeknights.mantle.client.book.repository.FileRepository;
 import slimeknights.mantle.client.book.transformer.BookTransformer;
-import slimeknights.tconstruct.library.client.book.sectiontransformer.ModifierTagInjectorTransformer;
-import slimeknights.tconstruct.library.client.book.sectiontransformer.ToolSectionTransformer;
-import slimeknights.tconstruct.library.client.book.sectiontransformer.ToolTagInjectorTransformer;
 import slimeknights.tconstruct.library.client.book.sectiontransformer.materials.TierRangeMaterialSectionTransformer;
 
 public class ModBooks extends BookData {

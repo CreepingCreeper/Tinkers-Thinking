@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:shroomite_ingot",
+  "key": {
+    "#": {
+      "tag": "forge:nuggets/shroomite"
+    },
+    "*": {
+      "item": "tinkers_thinking:shroomite_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:shroomite_ingot"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/beetron"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_beetron"
+  },
+  "temperature": 100,
+  "time": 100
+}

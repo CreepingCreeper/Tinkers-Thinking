@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:spectre_ingot",
+  "key": {
+    "#": {
+      "tag": "forge:nuggets/spectre"
+    },
+    "*": {
+      "item": "tinkers_thinking:spectre_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:spectre_ingot"
+  },
+  "show_notification": true
+}

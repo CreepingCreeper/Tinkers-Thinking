@@ -3,7 +3,6 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -22,15 +21,15 @@ public record SculkLevitateModule(LevelingValue amount) implements ModifierModul
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<SculkLevitateModule> LOADER;
 
-    public @NotNull RecordLoadable<SculkLevitateModule> getLoader() {
+    public RecordLoadable<SculkLevitateModule> getLoader() {
         return LOADER;
     }
 
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack() && context.isFullyCharged()) {
             LivingEntity attacker = context.getAttacker();
             LivingEntity target = context.getLivingTarget();

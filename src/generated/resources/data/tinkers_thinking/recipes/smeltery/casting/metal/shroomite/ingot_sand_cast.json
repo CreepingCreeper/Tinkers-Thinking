@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "cooling_time": 42,
+  "fluid": {
+    "amount": 90,
+    "tag": "tinkers_thinking:molten_shroomite"
+  },
+  "result": {
+    "tag": "forge:ingots/shroomite"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.5,
+  "ingredient": [
+    {
+      "item": "tinkers_thinking:raw_ardite"
+    },
+    {
+      "item": "tinkers_thinking:ardite_ore"
+    }
+  ],
+  "result": "tconstruct:cobalt_ingot"
+}

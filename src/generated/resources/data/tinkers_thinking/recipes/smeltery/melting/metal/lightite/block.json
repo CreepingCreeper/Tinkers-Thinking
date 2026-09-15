@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/lightite"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_lightite"
+  },
+  "temperature": 150,
+  "time": 107
+}

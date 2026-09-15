@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:no_levels",
+  "modules": [
+    {
+      "type": "tinkers_thinking:hurried",
+      "each_level": 0.0025
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:shroomite_nugget",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:shroomite_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:shroomite_nugget"
+  }
+}

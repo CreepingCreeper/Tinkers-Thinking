@@ -44,7 +44,7 @@ public class ShadowingModifier extends Modifier implements TooltipModifierHook, 
         if(player!=null){
             world = player.getCommandSenderWorld();
             float boost = (float) (((float) (15-world.getBrightness(LightLayer.SKY, player.blockPosition())+world.getSkyDarken())/7.5)*modifier.getLevel());
-            TooltipModifierHook.addFlatBoost(this, Resistance , boost, tooltip);;
+            TooltipModifierHook.addFlatBoost(this, Resistance , boost, tooltip);
         }
     }
 

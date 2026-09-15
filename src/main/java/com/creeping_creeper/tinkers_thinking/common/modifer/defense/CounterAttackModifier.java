@@ -55,7 +55,7 @@ public class CounterAttackModifier extends NoLevelsModifier implements GeneralIn
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
         Entity attacker = source.getEntity();
-        if (isDirectDamage && !source.is(DamageTypeTags.BYPASSES_SHIELD) && living instanceof Player player && CounterModule.isBlocking(tool, slotType, player) && attacker != null && ToolAttackUtil.isAttackable(living, attacker)) {
+        if (isDirectDamage && !source.is(DamageTypeTags.BYPASSES_SHIELD) && living instanceof Player player && CounterModule.isBlocking(tool, slotType, player) && ToolAttackUtil.isAttackable(living, attacker)) {
             isblocking = true;
             InteractionHand hand = living.getUsedItemHand();
             ToolAttackContext.Builder builder = ToolAttackContext.attacker(living).target(attacker).hand(hand).cooldown(1);

@@ -6,8 +6,11 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModFluids;
 import com.creeping_creeper.tinkers_thinking.data.ModTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
@@ -17,6 +20,7 @@ import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
+import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import java.util.function.Consumer;
@@ -25,20 +29,24 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
     public SmelteryRecipe(PackOutput output) {
         super(output);
     }
+
     @Override
     public String getModId() {
         return TinkersThinking.MODID;
     }
+
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         this.addTagRecipes(consumer);
         this.addAlloy(consumer);
         this.addMaterialRecipes(consumer);
     }
+
     @Override
     public String getName() {
-        return "Tinkers' Thinking Smeltery Recipes";
+        return "TiT Smeltery Recipes";
     }
+
     public SmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, String name, TagKey<Fluid> fluid) {
         return SmelteryRecipeBuilder.fluid(consumer, location(name), fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
     }
@@ -46,24 +54,30 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         return molten(consumer, fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
     }
     private void addMaterialRecipes(Consumer<FinishedRecipe> consumer) {
-        String folder = "common/materials/";
-        metalCrafting(consumer, ModCommonItems.ardite, folder);
-        metalCrafting(consumer, ModCommonItems.tinkers_bronze, folder);
-        metalCrafting(consumer, ModCommonItems.lightite, folder);
-        metalCrafting(consumer, ModCommonItems.chlorophyte, folder);
-        metalCrafting(consumer, ModCommonItems.spectre, folder);
-        metalCrafting(consumer, ModCommonItems.shroomite, folder);
-        metalCrafting(consumer, ModCommonItems.beetron, folder);
-        metalCrafting(consumer, ModCommonItems.obsidian_bronze, folder);
-        metalCrafting(consumer, ModCommonItems.echo_bronze, folder);
-        metalCrafting(consumer, ModCommonItems.electrical_steel, folder);
-        metalCrafting(consumer, ModCommonItems.warden_steel, folder);
-        metalCrafting(consumer, ModCommonItems.shimmerslime, folder);
-        metalCrafting(consumer, ModCommonItems.adamantium, folder);
+        String metal = "common/materials/metal/";
+        metalCrafting(consumer, ModCommonItems.ardite, metal);
+        metalCrafting(consumer, ModCommonItems.tinkers_bronze, metal);
+        metalCrafting(consumer, ModCommonItems.lightite, metal);
+        metalCrafting(consumer, ModCommonItems.chlorophyte, metal);
+        metalCrafting(consumer, ModCommonItems.spectre, metal);
+        metalCrafting(consumer, ModCommonItems.shroomite, metal);
+        metalCrafting(consumer, ModCommonItems.beetron, metal);
+        metalCrafting(consumer, ModCommonItems.obsidian_bronze, metal);
+        metalCrafting(consumer, ModCommonItems.echo_bronze, metal);
+        metalCrafting(consumer, ModCommonItems.electrical_steel, metal);
+        metalCrafting(consumer, ModCommonItems.warden_steel, metal);
+        metalCrafting(consumer, ModCommonItems.shimmerslime, metal);
+        metalCrafting(consumer, ModCommonItems.adamantium, metal);
+
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModCommonItems.raw_ardite, ModCommonItems.ardite_ore), RecipeCategory.MISC, TinkerMaterials.cobalt.getIngot(), 1.5f, 200)
+                .unlockedBy("has_item", has(ModCommonItems.raw_ardite))
+                .save(consumer, location(metal + "ardite_ingot_blasting"));
+        packingRecipe(consumer, RecipeCategory.MISC, "raw_block", ModCommonItems.raw_ardite_block, "raw", ModCommonItems.raw_ardite, ModTags.Items.raw_ardite, metal);
+
     }
 
     private void addAlloy(Consumer<FinishedRecipe> consumer){
-        String folder = "common/materials/";
+        String folder = "smeltery/alloy/";
         AlloyRecipeBuilder.alloy(TinkerFluids.moltenManyullyn, FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenCobalt.getTag(), FluidValues.INGOT)
                 .addInput(ModFluids.moltenArdite.getTag(), FluidValues.INGOT)

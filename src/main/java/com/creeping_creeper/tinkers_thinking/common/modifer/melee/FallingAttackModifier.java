@@ -2,7 +2,6 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.melee;
 
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraftforge.common.ForgeMod;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -21,7 +20,7 @@ public class FallingAttackModifier extends Modifier implements MeleeDamageModifi
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_DAMAGE);
     }
     @Override
-    public float getMeleeDamage(IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
+    public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         float h = context.getAttacker().fallDistance;
         int p =3+tool.getModifierLevel(ModModifierIds.DensityAdvanced);
         float x = (float) (Objects.requireNonNull(context.getAttacker().getAttribute(ForgeMod.ENTITY_GRAVITY.get())).getValue()/0.08);

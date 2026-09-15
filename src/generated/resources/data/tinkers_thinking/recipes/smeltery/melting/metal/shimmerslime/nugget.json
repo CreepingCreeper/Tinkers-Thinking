@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/shimmerslime"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:molten_shimmerslime"
+  },
+  "temperature": 1300,
+  "time": 25
+}

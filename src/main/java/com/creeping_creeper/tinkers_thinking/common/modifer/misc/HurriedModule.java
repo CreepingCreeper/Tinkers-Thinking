@@ -10,7 +10,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
@@ -35,11 +34,16 @@ public record HurriedModule(LevelingValue amount) implements ModifierModule, Equ
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<HurriedModule> LOADER;
 
-    public @NotNull RecordLoadable<HurriedModule> getLoader() {
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.EQUIPMENT_CHANGE, ModifierHooks.TOOLTIP, ModifierHooks.INVENTORY_TICK);
+        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(HurriedModule::amount), HurriedModule::new);
+    }
+
+    public RecordLoadable<HurriedModule> getLoader() {
         return LOADER;
     }
 
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
 
@@ -57,14 +61,15 @@ public record HurriedModule(LevelingValue amount) implements ModifierModule, Equ
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         AttributeInstance attribute = holder.getAttribute(Attributes.MOVEMENT_SPEED);
-        if (attribute!=null&&attribute.getModifier(ATTRIBUTE_BONUS) == null){
+        if (attribute != null && attribute.getModifier(ATTRIBUTE_BONUS) == null){
             attribute.addTransientModifier(new AttributeModifier(ATTRIBUTE_BONUS, "tinkers_thinking.modifier.hurried",getBonus(holder,modifier),
                     AttributeModifier.Operation.ADDITION));
         }
     }
-    private boolean isEmpty(LivingEntity living, int stack){
+    private static boolean isEmpty(LivingEntity living, int stack){
         return living.getSlot(stack).get().isEmpty();
     }
+
     private float getBonus(LivingEntity living,ModifierEntry modifier){
         int x = 0;
         for (int i=0;i<9;i++){
@@ -72,7 +77,7 @@ public record HurriedModule(LevelingValue amount) implements ModifierModule, Equ
                 x++;
             }
         }
-        return amount.eachLevel() *x*modifier.getLevel();
+        return amount.compute(modifier) * x;
     }
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey key, TooltipFlag tooltipFlag) {
@@ -83,12 +88,5 @@ public record HurriedModule(LevelingValue amount) implements ModifierModule, Equ
         if (x > 0) {
             TooltipModifierHook.addPercentBoost(modifier.getModifier(), Boost, x, tooltip);
         }
-    }
-    public LevelingValue amount() {
-        return this.amount;
-    }
-    static {
-        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.EQUIPMENT_CHANGE, ModifierHooks.TOOLTIP, ModifierHooks.INVENTORY_TICK);
-        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(HurriedModule::amount), HurriedModule::new);
     }
 }

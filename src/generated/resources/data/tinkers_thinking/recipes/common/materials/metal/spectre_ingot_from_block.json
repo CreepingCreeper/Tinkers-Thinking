@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:spectre_ingot",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:spectre_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:spectre_ingot"
+  }
+}

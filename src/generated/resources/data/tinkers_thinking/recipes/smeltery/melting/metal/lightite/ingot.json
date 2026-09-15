@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/lightite"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_thinking:molten_lightite"
+  },
+  "temperature": 150,
+  "time": 36
+}

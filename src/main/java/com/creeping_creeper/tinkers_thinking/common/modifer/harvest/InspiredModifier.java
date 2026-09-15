@@ -3,7 +3,6 @@ package com.creeping_creeper.tinkers_thinking.common.modifer.harvest;
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -19,7 +18,7 @@ public class InspiredModifier extends Modifier implements BlockBreakModifierHook
         hookBuilder.addHook(this, ModifierHooks.BLOCK_BREAK);
     }
     @Override
-    public void afterBlockBreak(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolHarvestContext context) {
+    public void afterBlockBreak(IToolStackView tool, ModifierEntry modifier, ToolHarvestContext context) {
         if (context.canHarvest() && context.isEffective() && !context.isAOE() && RANDOM.nextFloat() <  0.25) {
             LivingEntity living = context.getLiving();
             ModifierUtils.addEffect(living,MobEffects.DIG_SPEED,20,1);

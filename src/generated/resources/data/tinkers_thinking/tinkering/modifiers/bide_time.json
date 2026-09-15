@@ -1,0 +1,22 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 0.4,
+      "operation": "add",
+      "stat": "tconstruct:projectile_damage"
+    },
+    {
+      "type": "tconstruct:stat_boost",
+      "flat": 0.4,
+      "operation": "add",
+      "stat": "tconstruct:accuracy"
+    },
+    {
+      "type": "tinkers_thinking:bide_time",
+      "cooldown": 100
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -2,7 +2,6 @@ package com.creeping_creeper.tinkers_thinking.common.integration;
 
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
-import com.creeping_creeper.tinkers_thinking.common.register.ModModifiers;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import com.github.tartaricacid.touhoulittlemaid.api.event.MaidPickupEvent;
 import com.github.tartaricacid.touhoulittlemaid.entity.passive.EntityMaid;

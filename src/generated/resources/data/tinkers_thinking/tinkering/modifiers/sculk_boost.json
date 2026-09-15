@@ -1,0 +1,86 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "formula": [
+        "$catalyse",
+        "$level",
+        "*",
+        0.2,
+        "*",
+        1.0,
+        "+",
+        "$speed",
+        "*"
+      ],
+      "percent": true,
+      "require_effective": true,
+      "variables": {
+        "catalyse": {
+          "type": "tconstruct:mod_data",
+          "key": "tinkers_thinking:sculk_catalyse",
+          "source": "persistent"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$catalyse",
+        "$level",
+        "*",
+        0.2,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:draw_speed",
+      "variables": {
+        "catalyse": {
+          "type": "tconstruct:mod_data",
+          "key": "tinkers_thinking:sculk_catalyse",
+          "source": "persistent"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "minecraft:generic.armor_toughness",
+      "each_level": 0.2,
+      "operation": "multiply_base",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "tool": {
+        "type": "mantle:and",
+        "predicates": [
+          {
+            "type": "mantle:tag",
+            "tag": "tconstruct:modifiable/armor"
+          },
+          {
+            "type": "tconstruct:variable_range",
+            "interval": "right_open",
+            "min": 1.0,
+            "variable": {
+              "type": "tconstruct:mod_data",
+              "key": "tinkers_thinking:sculk_catalyse",
+              "source": "persistent"
+            }
+          }
+        ]
+      },
+      "tooltip_style": "percent"
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/adamantium"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_adamantium"
+  },
+  "temperature": 1400,
+  "time": 233
+}

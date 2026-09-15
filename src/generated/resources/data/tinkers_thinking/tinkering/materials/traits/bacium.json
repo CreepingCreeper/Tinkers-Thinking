@@ -1,0 +1,20 @@
+{
+  "perStat": {
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:bane_of_pigs"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_thinking:bane_of_pigs"
+      }
+    ],
+    "tconstruct:shell": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:antibrute"
+      }
+    ]
+  }
+}

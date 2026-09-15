@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/tinkers_bronze"
+  },
+  "result": {
+    "amount": 10,
+    "fluid": "tinkers_thinking:molten_tinkers_bronze"
+  },
+  "temperature": 250,
+  "time": 13
+}

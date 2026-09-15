@@ -7,7 +7,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -27,10 +26,10 @@ public enum ReburningModifier implements ModifierModule, OnAttackedModifierHook 
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<ReburningModifier>defaultHooks(ModifierHooks.ON_ATTACKED);
     public static final RecordLoadable<ReburningModifier> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<ReburningModifier> getLoader() {
+    public RecordLoadable<ReburningModifier> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override

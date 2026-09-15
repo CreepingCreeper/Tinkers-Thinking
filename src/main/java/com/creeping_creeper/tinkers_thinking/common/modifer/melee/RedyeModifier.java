@@ -12,7 +12,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.common.TinkerDamageTypes;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -39,10 +38,11 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.PROJECTILE_HIT, ModifierHooks.REMOVE);
     }
+
     private float dye(ServerLevel level, LivingEntity target, LivingEntity attacker, ModDataNBT persistentData, float damage, boolean a, int l){
         Entity entity = persistentData.contains(KEY) ? level.getEntity((UUID.fromString(persistentData.getString(KEY)))) : null;
         persistentData.putString(this.KEY, target.getStringUUID());
-        if (entity instanceof LivingEntity living && living.isAlive() && attacker!=null){
+        if (entity instanceof LivingEntity living && living.isAlive()){
             if (a && entity == target) {
               return 1+l*0.06f;
             }
@@ -53,25 +53,30 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
         }
         return 0;
     }
+
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
         if (!context.isExtraAttack() && context.isFullyCharged() && target!=null && target.isAlive()) {
-            damage *= (1 + dye((ServerLevel) context.getLevel(),target,attacker,Objects.requireNonNull(tool.getPersistentData()),damage,ModifierUtils.reverse(tool),modifier.getLevel()));
+            damage *= (1 + dye((ServerLevel) context.getLevel(),target,attacker,Objects.requireNonNull(tool.getPersistentData()),damage,ModifierUtils.reverse(tool, modifier),modifier.getLevel()));
         }
         return damage;
     }
+
     @Override
-    public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target, boolean notBlocked) {
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
         if (target != null) {
             float power = 0f;
             if (projectile instanceof AbstractArrow arrow) power = (float) arrow.getBaseDamage();
-            if (projectile instanceof ProjectileWithPower withPower ) power = withPower.getDamage();
-            ModifierUtils.setPower(projectile, dye((ServerLevel) target.level(),target,attacker,Objects.requireNonNull(persistentData),power, ModifierUtils.reverseProjectile(projectile),modifier.getLevel()));
+            if (projectile instanceof ProjectileWithPower withPower) power = withPower.getDamage();
+            if (attacker != null) {
+                ModifierUtils.setPower(projectile, dye((ServerLevel) target.level(), target, attacker, Objects.requireNonNull(persistentData),power, ModifierUtils.reverseProjectile(projectile),modifier.getLevel()));
+            }
         }
         return false;
     }
+
     @Nullable
     @Override
     public Component onRemoved(IToolStackView tool, Modifier modifier) {

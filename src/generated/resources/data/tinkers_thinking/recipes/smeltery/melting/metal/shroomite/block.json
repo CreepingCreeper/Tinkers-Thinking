@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/shroomite"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_shroomite"
+  },
+  "temperature": 300,
+  "time": 127
+}

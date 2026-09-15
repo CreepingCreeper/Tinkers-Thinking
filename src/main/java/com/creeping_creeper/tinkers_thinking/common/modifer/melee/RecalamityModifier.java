@@ -8,7 +8,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -21,6 +20,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.shared.TinkerEffects;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -53,15 +53,15 @@ public class RecalamityModifier extends Modifier implements MeleeDamageModifierH
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if (!context.isExtraAttack() && context.isFullyCharged()&&target!=null&&target.isAlive()) {
-            calamity(target,context.getAttacker(), ModifierUtils.reverse(tool),damage,modifier.getLevel());
+            calamity(target,context.getAttacker(), ModifierUtils.reverse(tool, modifier),damage,modifier.getLevel());
         }
         return damage;
     }
     @Override
-    public boolean onProjectileHitEntity(@NotNull ModifierNBT modifiers, ModDataNBT persistentData, @NotNull ModifierEntry modifier, @NotNull Projectile projectile, EntityHitResult hit, @javax.annotation.Nullable LivingEntity attacker, @javax.annotation.Nullable LivingEntity target) {
-        if (target != null) {
+    public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, @Nullable LivingEntity attacker, @Nullable LivingEntity target, boolean notBlocked) {
+        if (target != null && attacker != null) {
             float damage=1;
-            ModifierUtils.setPower(projectile,calamity(target,attacker, ModifierUtils.reverseProjectile(projectile),damage,modifier.getLevel()));
+            ModifierUtils.setPower(projectile,calamity(target, attacker, ModifierUtils.reverseProjectile(persistentData),damage,modifier.getLevel()));
         }
         return false;
     }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:beetron_ingot",
+  "key": {
+    "#": {
+      "tag": "forge:nuggets/beetron"
+    },
+    "*": {
+      "item": "tinkers_thinking:beetron_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:beetron_ingot"
+  },
+  "show_notification": true
+}

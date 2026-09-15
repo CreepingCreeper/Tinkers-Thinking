@@ -18,7 +18,6 @@ import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.item.ModifiableSwordItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
-import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;

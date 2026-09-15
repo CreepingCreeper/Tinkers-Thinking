@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 100,
+      "tag": "forge:molten_echo"
+    },
+    {
+      "amount": 90,
+      "tag": "forge:molten_copper"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_thinking:molten_echo_bronze"
+  },
+  "temperature": 50
+}

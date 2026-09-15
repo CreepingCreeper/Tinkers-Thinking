@@ -6,7 +6,6 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -20,6 +19,7 @@ import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 import static net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR;
@@ -29,20 +29,23 @@ public enum NetheriteModule implements ModifierModule, ToolDamageModifierHook, M
     private static final ResourceLocation KEY = TinkersThinking.getResource("netherite");
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<NetheriteModule>defaultHooks(ModifierHooks.TOOL_DAMAGE, ModifierHooks.MODIFY_HURT);
     public static final RecordLoadable<NetheriteModule> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<NetheriteModule> getLoader() {
+    public RecordLoadable<NetheriteModule> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
+
     @Override
-    public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @org.jetbrains.annotations.Nullable LivingEntity holder) {
+    public int onDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
         if (tool.getPersistentData().getBoolean(KEY)){
             amount = 0;
             tool.getPersistentData().remove(KEY);
         }
         return amount;
     }
+
+    @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         if (source.is(DamageTypeTags.IS_FIRE)&&!source.is(BYPASSES_ARMOR)&&tool.hasTag(TinkerTags.Items.WORN_ARMOR)){
             tool.getPersistentData().putBoolean(KEY, true);

@@ -1,4 +1,4 @@
-{
+ {
   "itemGroup.tinkers_thinking.common": "Tinkers' Thinking's Common Items",
   "itemGroup.tinkers_thinking.tool": "Tinkers' Thinking's Tools",
 
@@ -847,8 +847,8 @@
   "modifier.tinkers_thinking.reverse": "§cRev§9erse",
   "modifier.tinkers_thinking.reverse.flavor": "§cCycle §9repeats",
   "modifier.tinkers_thinking.reverse.description": "Effects of Reverse series traits are affected by the parity of tool usage count. §cOdd: Durability consumption doubled/§9Even: No durability consumption",
-  "modifier.tinkers_thinking.reverse.1": "§cState: Odd",
-  "modifier.tinkers_thinking.reverse.2": "§9State: Even",
+  "modifier.tinkers_thinking.reverse.1": "§c-Odd",
+  "modifier.tinkers_thinking.reverse.2": "§9-Even",
 
   "modifier.tinkers_thinking.recalamity": "Recalamity",
   "modifier.tinkers_thinking.recalamity.flavor": "Survive a catastrophe, only to get finished off",

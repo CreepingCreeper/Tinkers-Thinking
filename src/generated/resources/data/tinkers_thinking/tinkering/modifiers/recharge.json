@@ -1,0 +1,103 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$reverse",
+        "$level",
+        "*",
+        -0.15,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:draw_speed",
+      "variables": {
+        "reverse": {
+          "type": "tconstruct:mod_data",
+          "key": "tinkers_thinking:reverse",
+          "source": "persistent"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$reverse",
+        "$level",
+        "*",
+        0.2,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:velocity",
+      "variables": {
+        "reverse": {
+          "type": "tconstruct:mod_data",
+          "key": "tinkers_thinking:reverse",
+          "source": "persistent"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$reverse",
+        0.0,
+        "==",
+        "$level",
+        "*",
+        -0.15,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:accuracy",
+      "variables": {
+        "reverse": {
+          "type": "tconstruct:mod_data",
+          "key": "tinkers_thinking:reverse",
+          "source": "persistent"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        "$reverse",
+        "non-negative",
+        0.0,
+        "==",
+        "$level",
+        "*",
+        0.2,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:projectile_damage",
+      "variables": {
+        "reverse": {
+          "type": "tconstruct:mod_data",
+          "key": "tinkers_thinking:reverse",
+          "source": "persistent"
+        }
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

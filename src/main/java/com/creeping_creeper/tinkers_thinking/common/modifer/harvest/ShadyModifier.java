@@ -9,7 +9,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -41,7 +40,7 @@ public class ShadyModifier extends Modifier implements ConditionalStatModifierHo
     }
 
     @Override
-    public void onBreakSpeed(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, PlayerEvent.@NotNull BreakSpeed event, @NotNull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+    public void onBreakSpeed(IToolStackView tool, ModifierEntry modifier, PlayerEvent.BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
         if (!isEffective) {
             return;
         }
@@ -49,7 +48,7 @@ public class ShadyModifier extends Modifier implements ConditionalStatModifierHo
         event.setNewSpeed((float) (event.getNewSpeed()*( 1+(15-(world.getBrightness(LightLayer.SKY, event.getEntity().blockPosition())-world.getSkyDarken()))*0.015*modifier.getLevel())));
     }
     @Override
-    public float modifyStat(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull LivingEntity living, @NotNull FloatToolStat stat, float baseValue, float multiplier) {
+    public float modifyStat(IToolStackView tool, ModifierEntry modifier, LivingEntity living, FloatToolStat stat, float baseValue, float multiplier) {
         if (stat == ToolStats.VELOCITY) {
             Level world = living.getCommandSenderWorld();
             return (float) (baseValue*( 1+(15-(world.getBrightness(LightLayer.SKY, living.blockPosition())-world.getSkyDarken()))*0.01*modifier.getLevel()));

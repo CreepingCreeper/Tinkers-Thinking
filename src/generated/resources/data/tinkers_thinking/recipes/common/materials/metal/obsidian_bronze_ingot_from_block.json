@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:obsidian_bronze_ingot",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:obsidian_bronze_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:obsidian_bronze_ingot"
+  }
+}

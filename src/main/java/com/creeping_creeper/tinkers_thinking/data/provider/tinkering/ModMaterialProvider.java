@@ -14,6 +14,7 @@ public class ModMaterialProvider extends AbstractMaterialDataProvider {
     protected void addMaterials() {
         material(ModMaterialIds.electrical_steel).tier(3).sort(ORDER_WEAPON);
         material(ModMaterialIds.bacium).tier(3).sort(ORDER_WEAPON + ORDER_NETHER).craftable();
+        material(ModMaterialIds.gilded_silky_cloth).tier(3).sort(ORDER_SPECIAL).craftable();
 
     }
 

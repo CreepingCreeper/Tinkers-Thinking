@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 250,
+      "tag": "tconstruct:molten_quartz"
+    },
+    {
+      "amount": 90,
+      "tag": "forge:molten_steel"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_electrical_steel"
+  },
+  "temperature": 996
+}

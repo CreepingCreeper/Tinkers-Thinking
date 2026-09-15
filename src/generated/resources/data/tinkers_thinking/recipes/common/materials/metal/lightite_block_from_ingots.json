@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:lightite_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/lightite"
+    },
+    "*": {
+      "item": "tinkers_thinking:lightite_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:lightite_block"
+  },
+  "show_notification": true
+}

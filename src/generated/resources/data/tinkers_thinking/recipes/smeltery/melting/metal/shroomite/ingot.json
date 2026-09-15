@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/shroomite"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "tinkers_thinking:molten_shroomite"
+  },
+  "temperature": 300,
+  "time": 42
+}

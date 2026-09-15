@@ -6,7 +6,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
@@ -25,12 +24,13 @@ public enum CoercionModule implements ModifierModule, ProjectileShootModifierHoo
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<CoercionModule>defaultHooks(ModifierHooks.PROJECTILE_SHOT);
     public static final RecordLoadable<CoercionModule> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<CoercionModule> getLoader() {
+    public RecordLoadable<CoercionModule> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
+
     @Override
     public void onProjectileShoot(IToolStackView tool, ModifierEntry modifier, @Nullable LivingEntity shooter, ItemStack ammo, Projectile projectile, @Nullable AbstractArrow arrow, ModDataNBT persistentData, boolean primary) {
         if (shooter != null && shooter.hasEffect(MobEffects.INVISIBILITY)) {

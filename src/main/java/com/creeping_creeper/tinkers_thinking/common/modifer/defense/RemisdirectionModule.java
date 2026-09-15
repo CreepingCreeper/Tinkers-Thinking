@@ -10,7 +10,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.events.teleport.SlingModifierTeleportEvent;
@@ -24,7 +23,6 @@ import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.shared.TinkerEffects;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,16 +31,16 @@ public enum RemisdirectionModule implements ModifierModule, DamageBlockModifierH
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<RemisdirectionModule>defaultHooks(ModifierHooks.DAMAGE_BLOCK);
     public static final RecordLoadable<RemisdirectionModule> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<RemisdirectionModule> getLoader() {
+    public RecordLoadable<RemisdirectionModule> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override
     public boolean isDamageBlocked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount) {
         LivingEntity living = context.getEntity();
-        if (source.getEntity() != null && !living.hasEffect(TinkerEffects.enderference.get()) && ModifierUtils.reverse(tool)){
+        if (source.getEntity() != null && !living.hasEffect(TinkerEffects.enderference.get()) && ModifierUtils.reverse(tool, modifier)){
             Vec3 look = living.getLookAngle();
             Level level = context.getLevel();
             double offX = look.x * 5;

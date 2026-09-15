@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/obsidian_bronze"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_obsidian_bronze"
+  },
+  "temperature": 650,
+  "time": 166
+}

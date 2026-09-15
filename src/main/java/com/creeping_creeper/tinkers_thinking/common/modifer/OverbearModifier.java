@@ -24,7 +24,6 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.library.utils.Util;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.util.List;
 
@@ -55,7 +54,7 @@ public class OverbearModifier extends Modifier implements ConditionalStatModifie
         }
     }
     @Override
-    public float getMeleeDamage(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
+    public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         if (!hasOverSlime(tool)){
             return (float) (damage*(1-(0.15*modifier.getLevel())));
         }

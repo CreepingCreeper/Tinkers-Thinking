@@ -1,0 +1,11 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:overcharge",
+      "max_energy_rate": 100.0,
+      "overslime_rate": 200
+    }
+  ],
+  "tooltip_display": "always"
+}

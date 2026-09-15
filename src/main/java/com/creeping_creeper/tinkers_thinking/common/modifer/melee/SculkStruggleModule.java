@@ -21,14 +21,14 @@ public enum SculkStruggleModule implements ModifierModule, MeleeHitModifierHook 
     INSTANCE;
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<SculkStruggleModule>defaultHooks(ModifierHooks.MELEE_HIT);
     public static final RecordLoadable<SculkStruggleModule> LOADER = new SingletonLoader<>(INSTANCE);
-    public @NotNull RecordLoadable<SculkStruggleModule> getLoader() {
+    public RecordLoadable<SculkStruggleModule> getLoader() {
         return LOADER;
     }
-    public @NotNull List<ModuleHook<?>> getDefaultHooks() {
+    public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity attacker = context.getAttacker();
         LivingEntity living = context.getLivingTarget();
         if (!context.isExtraAttack()&&attacker.hasEffect(ModEffects.sculk_power.get())&&living!=null&&living.isDeadOrDying()) {

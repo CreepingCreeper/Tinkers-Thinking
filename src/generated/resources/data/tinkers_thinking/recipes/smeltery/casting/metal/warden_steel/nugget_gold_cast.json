@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "cooling_time": 16,
+  "fluid": {
+    "amount": 10,
+    "tag": "tinkers_thinking:molten_warden_steel"
+  },
+  "result": {
+    "tag": "forge:nuggets/warden_steel"
+  }
+}

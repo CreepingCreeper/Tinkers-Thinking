@@ -5,7 +5,6 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -33,12 +32,13 @@ public class RepercussionModifier extends Modifier implements MeleeDamageModifie
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.PROJECTILE_HIT);
     }
+
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
         if (!context.isExtraAttack() && context.isFullyCharged() && target != null) {
-            if (ModifierUtils.reverse(tool) && repercussion){
+            if (ModifierUtils.reverse(tool, modifier) && repercussion){
                 ToolAttackContext.Builder builder = ToolAttackContext.attacker(attacker).target(target).hand(context.getHand()).cooldown(1);
                 if (context.getHand() == InteractionHand.MAIN_HAND) {
                     builder.applyAttributes();
@@ -60,9 +60,10 @@ public class RepercussionModifier extends Modifier implements MeleeDamageModifie
         }
         return damage;
     }
+
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if (!context.isExtraAttack() && !ModifierUtils.reverse(tool)&& context.getTarget().isAlive()) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+        if (!context.isExtraAttack() && !ModifierUtils.reverse(tool, modifier) && context.getTarget().isAlive()) {
             ModifierUtils.addEffect(context.getAttacker(), ModEffects.disintegration.get(), 200 / modifier.getLevel(), 2);
         }
     }

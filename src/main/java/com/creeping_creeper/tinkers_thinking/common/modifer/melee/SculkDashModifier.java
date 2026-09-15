@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -35,7 +34,7 @@ public class SculkDashModifier extends Modifier implements MeleeHitModifierHook,
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.REMOVE, ModifierHooks.TOOLTIP);
     }
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         Player attacker = context.getPlayerAttacker();
         ModDataNBT persistentData = Objects.requireNonNull(tool.getPersistentData());
         if (attacker == null) {

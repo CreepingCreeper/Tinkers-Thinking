@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/chlorophyte"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_chlorophyte"
+  },
+  "temperature": 300,
+  "time": 127
+}

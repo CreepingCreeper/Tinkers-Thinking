@@ -23,7 +23,7 @@ public class OverFreezeModifier extends Modifier implements MeleeHitModifierHook
         hookBuilder.addHook(this, ModifierHooks.MELEE_HIT,ModifierHooks.MODIFY_DAMAGE);
     }
     @Override
-    public void afterMeleeHit(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
+    public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack() && context.isFullyCharged()) {
             LivingEntity target = context.getLivingTarget();
             int x = Math.min(5,OverslimeModule.INSTANCE.getAmount(tool));

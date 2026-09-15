@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:adamantium_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/adamantium"
+    },
+    "*": {
+      "item": "tinkers_thinking:adamantium_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:adamantium_block"
+  },
+  "show_notification": true
+}

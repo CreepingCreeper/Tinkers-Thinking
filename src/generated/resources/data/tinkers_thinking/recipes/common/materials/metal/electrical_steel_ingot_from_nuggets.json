@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:electrical_steel_ingot",
+  "key": {
+    "#": {
+      "tag": "forge:nuggets/electrical_steel"
+    },
+    "*": {
+      "item": "tinkers_thinking:electrical_steel_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:electrical_steel_ingot"
+  },
+  "show_notification": true
+}

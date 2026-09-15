@@ -8,7 +8,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -19,12 +18,12 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class SpikyModifier extends Modifier implements OnAttackedModifierHook {
     @Override
-    protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
+    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
         super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.ON_ATTACKED);
     }
     @Override
-    public void onAttacked(@NotNull IToolStackView tool, @NotNull ModifierEntry modifier, @NotNull EquipmentContext context, @NotNull EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
+    public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         if (source.getEntity() instanceof LivingEntity attacker&&!attacker.hasEffect(ModEffects.modifier_immune.get())&&attacker!=context.getEntity()&&(!(source.getDirectEntity() instanceof AbstractArrow arrow) || arrow.getPierceLevel() == 0)) {
             attacker.hurt(context.getEntity().damageSources().thorns(context.getEntity()),amount);
             context.getEntity().level().playSound(null, context.getEntity().getX(), context.getEntity().getY(), context.getEntity().getZ(), SoundEvents.THORNS_HIT, SoundSource.PLAYERS, 1.0F, 1.0F);

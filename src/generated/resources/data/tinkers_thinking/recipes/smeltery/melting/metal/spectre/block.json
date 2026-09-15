@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/spectre"
+  },
+  "result": {
+    "amount": 810,
+    "fluid": "tinkers_thinking:molten_spectre"
+  },
+  "temperature": 300,
+  "time": 127
+}

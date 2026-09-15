@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 120,
+  "fluid": {
+    "amount": 810,
+    "tag": "tinkers_thinking:molten_tinkers_bronze"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/tinkers_bronze"
+  }
+}

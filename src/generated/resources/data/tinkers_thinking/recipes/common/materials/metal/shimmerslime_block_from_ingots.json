@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:shimmerslime_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/shimmerslime"
+    },
+    "*": {
+      "item": "tinkers_thinking:shimmerslime_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:shimmerslime_block"
+  },
+  "show_notification": true
+}

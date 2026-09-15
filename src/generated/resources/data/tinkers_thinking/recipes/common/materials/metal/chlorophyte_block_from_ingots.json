@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:chlorophyte_block",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/chlorophyte"
+    },
+    "*": {
+      "item": "tinkers_thinking:chlorophyte_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:chlorophyte_block"
+  },
+  "show_notification": true
+}
