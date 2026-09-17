@@ -8,7 +8,6 @@ import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.datagen.MantleTags;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -22,7 +21,7 @@ public class ModFluidTagProvider extends FluidTagsProvider {
     }
 
     @Override
-    protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
+    protected void addTags(HolderLookup.Provider lookupProvider) {
         // tconstruct
         tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(ModFluids.moltenTinkersBronze.getTag(), ModFluids.moltenAdamantium.getTag(), ModFluids.moltenLightite.getTag(), ModFluids.moltenBlackChocolate.getTag(),
                 ModFluids.moltenWhiteChocolate.getTag(), ModFluids.moltenChlorophyte.getTag(), ModFluids.moltenSpectre.getTag(), ModFluids.moltenShroomite.getTag(), ModFluids.moltenObsidianBronze.getTag(), ModFluids.moltenElectricalSteel.getTag(),

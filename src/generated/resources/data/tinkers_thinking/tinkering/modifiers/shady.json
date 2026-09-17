@@ -1,0 +1,56 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "formula": [
+        15.0,
+        "$light",
+        "-",
+        "$level",
+        "*",
+        0.015,
+        "*",
+        1.0,
+        "+",
+        "$speed",
+        "*"
+      ],
+      "percent": true,
+      "require_effective": true,
+      "variables": {
+        "light": {
+          "type": "tconstruct:block_light",
+          "fallback": 15.0,
+          "light_layer": "sky"
+        }
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "formula": [
+        15.0,
+        "$light",
+        "-",
+        "$level",
+        "*",
+        0.01,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:velocity",
+      "variables": {
+        "light": {
+          "type": "tinkers_thinking:sky_light",
+          "fallback": 15.0,
+          "light_layer": "sky"
+        }
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

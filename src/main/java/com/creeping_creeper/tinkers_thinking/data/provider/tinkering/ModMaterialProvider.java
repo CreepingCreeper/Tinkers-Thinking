@@ -2,7 +2,6 @@ package com.creeping_creeper.tinkers_thinking.data.provider.tinkering;
 
 import com.creeping_creeper.tinkers_thinking.data.ModMaterialIds;
 import net.minecraft.data.PackOutput;
-import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 
 public class ModMaterialProvider extends AbstractMaterialDataProvider {
@@ -19,7 +18,7 @@ public class ModMaterialProvider extends AbstractMaterialDataProvider {
     }
 
     @Override
-    public @NotNull String getName() {
+    public String getName() {
         return "TiT Materials";
     }
 

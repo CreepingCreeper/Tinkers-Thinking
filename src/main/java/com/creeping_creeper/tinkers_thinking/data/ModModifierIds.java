@@ -13,6 +13,8 @@ public class ModModifierIds {
     public static final ModifierId CounterAdvanced = id("counter_advanced");
     public static final ModifierId Seeking = id("seeking");
     // harvest
+    public static final ModifierId Inspired = id("inspired");
+    public static final ModifierId Hungriness = id("hungriness");
     public static final ModifierId SculkBoost = id("sculk_boost");
     public static final ModifierId Shady = id("shady");
     //ranged

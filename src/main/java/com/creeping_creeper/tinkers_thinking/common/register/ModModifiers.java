@@ -2,14 +2,13 @@ package com.creeping_creeper.tinkers_thinking.common.register;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
+import com.creeping_creeper.tinkers_thinking.common.library.variable.FoodDataVariable;
+import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
 import com.creeping_creeper.tinkers_thinking.common.modifer.OverbearModifier;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.CurioLevelModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.SculkHealModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.HungrinessModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.InspiredModifier;
-import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.ShadyModifier;
 import com.creeping_creeper.tinkers_thinking.common.modifer.melee.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.HurriedModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.SlingSprintingModule;
@@ -20,6 +19,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
@@ -34,10 +34,8 @@ public class ModModifiers{
 
     private static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
     public static final StaticModifier<StimulationModifier> Stimulation = MODIFIERS.register("stimulation", StimulationModifier::new);
-    public static final StaticModifier<InspiredModifier> Inspired = MODIFIERS.register("inspired", InspiredModifier::new);
     public static final StaticModifier<MockModifier> Mock = MODIFIERS.register("mock", MockModifier::new);
     public static final StaticModifier<ConcealingModifier> Concealing = MODIFIERS.register("concealing", ConcealingModifier::new);
-    public static final StaticModifier<ShadyModifier> Shady = MODIFIERS.register("shady", ShadyModifier::new);
     public static final StaticModifier<ShadowingModifier> Shadowing = MODIFIERS.register("shadowing", ShadowingModifier::new);
     public static final StaticModifier<RepulsiveModifier> Repulsive = MODIFIERS.register("repulsive", RepulsiveModifier::new);
     public static final StaticModifier<PricklyModifier> Prickly = MODIFIERS.register("prickly", PricklyModifier::new);
@@ -46,7 +44,6 @@ public class ModModifiers{
     public static final StaticModifier<SculkTeleportModifier> SculkTeleport = MODIFIERS.register("sculk_teleport", SculkTeleportModifier::new);
     public static final StaticModifier<FallingAttackModifier> FallingAttack = MODIFIERS.register("falling_attack", FallingAttackModifier::new);
     public static final StaticModifier<SpikyModifier> Spiky = MODIFIERS.register("spiky", SpikyModifier::new);
-    public static final StaticModifier<HungrinessModifier> Hungriness = MODIFIERS.register("hungriness", HungrinessModifier::new);
     public static final StaticModifier<BurningOutModifier> BurningOut = MODIFIERS.register("burning_out", BurningOutModifier::new);
     public static final StaticModifier<SculkBreedModifier> SculkBreed = MODIFIERS.register("sculk_breed", SculkBreedModifier::new);
     public static final StaticModifier<SculkDashModifier> SculkDash = MODIFIERS.register("sculk_dash", SculkDashModifier::new);
@@ -68,8 +65,14 @@ public class ModModifiers{
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
+            // predicate
+
             LivingEntityPredicate.LOADER.register(getResource("is_day"), ModPredicate.Entity.IS_DAY.getLoader());
             LivingEntityPredicate.LOADER.register(getResource("is_riding"), ModPredicate.Entity.IS_RIDING.getLoader());
+
+            // variable
+            ToolVariable.register(getResource("sky_light"), SkyLightVariable.LOADER);
+            ToolVariable.register(getResource("food_data"), FoodDataVariable.LOADER);
 
             ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_levitate"), SculkLevitateModule.LOADER);
@@ -84,7 +87,10 @@ public class ModModifiers{
 
             ModifierModule.LOADER.register(getResource("sharp_circumstance"), SharpCircumstanceModule.LOADER);
             ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
-            // ranged
+            // module-melee
+            // module-havest
+            // module-defense
+            // module-ranged
             ModifierModule.LOADER.register(getResource("atlatl"), AtlatlModule.LOADER);
             ModifierModule.LOADER.register(getResource("coercion"), CoercionModule.LOADER);
             ModifierModule.LOADER.register(getResource("nonsense"), NonsenseModule.LOADER);
@@ -93,21 +99,19 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("resisting"), ResistingModule.LOADER);
             ModifierModule.LOADER.register(getResource("sinistral"), SinistralModule.LOADER);
             ModifierModule.LOADER.register(getResource("swash_advanced"), SwashAdvancedModule.LOADER);
-            // durability
+            // module-durability
             ModifierModule.LOADER.register(getResource("sculk_catalyse"), SculkCatalyseModule.LOADER);
             ModifierModule.LOADER.register(getResource("reverse"), ReverseModule.LOADER);
-
             ModifierModule.LOADER.register(getResource("deposition"), DepositionModule.LOADER);
             ModifierModule.LOADER.register(getResource("duritae"), DuritaeModule.LOADER);
             ModifierModule.LOADER.register(getResource("overeat"), OvereatModule.LOADER);
             ModifierModule.LOADER.register(getResource("durable"), DurableModule.LOADER);
             ModifierModule.LOADER.register(getResource("overcharge"), OverchargeModule.LOADER);
-
             ModifierModule.LOADER.register(getResource("netherite"), NetheriteModule.LOADER);
-            // misc
+            // module-misc
             ModifierModule.LOADER.register(getResource("sling_sprinting"), SlingSprintingModule.LOADER);
             ModifierModule.LOADER.register(getResource("hurried"), HurriedModule.LOADER);
-
+            // module-compat
             if (ModList.get().isLoaded("tinkers_ingenuity")) {
                 ModifierModule.LOADER.register(getResource("curio_level"), CurioLevelModule.LOADER);
                 ModifierModule.LOADER.register(getResource("sculk_heal"), SculkHealModule.LOADER);

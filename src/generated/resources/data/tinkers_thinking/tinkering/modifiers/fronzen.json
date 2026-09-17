@@ -2,7 +2,14 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:coercion"
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "minecraft:slowness",
+      "level": {
+        "flat": 4.0
+      },
+      "time": {
+        "per_level": 30.0
+      }
     }
   ],
   "tooltip_display": "always"

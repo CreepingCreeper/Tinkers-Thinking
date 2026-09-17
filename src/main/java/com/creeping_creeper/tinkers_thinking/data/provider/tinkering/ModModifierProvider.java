@@ -1,6 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.data.provider.tinkering;
 
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
+import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.HurriedModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.SlingSprintingModule;
@@ -8,10 +9,12 @@ import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.*;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -19,10 +22,12 @@ import slimeknights.tconstruct.common.data.advancement.AdvancementIds;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.json.LevelingValue;
+import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolVariableRangePredicate;
 import slimeknights.tconstruct.library.json.variable.entity.ConditionalEntityVariable;
 import slimeknights.tconstruct.library.json.variable.entity.EntityVariable;
+import slimeknights.tconstruct.library.json.variable.mining.BlockLightVariable;
 import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
@@ -32,8 +37,10 @@ import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalSta
 import slimeknights.tconstruct.library.modifiers.modules.build.*;
 import slimeknights.tconstruct.library.modifiers.modules.capacity.CapacityBarModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
+import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.modules.technical.ArmorLevelModule;
+import slimeknights.tconstruct.library.modifiers.modules.util.BooleanPredicate;
 import slimeknights.tconstruct.library.modifiers.modules.util.ModifierCondition;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.IndestructibleItemEntity;
@@ -49,17 +56,17 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         super(packOutput);
     }
 
+    @SuppressWarnings("UnstableApiUsage")
     @Override
     protected void addModifiers() {
-        ToolVariable catalyse =  new ModDataVariable(ModModifierIds.SculkCatalyse, ModDataSource.PERSISTENT);
-        ToolVariable reverse =  new ModDataVariable(ModModifierIds.Reverse, ModDataSource.PERSISTENT);
+        ToolVariable catalyse = new ModDataVariable(ModModifierIds.SculkCatalyse, ModDataSource.PERSISTENT);
+        ToolVariable reverse = new ModDataVariable(ModModifierIds.Reverse, ModDataSource.PERSISTENT);
 
         // melee
 
         // harvest
         buildModifier(ModModifierIds.SculkBoost).addModule(
-                ConditionalMiningSpeedModule.builder()
-                        .percent()
+                ConditionalMiningSpeedModule.builder().percent()
                         .formula()
                         .customVariable("catalyse", catalyse)
                         .variable(LEVEL).multiply()
@@ -80,28 +87,54 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .tool(ToolStackPredicate.and(ToolStackPredicate.tag(TinkerTags.Items.ARMOR), ToolVariableRangePredicate.min(catalyse, 1, false)))
                         .eachLevel(0.2f));
 
-        buildModifier(ModModifierIds.SculkBoost).addModule(
-                        ConditionalMiningSpeedModule.builder()
-                                .percent()
-                                .formula()
-                                .customVariable("catalyse", catalyse)
-                                .variable(LEVEL).multiply()
-                                .constant(0.2f).multiply()
-                                .constant(1).add()
-                                .variable(VALUE).multiply()
-                                .build())
-                .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).percent()
+        buildModifier(ModModifierIds.Shady)
+                .addModule(ConditionalMiningSpeedModule.builder().percent()
                         .formula()
-                        .customVariable("catalyse", catalyse)
+                        .constant(15)
+                        .customVariable("light", new BlockLightVariable(LightLayer.SKY, 15)).subtract()
                         .variable(LEVEL).multiply()
-                        .constant(0.2f).multiply()
+                        .constant(0.015f).multiply()
+                        .constant(1).add()
+                        .variable(VALUE).multiply().build())
+                .addModule(ConditionalStatModule.stat(ToolStats.VELOCITY).percent()
+                        .formula()
+                        .constant(15)
+                        .customVariable("light", new SkyLightVariable(LightLayer.SKY, 15)).subtract()
+                        .variable(LEVEL).multiply()
+                        .constant(0.01f).multiply()
                         .constant(1).add()
                         .variable(VALUE).multiply()
                         .build());
+        buildModifier(ModModifierIds.Hungriness)
+                .addModule(ConditionalMiningSpeedModule.builder().percent()
+                        .formula()
+                        .constant(20)
+                        .customVariable("food_level", new BlockLightVariable(LightLayer.SKY, 20)).subtract()
+                        .variable(LEVEL).multiply()
+                        .constant(0.02f).multiply()
+                        .constant(1).add()
+                        .variable(VALUE).multiply().build())
+                .addModule(ConditionalStatModule.stat(ToolStats.VELOCITY).percent()
+                        .formula()
+                        .constant(20)
+                        .customVariable("food_level", new SkyLightVariable(LightLayer.SKY, 20)).subtract()
+                        .variable(LEVEL).multiply()
+                        .constant(0.02f).multiply()
+                        .constant(1).add()
+                        .variable(VALUE).multiply()
+                        .build());
+
+        MobEffectModule.Builder inspiredBuilder = MobEffectModule.builder(MobEffects.DIG_SPEED).time(RandomLevelingValue.perLevel(0, 100)).level(RandomLevelingValue.flat(1)).isAoe(BooleanPredicate.FALSE).chance(LevelingValue.flat(0.25f));
+
+        buildModifier(ModModifierIds.Inspired).addModule(inspiredBuilder.buildToolUsage());
         //ranged
         buildModifier(ModModifierIds.Atlatl).addModule(AtlatlModule.INSTANCE);
         buildModifier(ModModifierIds.Coercion).addModule(CoercionModule.INSTANCE);
-        buildModifier(ModModifierIds.Fronzen).addModule(CoercionModule.INSTANCE);
+
+        MobEffectModule.Builder fronzenBuilder = MobEffectModule.builder(MobEffects.MOVEMENT_SLOWDOWN).time(RandomLevelingValue.perLevel(0, 30)).level(RandomLevelingValue.flat(4));
+
+        buildModifier(ModModifierIds.Fronzen).addModule(fronzenBuilder.buildWeapon());
+
         buildModifier(ModModifierIds.Nonsense).addModule(new NonsenseModule(new LevelingValue(0, 0.5f)));
         buildModifier(ModModifierIds.Nocturnal)
                 .addModule(ConditionalStatModule.stat(ToolStats.VELOCITY)
