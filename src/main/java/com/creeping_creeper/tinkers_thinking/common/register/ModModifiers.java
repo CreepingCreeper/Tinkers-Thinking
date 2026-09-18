@@ -2,13 +2,13 @@ package com.creeping_creeper.tinkers_thinking.common.register;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
-import com.creeping_creeper.tinkers_thinking.common.library.variable.FoodDataVariable;
 import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
 import com.creeping_creeper.tinkers_thinking.common.modifer.OverbearModifier;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.CurioLevelModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.SculkHealModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
+import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.HungrinessModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.melee.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.HurriedModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.SlingSprintingModule;
@@ -39,7 +39,6 @@ public class ModModifiers{
     public static final StaticModifier<ShadowingModifier> Shadowing = MODIFIERS.register("shadowing", ShadowingModifier::new);
     public static final StaticModifier<RepulsiveModifier> Repulsive = MODIFIERS.register("repulsive", RepulsiveModifier::new);
     public static final StaticModifier<PricklyModifier> Prickly = MODIFIERS.register("prickly", PricklyModifier::new);
-    public static final StaticModifier<DisarmModifier> Disarm = MODIFIERS.register("disarm", DisarmModifier::new);
     public static final StaticModifier<SculkProtectionModifier> SculkProtection = MODIFIERS.register("sculk_protection", SculkProtectionModifier::new);
     public static final StaticModifier<SculkTeleportModifier> SculkTeleport = MODIFIERS.register("sculk_teleport", SculkTeleportModifier::new);
     public static final StaticModifier<FallingAttackModifier> FallingAttack = MODIFIERS.register("falling_attack", FallingAttackModifier::new);
@@ -72,7 +71,6 @@ public class ModModifiers{
 
             // variable
             ToolVariable.register(getResource("sky_light"), SkyLightVariable.LOADER);
-            ToolVariable.register(getResource("food_data"), FoodDataVariable.LOADER);
 
             ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_levitate"), SculkLevitateModule.LOADER);
@@ -89,6 +87,8 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
             // module-melee
             // module-havest
+            ModifierModule.LOADER.register(getResource("hungriness"), HungrinessModule.LOADER);
+
             // module-defense
             // module-ranged
             ModifierModule.LOADER.register(getResource("atlatl"), AtlatlModule.LOADER);

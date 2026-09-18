@@ -1,0 +1,32 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tinkers_thinking:disarm",
+      "level": {
+        "flat": 1.0
+      },
+      "target": {
+        "type": "mantle:inverted",
+        "effect": "tinkers_thinking:modifier_immune",
+        "inverted_type": "mantle:has_effect"
+      },
+      "time": {
+        "flat": 160.0
+      }
+    },
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tinkers_thinking:modifier_immune",
+      "level": {
+        "flat": 1.0
+      },
+      "time": {
+        "flat": 160.0,
+        "per_level": -30.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -8,7 +8,7 @@
       },
       "effect": "minecraft:haste",
       "level": {
-        "flat": 1.0
+        "flat": 2.0
       },
       "time": {
         "per_level": 100.0

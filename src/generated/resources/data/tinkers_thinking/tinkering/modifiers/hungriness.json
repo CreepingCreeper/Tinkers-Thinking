@@ -2,54 +2,8 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tconstruct:conditional_mining_speed",
-      "formula": [
-        20.0,
-        "$food_level",
-        "-",
-        "$level",
-        "*",
-        0.02,
-        "*",
-        1.0,
-        "+",
-        "$speed",
-        "*"
-      ],
-      "percent": true,
-      "require_effective": true,
-      "variables": {
-        "food_level": {
-          "type": "tconstruct:block_light",
-          "fallback": 20.0,
-          "light_layer": "sky"
-        }
-      }
-    },
-    {
-      "type": "tconstruct:conditional_stat",
-      "formula": [
-        20.0,
-        "$food_level",
-        "-",
-        "$level",
-        "*",
-        0.02,
-        "*",
-        1.0,
-        "+",
-        "$value",
-        "*"
-      ],
-      "percent": true,
-      "stat": "tconstruct:velocity",
-      "variables": {
-        "food_level": {
-          "type": "tinkers_thinking:sky_light",
-          "fallback": 20.0,
-          "light_layer": "sky"
-        }
-      }
+      "type": "tinkers_thinking:hungriness",
+      "each_level": 0.02
     }
   ],
   "tooltip_display": "always"

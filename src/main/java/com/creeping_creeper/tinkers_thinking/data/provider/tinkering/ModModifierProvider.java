@@ -3,9 +3,11 @@ package com.creeping_creeper.tinkers_thinking.data.provider.tinkering;
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
 import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
+import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.HungrinessModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.HurriedModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.SlingSprintingModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.*;
+import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.data.PackOutput;
@@ -16,6 +18,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import slimeknights.mantle.data.predicate.entity.HasMobEffectPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.common.data.advancement.AdvancementIds;
@@ -36,6 +39,7 @@ import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModul
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.*;
 import slimeknights.tconstruct.library.modifiers.modules.capacity.CapacityBarModule;
+import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
@@ -63,7 +67,33 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         ToolVariable reverse = new ModDataVariable(ModModifierIds.Reverse, ModDataSource.PERSISTENT);
 
         // melee
+        MobEffectModule.Builder disarmBuilder = MobEffectModule.builder(ModEffects.disarm.get()).time(RandomLevelingValue.flat(160))
+                .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
+        MobEffectModule.Builder disarmBuilder1 = MobEffectModule.builder(ModEffects.modifier_immune.get()).time(RandomLevelingValue.perLevel(160, -30));
 
+        buildModifier(ModModifierIds.Disarm).addModule(disarmBuilder.buildWeapon())
+                .addModule(disarmBuilder1.buildWeapon());
+
+        MobEffectModule.Builder invisibilitydBuilder = MobEffectModule.builder(MobEffects.INVISIBILITY).time(RandomLevelingValue.flat(200));
+
+        buildModifier(ModModifierIds.Mock)
+                .addModule(invisibilitydBuilder.buildWeapon())
+                .addModule(ConditionalMeleeDamageModule.builder().percent()
+                        .target(new HasMobEffectPredicate(MobEffects.INVISIBILITY))
+                        .formula()
+                        .variable(LEVEL)
+                        .constant(0.2f).multiply()
+                        .constant(1).add()
+                        .variable(VALUE).multiply()
+                        .build())
+                .addModule(ConditionalPowerModule.builder().percent()
+                        .target(new HasMobEffectPredicate(MobEffects.INVISIBILITY))
+                        .formula()
+                        .variable(LEVEL)
+                        .constant(0.2f).multiply()
+                        .constant(1).add()
+                        .variable(VALUE).multiply()
+                        .build());
         // harvest
         buildModifier(ModModifierIds.SculkBoost).addModule(
                 ConditionalMiningSpeedModule.builder().percent()
@@ -105,33 +135,16 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .constant(1).add()
                         .variable(VALUE).multiply()
                         .build());
-        buildModifier(ModModifierIds.Hungriness)
-                .addModule(ConditionalMiningSpeedModule.builder().percent()
-                        .formula()
-                        .constant(20)
-                        .customVariable("food_level", new BlockLightVariable(LightLayer.SKY, 20)).subtract()
-                        .variable(LEVEL).multiply()
-                        .constant(0.02f).multiply()
-                        .constant(1).add()
-                        .variable(VALUE).multiply().build())
-                .addModule(ConditionalStatModule.stat(ToolStats.VELOCITY).percent()
-                        .formula()
-                        .constant(20)
-                        .customVariable("food_level", new SkyLightVariable(LightLayer.SKY, 20)).subtract()
-                        .variable(LEVEL).multiply()
-                        .constant(0.02f).multiply()
-                        .constant(1).add()
-                        .variable(VALUE).multiply()
-                        .build());
+        buildModifier(ModModifierIds.Hungriness).addModule(new HungrinessModule(new LevelingValue(0, 0.02f)));
 
-        MobEffectModule.Builder inspiredBuilder = MobEffectModule.builder(MobEffects.DIG_SPEED).time(RandomLevelingValue.perLevel(0, 100)).level(RandomLevelingValue.flat(1)).isAoe(BooleanPredicate.FALSE).chance(LevelingValue.flat(0.25f));
+        MobEffectModule.Builder inspiredBuilder = MobEffectModule.builder(MobEffects.DIG_SPEED).time(RandomLevelingValue.perLevel(0, 100)).level(RandomLevelingValue.flat(2)).isAoe(BooleanPredicate.FALSE).chance(LevelingValue.flat(0.25f));
 
         buildModifier(ModModifierIds.Inspired).addModule(inspiredBuilder.buildToolUsage());
         //ranged
         buildModifier(ModModifierIds.Atlatl).addModule(AtlatlModule.INSTANCE);
         buildModifier(ModModifierIds.Coercion).addModule(CoercionModule.INSTANCE);
 
-        MobEffectModule.Builder fronzenBuilder = MobEffectModule.builder(MobEffects.MOVEMENT_SLOWDOWN).time(RandomLevelingValue.perLevel(0, 30)).level(RandomLevelingValue.flat(4));
+        MobEffectModule.Builder fronzenBuilder = MobEffectModule.builder(MobEffects.MOVEMENT_SLOWDOWN).time(RandomLevelingValue.perLevel(0, 30)).level(RandomLevelingValue.flat(5));
 
         buildModifier(ModModifierIds.Fronzen).addModule(fronzenBuilder.buildWeapon());
 

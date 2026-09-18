@@ -5,7 +5,7 @@
       "type": "tconstruct:weapon_mob_effect",
       "effect": "minecraft:slowness",
       "level": {
-        "flat": 4.0
+        "flat": 5.0
       },
       "time": {
         "per_level": 30.0

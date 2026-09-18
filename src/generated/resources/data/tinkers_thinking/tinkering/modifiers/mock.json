@@ -1,0 +1,50 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "minecraft:invisibility",
+      "level": {
+        "flat": 1.0
+      },
+      "time": {
+        "flat": 200.0
+      }
+    },
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "formula": [
+        "$level",
+        0.2,
+        "*",
+        1.0,
+        "+",
+        "$damage",
+        "*"
+      ],
+      "percent": true,
+      "target": {
+        "type": "mantle:has_effect",
+        "effect": "minecraft:invisibility"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_power",
+      "formula": [
+        "$level",
+        0.2,
+        "*",
+        1.0,
+        "+",
+        "$damage",
+        "*"
+      ],
+      "percent": true,
+      "target": {
+        "type": "mantle:has_effect",
+        "effect": "minecraft:invisibility"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}
