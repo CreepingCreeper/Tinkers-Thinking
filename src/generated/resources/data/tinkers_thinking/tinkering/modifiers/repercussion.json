@@ -1,0 +1,11 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:repercussion",
+      "each_level": -40.0,
+      "flat": 200.0
+    }
+  ],
+  "tooltip_display": "always"
+}

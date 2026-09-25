@@ -1,0 +1,79 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tinkers_thinking:overweight",
+      "holder": {
+        "type": "mantle:has_effect",
+        "effect": "tinkers_thinking:sculk_power"
+      },
+      "level": {
+        "flat": 5.0
+      },
+      "target": {
+        "type": "mantle:inverted",
+        "effect": "tinkers_thinking:modifier_immune",
+        "inverted_type": "mantle:has_effect"
+      },
+      "time": {
+        "flat": 120.0
+      }
+    },
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tinkers_thinking:jumpless",
+      "holder": {
+        "type": "mantle:has_effect",
+        "effect": "tinkers_thinking:sculk_power"
+      },
+      "level": {
+        "flat": 1.0
+      },
+      "target": {
+        "type": "mantle:inverted",
+        "effect": "tinkers_thinking:modifier_immune",
+        "inverted_type": "mantle:has_effect"
+      },
+      "time": {
+        "flat": 120.0
+      }
+    },
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tinkers_thinking:modifier_immune",
+      "holder": {
+        "type": "mantle:has_effect",
+        "effect": "tinkers_thinking:sculk_power"
+      },
+      "level": {
+        "flat": 1.0
+      },
+      "target": {
+        "type": "mantle:inverted",
+        "effect": "tinkers_thinking:modifier_immune",
+        "inverted_type": "mantle:has_effect"
+      },
+      "time": {
+        "flat": 360.0,
+        "per_level": -80.0
+      }
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:entity_gravity",
+      "each_level": 0.05,
+      "operation": "multiply_total",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "tooltip_style": "percent"
+    }
+  ],
+  "tooltip_display": "always"
+}

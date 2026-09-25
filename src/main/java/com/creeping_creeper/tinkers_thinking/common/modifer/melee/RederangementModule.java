@@ -42,7 +42,8 @@ public enum RederangementModule implements ModifierModule, MeleeHitModifierHook,
     public List<ModuleHook<?>> getDefaultHooks() {
         return DEFAULT_HOOKS;
     }
-    private void derangement(Level level, LivingEntity target, LivingEntity attacker, boolean a, int l) {
+
+    private static void derangement(Level level, LivingEntity target, LivingEntity attacker, boolean a, int l) {
         if (level instanceof ServerLevel) {
             if (a) {
                 LightningBolt lightning = EntityType.LIGHTNING_BOLT.create(level);

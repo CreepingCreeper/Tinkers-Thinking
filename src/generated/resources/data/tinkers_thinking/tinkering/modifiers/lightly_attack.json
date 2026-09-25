@@ -1,0 +1,47 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tinkers_thinking:quick_attack",
+      "holder": "tinkers_thinking:is_hotbar_empty",
+      "level": {
+        "per_level": 3.0
+      },
+      "time": {
+        "flat": 60.0
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "entity": "tinkers_thinking:is_hotbar_empty",
+      "formula": [
+        "$level",
+        0.3,
+        "*",
+        1.0,
+        "+",
+        "$value",
+        "*"
+      ],
+      "percent": true,
+      "stat": "tconstruct:draw_speed"
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:entity_gravity",
+      "each_level": -0.1,
+      "operation": "multiply_total",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "tooltip_style": "percent"
+    }
+  ],
+  "tooltip_display": "always"
+}

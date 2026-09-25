@@ -1,0 +1,24 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "chance": {
+        "each_level": 0.15
+      },
+      "effect": "tinkers_thinking:cataclysm",
+      "level": {
+        "flat": 1.0
+      },
+      "target": {
+        "type": "mantle:inverted",
+        "effect": "tinkers_thinking:modifier_immune",
+        "inverted_type": "mantle:has_effect"
+      },
+      "time": {
+        "flat": 600.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

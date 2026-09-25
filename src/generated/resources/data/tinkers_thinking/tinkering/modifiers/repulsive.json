@@ -1,0 +1,26 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tconstruct:repulsive",
+      "level": {
+        "per_level": 2.0
+      },
+      "time": {
+        "flat": 15.0
+      }
+    },
+    {
+      "type": "tconstruct:counter_mob_effect",
+      "effect": "tconstruct:repulsive",
+      "level": {
+        "per_level": 2.0
+      },
+      "time": {
+        "flat": 15.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

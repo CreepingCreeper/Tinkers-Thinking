@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:recalamity",
+      "odd_rate": 0.1
+    }
+  ],
+  "tooltip_display": "always"
+}

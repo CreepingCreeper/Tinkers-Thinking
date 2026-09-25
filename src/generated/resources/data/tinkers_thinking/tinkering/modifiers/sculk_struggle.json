@@ -2,13 +2,14 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:antibrute"
+      "type": "tinkers_thinking:sculk_struggle",
+      "each_level": 100.0
     },
     {
       "type": "tconstruct:armor_level",
       "allow_broken": false,
-      "held_tag": "tconstruct:modifiable/armor/held",
-      "key": "tinkers_thinking:antibrute"
+      "held_tag": "tconstruct:modifiable/held",
+      "key": "tinkers_thinking:sculk_struggle"
     }
   ],
   "tooltip_display": "always"

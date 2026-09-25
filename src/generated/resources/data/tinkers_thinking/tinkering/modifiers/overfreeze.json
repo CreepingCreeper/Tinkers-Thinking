@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:overfreeze",
+      "each_level": 4.0
+    }
+  ],
+  "tooltip_display": "always"
+}

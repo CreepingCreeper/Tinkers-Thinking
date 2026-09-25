@@ -23,6 +23,7 @@ public class ModTags {
             return TagKey.create(Registries.ITEM, commonResource(name));
         }
     }
+
     public static class Blocks {
         /** Any Blocks that can speed up cooling */
         public static final TagKey<Block> cooling_fast = local("cooling_fast");
@@ -32,6 +33,7 @@ public class ModTags {
         }
         private static TagKey<Block> common(String name) {return TagKey.create(Registries.BLOCK, commonResource(name));}
     }
+
     public static class Fluids {
         public static final TagKey<Fluid> glowstone = common("glowstone");
         private static TagKey<Fluid> local(String name) {
@@ -39,6 +41,7 @@ public class ModTags {
         }
         private static TagKey<Fluid> common(String name) {return TagKey.create(Registries.FLUID, commonResource(name));}
     }
+
     public static class DamageTypes {
         /** Any DamageTypes that make blaze drop ashes */
         public static final TagKey<DamageType> drop_ashes = local("drop_ashes");
@@ -47,6 +50,7 @@ public class ModTags {
         }
         private static TagKey<DamageType> common(String name) {return TagKey.create(Registries.DAMAGE_TYPE, commonResource(name));}
     }
+
     public static class EntityTypes {
         public static final TagKey<EntityType<?>> resisting = local("resisting");
         private static TagKey<EntityType<?>> local(String name) {
@@ -54,4 +58,5 @@ public class ModTags {
         }
         private static TagKey<EntityType<?>> common(String name) {return TagKey.create(Registries.ENTITY_TYPE, commonResource(name));}
     }
+
 }

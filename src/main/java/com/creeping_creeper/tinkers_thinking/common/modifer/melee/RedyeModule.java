@@ -13,7 +13,9 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.common.TinkerDamageTypes;
+import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -22,29 +24,45 @@ import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MonsterMeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileHitModifierHook;
-import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.module.HookProvider;
+import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter,ProjectileHitModifierHook, ModifierRemovalHook {
-    private final ResourceLocation KEY = TinkersThinking.getResource("a");
-    @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.PROJECTILE_HIT, ModifierHooks.REMOVE);
+public record RedyeModule(LevelingValue odd_rate) implements ModifierModule, MeleeDamageModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook, ModifierRemovalHook {
+    private static final ResourceLocation KEY = TinkersThinking.getResource("last_target");
+
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS;
+    public static final RecordLoadable<RedyeModule> LOADER;
+
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.PROJECTILE_HIT, ModifierHooks.REMOVE);
+        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(RedyeModule::odd_rate), RedyeModule::new);
     }
+
+    public RecordLoadable<RedyeModule> getLoader() {
+        return LOADER;
+    }
+
+    public List<ModuleHook<?>> getDefaultHooks() {
+        return DEFAULT_HOOKS;
+    }
+
 
     private float dye(ServerLevel level, LivingEntity target, LivingEntity attacker, ModDataNBT persistentData, float damage, boolean a, int l){
         Entity entity = persistentData.contains(KEY) ? level.getEntity((UUID.fromString(persistentData.getString(KEY)))) : null;
-        persistentData.putString(this.KEY, target.getStringUUID());
+        persistentData.putString(KEY, target.getStringUUID());
         if (entity instanceof LivingEntity living && living.isAlive()){
             if (a && entity == target) {
-              return 1+l*0.06f;
+              return 1 + odd_rate.compute(l);
             }
             if (!a && entity != target) {
                 DamageSource source = TinkerDamageTypes.source(level.registryAccess(), DamageTypes.PLAYER_ATTACK, attacker);
@@ -58,8 +76,8 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         LivingEntity attacker = context.getAttacker();
-        if (!context.isExtraAttack() && context.isFullyCharged() && target!=null && target.isAlive()) {
-            damage *= (1 + dye((ServerLevel) context.getLevel(),target,attacker,Objects.requireNonNull(tool.getPersistentData()),damage,ModifierUtils.reverse(tool, modifier),modifier.getLevel()));
+        if (!context.isExtraAttack() && context.isFullyCharged() && target != null && target.isAlive()) {
+            damage *= (1 + dye((ServerLevel) context.getLevel(), target, attacker, Objects.requireNonNull(tool.getPersistentData()), damage, ModifierUtils.reverse(tool, modifier), modifier.getLevel()));
         }
         return damage;
     }
@@ -71,7 +89,7 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
             if (projectile instanceof AbstractArrow arrow) power = (float) arrow.getBaseDamage();
             if (projectile instanceof ProjectileWithPower withPower) power = withPower.getDamage();
             if (attacker != null) {
-                ModifierUtils.setPower(projectile, dye((ServerLevel) target.level(), target, attacker, Objects.requireNonNull(persistentData),power, ModifierUtils.reverseProjectile(projectile),modifier.getLevel()));
+                ModifierUtils.setPower(projectile, dye((ServerLevel) target.level(), target, attacker, Objects.requireNonNull(persistentData), power, ModifierUtils.reverseProjectile(projectile), modifier.getLevel()));
             }
         }
         return false;
@@ -80,7 +98,7 @@ public class RedyeModifier extends Modifier implements MeleeDamageModifierHook, 
     @Nullable
     @Override
     public Component onRemoved(IToolStackView tool, Modifier modifier) {
-        if (tool.getModifierLevel(this.getId()) == 0) {
+        if (tool.getModifierLevel(modifier.getId()) == 0) {
             tool.getPersistentData().remove(KEY);
         }
         return null;

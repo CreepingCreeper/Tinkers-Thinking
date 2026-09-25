@@ -1,0 +1,21 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:falling_attack",
+      "rate": 0.5
+    },
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "tconstruct:repulsive",
+      "holder": "mantle:on_ground",
+      "level": {
+        "flat": 2.0
+      },
+      "time": {
+        "flat": 50.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:sculk_dash",
+      "rate": 0.25
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,11 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:burning_out",
+      "cooling": 80,
+      "each_level": 0.3
+    }
+  ],
+  "tooltip_display": "always"
+}

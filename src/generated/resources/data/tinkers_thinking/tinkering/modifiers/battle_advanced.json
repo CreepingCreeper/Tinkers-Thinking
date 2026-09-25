@@ -1,0 +1,11 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:battle_advanced",
+      "max_time": 1200,
+      "rate": 0.005
+    }
+  ],
+  "tooltip_display": "always"
+}

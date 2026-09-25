@@ -29,6 +29,7 @@ public class ModProvider {
         boolean client = event.includeClient();
 
         generator.addProvider(server, new ModFluidTagProvider(output, lookupProvider, existingFileHelper));
+
         generator.addProvider(server, new SmelteryRecipe(output));
 
         ModMaterialProvider materials = new ModMaterialProvider(output);

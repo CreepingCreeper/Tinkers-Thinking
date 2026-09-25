@@ -33,31 +33,16 @@ public class ModModifiers{
     }
 
     private static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
-    public static final StaticModifier<StimulationModifier> Stimulation = MODIFIERS.register("stimulation", StimulationModifier::new);
-    public static final StaticModifier<MockModifier> Mock = MODIFIERS.register("mock", MockModifier::new);
     public static final StaticModifier<ConcealingModifier> Concealing = MODIFIERS.register("concealing", ConcealingModifier::new);
     public static final StaticModifier<ShadowingModifier> Shadowing = MODIFIERS.register("shadowing", ShadowingModifier::new);
-    public static final StaticModifier<RepulsiveModifier> Repulsive = MODIFIERS.register("repulsive", RepulsiveModifier::new);
-    public static final StaticModifier<PricklyModifier> Prickly = MODIFIERS.register("prickly", PricklyModifier::new);
     public static final StaticModifier<SculkProtectionModifier> SculkProtection = MODIFIERS.register("sculk_protection", SculkProtectionModifier::new);
-    public static final StaticModifier<SculkTeleportModifier> SculkTeleport = MODIFIERS.register("sculk_teleport", SculkTeleportModifier::new);
-    public static final StaticModifier<FallingAttackModifier> FallingAttack = MODIFIERS.register("falling_attack", FallingAttackModifier::new);
     public static final StaticModifier<SpikyModifier> Spiky = MODIFIERS.register("spiky", SpikyModifier::new);
-    public static final StaticModifier<BurningOutModifier> BurningOut = MODIFIERS.register("burning_out", BurningOutModifier::new);
     public static final StaticModifier<SculkBreedModifier> SculkBreed = MODIFIERS.register("sculk_breed", SculkBreedModifier::new);
-    public static final StaticModifier<SculkDashModifier> SculkDash = MODIFIERS.register("sculk_dash", SculkDashModifier::new);
     public static final StaticModifier<CrimsonModifier> Crimson = MODIFIERS.register("crimson", CrimsonModifier::new);
-    public static final StaticModifier<CataclysmModifier> Cataclysm = MODIFIERS.register("cataclysm", CataclysmModifier::new);
     public static final StaticModifier<MagicTransformModifier> MagicTransform = MODIFIERS.register("magic_transform", MagicTransformModifier::new);
-    public static final StaticModifier<OverFreezeModifier> FreezingCold = MODIFIERS.register("overfreeze", OverFreezeModifier::new);
-    public static final StaticModifier<OverdisintegrateModifier> Overdisintegrate = MODIFIERS.register("overdisintegrate", OverdisintegrateModifier::new);
     public static final StaticModifier<OverbearModifier> Overbear = MODIFIERS.register("overbear", OverbearModifier::new);
-    public static final StaticModifier<RecalamityModifier> Recalamity = MODIFIERS.register("recalamity", RecalamityModifier::new);
     public static final StaticModifier<SculkSiphonModifier> SculkSiphon = MODIFIERS.register("sculk_siphon", SculkSiphonModifier::new);
-    public static final StaticModifier<RedyeModifier> Redye = MODIFIERS.register("redye", RedyeModifier::new);
-    public static final StaticModifier<RepercussionModifier> Repercussion = MODIFIERS.register("repercussion", RepercussionModifier::new);
     public static final StaticModifier<CounterAttackModifier> CounterAttack = MODIFIERS.register("counter_attack", CounterAttackModifier::new);
-    public static final StaticModifier<BattleAdvancedModifier> BattleAdvanced = MODIFIERS.register("battle_advanced", BattleAdvancedModifier::new);
     public static final StaticModifier<GlowAdvancedModifier> GlowAdvanced = MODIFIERS.register("glow_advanced", GlowAdvancedModifier::new);
     public static final StaticModifier<TeleportAdvancedModifier> TeleportAdvanced = MODIFIERS.register("teleport_advanced", TeleportAdvancedModifier::new);
 
@@ -68,28 +53,38 @@ public class ModModifiers{
 
             LivingEntityPredicate.LOADER.register(getResource("is_day"), ModPredicate.Entity.IS_DAY.getLoader());
             LivingEntityPredicate.LOADER.register(getResource("is_riding"), ModPredicate.Entity.IS_RIDING.getLoader());
+            LivingEntityPredicate.LOADER.register(getResource("is_hotbar_empty"), ModPredicate.Entity.IS_HOTBAR_EMPTY.getLoader());
 
             // variable
             ToolVariable.register(getResource("sky_light"), SkyLightVariable.LOADER);
 
-            ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
-            ModifierModule.LOADER.register(getResource("sculk_levitate"), SculkLevitateModule.LOADER);
-            ModifierModule.LOADER.register(getResource("sculk_gravity"), SculkGravityModule.LOADER);
-            ModifierModule.LOADER.register(getResource("lightly_attack"), LightlyAttackModule.LOADER);
-            ModifierModule.LOADER.register(getResource("antibrute"), AntibruteModule.LOADER);
-            ModifierModule.LOADER.register(getResource("reburning"), ReburningModifier.LOADER);
-            ModifierModule.LOADER.register(getResource("sculk_struggle"), SculkStruggleModule.LOADER);
-            ModifierModule.LOADER.register(getResource("rederangement"), RederangementModule.LOADER);
-            ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
-
-
-            ModifierModule.LOADER.register(getResource("sharp_circumstance"), SharpCircumstanceModule.LOADER);
-            ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
             // module-melee
+            ModifierModule.LOADER.register(getResource("battle_advanced"), BattleAdvancedModule.LOADER);
+            ModifierModule.LOADER.register(getResource("burning_out"), BurningOutModule.LOADER);
+            ModifierModule.LOADER.register(getResource("falling_attack"), FallingAttackModule.LOADER);
+            ModifierModule.LOADER.register(getResource("prickly"), PricklyModule.LOADER);
+            ModifierModule.LOADER.register(getResource("overdisintegrate"), OverdisintegrateModule.LOADER);
+            ModifierModule.LOADER.register(getResource("overfreeze"), OverfreezeModule.LOADER);
+            ModifierModule.LOADER.register(getResource("recalamity"), RecalamityModule.LOADER);
+            ModifierModule.LOADER.register(getResource("rederangement"), RederangementModule.LOADER);
+            ModifierModule.LOADER.register(getResource("redye"), RedyeModule.LOADER);
+            ModifierModule.LOADER.register(getResource("repercussion"), RepercussionModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sculk_dash"), SculkDashModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sculk_teleport"), SculkTeleportModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sculk_struggle"), SculkStruggleModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sharp_circumstance"), SharpCircumstanceModule.LOADER);
+
             // module-havest
             ModifierModule.LOADER.register(getResource("hungriness"), HungrinessModule.LOADER);
 
             // module-defense
+            ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
+            ModifierModule.LOADER.register(getResource("antibrute"), AntibruteModule.LOADER);
+            ModifierModule.LOADER.register(getResource("reburning"), ReburningModifier.LOADER);
+            ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
+            ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
+
+
             // module-ranged
             ModifierModule.LOADER.register(getResource("atlatl"), AtlatlModule.LOADER);
             ModifierModule.LOADER.register(getResource("coercion"), CoercionModule.LOADER);

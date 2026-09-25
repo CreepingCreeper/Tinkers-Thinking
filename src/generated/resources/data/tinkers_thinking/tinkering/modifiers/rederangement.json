@@ -2,9 +2,7 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:lightly_attack",
-      "_comment": "Per level",
-      "each_level": 0.3
+      "type": "tinkers_thinking:rederangement"
     },
     {
       "type": "tconstruct:attribute",
@@ -13,10 +11,14 @@
       "operation": "multiply_total",
       "slots": [
         "mainhand",
-        "offhand"
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
       ],
       "tooltip_style": "percent"
     }
-    ],
+  ],
   "tooltip_display": "always"
 }

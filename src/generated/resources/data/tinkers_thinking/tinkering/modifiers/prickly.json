@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:prickly",
+      "each_level": 0.12
+    }
+  ],
+  "tooltip_display": "always"
+}
