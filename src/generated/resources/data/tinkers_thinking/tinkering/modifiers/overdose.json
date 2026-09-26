@@ -1,0 +1,26 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "minecraft:poison",
+      "level": {
+        "per_level": 3.0
+      },
+      "time": {
+        "flat": 120.0,
+        "per_level": 20.0
+      }
+    },
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 2.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "forge:slimes"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

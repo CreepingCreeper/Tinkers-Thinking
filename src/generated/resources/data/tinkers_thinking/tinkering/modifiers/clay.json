@@ -5,12 +5,11 @@
       "type": "tconstruct:conditional_melee_damage",
       "each_level": 100.0,
       "percent": false,
-      "target":
-      {
+      "target": {
         "type": "mantle:tag",
-        "tag": "minecraft:boat"
+        "tag": "minecraft:arrows"
       }
     }
   ],
-  "tooltip_display": "never"
+  "tooltip_display": "always"
 }

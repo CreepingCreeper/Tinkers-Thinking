@@ -1,0 +1,19 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:protection",
+      "damage_source": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:tag",
+        "tag": "minecraft:bypasses_armor"
+      },
+      "each_level": 2.5,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

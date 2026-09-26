@@ -7,8 +7,6 @@
         "$charge",
         0.04,
         "*",
-        "$level",
-        "*",
         "$multiplier",
         "*",
         "$value",

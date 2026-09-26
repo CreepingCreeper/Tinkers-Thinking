@@ -4,15 +4,11 @@
     {
       "type": "tconstruct:conditional_mining_speed",
       "blocks": {
-        "type": "mantle:or",
+        "type": "mantle:and",
         "predicates": [
           {
             "type": "mantle:tag",
             "tag": "forge:stone"
-          },
-          {
-            "type": "mantle:tag",
-            "tag": "forge:blackstone"
           },
           {
             "type": "mantle:tag",
@@ -24,10 +20,9 @@
           }
         ]
       },
-      "each_level": 5,
-      "entity": "mantle:any",
+      "each_level": 5.0,
       "percent": false,
-      "require_effective": false
+      "require_effective": true
     }
   ],
   "tooltip_display": "always"

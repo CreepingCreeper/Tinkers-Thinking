@@ -25,6 +25,8 @@ public class ModTags {
     }
 
     public static class Blocks {
+        public static final TagKey<Block> cuttable = local("cuttable_blocks");
+
         /** Any Blocks that can speed up cooling */
         public static final TagKey<Block> cooling_fast = local("cooling_fast");
         public static final TagKey<Block> zith = local("zith");
@@ -52,6 +54,8 @@ public class ModTags {
     }
 
     public static class EntityTypes {
+        public static final TagKey<EntityType<?>> pigLike = local("pig_like");
+
         public static final TagKey<EntityType<?>> resisting = local("resisting");
         private static TagKey<EntityType<?>> local(String name) {
             return TagKey.create(Registries.ENTITY_TYPE, getResource(name));

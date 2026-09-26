@@ -3,13 +3,13 @@
   "modules": [
     {
       "type": "tconstruct:stat_boost",
-      "each_level": -0.15,
+      "flat": -0.15,
       "operation": "multiply_base",
       "stat": "tconstruct:velocity"
     },
     {
       "type": "tconstruct:stat_boost",
-      "each_level": 0.30,
+      "flat": 0.3,
       "operation": "multiply_base",
       "stat": "tconstruct:projectile_damage"
     }

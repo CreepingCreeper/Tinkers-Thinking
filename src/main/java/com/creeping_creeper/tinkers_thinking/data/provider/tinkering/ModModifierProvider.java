@@ -12,7 +12,10 @@ import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.*;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
+import com.creeping_creeper.tinkers_thinking.data.ModTags;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -20,7 +23,10 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import slimeknights.mantle.data.predicate.block.BlockPredicate;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.HasMobEffectPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.mantle.data.predicate.item.ItemPredicate;
@@ -62,8 +68,7 @@ import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
-import static slimeknights.tconstruct.library.json.math.ModifierFormula.LEVEL;
-import static slimeknights.tconstruct.library.json.math.ModifierFormula.VALUE;
+import static slimeknights.tconstruct.library.json.math.ModifierFormula.*;
 
 public class ModModifierProvider extends AbstractModifierProvider implements IConditionBuilder {
     public ModModifierProvider(PackOutput packOutput) {
@@ -79,6 +84,13 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         // melee
         buildModifier(ModModifierIds.BattleAdvanced).addModule(new BattleAdvancedModule(0.005f, 1200));
 
+        MobEffectModule.Builder weaknessBuilder = MobEffectModule.builder(MobEffects.WEAKNESS).time(RandomLevelingValue.perLevel(80.0f, 20.0f)).level(RandomLevelingValue.flat(2.0f))
+                .target(LivingEntityPredicate.tag(ModTags.EntityTypes.pigLike));
+
+        buildModifier(ModModifierIds.BaneOfPigs)
+                .addModule(weaknessBuilder.buildWeapon())
+                .addModule(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(ModTags.EntityTypes.pigLike)).eachLevel(5.0f));
+
         MobEffectModule.Builder fireResistanceBuilder = MobEffectModule.builder(MobEffects.FIRE_RESISTANCE).time(RandomLevelingValue.flat(80))
                 .target(new HasMobEffectPredicate(MobEffects.FIRE_RESISTANCE).inverted());
 
@@ -89,16 +101,22 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
 
         buildModifier(ModModifierIds.Cataclysm).addModule(cataclysmBuilder.buildWeapon());
 
+        buildModifier(ModModifierIds.Clay).addModule(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(EntityTypeTags.ARROWS)).eachLevel(100)).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+
         MobEffectModule.Builder disarmBuilder = MobEffectModule.builder(ModEffects.disarm).time(RandomLevelingValue.flat(160))
                 .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
         MobEffectModule.Builder disarmBuilder1 = MobEffectModule.builder(ModEffects.modifier_immune.get()).time(RandomLevelingValue.perLevel(190, -30))
                 .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
+
+        buildModifier(ModModifierIds.DensityAdvanced);
 
         buildModifier(ModModifierIds.Disarm).addModule(disarmBuilder.buildWeapon())
                 .addModule(disarmBuilder1.buildWeapon());
 
         MobEffectModule.Builder fallingBuilder = MobEffectModule.builder(TinkerEffects.repulsive).time(RandomLevelingValue.flat(50)).level(RandomLevelingValue.flat(2))
                 .holder(LivingEntityPredicate.ON_GROUND);
+
+        buildModifier(ModModifierIds.Hellish).addModule(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.FIRE_IMMUNE.inverted()).eachLevel(2.0f));
 
         buildModifier(ModModifierIds.FallingAttack).addModule(new FallingAttackModule(0.5f))
                 .addModule(fallingBuilder.buildWeapon());
@@ -137,6 +155,11 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .constant(1).add()
                         .variable(VALUE).multiply()
                         .build());
+
+        MobEffectModule.Builder posionBuilder = MobEffectModule.builder(MobEffects.POISON).time(RandomLevelingValue.perLevel(120f, 20f)).level(RandomLevelingValue.perLevel(0, 3));
+
+        buildModifier(ModModifierIds.Overdose).addModule(posionBuilder.buildWeapon())
+                .addModule(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(TinkerTags.EntityTypes.SLIMES)).eachLevel(2.0f));
 
         buildModifier(ModModifierIds.Overdisintegrate).addModule(new OverdisintegrateModule(LevelingInt.eachLevel(4)));
         buildModifier(ModModifierIds.Overfreeze).addModule(new OverfreezeModule(LevelingInt.eachLevel(4)));
@@ -186,7 +209,13 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.SharpCircumstance).addModule(new SharpCircumstanceModule(LevelingValue.eachLevel(0.125f), LevelingValue.eachLevel(0.08f))).priority(15);
         buildModifier(ModModifierIds.Stimulation).addModule(stimulationBuilder.buildWeapon());
 
+        buildModifier(ModModifierIds.Targeted).addModule(StatBoostModule.multiplyConditional(ToolStats.ATTACK_DAMAGE).flat(0.5f));
+
         // harvest
+        buildModifier(ModModifierIds.Cutting).addModule(
+                ConditionalMiningSpeedModule.builder().blocks(BlockPredicate.and(
+                        BlockPredicate.tag(Tags.Blocks.STONE), BlockPredicate.tag(Tags.Blocks.COBBLESTONE), BlockPredicate.tag(ModTags.Blocks.cuttable)))
+                        .eachLevel(5.0f));
         buildModifier(ModModifierIds.SculkBoost).addModule(
                 ConditionalMiningSpeedModule.builder().percent()
                         .formula()
@@ -228,18 +257,31 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .variable(VALUE).multiply()
                         .build());
         buildModifier(ModModifierIds.Hungriness).addModule(new HungrinessModule(LevelingValue.eachLevel(0.02f)));
-
+        buildModifier(ModModifierIds.MeltAdvanced) .addModule(new ModifierTraitModule(ModifierIds.lustrous, 1, false));
         MobEffectModule.Builder inspiredBuilder = MobEffectModule.builder(MobEffects.DIG_SPEED).time(RandomLevelingValue.perLevel(0, 100)).level(RandomLevelingValue.flat(2)).isAoe(BooleanPredicate.FALSE).chance(LevelingValue.flat(0.25f));
 
         buildModifier(ModModifierIds.Inspired).addModule(inspiredBuilder.buildToolUsage());
-        //ranged
-        buildModifier(ModModifierIds.Atlatl).addModule(AtlatlModule.INSTANCE);
+        // ranged
+        buildModifier(ModModifierIds.Atlatl).addModule(AtlatlModule.INSTANCE).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(ModModifierIds.BideTime)
+                .addModule(StatBoostModule.add(ToolStats.PROJECTILE_DAMAGE).flat(0.4f))
+                .addModule(StatBoostModule.add(ToolStats.ACCURACY).flat(0.4f))
+                .addModule(new BideTimeModule(100));
         buildModifier(ModModifierIds.Coercion).addModule(CoercionModule.INSTANCE);
+        buildModifier(ModModifierIds.ChargeAdvanced)
+                .addModule(ConditionalStatModule.stat(ToolStats.PROJECTILE_DAMAGE)
+                        .formula()
+                        .customVariable("charge", new ModDataVariable(ModifierIds.warCharge, ModDataSource.PERSISTENT))
+                        .constant(0.04f).multiply()
+                        .variable(MULTIPLIER).multiply()
+                        .variable(VALUE).add().build());
 
         MobEffectModule.Builder fronzenBuilder = MobEffectModule.builder(MobEffects.MOVEMENT_SLOWDOWN).time(RandomLevelingValue.perLevel(0, 30)).level(RandomLevelingValue.flat(5));
 
         buildModifier(ModModifierIds.Fronzen).addModule(fronzenBuilder.buildWeapon());
-
+        buildModifier(ModModifierIds.Impact)
+                .addModule(StatBoostModule.multiplyBase(ToolStats.VELOCITY).flat(-0.15f))
+                .addModule(StatBoostModule.multiplyBase(ToolStats.PROJECTILE_DAMAGE).flat(0.3f));
         buildModifier(ModModifierIds.Nonsense).addModule(new NonsenseModule(LevelingValue.eachLevel(0.5f)));
         buildModifier(ModModifierIds.Nocturnal)
                 .addModule(ConditionalStatModule.stat(ToolStats.VELOCITY)
@@ -252,10 +294,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .variable(LEVEL).multiply()
                 .variable(VALUE).add()
                 .build());
-        buildModifier(ModModifierIds.BideTime)
-                .addModule(StatBoostModule.add(ToolStats.PROJECTILE_DAMAGE).flat(0.4f))
-                .addModule(StatBoostModule.add(ToolStats.ACCURACY).flat(0.4f))
-                .addModule(new BideTimeModule(100));
+
         buildModifier(ModModifierIds.Seeking);
         buildModifier(ModModifierIds.Recharge)
                 .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).percent()
@@ -293,6 +332,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .variable(VALUE).multiply()
                         .build());
 
+        buildModifier(ModModifierIds.RepeatingAdvanced);
         buildModifier(ModModifierIds.RidingShoot)
                 .addModule(ConditionalPowerModule.builder().holder(ModPredicate.Entity.IS_RIDING).eachLevel(1))
                 .addModule(RidingShootModule.INSTANCE);
@@ -302,13 +342,17 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.SwashAdvanced).addModule(new SwashAdvancedModule((LevelingValue.eachLevel(1f))));
         // defense
         buildModifier(ModModifierIds.Antibrute).addModule(AntibruteModule.INSTANCE);
+        buildModifier(ModModifierIds.Broad).addModule(StatBoostModule.add(ToolStats.BLOCK_ANGLE).eachLevel(30));
 
         MobEffectModule.Builder invisibilitydBuilder1 = MobEffectModule.builder(MobEffects.INVISIBILITY).time(RandomLevelingValue.flat(200)).targetSelf(true);
 
         buildModifier(ModModifierIds.Concealing)
                 .addModule(invisibilitydBuilder1.buildCounter())
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(new HasMobEffectPredicate(MobEffects.INVISIBILITY)).eachLevel(1.5f));
-        buildModifier(ModModifierIds.CounterAdvanced).addModule(new CounterAttackModule(2.0f, LevelingValue.eachLevel(0.35f)));
+        buildModifier(ModModifierIds.CounterAdvanced);
+        buildModifier(ModModifierIds.CounterAttack).addModule(new CounterAttackModule(2.0f, LevelingValue.eachLevel(0.35f))).levelDisplay(ModifierLevelDisplay.NO_LEVELS);;
+        buildModifier(ModModifierIds.Countermeasures).addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(DamageSourcePredicate.tag(DamageTypeTags.BYPASSES_ARMOR).inverted()).eachLevel(2.5f));
+
         buildModifier(ModModifierIds.Crimson).addModule(new CrimsonModule(400));
         buildModifier(ModModifierIds.GlowAdvanced).addModule(new GlowAdvancedModule(LevelingValue.eachLevel(0.1f)));
         buildModifier(ModModifierIds.MagicTransform).addModule(new MagicTransformModule(LevelingValue.eachLevel(0.2f), 0.75f));
@@ -328,8 +372,6 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.SculkProtection).addModule(new SculkProtectionModule(LevelingValue.ZERO));
         buildModifier(ModModifierIds.SculkSiphon).addModule(new SculkSiphonModule(0.2f));
         buildModifier(ModModifierIds.Shadowing);
-        buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
-                .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
 
         MobEffectModule.Builder spikyBuilder = MobEffectModule.builder(ModEffects.modifier_immune.get()).time(RandomLevelingValue.flat(60))
                 .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
@@ -357,6 +399,10 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(new CapacityBarModule(LevelingInt.flat(1), null))
                 .addModule(SculkCatalyseModule.INSTANCE)
                 .addModule(new ArmorLevelModule(ModDataKeys.SculkCatalyse, false, TinkerTags.Items.HELD));
+        // slot
+
+        buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
+                .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
         // misc
         buildModifier(ModModifierIds.Hurried).levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(new HurriedModule(LevelingValue.eachLevel(0.0025f)))

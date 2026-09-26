@@ -1,0 +1,30 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:weapon_mob_effect",
+      "effect": "minecraft:weakness",
+      "level": {
+        "flat": 2.0
+      },
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tinkers_thinking:pig_like"
+      },
+      "time": {
+        "flat": 80.0,
+        "per_level": 20.0
+      }
+    },
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 5.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "tinkers_thinking:pig_like"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

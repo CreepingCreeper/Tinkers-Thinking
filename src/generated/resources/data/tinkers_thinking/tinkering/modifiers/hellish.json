@@ -3,9 +3,12 @@
   "modules": [
     {
       "type": "tconstruct:conditional_melee_damage",
-      "attacker": "mantle:sprinting",
-      "each_level": 3.5,
-      "percent": false
+      "each_level": 2.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:fire_immune"
+      }
     }
   ],
   "tooltip_display": "always"

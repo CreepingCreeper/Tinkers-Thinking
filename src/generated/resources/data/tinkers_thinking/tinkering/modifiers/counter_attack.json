@@ -2,7 +2,9 @@
   "level_display": "tconstruct:no_levels",
   "modules": [
     {
-      "type": "tinkers_thinking:atlatl"
+      "type": "tinkers_thinking:counter_attack",
+      "each_level": 0.35,
+      "rate": 2.0
     }
   ],
   "tooltip_display": "always"

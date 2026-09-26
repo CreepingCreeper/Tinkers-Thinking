@@ -3,9 +3,9 @@
   "modules": [
     {
       "type": "tconstruct:stat_boost",
-      "each_level": 0.5,
-      "operation": "multiply_conditional",
-      "stat": "tconstruct:attack_damage"
+      "each_level": 30.0,
+      "operation": "add",
+      "stat": "tconstruct:block_angle"
     }
   ],
   "tooltip_display": "always"

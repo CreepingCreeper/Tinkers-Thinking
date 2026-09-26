@@ -5,11 +5,7 @@
       "type": "tconstruct:trait",
       "fixed_level": false,
       "level": 1,
-      "name": "tconstruct:lustrous",
-      "tool": {
-        "type": "mantle:tag",
-        "tag": "tconstruct:modifiable"
-      }
+      "name": "tconstruct:lustrous"
     }
   ],
   "tooltip_display": "always"

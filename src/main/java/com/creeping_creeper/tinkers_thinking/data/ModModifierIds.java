@@ -5,10 +5,15 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class ModModifierIds {
     //melee
+    public static final ModifierId BaneOfPigs = id("bane_of_pigs");
     public static final ModifierId BattleAdvanced = id("battle_advanced");
     public static final ModifierId BurningOut = id("burning_out");
     public static final ModifierId Cataclysm = id("cataclysm");
+    public static final ModifierId Clay = id("clay");
+
+    public static final ModifierId DensityAdvanced = id("density_advanced");
     public static final ModifierId Disarm = id("disarm");
+    public static final ModifierId Hellish = id("hellish");
     public static final ModifierId FallingAttack = id("falling_attack");
     public static final ModifierId LightlyAttack = id("lightly_attack");
     public static final ModifierId Mock = id("mock");
@@ -28,22 +33,24 @@ public class ModModifierIds {
     public static final ModifierId SculkTeleport = id("sculk_teleport");
     public static final ModifierId SharpCircumstance = id("sharp_circumstance");
     public static final ModifierId Stimulation = id("stimulation");
-
-    public static final ModifierId BaneOfPigs = id("bane_of_pigs");
-    public static final ModifierId DensityAdvanced = id("density_advanced");
+    public static final ModifierId Targeted = id("targeted");
 
     // harvest
+    public static final ModifierId Cutting = id("cutting");
     public static final ModifierId Inspired = id("inspired");
     public static final ModifierId Hungriness = id("hungriness");
+    public static final ModifierId MeltAdvanced = id("melt_advanced");
     public static final ModifierId SculkBoost = id("sculk_boost");
     public static final ModifierId Shady = id("shady");
     //ranged
     public static final ModifierId Atlatl = id("atlatl");
+    public static final ModifierId BideTime = id("bide_time");
+    public static final ModifierId ChargeAdvanced = id("charge_advanced");
     public static final ModifierId Coercion = id("coercion");
     public static final ModifierId Fronzen = id("fronzen");
     public static final ModifierId Nonsense = id("nonsense");
     public static final ModifierId Nocturnal = id("nocturnal");
-    public static final ModifierId BideTime = id("bide_time");
+    public static final ModifierId Impact = id("impact");
     public static final ModifierId Recharge = id("recharge");
     public static final ModifierId RidingShoot = id("riding_shoot");
     public static final ModifierId Resisting = id("resisting");
@@ -55,8 +62,11 @@ public class ModModifierIds {
     public static final ModifierId Seeking = id("seeking");
     // defense
     public static final ModifierId Antibrute = id("antibrute");
+    public static final ModifierId Broad = id("broad");
     public static final ModifierId Concealing = id("concealing");
     public static final ModifierId CounterAttack = id("counter_attack");
+    public static final ModifierId Countermeasures = id("countermeasures");
+
     public static final ModifierId Crimson = id("crimson");
     public static final ModifierId GlowAdvanced = id("glow_advanced");
     public static final ModifierId MagicTransform = id("magic_transform");
@@ -71,7 +81,6 @@ public class ModModifierIds {
     public static final ModifierId Symbiotic = id("symbiotic");
     public static final ModifierId TeleportAdvanced = id("teleport_advanced");
 
-    public static final ModifierId Silkward = id("silkward");
     // durability
     public static final ModifierId SculkCatalyse = id("sculk_catalyse");
     public static final ModifierId Reverse = id("reverse");
@@ -80,15 +89,32 @@ public class ModModifierIds {
     public static final ModifierId Overeat = id("overeat");
     public static final ModifierId Durable = id("durable");
     public static final ModifierId Overcharge = id("overcharge");
-    public static final ModifierId SlingSprinting = id("sling_sprinting");
+    //slot
+    public static final ModifierId AncientAbility = id("ancient_ability");
+    public static final ModifierId AncientUpgrade = id("ancient_upgrade");
+    public static final ModifierId AttackAdvanced = id("attack_advanced");
+    public static final ModifierId Bronze = id("bronze");
+    public static final ModifierId Ceramic = id("ceramic");
+
+    public static final ModifierId Repayed = id("repayed");
+    public static final ModifierId Silkward = id("silkward");
+    public static final ModifierId Soft = id("soft");
+    public static final ModifierId Withernic = id("withernic");
 
     // misc
+    public static final ModifierId LightlySpeed = id("lightly_speed");
     public static final ModifierId Sprinting = id("sprinting");
     public static final ModifierId Hurried = id("hurried");
 
+    //farmer
+    public static final ModifierId Backstabbing = id("backstabbing");
+
     // tinkers_ingenuity
+    public static final ModifierId CuttingCurio = id("cutting_curio");
+    public static final ModifierId LightlySpeedCurio = id("lightly_speed_curio");
     public static final ModifierId SculkCatalyseCurio = id("sculk_catalyse_curio");
     public static final ModifierId SculkHeal = id("sculk_heal");
+    public static final ModifierId SculkStruggleCurio = id("sculk_struggle_curio");
 
     private ModModifierIds() {}
     private static ModifierId id(String name) {
