@@ -6,8 +6,10 @@ import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.RepairStats;
 
+import static slimeknights.tconstruct.library.materials.MaterialRegistry.AMMO;
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.MELEE_HARVEST;
 
 public class ModTraitsProvider extends AbstractMaterialTraitDataProvider {
@@ -17,9 +19,12 @@ public class ModTraitsProvider extends AbstractMaterialTraitDataProvider {
 
     @Override
     protected void addMaterialTraits() {
+        addDefaultTraits(MaterialIds.paper, ModModifierIds.Soft);
+
         addDefaultTraits(ModMaterialIds.electrical_steel, ModModifierIds.Repulsive);
         addTraits(ModMaterialIds.bacium, MELEE_HARVEST, ModModifierIds.BaneOfPigs);
-        addTraits(ModMaterialIds.bacium, MELEE_HARVEST, ModModifierIds.BaneOfPigs);
+        addTraits(ModMaterialIds.bacium, AMMO, ModModifierIds.Resisting);
+        addDefaultTraits(MaterialIds.gold, ModModifierIds.Spiky);
         addDefaultTraits(ModMaterialIds.gilded_silky_cloth, ModModifierIds.Silkward);
 
         MaterialStatsId shell = RepairStats.SHELL.getId();

@@ -2,16 +2,6 @@
   "level_display": "tconstruct:no_levels",
   "modules": [
     {
-      "type": "tconstruct:swappable_bonus_slot",
-      "bonus": "ancient",
-      "match": "ancient",
-      "slots": -1,
-      "tool": {
-        "type": "mantle:tag",
-        "tag": "tconstruct:modifiable/ancient"
-      }
-    },
-    {
       "type": "tconstruct:swappable_slot",
       "slots": 1
     },
@@ -48,10 +38,22 @@
       }
     },
     {
+      "type": "tconstruct:swappable_bonus_slot",
+      "bonus": "ancient",
+      "match": "ancient",
+      "slots": -1,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/ancient"
+      }
+    },
+    {
       "type": "tconstruct:swappable_tool_traits",
       "hook": "tconstruct:rebalanced_trait",
       "match": "traits"
     }
   ],
-  "tooltip_display": "tinker_station"
+  "show_in_tooltips": [
+    "tinker_station"
+  ]
 }

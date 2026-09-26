@@ -26,6 +26,7 @@ import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.block.BlockPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.HasMobEffectPredicate;
@@ -37,6 +38,7 @@ import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.json.predicate.tool.ToolContextPredicate;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.json.predicate.tool.ToolVariableRangePredicate;
 import slimeknights.tconstruct.library.json.variable.entity.ConditionalEntityVariable;
@@ -46,6 +48,7 @@ import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatV
 import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
@@ -66,6 +69,8 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.modifiers.util.ModifierTooltip;
 import slimeknights.tconstruct.library.tools.IndestructibleItemEntity;
 import slimeknights.tconstruct.library.tools.SlotType;
+import slimeknights.tconstruct.library.tools.definition.module.ToolHooks;
+import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerEffects;
@@ -389,6 +394,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(new EdibleRepresentativeItemModule(TinkerCommons.jeweledApple))
                 .addModule(new EdibleConsumeDurabilityModule(LevelingInt.eachLevel(8)))
                 .addModule(new EdibleHealModule(LevelingValue.eachLevel(0.1f)))
+                .addModule(StatBoostModule.add(EdibleModule.HUNGER).eachLevel(1))
                 .addModule(StatBoostModule.add(EdibleModule.COUNTER_CHANCE).eachLevel(0.15f));
         buildModifier(ModModifierIds.TeleportAdvanced).addModule(new TeleportAdvancedModule(LevelingInt.eachLevel(300)));
 
@@ -414,7 +420,9 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.Repayed).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
         buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
-        buildModifier(ModModifierIds.Soft).addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(-0.25f))
+        buildModifier(ModModifierIds.Soft).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
+                .addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(2))
+                .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(-0.25f))
                 .addModule(MaterialRepairModule.material(MaterialIds.paper).constant(120));
         buildModifier(ModModifierIds.Withernic).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
 
@@ -428,6 +436,8 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
 
         buildModifier(ModModifierIds.Sprinting).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).addModule(new SlingSprintingModule(new LevelingValue(2F, 1.5f), 1.5f, LivingEntityPredicate.ANY, ModifierCondition.ANY_TOOL));
         // overwrite
+        buildModifier(ModifierIds.lustrous).showInTooltips(ModifierTooltip.ShowInTooltips.NEVER);
+
         buildModifier(ModifierIds.netherite)
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(NetheriteModule.INSTANCE)
@@ -445,6 +455,17 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(StatBoostModule.multiplyBase(ToolStats.VELOCITY).flat(0.1f))
                 // achievement
                 .addModule(new VolatileFlagModule(AdvancementIds.NETHERITE));
+
+        IJsonPredicate<IToolContext> ancientTool = ToolContextPredicate.tag(TinkerTags.Items.ANCIENT_TOOLS);
+
+        buildModifier(ModifierIds.rebalanced)
+                .showInTooltips(ModifierTooltip.TINKER_STATION).levelDisplay(ModifierLevelDisplay.NO_LEVELS)
+                .addModule(new SwappableSlotModule(1))
+                .addModule(new SwappableSlotModule(null, 1, ModifierCondition.ANY_CONTEXT.with(ancientTool)), ModifierHooks.VOLATILE_DATA)
+                .addModule(new SwappableSlotModule.BonusSlot(null, SlotType.ABILITY, SlotType.UPGRADE, -1, ModifierCondition.ANY_CONTEXT.with(ancientTool.inverted())))
+                .addModule(new SwappableSlotModule.BonusSlot(null, SlotType.ABILITY, SlotType.ABILITY, -1, ModifierCondition.ANY_CONTEXT.with(ancientTool)))
+                .addModule(new SwappableSlotModule.BonusSlot(null, ModSlots.ANCIENT, ModSlots.ANCIENT, -1, ModifierCondition.ANY_CONTEXT.with(ancientTool)))
+                .addModule(new SwappableToolTraitsModule(null, "traits", ToolHooks.REBALANCED_TRAIT));
     }
 
     @Override

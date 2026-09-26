@@ -1,9 +1,9 @@
 {
   "stats": {
     "tconstruct:cuirass": {},
-    "tconstruct:maille": {},
-    "tconstruct:shell": {
+    "tconstruct:laces": {
       "repair_amount": 78
-    }
+    },
+    "tconstruct:maille": {}
   }
 }

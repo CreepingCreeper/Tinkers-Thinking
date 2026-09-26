@@ -1,10 +1,12 @@
 {
   "perStat": {
-    "tconstruct:melee_harvest": [
+    "tconstruct:ammo": [
       {
         "level": 1,
-        "name": "tinkers_thinking:bane_of_pigs"
-      },
+        "name": "tinkers_thinking:resisting"
+      }
+    ],
+    "tconstruct:melee_harvest": [
       {
         "level": 1,
         "name": "tinkers_thinking:bane_of_pigs"

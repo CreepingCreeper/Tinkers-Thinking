@@ -25,6 +25,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
     }
 
     private void addMeleeHarvest() {
+        addMaterialStats(MaterialIds.paper, StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.electrical_steel,
                 new HeadMaterialStats(960, 6.5f, DIAMOND, 2.75f),
                 HandleMaterialStats.multipliers().durability(1.05f).attackDamage(1.15f).attackSpeed(1.15f).miningSpeed(1.1f).build(),
@@ -33,9 +34,11 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(750, 6.5f, DIAMOND, 3.0f),
                 HandleMaterialStats.multipliers().durability(1.1f).attackDamage(1.1f).attackSpeed(1.15f).miningSpeed(0.9f).build(),
                 StatlessMaterialStats.BINDING);
+
     }
 
     private void addRanged() {
+        addMaterialStats(MaterialIds.paper, StatlessMaterialStats.BOWSTRING);
         addMaterialStats(ModMaterialIds.electrical_steel,
                 new LimbMaterialStats(960, -0.1f, 0.1f, 0.1f),
                 new GripMaterialStats(0.05f, 0.15f, 2.75f));
@@ -47,14 +50,16 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
     }
 
     private void addArmor() {
+        addMaterialStats(MaterialIds.paper, StatlessMaterialStats.MAILLE, StatlessMaterialStats.CUIRASS, StatlessMaterialStats.SHIELD_CORE);
+
         addArmorShieldStats(ModMaterialIds.electrical_steel, PlatingMaterialStats.builder().durabilityFactor(30).armor(3, 5, 7, 3).toughness(1.5f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
         addMaterialStats(ModMaterialIds.gilded_silky_cloth, StatlessMaterialStats.MAILLE, StatlessMaterialStats.CUIRASS);
-        addMaterialStats(MaterialIds.paper, StatlessMaterialStats.CUIRASS);
     }
 
     private void addSlimesuit() {
         addMaterialStats(ModMaterialIds.bacium, RepairStats.shell(150));
-        addMaterialStats(ModMaterialIds.gilded_silky_cloth, RepairStats.shell(78));
+        addMaterialStats(MaterialIds.paper, RepairStats.laces(60));
+        addMaterialStats(ModMaterialIds.gilded_silky_cloth, RepairStats.laces(78));
     }
 
     private void addMisc() {
