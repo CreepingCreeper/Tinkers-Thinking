@@ -3,7 +3,7 @@
   "modules": [
     {
       "type": "tconstruct:stat_boost",
-      "each_level": 0.25,
+      "each_level": 0.3,
       "operation": "add",
       "stat": "tconstruct:use_item_speed"
     },
@@ -14,7 +14,11 @@
       "operation": "multiply_total",
       "slots": [
         "mainhand",
-        "offhand"
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
       ],
       "tooltip_style": "percent"
     }

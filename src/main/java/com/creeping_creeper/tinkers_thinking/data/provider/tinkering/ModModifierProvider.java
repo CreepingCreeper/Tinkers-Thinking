@@ -1,5 +1,6 @@
 package com.creeping_creeper.tinkers_thinking.data.provider.tinkering;
 
+import com.creeping_creeper.tinkers_thinking.common.client.ModSlots;
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
 import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
 import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
@@ -45,9 +46,11 @@ import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatV
 import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.MaterialRepairModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.*;
 import slimeknights.tconstruct.library.modifiers.modules.capacity.CapacityBarModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
@@ -67,6 +70,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import static slimeknights.tconstruct.library.json.math.ModifierFormula.*;
 
@@ -82,6 +86,8 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         ToolVariable reverse = new ModDataVariable(ModModifierIds.Reverse, ModDataSource.PERSISTENT);
 
         // melee
+        buildModifier(ModModifierIds.AttackAdvanced).addModule(ConditionalMeleeDamageModule.builder().attacker(LivingEntityPredicate.SPRINTING).eachLevel(3.5f));
+
         buildModifier(ModModifierIds.BattleAdvanced).addModule(new BattleAdvancedModule(0.005f, 1200));
 
         MobEffectModule.Builder weaknessBuilder = MobEffectModule.builder(MobEffects.WEAKNESS).time(RandomLevelingValue.perLevel(80.0f, 20.0f)).level(RandomLevelingValue.flat(2.0f))
@@ -400,10 +406,22 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(SculkCatalyseModule.INSTANCE)
                 .addModule(new ArmorLevelModule(ModDataKeys.SculkCatalyse, false, TinkerTags.Items.HELD));
         // slot
+        buildModifier(ModModifierIds.AncientAbility).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+        buildModifier(ModModifierIds.AncientUpgrade).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(2)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+        buildModifier(ModModifierIds.Bronze).addModule(ModifierSlotModule.slot(ModSlots.ANCIENT).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+        buildModifier(ModModifierIds.Ceramic).addModule(ModifierSlotModule.slot(ModSlots.ANCIENT).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
 
+        buildModifier(ModModifierIds.Repayed).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
         buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
+        buildModifier(ModModifierIds.Soft).addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(-0.25f))
+                .addModule(MaterialRepairModule.material(MaterialIds.paper).constant(120));
+        buildModifier(ModModifierIds.Withernic).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+
         // misc
+        buildModifier(ModModifierIds.LightlySpeed).addModule(StatBoostModule.add(ToolStats.USE_ITEM_SPEED).eachLevel(0.3f))
+                .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.1f));
+
         buildModifier(ModModifierIds.Hurried).levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(new HurriedModule(LevelingValue.eachLevel(0.0025f)))
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.1f));

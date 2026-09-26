@@ -5,6 +5,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 public class ModModifierIds {
     //melee
+    public static final ModifierId AttackAdvanced = id("attack_advanced");
     public static final ModifierId BaneOfPigs = id("bane_of_pigs");
     public static final ModifierId BattleAdvanced = id("battle_advanced");
     public static final ModifierId BurningOut = id("burning_out");
@@ -92,7 +93,6 @@ public class ModModifierIds {
     //slot
     public static final ModifierId AncientAbility = id("ancient_ability");
     public static final ModifierId AncientUpgrade = id("ancient_upgrade");
-    public static final ModifierId AttackAdvanced = id("attack_advanced");
     public static final ModifierId Bronze = id("bronze");
     public static final ModifierId Ceramic = id("ceramic");
 

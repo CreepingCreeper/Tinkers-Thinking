@@ -1,0 +1,12 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": "mantle:sprinting",
+      "each_level": 3.5,
+      "percent": false
+    }
+  ],
+  "tooltip_display": "always"
+}

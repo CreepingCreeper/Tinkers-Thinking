@@ -33,7 +33,7 @@ public record SculkHealModule(LevelingValue amount) implements ModifierModule, T
 
     @Override
     public void onCurioTick(CurioStackView curio, int level, LivingEntity entity) {
-        if (entity.tickCount % 60/ level == 0 && entity.hasEffect(ModEffects.sculk_power.get()) && entity.getHealth() < entity.getMaxHealth()) {
+        if (entity.tickCount % 20 == 0 && entity.hasEffect(ModEffects.sculk_power.get()) && entity.getHealth() < entity.getMaxHealth()) {
             entity.heal(amount.compute(level));
         }
     }
