@@ -1,9 +1,7 @@
 package com.creeping_creeper.tinkers_thinking.common.register;
 
-import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
 import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
-import com.creeping_creeper.tinkers_thinking.common.modifer.OverbearModifier;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.CurioLevelModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.curio.SculkHealModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
@@ -16,35 +14,15 @@ import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
-import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
-import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 
-@SuppressWarnings("removal")
 public class ModModifiers{
-    public static void init(){
-        MODIFIERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-    }
-
-    private static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersThinking.MODID);
-    public static final StaticModifier<ConcealingModifier> Concealing = MODIFIERS.register("concealing", ConcealingModifier::new);
-    public static final StaticModifier<ShadowingModifier> Shadowing = MODIFIERS.register("shadowing", ShadowingModifier::new);
-    public static final StaticModifier<SculkProtectionModifier> SculkProtection = MODIFIERS.register("sculk_protection", SculkProtectionModifier::new);
-    public static final StaticModifier<SpikyModifier> Spiky = MODIFIERS.register("spiky", SpikyModifier::new);
-    public static final StaticModifier<SculkBreedModifier> SculkBreed = MODIFIERS.register("sculk_breed", SculkBreedModifier::new);
-    public static final StaticModifier<CrimsonModifier> Crimson = MODIFIERS.register("crimson", CrimsonModifier::new);
-    public static final StaticModifier<MagicTransformModifier> MagicTransform = MODIFIERS.register("magic_transform", MagicTransformModifier::new);
-    public static final StaticModifier<OverbearModifier> Overbear = MODIFIERS.register("overbear", OverbearModifier::new);
-    public static final StaticModifier<SculkSiphonModifier> SculkSiphon = MODIFIERS.register("sculk_siphon", SculkSiphonModifier::new);
-    public static final StaticModifier<CounterAttackModifier> CounterAttack = MODIFIERS.register("counter_attack", CounterAttackModifier::new);
-    public static final StaticModifier<GlowAdvancedModifier> GlowAdvanced = MODIFIERS.register("glow_advanced", GlowAdvancedModifier::new);
-    public static final StaticModifier<TeleportAdvancedModifier> TeleportAdvanced = MODIFIERS.register("teleport_advanced", TeleportAdvancedModifier::new);
+    public static void init(){}
 
     @SubscribeEvent
     void registerSerializers(RegisterEvent event) {
@@ -80,6 +58,17 @@ public class ModModifiers{
             // module-defense
             ModifierModule.LOADER.register(getResource("antibrute"), AntibruteModule.LOADER);
             ModifierModule.LOADER.register(getResource("edible_heal"), EdibleHealModule.LOADER);
+            ModifierModule.LOADER.register(getResource("shadowing"), ShadowingModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sculk_protection"), SculkProtectionModule.LOADER);
+            ModifierModule.LOADER.register(getResource("spiky"), SpikyModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sculk_breed"), SculkBreedModule.LOADER);
+            ModifierModule.LOADER.register(getResource("crimson"), CrimsonModule.LOADER);
+            ModifierModule.LOADER.register(getResource("magic_transform"), MagicTransformModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sculk_siphon"), SculkSiphonModule.LOADER);
+            ModifierModule.LOADER.register(getResource("counter_attack"), CounterAttackModule.LOADER);
+            ModifierModule.LOADER.register(getResource("glow_advanced"), GlowAdvancedModule.LOADER);
+            ModifierModule.LOADER.register(getResource("teleport_advanced"), TeleportAdvancedModule.LOADER);
+
             ModifierModule.LOADER.register(getResource("reburning"), ReburningModule.LOADER);
             ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
             ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
@@ -103,8 +92,9 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("overcharge"), OverchargeModule.LOADER);
             ModifierModule.LOADER.register(getResource("netherite"), NetheriteModule.LOADER);
             // module-misc
-            ModifierModule.LOADER.register(getResource("sling_sprinting"), SlingSprintingModule.LOADER);
             ModifierModule.LOADER.register(getResource("hurried"), HurriedModule.LOADER);
+            //ModifierModule.LOADER.register(getResource("overbear"), OverbearModule.LOADER);
+            ModifierModule.LOADER.register(getResource("sling_sprinting"), SlingSprintingModule.LOADER);
             // module-compat
             if (ModList.get().isLoaded("tinkers_ingenuity")) {
                 ModifierModule.LOADER.register(getResource("curio_level"), CurioLevelModule.LOADER);

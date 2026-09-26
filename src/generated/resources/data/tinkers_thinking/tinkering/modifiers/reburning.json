@@ -2,11 +2,11 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:burning_out",
-      "each_level": 0.3
+      "type": "tinkers_thinking:reburning",
+      "rate": 1.0
     },
     {
-      "type": "tconstruct:weapon_mob_effect",
+      "type": "tconstruct:counter_mob_effect",
       "effect": "minecraft:fire_resistance",
       "level": {
         "flat": 1.0
@@ -16,9 +16,16 @@
         "effect": "minecraft:fire_resistance",
         "inverted_type": "mantle:has_effect"
       },
+      "target_self": true,
       "time": {
         "flat": 80.0
       }
+    },
+    {
+      "type": "tconstruct:armor_level",
+      "allow_broken": false,
+      "held_tag": "tconstruct:modifiable/held",
+      "key": "tinkers_thinking:reburning"
     }
   ],
   "tooltip_display": "always"

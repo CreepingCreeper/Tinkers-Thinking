@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:glow_advanced",
+      "each_level": 0.1
+    }
+  ],
+  "tooltip_display": "always"
+}

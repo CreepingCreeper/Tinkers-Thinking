@@ -21,7 +21,7 @@ import java.util.List;
 
 public enum AntibruteModule implements ModifierModule, ModifyDamageModifierHook {
     INSTANCE;
-    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<AntibruteModule>defaultHooks(ModifierHooks.MODIFY_HURT);
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MODIFY_HURT);
     public static final RecordLoadable<AntibruteModule> LOADER = new SingletonLoader<>(INSTANCE);
     public RecordLoadable<AntibruteModule> getLoader() {
         return LOADER;

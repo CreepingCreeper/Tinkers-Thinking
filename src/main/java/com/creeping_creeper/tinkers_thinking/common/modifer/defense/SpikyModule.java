@@ -1,6 +1,5 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
-import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -8,26 +7,37 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
+import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
-import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.module.HookProvider;
+import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class SpikyModifier extends Modifier implements OnAttackedModifierHook {
-    @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.ON_ATTACKED);
+import java.util.List;
+
+public enum SpikyModule implements ModifierModule, OnAttackedModifierHook {
+    INSTANCE;
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.ON_ATTACKED);
+    public static final RecordLoadable<SpikyModule> LOADER = new SingletonLoader<>(INSTANCE);
+
+    public RecordLoadable<SpikyModule> getLoader() {
+        return LOADER;
     }
+
+    public List<ModuleHook<?>> getDefaultHooks() {
+        return DEFAULT_HOOKS;
+    }
+
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
-        if (source.getEntity() instanceof LivingEntity attacker&&!attacker.hasEffect(ModEffects.modifier_immune.get())&&attacker!=context.getEntity()&&(!(source.getDirectEntity() instanceof AbstractArrow arrow) || arrow.getPierceLevel() == 0)) {
-            attacker.hurt(context.getEntity().damageSources().thorns(context.getEntity()),amount);
+        if (source.getEntity() instanceof LivingEntity attacker && !attacker.hasEffect(ModEffects.modifier_immune.get())&&attacker!=context.getEntity() && (!(source.getDirectEntity() instanceof AbstractArrow arrow) || arrow.getPierceLevel() == 0)) {
+            attacker.hurt(context.getEntity().damageSources().thorns(context.getEntity()), amount);
             context.getEntity().level().playSound(null, context.getEntity().getX(), context.getEntity().getY(), context.getEntity().getZ(), SoundEvents.THORNS_HIT, SoundSource.PLAYERS, 1.0F, 1.0F);
-            ModifierUtils.addEffect(attacker,ModEffects.modifier_immune.get(), 60/modifier.getLevel());
         }
     }
 }

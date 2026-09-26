@@ -2,22 +2,21 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:burning_out",
-      "each_level": 0.3
+      "type": "tinkers_thinking:spiky"
     },
     {
-      "type": "tconstruct:weapon_mob_effect",
-      "effect": "minecraft:fire_resistance",
+      "type": "tconstruct:counter_mob_effect",
+      "effect": "tinkers_thinking:modifier_immune",
       "level": {
         "flat": 1.0
       },
       "target": {
         "type": "mantle:inverted",
-        "effect": "minecraft:fire_resistance",
+        "effect": "tinkers_thinking:modifier_immune",
         "inverted_type": "mantle:has_effect"
       },
       "time": {
-        "flat": 80.0
+        "flat": 60.0
       }
     }
   ],

@@ -1,4 +1,4 @@
-package com.creeping_creeper.tinkers_thinking.data.provider;
+package com.creeping_creeper.tinkers_thinking.data.provider.tag;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModFluids;

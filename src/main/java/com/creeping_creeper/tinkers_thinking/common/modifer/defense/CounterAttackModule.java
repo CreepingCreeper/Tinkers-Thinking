@@ -1,8 +1,10 @@
 package com.creeping_creeper.tinkers_thinking.common.modifer.defense;
 
+import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.library.ModifierUtils;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -17,7 +19,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.UseAnim;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
+import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.common.network.TinkerNetwork;
+import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
@@ -26,28 +31,47 @@ import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifier
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.UsingToolModifierHook;
-import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
-import slimeknights.tconstruct.library.module.ModuleHookMap.Builder;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.module.HookProvider;
+import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerTools;
 import slimeknights.tconstruct.tools.modules.armor.CounterModule;
 
-public class CounterAttackModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, OnAttackedModifierHook, MeleeDamageModifierHook, ToolActionModifierHook, UsingToolModifierHook {
-    private static boolean isblocking = false;
-    @Override
-    protected void registerHooks(Builder hookBuilder) {
-        super.registerHooks(hookBuilder);
-        hookBuilder.addHook(this, ModifierHooks.GENERAL_INTERACT, ModifierHooks.ON_ATTACKED, ModifierHooks.MELEE_DAMAGE, ModifierHooks.TOOL_ACTION, ModifierHooks.TOOL_USING);
+import java.util.List;
+
+public record CounterAttackModule(float rate, LevelingValue boost) implements ModifierModule, GeneralInteractionModifierHook, OnAttackedModifierHook, MeleeDamageModifierHook, ToolActionModifierHook, UsingToolModifierHook {
+   public static final ResourceLocation IS_BONKING = TinkersThinking.getResource("is_blocking");
+
+
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS;
+    public static final RecordLoadable<CounterAttackModule> LOADER;
+
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.GENERAL_INTERACT, ModifierHooks.ON_ATTACKED, ModifierHooks.MELEE_DAMAGE, ModifierHooks.TOOL_ACTION, ModifierHooks.TOOL_USING);
+        LOADER = RecordLoadable.create(FloatLoadable.FROM_ZERO.requiredField("rate", CounterAttackModule::rate),
+                LevelingValue.LOADABLE.directField(CounterAttackModule::boost), CounterAttackModule::new);
     }
+
+    public RecordLoadable<CounterAttackModule> getLoader() {
+        return LOADER;
+    }
+
+    public List<ModuleHook<?>> getDefaultHooks() {
+        return DEFAULT_HOOKS;
+    }
+
+
     @Override
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        if (isblocking) {
-            damage *= 2+0.35f*tool.getModifierLevel(ModModifierIds.CounterAdvanced);
+        if (tool.getPersistentData().getBoolean(IS_BONKING)) {
+            damage *= rate + boost.compute(tool.getModifierLevel(ModModifierIds.CounterAdvanced));
         }
         return damage;
     }
@@ -56,7 +80,8 @@ public class CounterAttackModifier extends NoLevelsModifier implements GeneralIn
         LivingEntity living = context.getEntity();
         Entity attacker = source.getEntity();
         if (isDirectDamage && !source.is(DamageTypeTags.BYPASSES_SHIELD) && living instanceof Player player && CounterModule.isBlocking(tool, slotType, player) && ToolAttackUtil.isAttackable(living, attacker)) {
-            isblocking = true;
+            ModDataNBT data = tool.getPersistentData();
+            data.putBoolean(IS_BONKING, true);
             InteractionHand hand = living.getUsedItemHand();
             ToolAttackContext.Builder builder = ToolAttackContext.attacker(living).target(attacker).hand(hand).cooldown(1);
             if (hand == InteractionHand.MAIN_HAND) {
@@ -66,7 +91,7 @@ public class CounterAttackModifier extends NoLevelsModifier implements GeneralIn
                 builder.toolAttributes(tool);
             }
             ToolAttackUtil.performAttack(tool, builder.build());
-            isblocking = false;
+            data.remove(IS_BONKING);
             ModifierUtils.addEffect(player, MobEffects.MOVEMENT_SPEED, 80, 3);
             ToolAttackUtil.spawnAttackParticle(TinkerTools.hammerAttackParticle.get(), living, 0.6d);
             if (player instanceof ServerPlayer playerMP) {

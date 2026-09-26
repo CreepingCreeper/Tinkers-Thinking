@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:sculk_siphon",
+      "chance": 0.2
+    }
+  ],
+  "tooltip_display": "always"
+}

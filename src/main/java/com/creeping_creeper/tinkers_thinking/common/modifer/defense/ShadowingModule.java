@@ -10,28 +10,44 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
-import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
+import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
-import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.module.HookProvider;
+import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class ShadowingModifier extends Modifier implements TooltipModifierHook, ModifyDamageModifierHook {
+public record ShadowingModule(LevelingValue amount) implements ModifierModule, TooltipModifierHook, ModifyDamageModifierHook {
     private static final Component Resistance = TinkersThinking.makeTranslation("modifier", "shadowing.resistance");
 
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS;
+    public static final RecordLoadable<ShadowingModule> LOADER;
+
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.TOOLTIP, ModifierHooks.MODIFY_DAMAGE);
+        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(ShadowingModule::amount), ShadowingModule::new);
+    }
+
+    public RecordLoadable<ShadowingModule> getLoader() {
+        return LOADER;
+    }
+
+    public List<ModuleHook<?>> getDefaultHooks() {
+        return DEFAULT_HOOKS;
+    }
+
     @Override
-    public int getPriority() {
+    public Integer getPriority() {
         return 75;
     }
-    @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this,  ModifierHooks.TOOLTIP,ModifierHooks.MODIFY_DAMAGE);
-    }
+    
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         Level world =context.getEntity().getCommandSenderWorld();
@@ -44,7 +60,7 @@ public class ShadowingModifier extends Modifier implements TooltipModifierHook, 
         if(player!=null){
             world = player.getCommandSenderWorld();
             float boost = (float) (((float) (15-world.getBrightness(LightLayer.SKY, player.blockPosition())+world.getSkyDarken())/7.5)*modifier.getLevel());
-            TooltipModifierHook.addFlatBoost(this, Resistance , boost, tooltip);
+            TooltipModifierHook.addFlatBoost(modifier.getModifier(), Resistance , boost, tooltip);
         }
     }
 

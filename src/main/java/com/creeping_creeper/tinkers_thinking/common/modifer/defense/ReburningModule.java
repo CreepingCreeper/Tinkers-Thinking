@@ -27,7 +27,7 @@ public record ReburningModule(float rate) implements ModifierModule, OnAttackedM
     public static final RecordLoadable<ReburningModule> LOADER;
 
     static {
-        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MODIFY_DAMAGE);
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.ON_ATTACKED);
         LOADER = RecordLoadable.create(FloatLoadable.FROM_ZERO.requiredField("rate", ReburningModule::rate), ReburningModule::new);
     }
 
@@ -46,7 +46,6 @@ public record ReburningModule(float rate) implements ModifierModule, OnAttackedM
             dataCap.ifPresent(data -> living.heal(fire * data.get(ModDataKeys.Reburning, 1) * amount));
             living.clearFire();
             ModifierUtils.particles(living.level(), living, ParticleTypes.SMOKE, 4);
-            ModifierUtils.addEffect(living,MobEffects.FIRE_RESISTANCE,80);
         }
     }
 }

@@ -1,0 +1,11 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:magic_transform",
+      "each_level": 0.2,
+      "magic_rate": 0.75
+    }
+  ],
+  "tooltip_display": "always"
+}

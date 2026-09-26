@@ -13,13 +13,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
-import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
+import slimeknights.tconstruct.library.json.LevelingValue;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
-import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.module.HookProvider;
+import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentChangeContext;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -28,13 +31,27 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class SculkBreedModifier extends Modifier implements ModifyDamageModifierHook, EquipmentChangeModifierHook, TooltipModifierHook {
+public record SculkBreedModule(LevelingValue amount) implements ModifierModule, ModifyDamageModifierHook, EquipmentChangeModifierHook, TooltipModifierHook {
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS;
+    public static final RecordLoadable<SculkBreedModule> LOADER;
+
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MODIFY_DAMAGE, ModifierHooks.EQUIPMENT_CHANGE, ModifierHooks.TOOLTIP);
+        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(SculkBreedModule::amount), SculkBreedModule::new);
+    }
+
+    public RecordLoadable<SculkBreedModule> getLoader() {
+        return LOADER;
+    }
+
+    public List<ModuleHook<?>> getDefaultHooks() {
+        return DEFAULT_HOOKS;
+    }
+
+
     public static final UUID ATTRIBUTE_BONUS = UUID.fromString("2307DE5E-7CE8-4030-940E-514C1F170001");
     private static final Component Boost = TinkersThinking.makeTranslation("modifier", "sculk_breed.boost");
-    @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.MODIFY_DAMAGE,ModifierHooks.EQUIPMENT_CHANGE,ModifierHooks.TOOLTIP);
-    }
+
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
         LivingEntity living = context.getEntity();
@@ -53,12 +70,13 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
         }
         return amount;
     }
+
     @Override
     public void onUnequip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
         // remove boost when boots are removed
         LivingEntity living = context.getEntity();
         IToolStackView newTool = context.getReplacementTool();
-        if (newTool == null || newTool.isBroken() || newTool.getModifier(this).getLevel() < modifier.getLevel()) {
+        if (newTool == null || newTool.isBroken() || newTool.getModifier(modifier.getModifier()).getLevel() < modifier.getLevel()) {
             AttributeInstance attribute = living.getAttribute(Attributes.MAX_HEALTH);
             if (attribute.getModifier(ATTRIBUTE_BONUS) != null) {
                 attribute.removeModifier(ATTRIBUTE_BONUS);
@@ -68,6 +86,7 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
             }
         }
     }
+
     @Override
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey key, TooltipFlag tooltipFlag) {
         float x = 0;
@@ -76,7 +95,7 @@ public class SculkBreedModifier extends Modifier implements ModifyDamageModifier
             if (attribute!= null && attribute.getModifier(ATTRIBUTE_BONUS) != null) {
                 x = (float) Objects.requireNonNull(attribute.getModifier(ATTRIBUTE_BONUS)).getAmount();
             }
-            TooltipModifierHook.addFlatBoost(this,Boost,x,tooltip);
+            TooltipModifierHook.addFlatBoost(modifier.getModifier(), Boost, x, tooltip);
         }
     }
 }

@@ -10,11 +10,6 @@
       "level": {
         "flat": 1.0
       },
-      "target": {
-        "type": "mantle:inverted",
-        "effect": "tinkers_thinking:modifier_immune",
-        "inverted_type": "mantle:has_effect"
-      },
       "time": {
         "flat": 600.0
       }

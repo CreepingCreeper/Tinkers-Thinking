@@ -1,8 +1,10 @@
 package com.creeping_creeper.tinkers_thinking.data;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
-import com.creeping_creeper.tinkers_thinking.data.provider.ModFluidTagProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
+import com.creeping_creeper.tinkers_thinking.data.provider.tag.ModFluidTagProvider;
+import com.creeping_creeper.tinkers_thinking.data.provider.tag.ModMaterialTagsProvider;
+import com.creeping_creeper.tinkers_thinking.data.provider.tag.ModModifierTagsProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModMaterialProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModModifierProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModStatsProvider;
@@ -29,6 +31,8 @@ public class ModProvider {
         boolean client = event.includeClient();
 
         generator.addProvider(server, new ModFluidTagProvider(output, lookupProvider, existingFileHelper));
+        generator.addProvider(server, new ModMaterialTagsProvider(output, existingFileHelper));
+        generator.addProvider(server, new ModModifierTagsProvider(output, existingFileHelper));
 
         generator.addProvider(server, new SmelteryRecipe(output));
 

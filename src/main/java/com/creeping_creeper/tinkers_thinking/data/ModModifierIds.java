@@ -13,6 +13,7 @@ public class ModModifierIds {
     public static final ModifierId LightlyAttack = id("lightly_attack");
     public static final ModifierId Mock = id("mock");
     public static final ModifierId Overdisintegrate = id("overdisintegrate");
+    public static final ModifierId Overdose = id("overdose");
     public static final ModifierId Overfreeze = id("overfreeze");
     public static final ModifierId Prickly = id("prickly");
     public static final ModifierId Recalamity = id("recalamity");

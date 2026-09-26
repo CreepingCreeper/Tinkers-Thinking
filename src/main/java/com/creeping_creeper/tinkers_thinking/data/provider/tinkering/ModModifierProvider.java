@@ -23,6 +23,7 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slimeknights.mantle.data.predicate.entity.HasMobEffectPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.mantle.data.predicate.item.ItemPredicate;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.common.data.advancement.AdvancementIds;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
@@ -38,6 +39,7 @@ import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatV
 import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.*;
@@ -76,10 +78,14 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
 
         // melee
         buildModifier(ModModifierIds.BattleAdvanced).addModule(new BattleAdvancedModule(0.005f, 1200));
-        buildModifier(ModModifierIds.BurningOut).addModule(new BurningOutModule(LevelingValue.eachLevel(0.3f), 80));
 
-        MobEffectModule.Builder cataclysmBuilder = MobEffectModule.builder(ModEffects.cataclysm).time(RandomLevelingValue.flat(600)).chance(LevelingValue.eachLevel(0.15f))
-                .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
+        MobEffectModule.Builder fireResistanceBuilder = MobEffectModule.builder(MobEffects.FIRE_RESISTANCE).time(RandomLevelingValue.flat(80))
+                .target(new HasMobEffectPredicate(MobEffects.FIRE_RESISTANCE).inverted());
+
+        buildModifier(ModModifierIds.BurningOut).addModule(new BurningOutModule(LevelingValue.eachLevel(0.3f)))
+                .addModule(fireResistanceBuilder.buildWeapon());
+
+        MobEffectModule.Builder cataclysmBuilder = MobEffectModule.builder(ModEffects.cataclysm).time(RandomLevelingValue.flat(600)).chance(LevelingValue.eachLevel(0.15f));
 
         buildModifier(ModModifierIds.Cataclysm).addModule(cataclysmBuilder.buildWeapon());
 
@@ -296,22 +302,47 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.SwashAdvanced).addModule(new SwashAdvancedModule((LevelingValue.eachLevel(1f))));
         // defense
         buildModifier(ModModifierIds.Antibrute).addModule(AntibruteModule.INSTANCE);
+
+        MobEffectModule.Builder invisibilitydBuilder1 = MobEffectModule.builder(MobEffects.INVISIBILITY).time(RandomLevelingValue.flat(200)).targetSelf(true);
+
+        buildModifier(ModModifierIds.Concealing)
+                .addModule(invisibilitydBuilder1.buildCounter())
+                .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(new HasMobEffectPredicate(MobEffects.INVISIBILITY)).eachLevel(1.5f));
+        buildModifier(ModModifierIds.CounterAdvanced).addModule(new CounterAttackModule(2.0f, LevelingValue.eachLevel(0.35f)));
+        buildModifier(ModModifierIds.Crimson).addModule(new CrimsonModule(400));
+        buildModifier(ModModifierIds.GlowAdvanced).addModule(new GlowAdvancedModule(LevelingValue.eachLevel(0.1f)));
+        buildModifier(ModModifierIds.MagicTransform).addModule(new MagicTransformModule(LevelingValue.eachLevel(0.2f), 0.75f));
+
+        MobEffectModule.Builder fireResistanceBuilder1 = MobEffectModule.builder(MobEffects.FIRE_RESISTANCE).time(RandomLevelingValue.flat(80))
+                .target(new HasMobEffectPredicate(MobEffects.FIRE_RESISTANCE).inverted()).targetSelf(true);
+
         buildModifier(ModModifierIds.Reburning).addModule(new ReburningModule(1))
+                .addModule(fireResistanceBuilder1.buildCounter())
                 .addModule(new ArmorLevelModule(ModDataKeys.Reburning, false, TinkerTags.Items.HELD));
         buildModifier(ModModifierIds.Remisdirection).addModule(RemisdirectionModule.INSTANCE)
                 .addModule(new ArmorLevelModule(ModDataKeys.Remisdirection, false, TinkerTags.Items.HELD));
         buildModifier(ModModifierIds.Retransit).addModule(new RetransitModule(new LevelingInt(240, -20)))
                 .addModule(new ArmorLevelModule(ModDataKeys.Retransit, false, TinkerTags.Items.HELD))
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.1f));
+        buildModifier(ModModifierIds.SculkBreed);
+        buildModifier(ModModifierIds.SculkProtection).addModule(new SculkProtectionModule(LevelingValue.ZERO));
+        buildModifier(ModModifierIds.SculkSiphon).addModule(new SculkSiphonModule(0.2f));
+        buildModifier(ModModifierIds.Shadowing);
         buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
+
+        MobEffectModule.Builder spikyBuilder = MobEffectModule.builder(ModEffects.modifier_immune.get()).time(RandomLevelingValue.flat(60))
+                .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
+
+        buildModifier(ModModifierIds.Spiky).addModule(SpikyModule.INSTANCE)
+                .addModule(spikyBuilder.buildCounter());
         buildModifier(ModModifierIds.Symbiotic)
                 .addModule(EdibleModule.EDIBLE_TRAIT)
                 .addModule(new EdibleRepresentativeItemModule(TinkerCommons.jeweledApple))
                 .addModule(new EdibleConsumeDurabilityModule(LevelingInt.eachLevel(8)))
                 .addModule(new EdibleHealModule(LevelingValue.eachLevel(0.1f)))
                 .addModule(StatBoostModule.add(EdibleModule.COUNTER_CHANCE).eachLevel(0.15f));
-
+        buildModifier(ModModifierIds.TeleportAdvanced).addModule(new TeleportAdvancedModule(LevelingInt.eachLevel(300)));
 
         // durability
         buildModifier(ModModifierIds.DepositionModule).addModule(new DepositionModule(0.8f));

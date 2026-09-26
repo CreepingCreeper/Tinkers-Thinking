@@ -8,7 +8,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
-import slimeknights.mantle.data.loadable.primitive.IntLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.common.TinkerDamageTypes;
 import slimeknights.tconstruct.library.json.LevelingValue;
@@ -29,14 +28,13 @@ import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public record BurningOutModule(LevelingValue rate, int cooling) implements ModifierModule, MeleeHitModifierHook, ProjectileHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
+public record BurningOutModule(LevelingValue rate) implements ModifierModule, MeleeHitModifierHook, ProjectileHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<BurningOutModule> LOADER;
 
     static {
         DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.PROJECTILE_HIT);
-        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(BurningOutModule::rate),
-                IntLoadable.FROM_ZERO.requiredField("cooling", BurningOutModule::cooling), BurningOutModule::new);
+        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(BurningOutModule::rate), BurningOutModule::new);
     }
 
     public RecordLoadable<BurningOutModule> getLoader() {
@@ -75,7 +73,6 @@ public record BurningOutModule(LevelingValue rate, int cooling) implements Modif
                 target.invulnerableTime = 0;
                 target.clearFire();
                 ModifierUtils.particles(attacker.level(), target, ParticleTypes.SMOKE, 4);
-                ModifierUtils.addEffect(target,MobEffects.FIRE_RESISTANCE, cooling);
             }
         }
     }

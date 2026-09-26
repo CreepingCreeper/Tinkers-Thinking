@@ -10,37 +10,54 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
+import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MonsterMeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InteractionSource;
-import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
-import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
+import slimeknights.tconstruct.library.module.HookProvider;
+import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.shared.TinkerEffects;
 
-public class TeleportAdvancedModifier extends NoLevelsModifier implements GeneralInteractionModifierHook, MeleeHitModifierHook {
-    private final ResourceLocation X = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_x");
-    private final ResourceLocation Y = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_y");
-    private final ResourceLocation Z = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_z");
-    private final ResourceLocation WORLD = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_dimension");
+import java.util.List;
 
-    @Override
-    protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
-        hookBuilder.addHook(this, ModifierHooks.GENERAL_INTERACT, ModifierHooks.MELEE_HIT);
+public record TeleportAdvancedModule(LevelingInt time) implements ModifierModule, GeneralInteractionModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter {
+    private static final ResourceLocation X = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_x");
+    private static final ResourceLocation Y = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_y");
+    private static final ResourceLocation Z = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_z");
+    private static final ResourceLocation WORLD = ResourceLocation.fromNamespaceAndPath ("tinkersinnovation", "teleport_dimension");
+
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS;
+    public static final RecordLoadable<TeleportAdvancedModule> LOADER;
+
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.GENERAL_INTERACT, ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_HIT);
+        LOADER = RecordLoadable.create(LevelingInt.LOADABLE.directField(TeleportAdvancedModule::time), TeleportAdvancedModule::new);
+    }
+
+    public RecordLoadable<TeleportAdvancedModule> getLoader() {
+        return LOADER;
+    }
+
+    public List<ModuleHook<?>> getDefaultHooks() {
+        return DEFAULT_HOOKS;
     }
 
     @Override
-    public int getPriority() {
+    public Integer getPriority() {
         return 5;
     }
 
     private void applyEffect(LivingEntity living, int level){
-        ModifierUtils.addEffect(living, MobEffects.MOVEMENT_SPEED, level * 300, 1);
-        ModifierUtils.addEffect(living, ModEffects.sculk_power.get(), level * 300);
+        ModifierUtils.addEffect(living, MobEffects.MOVEMENT_SPEED, time.compute(level), 1);
+        ModifierUtils.addEffect(living, ModEffects.sculk_power.get(), time.compute(level));
     }
 
     @Override

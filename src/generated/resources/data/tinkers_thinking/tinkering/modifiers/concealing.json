@@ -1,0 +1,30 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:counter_mob_effect",
+      "effect": "minecraft:invisibility",
+      "level": {
+        "flat": 1.0
+      },
+      "target_self": true,
+      "time": {
+        "flat": 200.0
+      }
+    },
+    {
+      "type": "tconstruct:protection",
+      "damage_source": "mantle:can_protect",
+      "each_level": 1.5,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      },
+      "wearing_entity": {
+        "type": "mantle:has_effect",
+        "effect": "minecraft:invisibility"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

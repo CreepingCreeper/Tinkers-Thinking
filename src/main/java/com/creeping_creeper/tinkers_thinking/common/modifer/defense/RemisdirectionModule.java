@@ -29,7 +29,7 @@ import java.util.Optional;
 
 public enum RemisdirectionModule implements ModifierModule, DamageBlockModifierHook {
     INSTANCE;
-    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.<RemisdirectionModule>defaultHooks(ModifierHooks.DAMAGE_BLOCK);
+    private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.DAMAGE_BLOCK);
     public static final RecordLoadable<RemisdirectionModule> LOADER = new SingletonLoader<>(INSTANCE);
     public RecordLoadable<RemisdirectionModule> getLoader() {
         return LOADER;

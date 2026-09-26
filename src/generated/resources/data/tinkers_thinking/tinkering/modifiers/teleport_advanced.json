@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:teleport_advanced",
+      "each_level": 300
+    }
+  ],
+  "tooltip_display": "always"
+}
