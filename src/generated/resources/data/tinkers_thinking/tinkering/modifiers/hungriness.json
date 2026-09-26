@@ -5,6 +5,5 @@
       "type": "tinkers_thinking:hungriness",
       "each_level": 0.02
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

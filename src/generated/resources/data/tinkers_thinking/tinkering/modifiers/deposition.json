@@ -5,6 +5,5 @@
       "type": "tinkers_thinking:deposition",
       "max_chance": 0.8
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

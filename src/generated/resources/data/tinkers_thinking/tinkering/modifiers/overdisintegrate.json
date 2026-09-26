@@ -5,6 +5,5 @@
       "type": "tinkers_thinking:overdisintegrate",
       "each_level": 4
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

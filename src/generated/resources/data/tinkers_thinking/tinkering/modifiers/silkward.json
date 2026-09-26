@@ -12,6 +12,5 @@
       "operation": "add",
       "stat": "tconstruct:armor"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

@@ -4,6 +4,7 @@ import com.creeping_creeper.tinkers_thinking.data.ModMaterialIds;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.DIAMOND;
@@ -47,7 +48,8 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
 
     private void addArmor() {
         addArmorShieldStats(ModMaterialIds.electrical_steel, PlatingMaterialStats.builder().durabilityFactor(30).armor(3, 5, 7, 3).toughness(1.5f).knockbackResistance(0.05f), StatlessMaterialStats.MAILLE);
-        addMaterialStats(ModMaterialIds.gilded_silky_cloth, StatlessMaterialStats.MAILLE);
+        addMaterialStats(ModMaterialIds.gilded_silky_cloth, StatlessMaterialStats.MAILLE, StatlessMaterialStats.CUIRASS);
+        addMaterialStats(MaterialIds.paper, StatlessMaterialStats.CUIRASS);
     }
 
     private void addSlimesuit() {

@@ -17,6 +17,5 @@
       "type": "tinkers_thinking:bide_time",
       "cooldown": 100
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

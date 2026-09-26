@@ -25,6 +25,5 @@
         "effect": "minecraft:invisibility"
       }
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

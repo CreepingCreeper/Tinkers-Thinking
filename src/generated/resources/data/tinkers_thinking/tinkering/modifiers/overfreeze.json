@@ -5,6 +5,5 @@
       "type": "tinkers_thinking:overfreeze",
       "each_level": 4
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

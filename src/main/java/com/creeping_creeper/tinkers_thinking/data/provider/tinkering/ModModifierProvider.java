@@ -46,7 +46,6 @@ import slimeknights.tconstruct.library.json.variable.stat.EntityConditionalStatV
 import slimeknights.tconstruct.library.json.variable.tool.ModDataSource;
 import slimeknights.tconstruct.library.json.variable.tool.ModDataVariable;
 import slimeknights.tconstruct.library.json.variable.tool.ToolVariable;
-import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
@@ -64,6 +63,7 @@ import slimeknights.tconstruct.library.modifiers.modules.technical.ArmorLevelMod
 import slimeknights.tconstruct.library.modifiers.modules.util.BooleanPredicate;
 import slimeknights.tconstruct.library.modifiers.modules.util.ModifierCondition;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+import slimeknights.tconstruct.library.modifiers.util.ModifierTooltip;
 import slimeknights.tconstruct.library.tools.IndestructibleItemEntity;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
@@ -406,17 +406,17 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(SculkCatalyseModule.INSTANCE)
                 .addModule(new ArmorLevelModule(ModDataKeys.SculkCatalyse, false, TinkerTags.Items.HELD));
         // slot
-        buildModifier(ModModifierIds.AncientAbility).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
-        buildModifier(ModModifierIds.AncientUpgrade).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(2)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
-        buildModifier(ModModifierIds.Bronze).addModule(ModifierSlotModule.slot(ModSlots.ANCIENT).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
-        buildModifier(ModModifierIds.Ceramic).addModule(ModifierSlotModule.slot(ModSlots.ANCIENT).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+        buildModifier(ModModifierIds.AncientAbility).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
+        buildModifier(ModModifierIds.AncientUpgrade).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(2)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
+        buildModifier(ModModifierIds.Bronze).addModule(ModifierSlotModule.slot(ModSlots.ANCIENT).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
+        buildModifier(ModModifierIds.Ceramic).addModule(ModifierSlotModule.slot(ModSlots.ANCIENT).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
 
-        buildModifier(ModModifierIds.Repayed).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+        buildModifier(ModModifierIds.Repayed).addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
         buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
         buildModifier(ModModifierIds.Soft).addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(-0.25f))
                 .addModule(MaterialRepairModule.material(MaterialIds.paper).constant(120));
-        buildModifier(ModModifierIds.Withernic).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL).tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION);
+        buildModifier(ModModifierIds.Withernic).addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1)).showInTooltips(ModifierTooltip.ShowInTooltips.BONUS_SLOT).levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL);
 
         // misc
         buildModifier(ModModifierIds.LightlySpeed).addModule(StatBoostModule.add(ToolStats.USE_ITEM_SPEED).eachLevel(0.3f))

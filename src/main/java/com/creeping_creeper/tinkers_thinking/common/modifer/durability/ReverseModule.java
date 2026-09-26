@@ -124,7 +124,7 @@ public enum ReverseModule implements ModifierModule, ToolDamageModifierHook, Dur
 
     @Override
     public Component getDisplayName(IToolStackView tool, ModifierEntry modifier, Component name, @Nullable RegistryAccess access) {
-        Component n = ModifierUtils.reverse(tool, modifier) ? Even : Odd;
+        Component n = ModifierUtils.reverse(tool, modifier) ? Odd : Even;
         return modifier.getDisplayName().copy().append(n);
     }
 }

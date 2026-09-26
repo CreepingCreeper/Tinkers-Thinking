@@ -6,6 +6,5 @@
       "max_time": 1200,
       "rate": 0.005
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

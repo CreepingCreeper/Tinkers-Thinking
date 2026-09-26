@@ -6,6 +6,5 @@
       "each_level": 0.08
     }
   ],
-  "priority": 15,
-  "tooltip_display": "always"
+  "priority": 15
 }

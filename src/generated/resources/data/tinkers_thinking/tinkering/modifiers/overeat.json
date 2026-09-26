@@ -5,6 +5,5 @@
       "type": "tinkers_thinking:overeat",
       "each_level": 0.15
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

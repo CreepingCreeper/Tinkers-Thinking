@@ -7,6 +7,5 @@
       "operation": "add",
       "stat": "tconstruct:block_angle"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

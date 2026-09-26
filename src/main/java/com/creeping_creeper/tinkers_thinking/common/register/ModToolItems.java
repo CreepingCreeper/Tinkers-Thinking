@@ -5,7 +5,6 @@ import com.creeping_creeper.tinkers_thinking.common.things.item.ModifiableAtlatl
 import com.creeping_creeper.tinkers_thinking.common.things.item.ModifiableRepeatingCrossbowItem;
 import com.creeping_creeper.tinkers_thinking.common.things.item.ToolDefinitions;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.object.ItemObject;
@@ -45,10 +44,7 @@ public class ModToolItems extends ModModule {
     public static final ItemObject<ToolPartItem> narrow_blade = ITEMS.register("narrow_blade", () -> new ToolPartItem(GENERAL_PROPS, HeadMaterialStats.ID));
 
     public static final CastItemObject narrow_blade_cast = ITEMS.registerCast(narrow_blade, GENERAL_PROPS);
-    @Deprecated(forRemoval = true)
-    public static final ItemObject<Item> seeking_arrow = ITEMS.register("seeking_arrow", GENERAL_PROPS);
-    @Deprecated(forRemoval = true)
-    public static final ItemObject<Item> roving_arrow = ITEMS.register("roving_arrow", GENERAL_PROPS);
+
     private static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
         Consumer<ItemStack> tab = output::accept;
         acceptTool(tab,paxel);

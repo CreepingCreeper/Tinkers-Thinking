@@ -7,6 +7,5 @@
       "operation": "multiply_conditional",
       "stat": "tconstruct:attack_damage"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

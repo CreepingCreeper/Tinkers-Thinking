@@ -6,6 +6,5 @@
       "max_energy_rate": 100.0,
       "overslime_rate": 200
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

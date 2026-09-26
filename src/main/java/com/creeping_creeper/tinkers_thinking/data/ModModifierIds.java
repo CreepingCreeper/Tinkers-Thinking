@@ -117,6 +117,7 @@ public class ModModifierIds {
     public static final ModifierId SculkStruggleCurio = id("sculk_struggle_curio");
 
     private ModModifierIds() {}
+
     private static ModifierId id(String name) {
         return new ModifierId(TinkersThinking.MODID, name);
     }
