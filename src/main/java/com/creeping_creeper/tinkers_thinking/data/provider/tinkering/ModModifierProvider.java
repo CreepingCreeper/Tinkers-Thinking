@@ -350,7 +350,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(invisibilitydBuilder1.buildCounter())
                 .addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).entity(new HasMobEffectPredicate(MobEffects.INVISIBILITY)).eachLevel(1.5f));
         buildModifier(ModModifierIds.CounterAdvanced);
-        buildModifier(ModModifierIds.CounterAttack).addModule(new CounterAttackModule(2.0f, LevelingValue.eachLevel(0.35f))).levelDisplay(ModifierLevelDisplay.NO_LEVELS);;
+        buildModifier(ModModifierIds.CounterAttack).addModule(new CounterAttackModule(2.0f, LevelingValue.eachLevel(0.35f))).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(ModModifierIds.Countermeasures).addModule(ProtectionModule.builder().toolItem(ItemPredicate.tag(TinkerTags.Items.ARMOR)).source(DamageSourcePredicate.tag(DamageTypeTags.BYPASSES_ARMOR).inverted()).eachLevel(2.5f));
 
         buildModifier(ModModifierIds.Crimson).addModule(new CrimsonModule(400));
