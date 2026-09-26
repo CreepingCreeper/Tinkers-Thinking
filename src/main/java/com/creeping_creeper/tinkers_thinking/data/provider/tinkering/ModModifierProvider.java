@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data.provider.tinkering;
 
 import com.creeping_creeper.tinkers_thinking.common.library.ModPredicate;
 import com.creeping_creeper.tinkers_thinking.common.library.variable.SkyLightVariable;
+import com.creeping_creeper.tinkers_thinking.common.modifer.defense.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.durability.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.harvest.HungrinessModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.melee.*;
@@ -44,6 +45,9 @@ import slimeknights.tconstruct.library.modifiers.modules.capacity.CapacityBarMod
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
+import slimeknights.tconstruct.library.modifiers.modules.interaction.edible.EdibleConsumeDurabilityModule;
+import slimeknights.tconstruct.library.modifiers.modules.interaction.edible.EdibleModule;
+import slimeknights.tconstruct.library.modifiers.modules.interaction.edible.EdibleRepresentativeItemModule;
 import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.modules.technical.ArmorLevelModule;
 import slimeknights.tconstruct.library.modifiers.modules.util.BooleanPredicate;
@@ -52,6 +56,7 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.IndestructibleItemEntity;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 
@@ -81,7 +86,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         MobEffectModule.Builder disarmBuilder = MobEffectModule.builder(ModEffects.disarm).time(RandomLevelingValue.flat(160))
                 .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
         MobEffectModule.Builder disarmBuilder1 = MobEffectModule.builder(ModEffects.modifier_immune.get()).time(RandomLevelingValue.perLevel(190, -30))
-                .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());;
+                .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
 
         buildModifier(ModModifierIds.Disarm).addModule(disarmBuilder.buildWeapon())
                 .addModule(disarmBuilder1.buildWeapon());
@@ -127,14 +132,14 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .variable(VALUE).multiply()
                         .build());
 
-        buildModifier(ModModifierIds.Overdisintegrate).addModule(new OverdisintegrateModule(LevelingValue.eachLevel(4)));
-        buildModifier(ModModifierIds.Overfreeze).addModule(new OverfreezeModule(LevelingValue.eachLevel(4)));
+        buildModifier(ModModifierIds.Overdisintegrate).addModule(new OverdisintegrateModule(LevelingInt.eachLevel(4)));
+        buildModifier(ModModifierIds.Overfreeze).addModule(new OverfreezeModule(LevelingInt.eachLevel(4)));
         buildModifier(ModModifierIds.Prickly).addModule(new PricklyModule(LevelingValue.eachLevel(0.12f)));
         buildModifier(ModModifierIds.Recalamity).addModule(new RecalamityModule(0.1f));
         buildModifier(ModModifierIds.Rederangement).addModule(RederangementModule.INSTANCE)
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.1f));
         buildModifier(ModModifierIds.Redye).addModule(new RedyeModule(LevelingValue.eachLevel(0.06f)));
-        buildModifier(ModModifierIds.Repercussion).addModule(new RepercussionModule(new LevelingValue(200, -40)));
+        buildModifier(ModModifierIds.Repercussion).addModule(new RepercussionModule(new LevelingInt(200, -40)));
 
         MobEffectModule.Builder repulsiveBuilder = MobEffectModule.builder(TinkerEffects.repulsive).time(RandomLevelingValue.flat(15)).level(RandomLevelingValue.perLevel(0, 2));
 
@@ -167,7 +172,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.05f));
 
         buildModifier(ModModifierIds.SculkTeleport).addModule(SculkTeleportModule.INSTANCE);
-        buildModifier(ModModifierIds.SculkStruggle).addModule(new SculkStruggleModule(LevelingValue.eachLevel(100)))
+        buildModifier(ModModifierIds.SculkStruggle).addModule(new SculkStruggleModule(LevelingInt.eachLevel(100)))
                 .addModule(new ArmorLevelModule(ModDataKeys.SculkStruggle, false, TinkerTags.Items.HELD));
 
         MobEffectModule.Builder stimulationBuilder = MobEffectModule.builder(MobEffects.DIG_SPEED).time(RandomLevelingValue.perLevel(0, 120)).level(RandomLevelingValue.flat(1)).isAoe(BooleanPredicate.FALSE).chance(LevelingValue.flat(0.25f));
@@ -290,8 +295,23 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.Sinistral).addModule(SinistralModule.INSTANCE);
         buildModifier(ModModifierIds.SwashAdvanced).addModule(new SwashAdvancedModule((LevelingValue.eachLevel(1f))));
         // defense
+        buildModifier(ModModifierIds.Antibrute).addModule(AntibruteModule.INSTANCE);
+        buildModifier(ModModifierIds.Reburning).addModule(new ReburningModule(1))
+                .addModule(new ArmorLevelModule(ModDataKeys.Reburning, false, TinkerTags.Items.HELD));
+        buildModifier(ModModifierIds.Remisdirection).addModule(RemisdirectionModule.INSTANCE)
+                .addModule(new ArmorLevelModule(ModDataKeys.Remisdirection, false, TinkerTags.Items.HELD));
+        buildModifier(ModModifierIds.Retransit).addModule(new RetransitModule(new LevelingInt(240, -20)))
+                .addModule(new ArmorLevelModule(ModDataKeys.Retransit, false, TinkerTags.Items.HELD))
+                .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.1f));
         buildModifier(ModModifierIds.Silkward).addModule(ModifierSlotModule.slot(SlotType.DEFENSE).eachLevel(2))
                 .addModule(StatBoostModule.add(ToolStats.ARMOR).eachLevel(-2.0f));
+        buildModifier(ModModifierIds.Symbiotic)
+                .addModule(EdibleModule.EDIBLE_TRAIT)
+                .addModule(new EdibleRepresentativeItemModule(TinkerCommons.jeweledApple))
+                .addModule(new EdibleConsumeDurabilityModule(LevelingInt.eachLevel(8)))
+                .addModule(new EdibleHealModule(LevelingValue.eachLevel(0.1f)))
+                .addModule(StatBoostModule.add(EdibleModule.COUNTER_CHANCE).eachLevel(0.15f));
+
 
         // durability
         buildModifier(ModModifierIds.DepositionModule).addModule(new DepositionModule(0.8f));

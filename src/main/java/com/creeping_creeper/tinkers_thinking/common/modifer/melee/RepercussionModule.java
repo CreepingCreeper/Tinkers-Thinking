@@ -6,7 +6,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.tconstruct.library.json.LevelingValue;
+import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
@@ -25,7 +25,7 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import java.util.List;
 import java.util.Objects;
 
-public record RepercussionModule(LevelingValue even_time) implements ModifierModule, MeleeDamageModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook {
+public record RepercussionModule(LevelingInt even_time) implements ModifierModule, MeleeDamageModifierHook, MeleeHitModifierHook, MonsterMeleeHitModifierHook.RedirectAfter, ProjectileHitModifierHook {
     private static boolean repercussion = true;
 
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
@@ -33,7 +33,7 @@ public record RepercussionModule(LevelingValue even_time) implements ModifierMod
 
     static {
         DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MELEE_DAMAGE, ModifierHooks.MELEE_HIT, ModifierHooks.MONSTER_MELEE_DAMAGE, ModifierHooks.MONSTER_MELEE_HIT, ModifierHooks.PROJECTILE_HIT);
-        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(RepercussionModule::even_time), RepercussionModule::new);
+        LOADER = RecordLoadable.create(LevelingInt.LOADABLE.directField(RepercussionModule::even_time), RepercussionModule::new);
     }
 
     public RecordLoadable<RepercussionModule> getLoader() {
@@ -79,7 +79,7 @@ public record RepercussionModule(LevelingValue even_time) implements ModifierMod
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         if (!context.isExtraAttack() && !ModifierUtils.reverse(tool, modifier) && context.getTarget().isAlive()) {
-            ModifierUtils.addEffect(context.getAttacker(), ModEffects.disintegration.get(), (int) even_time.compute(modifier), 2);
+            ModifierUtils.addEffect(context.getAttacker(), ModEffects.disintegration.get(), even_time.compute(modifier), 2);
         }
     }
 }

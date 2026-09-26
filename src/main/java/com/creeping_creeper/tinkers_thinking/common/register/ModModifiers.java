@@ -78,12 +78,11 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("hungriness"), HungrinessModule.LOADER);
 
             // module-defense
-            ModifierModule.LOADER.register(getResource("symbiotic"), SymbioticModule.LOADER);
             ModifierModule.LOADER.register(getResource("antibrute"), AntibruteModule.LOADER);
-            ModifierModule.LOADER.register(getResource("reburning"), ReburningModifier.LOADER);
+            ModifierModule.LOADER.register(getResource("edible_heal"), EdibleHealModule.LOADER);
+            ModifierModule.LOADER.register(getResource("reburning"), ReburningModule.LOADER);
             ModifierModule.LOADER.register(getResource("remisdirection"), RemisdirectionModule.LOADER);
             ModifierModule.LOADER.register(getResource("retransit"), RetransitModule.LOADER);
-
 
             // module-ranged
             ModifierModule.LOADER.register(getResource("atlatl"), AtlatlModule.LOADER);

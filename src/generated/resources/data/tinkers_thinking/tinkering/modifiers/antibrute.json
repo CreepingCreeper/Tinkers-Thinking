@@ -2,9 +2,7 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:repercussion",
-      "each_level": -40,
-      "flat": 200
+      "type": "tinkers_thinking:antibrute"
     }
   ],
   "tooltip_display": "always"

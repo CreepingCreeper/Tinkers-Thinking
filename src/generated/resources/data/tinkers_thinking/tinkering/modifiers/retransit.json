@@ -1,0 +1,32 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:retransit",
+      "each_level": -20,
+      "flat": 240
+    },
+    {
+      "type": "tconstruct:armor_level",
+      "allow_broken": false,
+      "held_tag": "tconstruct:modifiable/held",
+      "key": "tinkers_thinking:retransit"
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:entity_gravity",
+      "each_level": -0.1,
+      "operation": "multiply_total",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ],
+      "tooltip_style": "percent"
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -383,9 +383,8 @@
 
   "material.tinkers_thinking.chlorophyte": "叶绿",
   "material.tinkers_thinking.chlorophyte.flavor": "生命源质",
-  "material.tinkers_thinking.chlorophyte.encyclopedia": "近战攻击后，每级有15%概率消耗8点耐久度回复30%已损失生命值",
-  "material.tinkers_thinking.chlorophyte.ranged": "发射箭矢后，每级有15%概率消耗8点耐久度回复30%已损失生命值",
-  "material.tinkers_thinking.chlorophyte.armor": "受到伤害后,每级有15%概率消耗8点耐久度回复30%已损失生命值",
+  "material.tinkers_thinking.chlorophyte.encyclopedia": "食用工具后，每级消耗8点耐久度回复10%已损失生命值",
+  "material.tinkers_thinking.chlorophyte.armor": "受到伤害后,每级有15%概率消耗8点耐久度回复10%已损失生命值",
   "material.tinkers_thinking.chlorophyte_compound": "叶绿混合物",
   "material.tinkers_thinking.chlorophyte_compound.flavor": "生命源质",
   "material.tinkers_thinking.chlorophyte_compound.encyclopedia": "箭矢可以追踪附近的目标",
@@ -590,7 +589,7 @@
   "modifier.tinkers_thinking.counter_attack.flavor": "临场反应",
   "modifier.tinkers_thinking.counter_attack.description": "可以短时间格挡，格挡成功后自动反击",
 
-  "modifier.tinkers_thinking.overeat": "暴食",
+  "modifier.tinkers_thinking.overeat": "黏液吞食",
   "modifier.tinkers_thinking.overeat.flavor": "开胃小菜！",
   "modifier.tinkers_thinking.overeat.description": "工具能吃掉黏液覆层和胶状黏液液滴来恢复耐久度",
 
@@ -620,7 +619,7 @@
 
   "modifier.tinkers_thinking.symbiotic": "共生",
   "modifier.tinkers_thinking.symbiotic.flavor": "友谊的治愈力！",
-  "modifier.tinkers_thinking.symbiotic.description": "工具近战攻击命中，工具发射箭矢或盔甲受到伤害后，有概率会消耗耐久度治愈你",
+  "modifier.tinkers_thinking.symbiotic.description": "食用工具后，消耗耐久度治愈你",
   "modifier.tinkers_thinking.seeking": "追踪",
   "modifier.tinkers_thinking.seeking.flavor": "掌握之中，岂可逃之？",
   "modifier.tinkers_thinking.seeking.description": "箭矢可以追踪附近的目标",
@@ -829,14 +828,14 @@
   "modifier.tinkers_thinking.durable.description": "耐久度越少，耐久度消耗概率越低",
   "modifier.tinkers_thinking.durable.chance": "耐用加固",
 
-  "modifier.tinkers_thinking.overfreeze": "凝寒",
+  "modifier.tinkers_thinking.overfreeze": "黏液凝寒",
   "modifier.tinkers_thinking.overfreeze.flavor": "如琉璃般飘落",
   "modifier.tinkers_thinking.overfreeze.description": "攻击或被攻击后，对方移动速度不断下降并在一段时间后受到额外伤害（在水中翻倍）",
   "modifier.tinkers_thinking.frozen": "霜结",
   "modifier.tinkers_thinking.frozen.flavor": "寸步难行",
   "modifier.tinkers_thinking.frozen.description": "使目标短时间内无法移动",
 
-  "modifier.tinkers_thinking.overdisintegrate": "瓦解",
+  "modifier.tinkers_thinking.overdisintegrate": "黏液瓦解",
   "modifier.tinkers_thinking.overdisintegrate.flavor": "摧枯拉朽！",
   "modifier.tinkers_thinking.overdisintegrate.description": "攻击命中后消耗黏液覆层使目标获得溃散效果，自身生命值越少溃散等级越强",
 
@@ -865,7 +864,7 @@
   "modifier.tinkers_thinking.sharp_circumstance.flavor": "雪中送炭？倒不如——落井下石",
   "modifier.tinkers_thinking.sharp_circumstance.description": "攻击时，若生命值占最大生命值的百分比：你>=目标，对目标造成额外伤害，否则对自己造成伤害",
 
-  "modifier.tinkers_thinking.overcharge": "强充能",
+  "modifier.tinkers_thinking.overcharge": "黏液充能",
   "modifier.tinkers_thinking.overcharge.flavor": "你都充能了些什么？",
   "modifier.tinkers_thinking.overcharge.description": "根据黏液覆层上限增加FE存储，随时间将FE转化为黏液覆层",
 

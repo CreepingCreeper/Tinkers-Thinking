@@ -3,7 +3,7 @@
   "modules": [
     {
       "type": "tinkers_thinking:overfreeze",
-      "each_level": 4.0
+      "each_level": 4
     }
   ],
   "tooltip_display": "always"

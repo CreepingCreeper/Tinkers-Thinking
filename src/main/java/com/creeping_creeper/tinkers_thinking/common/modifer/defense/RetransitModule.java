@@ -6,7 +6,7 @@ import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.tconstruct.library.json.LevelingValue;
+import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
@@ -21,9 +21,14 @@ import slimeknights.tconstruct.shared.TinkerEffects;
 import java.util.List;
 import java.util.Optional;
 
-public record RetransitModule(LevelingValue amount) implements ModifierModule, ModifyDamageModifierHook {
+public record RetransitModule(LevelingInt amount) implements ModifierModule, ModifyDamageModifierHook {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<RetransitModule> LOADER;
+
+    static {
+        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MODIFY_DAMAGE);
+        LOADER = RecordLoadable.create(LevelingInt.LOADABLE.directField(RetransitModule::amount), RetransitModule::new);
+    }
 
     public RecordLoadable<RetransitModule> getLoader() {
         return LOADER;
@@ -38,21 +43,14 @@ public record RetransitModule(LevelingValue amount) implements ModifierModule, M
         LivingEntity living = context.getEntity();
         Optional<TinkerDataCapability.Holder> dataCap = living.getCapability(TinkerDataCapability.CAPABILITY).resolve();
         dataCap.ifPresent(data -> {
-            int x = (int)amount().eachLevel() * data.get(ModDataKeys.Retransit, 0) *20;
+            int x = amount().compute(data.get(ModDataKeys.Retransit, 0));
             if (ModifierUtils.reverse(tool, modifier) && !living.hasEffect(TinkerEffects.returning.get())) {
-                ModifierUtils.addEffect(living,TinkerEffects.returning.get(),x);
-            }
-            if (!ModifierUtils.reverse(tool, modifier) && !living.hasEffect(ModEffects.reminiscence.get())) {
-                ModifierUtils.addEffect(living,ModEffects.reminiscence.get(),x);
+                ModifierUtils.addEffect(living, TinkerEffects.returning.get(), x);
+            }else if (!ModifierUtils.reverse(tool, modifier) && !living.hasEffect(ModEffects.reminiscence.get())) {
+                ModifierUtils.addEffect(living, ModEffects.reminiscence.get(), x);
             }
         });
         return amount;
     }
-    public LevelingValue amount() {
-        return this.amount;
-    }
-    static {
-        DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MODIFY_DAMAGE);
-        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(RetransitModule::amount), RetransitModule::new);
-    }
+
 }

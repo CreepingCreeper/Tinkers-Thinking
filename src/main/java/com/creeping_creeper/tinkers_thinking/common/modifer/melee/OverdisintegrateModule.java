@@ -4,7 +4,7 @@ import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.tconstruct.library.json.LevelingValue;
+import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
@@ -17,13 +17,13 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public record OverdisintegrateModule(LevelingValue max) implements ModifierModule, MeleeHitModifierHook {
+public record OverdisintegrateModule(LevelingInt max) implements ModifierModule, MeleeHitModifierHook {
     private static final List<ModuleHook<?>> DEFAULT_HOOKS;
     public static final RecordLoadable<OverdisintegrateModule> LOADER;
 
     static {
         DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.MELEE_HIT);
-        LOADER = RecordLoadable.create(LevelingValue.LOADABLE.directField(OverdisintegrateModule::max), OverdisintegrateModule::new);
+        LOADER = RecordLoadable.create(LevelingInt.LOADABLE.directField(OverdisintegrateModule::max), OverdisintegrateModule::new);
     }
 
     public RecordLoadable<OverdisintegrateModule> getLoader() {
@@ -39,7 +39,7 @@ public record OverdisintegrateModule(LevelingValue max) implements ModifierModul
         LivingEntity living = context.getAttacker();
         if (!context.isExtraAttack() && context.isFullyCharged() && living.isAlive()) {
             LivingEntity target = context.getLivingTarget();
-            int x = Math.min((int) max.compute(modifier), OverslimeModule.INSTANCE.getAmount(tool));
+            int x = Math.min(max.compute(modifier), OverslimeModule.INSTANCE.getAmount(tool));
             int y;
             float z = living.getHealth();
             float w = living.getMaxHealth();

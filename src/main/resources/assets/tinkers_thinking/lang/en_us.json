@@ -383,8 +383,7 @@
 
   "material.tinkers_thinking.chlorophyte": "Chlorophyte",
   "material.tinkers_thinking.chlorophyte.flavor": "Life Essence",
-  "material.tinkers_thinking.chlorophyte.encyclopedia": "After a melee attack, has a 15% chance per level to heal 30% of lost health (costs 8 durability)",
-  "material.tinkers_thinking.chlorophyte.ranged": "After firing an arrow, has a 15% chance per level to heal 30% of lost health (costs 8 durability)",
+  "material.tinkers_thinking.chlorophyte.encyclopedia": "After eating tool, heal 30% of lost health (costs 8 durability)",
   "material.tinkers_thinking.chlorophyte.armor": "After taking damage, has a 15% chance per level to heal 20% of lost health (costs 8 durability)",
   "material.tinkers_thinking.chlorophyte_compound": "Chlorophyte Compound",
   "material.tinkers_thinking.chlorophyte_compound.flavor": "Life Essence",
@@ -620,7 +619,7 @@
 
   "modifier.tinkers_thinking.symbiotic": "Symbiotic",
   "modifier.tinkers_thinking.symbiotic.flavor": "The Healing Power of Friendship!",
-  "modifier.tinkers_thinking.symbiotic.description": "After the tool lands a melee hit, launches an arrow, or the armor is hit, it consumes durability and heals you randomly",
+  "modifier.tinkers_thinking.symbiotic.description": "After eating tool, consumes durability and heals you",
   "modifier.tinkers_thinking.seeking": "Seeking",
   "modifier.tinkers_thinking.seeking.flavor": "How dare you escape?",
   "modifier.tinkers_thinking.seeking.description": "Arrows can track nearby targets",

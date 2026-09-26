@@ -2,14 +2,13 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tinkers_thinking:sculk_struggle",
-      "each_level": 100
+      "type": "tinkers_thinking:remisdirection"
     },
     {
       "type": "tconstruct:armor_level",
       "allow_broken": false,
       "held_tag": "tconstruct:modifiable/held",
-      "key": "tinkers_thinking:sculk_struggle"
+      "key": "tinkers_thinking:remisdirection"
     }
   ],
   "tooltip_display": "always"
