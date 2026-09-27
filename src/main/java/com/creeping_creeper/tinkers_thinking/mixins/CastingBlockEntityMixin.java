@@ -14,10 +14,10 @@ import slimeknights.tconstruct.smeltery.block.entity.CastingBlockEntity;
 public class CastingBlockEntityMixin {
     @Unique
     private boolean isFaceBlock(Level level, BlockPos pos){
-        return level.getBlockState(pos.east()).is(ModTags.Blocks.cooling_fast)
-                || level.getBlockState(pos.west()).is(ModTags.Blocks.cooling_fast)
-                || level.getBlockState(pos.south()).is(ModTags.Blocks.cooling_fast)
-                || level.getBlockState(pos.north()).is(ModTags.Blocks.cooling_fast);
+        return level.getBlockState(pos.east()).is(ModTags.Blocks.COOLING_FAST)
+                || level.getBlockState(pos.west()).is(ModTags.Blocks.COOLING_FAST)
+                || level.getBlockState(pos.south()).is(ModTags.Blocks.COOLING_FAST)
+                || level.getBlockState(pos.north()).is(ModTags.Blocks.COOLING_FAST);
     }
     private int timer;
     private int coolingTime;

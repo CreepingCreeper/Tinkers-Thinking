@@ -51,7 +51,7 @@ public enum ResistingModule implements ModifierModule, ProjectileHitModifierHook
             target.invulnerableTime=0;
         }else return false;
             // wither are hardcoded to not take arrow damage, so disagree by reimplementing arrow damage right here
-        if (target.getType().is(ModTags.EntityTypes.resisting) && projectile instanceof AbstractArrow arrow && attacker != null) {
+        if (target.getType().is(ModTags.EntityTypes.RESISTING) && projectile instanceof AbstractArrow arrow && attacker != null) {
                 // first, give up if we reached pierce capacity, and ensure list are created
                 if (arrow.getPierceLevel() > 0) {
                     if (arrow.piercingIgnoreEntityIds == null) {

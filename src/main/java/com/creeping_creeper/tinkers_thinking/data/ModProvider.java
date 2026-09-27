@@ -2,9 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
-import com.creeping_creeper.tinkers_thinking.data.provider.tag.ModFluidTagProvider;
-import com.creeping_creeper.tinkers_thinking.data.provider.tag.ModMaterialTagsProvider;
-import com.creeping_creeper.tinkers_thinking.data.provider.tag.ModModifierTagsProvider;
+import com.creeping_creeper.tinkers_thinking.data.provider.tag.*;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModMaterialProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModModifierProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModStatsProvider;
@@ -29,6 +27,12 @@ public class ModProvider {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         boolean server = event.includeServer();
         boolean client = event.includeClient();
+
+        ModBlockTagsProvider blockTags = new ModBlockTagsProvider(output, lookupProvider, existingFileHelper);
+        generator.addProvider(server, blockTags);
+        generator.addProvider(server, new ModItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+        generator.addProvider(server, new ModEntityTypeTagsProvider(output, lookupProvider, existingFileHelper));
+        generator.addProvider(server, new ModDamageTypeTagsProvider(output, lookupProvider, existingFileHelper));
 
         generator.addProvider(server, new ModFluidTagProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(server, new ModMaterialTagsProvider(output, existingFileHelper));

@@ -39,7 +39,7 @@ public class WorldEvents{
         LivingEntity dying = event.getEntity();
         boolean a = source.getDirectEntity() instanceof Snowball;
         boolean b = source.getDirectEntity() instanceof ThrownPotion potion && PotionUtils.getPotion(potion.getItem())== Potions.WATER && PotionUtils.getMobEffects(potion.getItem()).isEmpty();
-        if (dying instanceof Blaze && (source.is(ModTags.DamageTypes.drop_ashes) || a || b)) {
+        if (dying instanceof Blaze && (source.is(ModTags.DamageTypes.DROP_ASHES) || a || b)) {
             dropItem(dying,ModCommonItems.ashes.get());
         }
         if (source.is(DamageTypes.SONIC_BOOM)&&dying.hasEffect(ModEffects.sculk_power.get())){
@@ -55,7 +55,7 @@ public class WorldEvents{
     static void blockBroke(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         Level level = (Level) event.getLevel();
-        if (!level.isClientSide() && event.getState().is(ModTags.Blocks.zith) && player != null){
+        if (!level.isClientSide() && event.getState().is(ModTags.Blocks.ZITH) && player != null){
             player.hurt(TinkerDamageTypes.source(level.registryAccess(), TinkerDamageTypes.BLEEDING), 20);
         }
     }

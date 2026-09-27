@@ -72,7 +72,7 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModCommonItems.raw_ardite, ModCommonItems.ardite_ore), RecipeCategory.MISC, TinkerMaterials.cobalt.getIngot(), 1.5f, 200)
                 .unlockedBy("has_item", has(ModCommonItems.raw_ardite))
                 .save(consumer, location(metal + "ardite_ingot_blasting"));
-        packingRecipe(consumer, RecipeCategory.MISC, "raw_block", ModCommonItems.raw_ardite_block, "raw", ModCommonItems.raw_ardite, ModTags.Items.raw_ardite, metal);
+        packingRecipe(consumer, RecipeCategory.MISC, "raw_block", ModCommonItems.raw_ardite_block, "raw", ModCommonItems.raw_ardite, ModTags.Items.RAW_ARDITE, metal);
 
     }
 
@@ -111,7 +111,7 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         wrapped = withCondition(consumer, tagCondition("glowstone"));
         AlloyRecipeBuilder.alloy(ModFluids.moltenShimmerslime, FluidValues.INGOT * 2)
                 .addInput(TinkerFluids.enderSlime.getTag(), FluidValues.INGOT)
-                .addInput(ModTags.Fluids.glowstone, FluidValues.INGOT)
+                .addInput(ModTags.Fluids.GLOWSTONE, FluidValues.INGOT)
                 .addInput(ModFluids.moltenZith.getTag(), FluidValues.GEM * 2)
                 .save(wrapped, prefix(ModFluids.moltenShimmerslime, folder));
         wrapped = withCondition(consumer, new NotCondition(tagCondition("glowstone")));

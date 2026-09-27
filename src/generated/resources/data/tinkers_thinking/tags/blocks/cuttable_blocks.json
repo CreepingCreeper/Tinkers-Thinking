@@ -1,0 +1,19 @@
+{
+  "values": [
+    "minecraft:quartz_block",
+    "minecraft:smooth_quartz",
+    "minecraft:smooth_stone",
+    "minecraft:bricks",
+    "minecraft:purpur_block",
+    "minecraft:prismarine",
+    "minecraft:prismarine_bricks",
+    "minecraft:copper_block",
+    "minecraft:waxed_copper_block",
+    "minecraft:cut_copper",
+    "minecraft:waxed_cut_copper",
+    "minecraft:blackstone",
+    "#tconstruct:seared_blocks",
+    "#tconstruct:scorched_blocks",
+    "#forge:sandstone"
+  ]
+}

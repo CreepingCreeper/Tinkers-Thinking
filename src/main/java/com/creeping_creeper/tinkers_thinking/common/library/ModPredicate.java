@@ -11,6 +11,9 @@ public interface ModPredicate extends LivingEntityPredicate {
     interface Item {
 
     }
+    interface Block {
+
+    }
     interface Entity {
         LivingEntityPredicate IS_DAY = isDay();
 

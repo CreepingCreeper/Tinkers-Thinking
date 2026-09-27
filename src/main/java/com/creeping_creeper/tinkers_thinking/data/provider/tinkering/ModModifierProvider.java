@@ -96,11 +96,11 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.BattleAdvanced).addModule(new BattleAdvancedModule(0.005f, 1200));
 
         MobEffectModule.Builder weaknessBuilder = MobEffectModule.builder(MobEffects.WEAKNESS).time(RandomLevelingValue.perLevel(80.0f, 20.0f)).level(RandomLevelingValue.flat(2.0f))
-                .target(LivingEntityPredicate.tag(ModTags.EntityTypes.pigLike));
+                .target(LivingEntityPredicate.tag(ModTags.EntityTypes.PIG_LIKE));
 
         buildModifier(ModModifierIds.BaneOfPigs)
                 .addModule(weaknessBuilder.buildWeapon())
-                .addModule(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(ModTags.EntityTypes.pigLike)).eachLevel(5.0f));
+                .addModule(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(ModTags.EntityTypes.PIG_LIKE)).eachLevel(5.0f));
 
         MobEffectModule.Builder fireResistanceBuilder = MobEffectModule.builder(MobEffects.FIRE_RESISTANCE).time(RandomLevelingValue.flat(80))
                 .target(new HasMobEffectPredicate(MobEffects.FIRE_RESISTANCE).inverted());
@@ -225,7 +225,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         // harvest
         buildModifier(ModModifierIds.Cutting).addModule(
                 ConditionalMiningSpeedModule.builder().blocks(BlockPredicate.and(
-                        BlockPredicate.tag(Tags.Blocks.STONE), BlockPredicate.tag(Tags.Blocks.COBBLESTONE), BlockPredicate.tag(ModTags.Blocks.cuttable)))
+                        BlockPredicate.tag(Tags.Blocks.STONE), BlockPredicate.tag(Tags.Blocks.COBBLESTONE), BlockPredicate.tag(ModTags.Blocks.CUTTABLE)))
                         .eachLevel(5.0f));
         buildModifier(ModModifierIds.SculkBoost).addModule(
                 ConditionalMiningSpeedModule.builder().percent()
