@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data.provider.tag;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
 import com.creeping_creeper.tinkers_thinking.data.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -30,8 +31,20 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
         //vanilla
-
+        tag(ItemTags.BEACON_PAYMENT_ITEMS).addTags(ModTags.Items.SILKY_JEWEL, ModCommonItems.ardite.getIngotTag(), ModCommonItems.lightite.getIngotTag(), ModCommonItems.chlorophyte.getIngotTag(), ModCommonItems.spectre.getIngotTag(),
+                ModCommonItems.shroomite.getIngotTag(), ModCommonItems.obsidian_bronze.getIngotTag(), ModCommonItems.electrical_steel.getIngotTag(), ModCommonItems.warden_steel.getIngotTag(), ModCommonItems.zith.getIngotTag(), ModCommonItems.shimmerslime.getIngotTag(),
+                ModCommonItems.adamantium.getIngotTag());
+        tag(ItemTags.CLUSTER_MAX_HARVESTABLES).add(ModToolItems.paxel.get());
+        tag(ItemTags.PIGLIN_FOOD).add(ModCommonItems.Pork_Jerky.get());
+        tag(ItemTags.PIGLIN_LOVED).add(ModCommonItems.gilded_silky_cloth.get(), ModCommonItems.silky_jewel.get(), ModCommonItems.silky_jewel_block.asItem());
+        tag(ItemTags.PIGLIN_REPELLENTS).add(ModCommonItems.stone_soul_torch_item.get());
         //common
+
+        tag(ModTags.Items.STONE_ROD).add(ModCommonItems.stone_stick.get());
+        tag(Tags.Items.RODS).addTag(ModTags.Items.STONE_ROD);
+        tag(ModTags.Items.SILKY_JEWEL).add(ModCommonItems.silky_jewel.get());
+        tag(Tags.Items.GEMS_QUARTZ).add(ModCommonItems.quartz_crystal.get());
+        tag(Tags.Items.GEMS).addTag(ModTags.Items.SILKY_JEWEL);
         tag(ModTags.Items.RAW_ARDITE).add(ModCommonItems.raw_ardite.get());
         tag(ModTags.Items.RAW_ZITH).add(ModCommonItems.raw_zith.get());
         tag(Tags.Items.RAW_MATERIALS).addTags(ModTags.Items.RAW_ARDITE, ModTags.Items.RAW_ZITH);
@@ -82,6 +95,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 ModCommonItems.zith.getIngotTag(), ModCommonItems.shimmerslime.getIngotTag(), ModCommonItems.adamantium.getIngotTag()
         );
 
+        copy(ModTags.Blocks.SILKY_JEWEL_BLOCK, ModTags.Items.SILKY_JEWEL_BLOCK);
         copy(ModCommonItems.ardite.getBlockTag(), ModCommonItems.ardite.getBlockItemTag());
         copy(ModCommonItems.tinkers_bronze.getBlockTag(), ModCommonItems.tinkers_bronze.getBlockItemTag());
         copy(ModCommonItems.lightite.getBlockTag(), ModCommonItems.lightite.getBlockItemTag());
@@ -100,10 +114,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 
         tag(COOKED_EGGS).add(ModCommonItems.Fried_Egg.get());
+        tag(Tags.Items.TOOLS_BOWS).add(ModToolItems.atlatl.get());
+        tag(Tags.Items.TOOLS_CROSSBOWS).add(ModToolItems.repeating_crossbow.get());
+        tag(ModTags.Items.TOOL_KNIVES).add(ModToolItems.knife.get());
+        tag(ModTags.Items.FILLET_KNIFE).add(ModToolItems.knife.get());
 
         //tconstruct
 
         copy(TinkerTags.Blocks.ANVIL_METAL, TinkerTags.Items.ANVIL_METAL);
         //self
+
     }
 }

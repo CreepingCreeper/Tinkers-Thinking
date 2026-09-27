@@ -14,6 +14,7 @@ import static slimeknights.mantle.Mantle.commonResource;
 
 public class ModTags {
     public static class Items {
+        public static final TagKey<Item> STONE_ROD = common("rods/stone");
         public static final TagKey<Item> ARDITE_ORE = common("ores/ardite");
         public static final TagKey<Item> RAW_ARDITE = common("raw_ardite");
         public static final TagKey<Item> RAW_ARDITE_BLOCK = common("storage_blocks/raw_ardite");
@@ -21,6 +22,11 @@ public class ModTags {
         public static final TagKey<Item> ZITH_ORE = common("ores/ith");
         public static final TagKey<Item> RAW_ZITH = common("raw_zith");
         public static final TagKey<Item> RAW_ZITH_BLOCK = common("storage_blocks/raw_zith");
+        public static final TagKey<Item> SILKY_JEWEL = common("gems/silky_jewel");
+        public static final TagKey<Item> SILKY_JEWEL_BLOCK = common("storage_blocks/silky_jewel");
+
+        public static final TagKey<Item> TOOL_KNIVES = common("tools/knives");
+        public static final TagKey<Item> FILLET_KNIFE = common("fillet_knife");
 
         private static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
@@ -37,6 +43,8 @@ public class ModTags {
         public static final TagKey<Block> CHLOROPHYLL_ORE = common("ores/chlorophyll");
         public static final TagKey<Block> ZITH_ORE = common("ores/ith");
         public static final TagKey<Block> RAW_ZITH_BLOCK = common("storage_blocks/raw_zith");
+        public static final TagKey<Block> SILKY_JEWEL_BLOCK = common("storage_blocks/silky_jewel");
+
 
         /** Any Blocks that can speed up cooling */
         public static final TagKey<Block> COOLING_FAST = local("cooling_fast");

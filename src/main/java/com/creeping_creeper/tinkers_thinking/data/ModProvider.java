@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
+import com.creeping_creeper.tinkers_thinking.data.provider.loot.ModLootTableProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tag.*;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModMaterialProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModModifierProvider;
@@ -28,18 +29,23 @@ public class ModProvider {
         boolean server = event.includeServer();
         boolean client = event.includeClient();
 
+        // tag
         ModBlockTagsProvider blockTags = new ModBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(server, blockTags);
         generator.addProvider(server, new ModItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
         generator.addProvider(server, new ModEntityTypeTagsProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(server, new ModDamageTypeTagsProvider(output, lookupProvider, existingFileHelper));
-
         generator.addProvider(server, new ModFluidTagProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(server, new ModMaterialTagsProvider(output, existingFileHelper));
         generator.addProvider(server, new ModModifierTagsProvider(output, existingFileHelper));
 
+        // loot
+        generator.addProvider(server, new ModLootTableProvider(output));
+
+        // recipe
         generator.addProvider(server, new SmelteryRecipe(output));
 
+        //misc
         ModMaterialProvider materials = new ModMaterialProvider(output);
         generator.addProvider(server, materials);
         generator.addProvider(server, new ModModifierProvider(output));

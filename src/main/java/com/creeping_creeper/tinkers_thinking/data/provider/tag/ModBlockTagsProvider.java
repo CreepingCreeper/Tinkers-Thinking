@@ -33,6 +33,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.NEEDS_STONE_TOOL);
         tag(BlockTags.NEEDS_DIAMOND_TOOL);
 
+        tag(BlockTags.BEACON_BASE_BLOCKS).addTags(ModTags.Blocks.SILKY_JEWEL_BLOCK, ModCommonItems.ardite.getBlockTag(), ModCommonItems.lightite.getBlockTag(), ModCommonItems.chlorophyte.getBlockTag(), ModCommonItems.spectre.getBlockTag(),
+                ModCommonItems.shroomite.getBlockTag(), ModCommonItems.obsidian_bronze.getBlockTag(), ModCommonItems.electrical_steel.getBlockTag(), ModCommonItems.warden_steel.getBlockTag(), ModCommonItems.zith.getBlockTag(), ModCommonItems.shimmerslime.getBlockTag(),
+                ModCommonItems.adamantium.getBlockTag());
+        tag(BlockTags.CLIMBABLE).add(ModCommonItems.stone_ladder.get(), ModCommonItems.soul_vine.get());
+        tag(BlockTags.GUARDED_BY_PIGLINS).add(ModCommonItems.silky_jewel_block.get());
+        tag(BlockTags.PIGLIN_REPELLENTS).add(ModCommonItems.ground_stone_soul_torch.get(), ModCommonItems.wall_stone_soul_torch.get());
+
         tag(BlockTags.WITHER_IMMUNE).add(ModCommonItems.tempered_glass.get(), ModCommonItems.tempered_glass.get());
         tag(BlockTags.IMPERMEABLE).add(ModCommonItems.tempered_glass.get());
 
@@ -44,6 +51,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.RAW_ZITH_BLOCK).add(ModCommonItems.raw_zith_block.get());
         tag(Tags.Blocks.ORES).addTags(ModTags.Blocks.ARDITE_ORE, ModTags.Blocks.CHLOROPHYLL_ORE, ModTags.Blocks.ZITH_ORE);
 
+        tag(ModTags.Blocks.SILKY_JEWEL_BLOCK).add(ModCommonItems.silky_jewel_block.get());
         tag(ModCommonItems.ardite.getBlockTag()).add(ModCommonItems.ardite.get());
         tag(ModCommonItems.tinkers_bronze.getBlockTag()).add(ModCommonItems.tinkers_bronze.get());
         tag(ModCommonItems.lightite.getBlockTag()).add(ModCommonItems.lightite.get());
@@ -59,9 +67,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModCommonItems.shimmerslime.getBlockTag()).add(ModCommonItems.shimmerslime.get());
         tag(ModCommonItems.adamantium.getBlockTag()).add(ModCommonItems.adamantium.get());
 
-        tag(Tags.Blocks.STORAGE_BLOCKS).addTags(ModTags.Blocks.RAW_ARDITE_BLOCK, ModCommonItems.ardite.getBlockTag(), ModCommonItems.tinkers_bronze.getBlockTag(), ModCommonItems.lightite.getBlockTag(), ModCommonItems.chlorophyte.getBlockTag(), ModCommonItems.spectre.getBlockTag(),
-                ModCommonItems.shroomite.getBlockTag(), ModCommonItems.obsidian_bronze.getBlockTag(), ModCommonItems.electrical_steel.getBlockTag(), ModCommonItems.beetron.getBlockTag(), ModCommonItems.echo_bronze.getBlockTag(), ModCommonItems.warden_steel.getBlockTag(),
-                ModTags.Blocks.RAW_ZITH_BLOCK, ModCommonItems.zith.getBlockTag(), ModCommonItems.shimmerslime.getBlockTag(), ModCommonItems.adamantium.getBlockTag()
+        tag(Tags.Blocks.STORAGE_BLOCKS).addTags(ModTags.Blocks.SILKY_JEWEL_BLOCK, ModTags.Blocks.RAW_ARDITE_BLOCK, ModCommonItems.ardite.getBlockTag(), ModCommonItems.tinkers_bronze.getBlockTag(), ModCommonItems.lightite.getBlockTag(),
+                ModCommonItems.chlorophyte.getBlockTag(), ModCommonItems.spectre.getBlockTag(), ModCommonItems.shroomite.getBlockTag(), ModCommonItems.obsidian_bronze.getBlockTag(), ModCommonItems.electrical_steel.getBlockTag(), ModCommonItems.beetron.getBlockTag(),
+                ModCommonItems.echo_bronze.getBlockTag(), ModCommonItems.warden_steel.getBlockTag(), ModTags.Blocks.RAW_ZITH_BLOCK, ModCommonItems.zith.getBlockTag(), ModCommonItems.shimmerslime.getBlockTag(), ModCommonItems.adamantium.getBlockTag()
         );
 
         //tconstruct
