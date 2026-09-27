@@ -23,7 +23,10 @@ public class ModEffects extends ModModule {
     public static final RegistryObject<MobEffect> disarm = MOB_EFFECTS.register("disarm",() -> new NoMilkEffect(MobEffectCategory.HARMFUL, 0xc1bc4e,true).addAttributeModifier(Attributes.ATTACK_DAMAGE,"2307DE5E-7CE8-4030-940E-514C1F160005",-1,AttributeModifier.Operation.MULTIPLY_BASE));
     public static final RegistryObject<MobEffect> reminiscence = MOB_EFFECTS.register("reminiscence",() -> new ReminiscenceEffect(MobEffectCategory.BENEFICIAL, true));
     public static final RegistryObject<MobEffect> jumpless = MOB_EFFECTS.register("jumpless",() -> new NoMilkEffect(MobEffectCategory.HARMFUL, 0x8f2e91,true).addAttributeModifier(Attributes.JUMP_STRENGTH,"2307DE5E-7CE8-4030-940E-514C1F160006",-1,AttributeModifier.Operation.MULTIPLY_BASE));
-    public static final RegistryObject<MobEffect> last_effort = MOB_EFFECTS.register("last_effort",() -> new LastEffortEffect(MobEffectCategory.BENEFICIAL,  0xa2af86,true));
+    public static final RegistryObject<MobEffect> last_effort = MOB_EFFECTS.register("last_effort",() -> new LastEffortEffect(MobEffectCategory.BENEFICIAL,  0xa2af86, true));
+
+    public static final RegistryObject<MobEffect> life_fruit = MOB_EFFECTS.register("life_fruit",() -> new LastEffortEffect(MobEffectCategory.BENEFICIAL,  0xa2af86, false).addAttributeModifier(Attributes.MAX_HEALTH,"2307DE5E-7CE8-4030-940E-514C1F160007", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
+
     /**attack cooldown reset */
     public static final RegistryObject<MobEffect> strength_reset = MOB_EFFECTS.register("strength_reset",() -> new StrengthResetEffect(MobEffectCategory.BENEFICIAL, 0xbf9c81,true));
 }

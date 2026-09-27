@@ -10,6 +10,7 @@ import com.creeping_creeper.tinkers_thinking.common.modifer.melee.*;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.HurriedModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.misc.SlingSprintingModule;
 import com.creeping_creeper.tinkers_thinking.common.modifer.ranged.*;
+import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
 import com.creeping_creeper.tinkers_thinking.common.register.ModEffects;
 import com.creeping_creeper.tinkers_thinking.data.ModDataKeys;
 import com.creeping_creeper.tinkers_thinking.data.ModModifierIds;
@@ -72,7 +73,6 @@ import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.definition.module.ToolHooks;
 import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerEffects;
 import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
@@ -391,7 +391,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                 .addModule(spikyBuilder.buildCounter());
         buildModifier(ModModifierIds.Symbiotic)
                 .addModule(EdibleModule.EDIBLE_TRAIT)
-                .addModule(new EdibleRepresentativeItemModule(TinkerCommons.jeweledApple))
+                .addModule(new EdibleRepresentativeItemModule(ModCommonItems.Life_Fruit))
                 .addModule(new EdibleConsumeDurabilityModule(LevelingInt.eachLevel(8)))
                 .addModule(new EdibleHealModule(LevelingValue.eachLevel(0.1f)))
                 .addModule(StatBoostModule.add(EdibleModule.HUNGER).eachLevel(1))

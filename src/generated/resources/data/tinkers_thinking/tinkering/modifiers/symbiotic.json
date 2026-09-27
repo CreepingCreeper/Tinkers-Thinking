@@ -9,7 +9,7 @@
     },
     {
       "type": "tconstruct:edible_representative_item",
-      "representative_item": "tconstruct:jeweled_apple"
+      "representative_item": "tinkers_thinking:life_fruit"
     },
     {
       "type": "tconstruct:edible_consume_durability",

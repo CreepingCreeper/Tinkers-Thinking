@@ -5,6 +5,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class ModFoods {
+    public static final FoodProperties Life_Fruit = new FoodProperties.Builder().alwaysEat().nutrition(4).saturationMod(1.0F)
+            .effect(() ->new MobEffectInstance(ModEffects.life_fruit.get(), -1, 0), 1.0F).build();
+
     public static final FoodProperties Beef_Jerky = new FoodProperties.Builder().alwaysEat().fast().nutrition(8).saturationMod(1.0F).meat().build();
     public static final FoodProperties Mutton_Jerky = new FoodProperties.Builder().alwaysEat().fast().nutrition(6).saturationMod(1.0F).meat().build();
     public static final FoodProperties Rabbit_Jerky = new FoodProperties.Builder().alwaysEat().fast().nutrition(5).saturationMod(0.8F).meat().build();

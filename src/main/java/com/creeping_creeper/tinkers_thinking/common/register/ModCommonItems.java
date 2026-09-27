@@ -67,11 +67,11 @@ public class ModCommonItems extends ModModule {
     public static final MetalItemObject shimmerslime = BLOCKS.registerMetal("shimmerslime", () -> new SlimesteelBlock(metalBuilder(COLOR_YELLOW).sound(SoundType.NETHERITE_BLOCK).noOcclusion().lightLevel((p_50886_) -> 7)), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     public static final MetalItemObject adamantium = BLOCKS.registerMetal("adamantium", builder(COLOR_RED, NETHERITE_BLOCK).requiresCorrectToolForDrops().strength(10f,500), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
     //Other Materials
-    public static final ItemObject<Block> ardite_ore = BLOCKS.register("ardite_ore", () -> new Block(builder(MapColor.NETHER, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f,1200)), FIRE_BLOCK_ITEM);
-    public static final ItemObject<Block> raw_ardite_block = BLOCKS.register("raw_ardite_block", () -> new Block(builder(MapColor.COLOR_ORANGE, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f,1200)), FIRE_BLOCK_ITEM);
-    public static final ItemObject<Item> raw_ardite = ITEMS.register("raw_ardite",() -> new Item(new Item.Properties().fireResistant()));
-    public static final ItemObject<Block> zith_ore = BLOCKS.register("zith_ore", () -> new Block(builder(MapColor.SAND, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(10f,1200)), GENERAL_TOOLTIP_BLOCK_ITEM);
-    public static final ItemObject<Block> raw_zith_block = BLOCKS.register("raw_zith_block", () -> new Block(builder(COLOR_PINK, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(10f,1200)), GENERAL_BLOCK_ITEM);
+    public static final ItemObject<Block> ardite_ore = BLOCKS.register("ardite_ore", builder(MapColor.NETHER, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f,1200), FIRE_BLOCK_ITEM);
+    public static final ItemObject<Block> raw_ardite_block = BLOCKS.register("raw_ardite_block", builder(MapColor.COLOR_ORANGE, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(30f,1200), FIRE_BLOCK_ITEM);
+    public static final ItemObject<Item> raw_ardite = ITEMS.register("raw_ardite", FIRE_PROPS);
+    public static final ItemObject<Block> zith_ore = BLOCKS.register("zith_ore", builder(MapColor.SAND, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(10f,1200), GENERAL_TOOLTIP_BLOCK_ITEM);
+    public static final ItemObject<Block> raw_zith_block = BLOCKS.register("raw_zith_block", builder(COLOR_PINK, SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops().strength(10f,1200), GENERAL_BLOCK_ITEM);
     public static final ItemObject<Item> raw_zith = ITEMS.register("raw_zith", GENERAL_PROPS);
 
     public static final ItemObject<Item> lightite_compound= ITEMS.register("lightite_compound", GENERAL_PROPS);
@@ -109,9 +109,9 @@ public class ModCommonItems extends ModModule {
     public static final ItemObject<Item> soul_shard_a = ITEMS.register("soul_shard_a", () -> new SoulShardItem(GENERAL_PROPS));
     public static final ItemObject<Item> soul_shard_b= ITEMS.register("soul_shard_b", () -> new SoulShardItem(GENERAL_PROPS));
     //Block&Block Items
-    public static final ItemObject<Block> ancient_ceramic_block = BLOCKS.register("ancient_ceramic_block", () -> new Block(metalBuilder(COLOR_BLACK)), GENERAL_BLOCK_ITEM);
+    public static final ItemObject<Block> ancient_ceramic_block = BLOCKS.register("ancient_ceramic_block", (metalBuilder(COLOR_BLACK)), GENERAL_BLOCK_ITEM);
 
-    public static final ItemObject<Block> silky_jewel_block = BLOCKS.register("silky_jewel_block", () -> new Block(metalBuilder(COLOR_YELLOW)), GENERAL_BLOCK_ITEM);
+    public static final ItemObject<Block> silky_jewel_block = BLOCKS.register("silky_jewel_block", (metalBuilder(COLOR_YELLOW)), GENERAL_BLOCK_ITEM);
     public static final ItemObject<ChainBlock> soul_vine = BLOCKS.register("soul_vine", () ->new ChainBlock(BlockBehaviour.Properties.copy(Blocks.CHAIN).sound(VINE)),GENERAL_TOOLTIP_BLOCK_ITEM);
     public static final ItemObject<ChainBlock> bound_chain = BLOCKS.register("bound_chain", () -> new ChainBlock(BlockBehaviour.Properties.copy(Blocks.CHAIN)),GENERAL_TOOLTIP_BLOCK_ITEM);
 
@@ -136,24 +136,25 @@ public class ModCommonItems extends ModModule {
     public static final ItemObject<Block> zith_platform = BLOCKS.register("zith_platform", () -> new PlatformBlock(BlockBehaviour.Properties.of().mapColor(COLOR_ORANGE).strength(10f,1200).requiresCorrectToolForDrops().sound(ANCIENT_DEBRIS)), GENERAL_BLOCK_ITEM);
     public static final ItemObject<WasteFluidCylinderBlock> waste_fluid_cylinder = BLOCKS.register("waste_fluid_cylinder", () -> new WasteFluidCylinderBlock(BlockBehaviour.Properties.of().strength(1.2f).sound(BASALT)), GENERAL_TOOLTIP_BLOCK_ITEM);
     //Foods
-    public static final ItemObject<Item> Beef_Jerky= ITEMS.register("beef_jerky", () -> new Item(new Item.Properties().food(ModFoods.Beef_Jerky)));
-    public static final ItemObject<Item> Pork_Jerky= ITEMS.register("pork_jerky", () -> new Item(new Item.Properties().food(ModFoods.Beef_Jerky)));
-    public static final ItemObject<Item> Mutton_Jerky= ITEMS.register("mutton_jerky", () -> new Item(new Item.Properties().food(ModFoods.Mutton_Jerky)));
-    public static final ItemObject<Item> Rabbit_Jerky= ITEMS.register("rabbit_jerky", () -> new Item(new Item.Properties().food(ModFoods.Rabbit_Jerky)));
-    public static final ItemObject<Item> Chicken_Jerky= ITEMS.register("chicken_jerky", () -> new Item(new Item.Properties().food(ModFoods.Rabbit_Jerky)));
-    public static final ItemObject<Item> Cod_Jerky= ITEMS.register("cod_jerky", () -> new Item(new Item.Properties().food(ModFoods.Rabbit_Jerky)));
-    public static final ItemObject<Item> Salmon_Jerky= ITEMS.register("salmon_jerky", () -> new Item(new Item.Properties().food(ModFoods.Mutton_Jerky)));
-    public static final ItemObject<Item> Tropical_Fish_Jerky= ITEMS.register("tropical_fish_jerky", () -> new Item(new Item.Properties().food(ModFoods.Fish_Jerky)));
-    public static final ItemObject<Item> Pufferfish_Jerky= ITEMS.register("pufferfish_jerky", () -> new Item(new Item.Properties().food(ModFoods.Fish_Jerky)));
-    public static final ItemObject<Item> Rotten_Flesh_Jerky= ITEMS.register("rotten_flesh_jerky", () -> new Item(new Item.Properties().food(ModFoods.Rotten_Flesh_Jerky)));
-    public static final ItemObject<Item> Fried_Egg= ITEMS.register("fried_egg", () -> new Item(new Item.Properties().food(ModFoods.Fried_Egg)));
-    public static final ItemObject<Item> Earth_Slime_Drop= ITEMS.register("earth_slime_drop", () -> new Item(new Item.Properties().food(ModFoods.Earth_Slime_Drop)));
-    public static final ItemObject<Item> Sky_Slime_Drop= ITEMS.register("sky_slime_drop", () -> new Item(new Item.Properties().food(ModFoods.Sky_Slime_Drop)));
-    public static final ItemObject<Item> Magma_Slime_Drop= ITEMS.register("magma_slime_drop", () -> new Item(new Item.Properties().food(ModFoods.Magma_Slime_Drop)));
-    public static final ItemObject<Item> Ichor_Slime_Drop= ITEMS.register("ichor_slime_drop", () -> new Item(new Item.Properties().food(ModFoods.Ichor_Slime_Drop)));
-    public static final ItemObject<Item> Ender_Slime_Drop= ITEMS.register("ender_slime_drop", () -> new Item(new Item.Properties().food(ModFoods.Ender_Slime_Drop)));
-    public static final ItemObject<Item> Black_Chocolate= ITEMS.register("black_chocolate", () -> new Item(new Item.Properties().food(ModFoods.Black_Chocolate)));
-    public static final ItemObject<Item> White_Chocolate= ITEMS.register("white_chocolate", () -> new Item(new Item.Properties().food(ModFoods.White_Chocolate)));
+    public static final ItemObject<Item> Life_Fruit= ITEMS.register("life_fruit", new Item.Properties().food(ModFoods.Life_Fruit));
+    public static final ItemObject<Item> Beef_Jerky= ITEMS.register("beef_jerky", new Item.Properties().food(ModFoods.Beef_Jerky));
+    public static final ItemObject<Item> Pork_Jerky= ITEMS.register("pork_jerky", new Item.Properties().food(ModFoods.Beef_Jerky));
+    public static final ItemObject<Item> Mutton_Jerky= ITEMS.register("mutton_jerky", new Item.Properties().food(ModFoods.Mutton_Jerky));
+    public static final ItemObject<Item> Rabbit_Jerky= ITEMS.register("rabbit_jerky", new Item.Properties().food(ModFoods.Rabbit_Jerky));
+    public static final ItemObject<Item> Chicken_Jerky= ITEMS.register("chicken_jerky", new Item.Properties().food(ModFoods.Rabbit_Jerky));
+    public static final ItemObject<Item> Cod_Jerky= ITEMS.register("cod_jerky", new Item.Properties().food(ModFoods.Rabbit_Jerky));
+    public static final ItemObject<Item> Salmon_Jerky= ITEMS.register("salmon_jerky", new Item.Properties().food(ModFoods.Mutton_Jerky));
+    public static final ItemObject<Item> Tropical_Fish_Jerky= ITEMS.register("tropical_fish_jerky", new Item.Properties().food(ModFoods.Fish_Jerky));
+    public static final ItemObject<Item> Pufferfish_Jerky= ITEMS.register("pufferfish_jerky", new Item.Properties().food(ModFoods.Fish_Jerky));
+    public static final ItemObject<Item> Rotten_Flesh_Jerky= ITEMS.register("rotten_flesh_jerky", new Item.Properties().food(ModFoods.Rotten_Flesh_Jerky));
+    public static final ItemObject<Item> Fried_Egg= ITEMS.register("fried_egg", new Item.Properties().food(ModFoods.Fried_Egg));
+    public static final ItemObject<Item> Earth_Slime_Drop= ITEMS.register("earth_slime_drop", new Item.Properties().food(ModFoods.Earth_Slime_Drop));
+    public static final ItemObject<Item> Sky_Slime_Drop= ITEMS.register("sky_slime_drop", new Item.Properties().food(ModFoods.Sky_Slime_Drop));
+    public static final ItemObject<Item> Magma_Slime_Drop= ITEMS.register("magma_slime_drop", new Item.Properties().food(ModFoods.Magma_Slime_Drop));
+    public static final ItemObject<Item> Ichor_Slime_Drop= ITEMS.register("ichor_slime_drop", new Item.Properties().food(ModFoods.Ichor_Slime_Drop));
+    public static final ItemObject<Item> Ender_Slime_Drop= ITEMS.register("ender_slime_drop", new Item.Properties().food(ModFoods.Ender_Slime_Drop));
+    public static final ItemObject<Item> Black_Chocolate= ITEMS.register("black_chocolate", new Item.Properties().food(ModFoods.Black_Chocolate));
+    public static final ItemObject<Item> White_Chocolate= ITEMS.register("white_chocolate", new Item.Properties().food(ModFoods.White_Chocolate));
     private static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
         output.accept(book);
         accept(output, ardite);
@@ -223,6 +224,8 @@ public class ModCommonItems extends ModModule {
         output.accept(waste_fluid_cylinder);
 
         output.accept(Fried_Egg);
+
+        output.accept(Life_Fruit);
         output.accept(Beef_Jerky);
         output.accept(Chicken_Jerky);
         output.accept(Pork_Jerky);
