@@ -1,9 +1,8 @@
 {
-  "replace": false,
   "values": [
-    "#minecraft:bookshelf_books",
     "minecraft:map",
     "minecraft:filled_map",
+    "#minecraft:bookshelf_books",
     {
       "id": "create:pulp",
       "required": false

@@ -1,3 +1,16 @@
 {
-  "values": []
+  "values": [
+    "tinkers_thinking:ardite_block",
+    "tinkers_thinking:ardite_ore",
+    "tinkers_thinking:raw_ardite_block",
+    "tinkers_thinking:chlorophyte_block",
+    "tinkers_thinking:spectre_block",
+    "tinkers_thinking:shroomite_block",
+    "tinkers_thinking:obsidian_bronze_block",
+    "tinkers_thinking:ardite_platform",
+    "tinkers_thinking:tempered_glass",
+    "tinkers_thinking:tempered_glass_pane",
+    "tinkers_thinking:shimmerslime_block",
+    "tinkers_thinking:adamantium_block"
+  ]
 }

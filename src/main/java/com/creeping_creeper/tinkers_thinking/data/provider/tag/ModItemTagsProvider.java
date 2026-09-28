@@ -7,9 +7,11 @@ import com.creeping_creeper.tinkers_thinking.data.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -22,6 +24,10 @@ import static slimeknights.mantle.Mantle.commonResource;
 
 public class ModItemTagsProvider extends ItemTagsProvider {
     private static final TagKey<Item> COOKED_EGGS = ItemTags.create(commonResource("cooked_eggs"));
+    private static final TagKey<Item> SAWDUST = ItemTags.create(commonResource("sawdust"));
+    private static final TagKey<Item> WOOD_DUST = ItemTags.create(commonResource("dusts/wood"));
+    private final ResourceLocation TREE_BARK = ResourceLocation.fromNamespaceAndPath("farmersdelight", "tree_bark");
+    private final ResourceLocation PULP = ResourceLocation.fromNamespaceAndPath("create", "pulp");
 
     public ModItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTagProvider, TinkersThinking.MODID, existingFileHelper);
@@ -123,6 +129,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         copy(TinkerTags.Blocks.ANVIL_METAL, TinkerTags.Items.ANVIL_METAL);
         //self
-
+        tag(ModTags.Items.PULP_INGREDIENT).add(Items.SUGAR_CANE, Items.PAPER).addOptional(TREE_BARK).addOptionalTags(SAWDUST, WOOD_DUST);
+        tag(ModTags.Items.PULP_INGREDIENT_LARGE).add(Items.MAP, Items.FILLED_MAP).addTag(ItemTags.BOOKSHELF_BOOKS).addOptional(PULP);
     }
 }

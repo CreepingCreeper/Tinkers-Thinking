@@ -5,12 +5,12 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
 import static com.creeping_creeper.tinkers_thinking.TinkersThinking.getResource;
 import static slimeknights.mantle.Mantle.commonResource;
-
 
 public class ModTags {
     public static class Items {
@@ -27,6 +27,10 @@ public class ModTags {
 
         public static final TagKey<Item> TOOL_KNIVES = common("tools/knives");
         public static final TagKey<Item> FILLET_KNIFE = common("fillet_knife");
+
+        public static final TagKey<Item> PULP_INGREDIENT = local("pulp_ingredient");
+        public static final TagKey<Item> PULP_INGREDIENT_LARGE = local("pulp_ingredient_large");
+
 
         private static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));
@@ -49,6 +53,10 @@ public class ModTags {
         /** Any Blocks that can speed up cooling */
         public static final TagKey<Block> COOLING_FAST = local("cooling_fast");
         public static final TagKey<Block> ZITH = local("zith");
+        public static final TagKey<Block> PAXEL = local("mineable/paxel");
+        public static final TagKey<Block> PAXEL_FAST = local("mineable/paxel_fast");
+
+
         private static TagKey<Block> local(String name) {
             return TagKey.create(Registries.BLOCK, getResource(name));
         }
@@ -80,6 +88,14 @@ public class ModTags {
             return TagKey.create(Registries.ENTITY_TYPE, getResource(name));
         }
         private static TagKey<EntityType<?>> common(String name) {return TagKey.create(Registries.ENTITY_TYPE, commonResource(name));}
+    }
+
+    public static class Biomes {
+        public static final TagKey<Biome> CHLOROPHYLL_ORE_SPAWN = local("chlorophyll_ore_spawn");
+          private static TagKey<Biome> local(String name) {
+            return TagKey.create(Registries.BIOME, getResource(name));
+        }
+        private static TagKey<Biome> common(String name) {return TagKey.create(Registries.BIOME, commonResource(name));}
     }
 
 }

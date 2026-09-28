@@ -33,9 +33,11 @@ public class ModProvider {
         ModBlockTagsProvider blockTags = new ModBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(server, blockTags);
         generator.addProvider(server, new ModItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+        generator.addProvider(server, new ModFluidTagProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(server, new ModEntityTypeTagsProvider(output, lookupProvider, existingFileHelper));
         generator.addProvider(server, new ModDamageTypeTagsProvider(output, lookupProvider, existingFileHelper));
-        generator.addProvider(server, new ModFluidTagProvider(output, lookupProvider, existingFileHelper));
+        generator.addProvider(server, new ModBiomeTagsProvider(output, lookupProvider, existingFileHelper));
+
         generator.addProvider(server, new ModMaterialTagsProvider(output, existingFileHelper));
         generator.addProvider(server, new ModModifierTagsProvider(output, existingFileHelper));
 

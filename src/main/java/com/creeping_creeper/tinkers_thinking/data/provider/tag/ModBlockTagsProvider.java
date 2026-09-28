@@ -18,7 +18,6 @@ import slimeknights.tconstruct.world.TinkerWorld;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
-
     public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, TinkersThinking.MODID, existingFileHelper);
     }
@@ -27,11 +26,19 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     @SuppressWarnings("unchecked")
     protected void addTags(@NotNull HolderLookup.Provider lookupProvider) {
         //vanilla
-        tag(BlockTags.MINEABLE_WITH_PICKAXE);
-        tag(BlockTags.MINEABLE_WITH_SHOVEL);
-        tag(BlockTags.NEEDS_IRON_TOOL);
-        tag(BlockTags.NEEDS_STONE_TOOL);
-        tag(BlockTags.NEEDS_DIAMOND_TOOL);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModCommonItems.tinkers_bronze.get(), ModCommonItems.ardite.get(), ModCommonItems.ardite_ore.get(), ModCommonItems.raw_ardite_block.get(), ModCommonItems.ardite_platform.get(),
+                ModCommonItems.silky_jewel_block.get(), ModCommonItems.lightite.get(), ModCommonItems.chlorophyte.get(), ModCommonItems.spectre.get(), ModCommonItems.shroomite.get(), ModCommonItems.obsidian_bronze.get(),
+                ModCommonItems.electrical_steel.get(), ModCommonItems.beetron.get(), ModCommonItems.stone_ladder.get(), ModCommonItems.ground_stone_torch.get(), ModCommonItems.wall_stone_torch.get(), ModCommonItems.ground_stone_soul_torch.get(),
+                ModCommonItems.wall_stone_soul_torch.get(), ModCommonItems.echo_bronze.get(), ModCommonItems.waste_fluid_cylinder.get(), ModCommonItems.warden_steel.get(), ModCommonItems.soul_vine.get(), ModCommonItems.bound_chain.get(),
+                ModCommonItems.tempered_glass.get(), ModCommonItems.tempered_glass_pane.get(), ModCommonItems.ancient_ceramic_block.get(), ModCommonItems.zith.get(), ModCommonItems.zith_ore.get(), ModCommonItems.raw_zith_block.get(),
+                ModCommonItems.zith_platform.get(), ModCommonItems.shimmerslime.get(), ModCommonItems.adamantium.get()).addTags(ModTags.Blocks.CHLOROPHYLL_ORE);
+        tag(BlockTags.MINEABLE_WITH_HOE).add(ModCommonItems.echo_bronze.get(), ModCommonItems.waste_fluid_cylinder.get(), ModCommonItems.warden_steel.get(), ModCommonItems.soul_vine.get());
+
+        tag(BlockTags.NEEDS_STONE_TOOL).add(ModCommonItems.waste_fluid_cylinder.get(), ModCommonItems.warden_steel.get(), ModCommonItems.soul_vine.get(), ModCommonItems.bound_chain.get(), ModCommonItems.ancient_ceramic_block.get());
+        tag(BlockTags.NEEDS_IRON_TOOL).add(ModCommonItems.tinkers_bronze.get(), ModCommonItems.silky_jewel_block.get(), ModCommonItems.lightite.get(), ModCommonItems.electrical_steel.get(), ModCommonItems.beetron.get());
+        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModCommonItems.ardite.get(), ModCommonItems.ardite_ore.get(), ModCommonItems.raw_ardite_block.get(), ModCommonItems.chlorophyte.get(), ModCommonItems.spectre.get(),
+                ModCommonItems.shroomite.get(), ModCommonItems.obsidian_bronze.get(), ModCommonItems.ardite_platform.get(), ModCommonItems.tempered_glass.get(), ModCommonItems.tempered_glass_pane.get(), ModCommonItems.shimmerslime.get(),
+                ModCommonItems.adamantium.get());
 
         tag(BlockTags.BEACON_BASE_BLOCKS).addTags(ModTags.Blocks.SILKY_JEWEL_BLOCK, ModCommonItems.ardite.getBlockTag(), ModCommonItems.lightite.getBlockTag(), ModCommonItems.chlorophyte.getBlockTag(), ModCommonItems.spectre.getBlockTag(),
                 ModCommonItems.shroomite.getBlockTag(), ModCommonItems.obsidian_bronze.getBlockTag(), ModCommonItems.electrical_steel.getBlockTag(), ModCommonItems.warden_steel.getBlockTag(), ModCommonItems.zith.getBlockTag(), ModCommonItems.shimmerslime.getBlockTag(),
@@ -86,5 +93,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         Blocks.BLACKSTONE)
                 .addTags(TinkerTags.Blocks.SEARED_BLOCKS, TinkerTags.Blocks.SCORCHED_BLOCKS, Tags.Blocks.SANDSTONE);
         tag(ModTags.Blocks.ZITH).add(ModCommonItems.zith.get(), ModCommonItems.zith_ore.get(), ModCommonItems.raw_zith_block.get(), ModCommonItems.zith_platform.get());
+
+        tag(ModTags.Blocks.PAXEL).addTags(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.MINEABLE_WITH_AXE, BlockTags.MINEABLE_WITH_SHOVEL, BlockTags.MINEABLE_WITH_HOE);
+        tag(ModTags.Blocks.PAXEL_FAST).addTags(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.MINEABLE_WITH_AXE);
+
     }
 }
