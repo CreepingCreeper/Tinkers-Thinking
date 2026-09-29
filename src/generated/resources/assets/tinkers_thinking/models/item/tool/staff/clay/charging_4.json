@@ -1,0 +1,9 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "tconstruct:item/base/staff_charging",
+  "textures": {
+    "tool": "tinkers_thinking:item/tool/clay_staff/staff_4",
+    "large_tool": "tinkers_thinking:item/tool/clay_staff/staff_large_4"
+  },
+  "large": true
+}

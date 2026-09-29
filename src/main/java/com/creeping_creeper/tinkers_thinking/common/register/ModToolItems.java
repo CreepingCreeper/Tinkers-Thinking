@@ -34,7 +34,7 @@ public class ModToolItems extends ModModule {
     public static final ItemObject<ModifiableBowItem> atlatl = ITEMS.register("arrow_thrower", () -> new ModifiableAtlatlItem(Stack1Item,  ToolDefinitions.Atlatl, true));
     public static final ItemObject<ModifiableItem>  mace = ITEMS.register( "mace", () -> new ModifiableItem(Stack1Item, ToolDefinitions.MACE));
     public static final ItemObject<ModifiableSwordItem> cutlass = ITEMS.register( "cutlass", () -> new ModifiableSwordItem(Stack1Item, ToolDefinitions.CUTLASS));
-    public static final ItemObject<ModifiableRepeatingCrossbowItem>  repeating_crossbow = ITEMS.register( "repeating_crossbow", () -> new ModifiableRepeatingCrossbowItem(Stack1Item,ToolDefinitions.REPEATING_CROSSBOW));
+    public static final ItemObject<ModifiableRepeatingCrossbowItem>  repeating_crossbow = ITEMS.register( "repeating_crossbow", () -> new ModifiableRepeatingCrossbowItem(Stack1Item, ToolDefinitions.REPEATING_CROSSBOW));
     public static final ItemObject<ModifiableItem> magma_staff = ITEMS.register("magma_staff", () -> new ModifiableItem(Stack1Item, ToolDefinitions.MAGMA_STAFF));
     public static final ItemObject<ModifiableItem> clay_staff = ITEMS.register("clay_staff", () -> new ModifiableItem(Stack1Item, ToolDefinitions.CLAY_STAFF));
     public static final ItemObject<ModifiableItem> quartz_staff = ITEMS.register("quartz_staff", () -> new ModifiableItem(Stack1Item, ToolDefinitions.QUARTZ_STAFF));

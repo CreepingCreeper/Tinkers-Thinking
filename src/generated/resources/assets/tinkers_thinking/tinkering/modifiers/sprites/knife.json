@@ -1,0 +1,62 @@
+{
+  "modifiers": {
+    "tconstruct:antiaquatic": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_antiaquatic",
+    "tconstruct:bane_of_sssss": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_bane_of_sssss",
+    "tconstruct:bucketing": [
+      {
+        "type": "tconstruct:fluid",
+        "mask": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_bucketing_full"
+      },
+      {
+        "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_bucketing"
+      }
+    ],
+    "tconstruct:cooling": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_cooling",
+    "tconstruct:diamond": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_diamond",
+    "tconstruct:emerald": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_emerald",
+    "tconstruct:experienced": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_experienced",
+    "tconstruct:fiery": {
+      "luminosity": 10,
+      "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_fiery"
+    },
+    "tconstruct:glowing": {
+      "luminosity": 15,
+      "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_glowing"
+    },
+    "tconstruct:haste": {
+      "luminosity": 7,
+      "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_haste"
+    },
+    "tconstruct:hydraulic": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_hydraulic",
+    "tconstruct:knockback": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_knockback",
+    "tconstruct:lightspeed": {
+      "luminosity": 15,
+      "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_lightspeed"
+    },
+    "tconstruct:luck": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_luck",
+    "tconstruct:magnetic": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_magnetic",
+    "tconstruct:necrotic": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_necrotic",
+    "tconstruct:netherite": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_netherite",
+    "tconstruct:overforced": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_overforced",
+    "tconstruct:reinforced": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_reinforced",
+    "tconstruct:severing": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_severing",
+    "tconstruct:sharpness": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_sharpness",
+    "tconstruct:silky": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_silky",
+    "tconstruct:smite": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_smite",
+    "tconstruct:soulbound": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_soulbound",
+    "tconstruct:tank": [
+      {
+        "type": "tconstruct:tank",
+        "full": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_tank_full",
+        "partial": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_tank_partial"
+      },
+      {
+        "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_tank"
+      }
+    ],
+    "tconstruct:unbreakable": {
+      "luminosity": 2,
+      "texture": "tinkers_thinking:item/tool/knife/modifiers/tconstruct_unbreakable"
+    }
+  }
+}

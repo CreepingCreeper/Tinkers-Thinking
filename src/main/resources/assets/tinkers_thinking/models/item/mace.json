@@ -14,10 +14,10 @@
   "overrides": [
   {
     "predicate": { "tconstruct:charging": 2 },
-    "model": "tinkers_thinking:item/blocking/mace"
+    "model": "tinkers_thinking:item/mace/blocking"
   },
   {
     "predicate": { "tconstruct:broken": 1 },
-    "model": "tinkers_thinking:item/broken/mace"
+    "model": "tinkers_thinking:item/mace/broken"
   }]
 }

@@ -1,0 +1,31 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "blade_left": "tinkers_thinking:item/tool/knife/blade_left_broken",
+    "blade_right": "tinkers_thinking:item/tool/knife/blade_right_broken",
+    "handle": "tinkers_thinking:item/tool/knife/handle"
+  },
+  "modifier_maps": [
+    "tinkers_thinking:knife_broken",
+    "tinkers_thinking:knife"
+  ],
+  "modifier_roots": [
+    "tinkers_thinking:item/tool/knife/modifiers/broken/",
+    "tinkers_thinking:item/tool/knife/modifiers/"
+  ],
+  "parts": [
+    {
+      "name": "handle",
+      "index": 1
+    },
+    {
+      "name": "blade_left",
+      "index": 0
+    },
+    {
+      "name": "blade_right",
+      "index": 2
+    }
+  ]
+}

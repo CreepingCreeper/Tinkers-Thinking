@@ -2,6 +2,8 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
+import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModModifierModelMapProvider;
+import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModToolItemModelProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.loot.ModLootTableProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tag.*;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModMaterialProvider;
@@ -28,7 +30,11 @@ public class ModProvider {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         boolean server = event.includeServer();
         boolean client = event.includeClient();
+        // resource pack
+        generator.addProvider(client, new ModToolItemModelProvider(output, existingFileHelper));
+        generator.addProvider(client, new ModModifierModelMapProvider(output));
 
+        // data pack
         // tag
         ModBlockTagsProvider blockTags = new ModBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(server, blockTags);
@@ -47,7 +53,7 @@ public class ModProvider {
         // recipe
         generator.addProvider(server, new SmelteryRecipe(output));
 
-        //misc
+        // misc
         ModMaterialProvider materials = new ModMaterialProvider(output);
         generator.addProvider(server, materials);
         generator.addProvider(server, new ModModifierProvider(output));

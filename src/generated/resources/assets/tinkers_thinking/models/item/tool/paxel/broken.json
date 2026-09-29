@@ -1,0 +1,31 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "axe": "tinkers_thinking:item/tool/paxel/axe_broken",
+    "head": "tinkers_thinking:item/tool/paxel/head_broken",
+    "handle": "tconstruct:item/tool/pickaxe/handle"
+  },
+  "modifier_maps": [
+    "tinkers_thinking:paxel_broken",
+    "tinkers_thinking:paxel"
+  ],
+  "modifier_roots": [
+    "tinkers_thinking:item/tool/paxel/modifiers/broken/",
+    "tinkers_thinking:item/tool/paxel/modifiers/"
+  ],
+  "parts": [
+    {
+      "name": "handle",
+      "index": 1
+    },
+    {
+      "name": "head",
+      "index": 0
+    },
+    {
+      "name": "axe",
+      "index": 2
+    }
+  ]
+}

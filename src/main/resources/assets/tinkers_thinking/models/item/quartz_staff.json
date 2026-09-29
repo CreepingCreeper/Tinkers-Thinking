@@ -13,10 +13,6 @@
     "large_crystal":        "tinkers_thinking:item/tool/quartz_staff/large/crystal"
   },
   "large": true,
-  "modifier_roots": {
-    "small": [ "tconstruct:item/tool/quartz_staff/modifiers/" ],
-    "large": [ "tconstruct:item/tool/quartz_staff/large_modifiers/" ]
-  },
   "parts": [
     { "name": "low",      "index": 0 },
     { "name": "high",     "index": 1 },
@@ -26,51 +22,51 @@
   "overrides": [
     {
       "predicate": { "tconstruct:charging": 1 },
-      "model": "tinkers_thinking:item/staff/quartz/charging_1"
+      "model": "tinkers_thinking:item/tool/staff/quartz/charging_1"
     },
     {
       "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.4 },
-      "model": "tinkers_thinking:item/staff/quartz/charging_2"
+      "model": "tinkers_thinking:item/tool/staff/quartz/charging_2"
     },
     {
       "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.7 },
-      "model": "tinkers_thinking:item/staff/quartz/charging_3"
+      "model": "tinkers_thinking:item/tool/staff/quartz/charging_3"
     },
     {
       "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 0.9 },
-      "model": "tinkers_thinking:item/staff/quartz/charging_4"
+      "model": "tinkers_thinking:item/tool/staff/quartz/charging_4"
     },
     {
       "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 1.0 },
-      "model": "tinkers_thinking:item/staff/quartz/charging_5"
+      "model": "tinkers_thinking:item/tool/staff/quartz/charging_5"
     },
     {
       "predicate": { "tconstruct:charging": 2 },
-      "model": "tinkers_thinking:item/staff/quartz/blocking"
+      "model": "tinkers_thinking:item/tool/staff/quartz/blocking"
     },
     {
       "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.05 },
-      "model": "tinkers_thinking:item/staff/quartz/blocking_1"
+      "model": "tinkers_thinking:item/tool/staff/quartz/blocking_1"
     },
     {
       "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.4 },
-      "model": "tinkers_thinking:item/staff/quartz/blocking_2"
+      "model": "tinkers_thinking:item/tool/staff/quartz/blocking_2"
     },
     {
       "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.7 },
-      "model": "tinkers_thinking:item/staff/quartz/blocking_3"
+      "model": "tinkers_thinking:item/tool/staff/quartz/blocking_3"
     },
     {
       "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 0.9 },
-      "model": "tinkers_thinking:item/staff/quartz/blocking_4"
+      "model": "tinkers_thinking:item/tool/staff/quartz/blocking_4"
     },
     {
       "predicate": { "tconstruct:charging": 2, "tconstruct:charge": 1.0 },
-      "model": "tinkers_thinking:item/staff/quartz/blocking_5"
+      "model": "tinkers_thinking:item/tool/staff/quartz/blocking_5"
     },
    {
       "predicate": { "tconstruct:broken": 1  },
-      "model": "tinkers_thinking:item/broken/quartz_staff"
+      "model": "tinkers_thinking:item/tool/staff/quartz/broken"
     }
   ]
 }
