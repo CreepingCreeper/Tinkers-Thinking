@@ -450,32 +450,27 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(20f)
                         .armor(1.5f,3.0f,4.5f,1.5f)
-                        .toughness(1.5f)
-                        .knockbackResistance(0f),
+                        .toughness(1.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.shroomite,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(33f)
                         .armor(2.5f,4.5f,6.5f,2.5f)
-                        .toughness(0.5f)
-                        .knockbackResistance(0f),
+                        .toughness(0.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.tinkers_bronze,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(17f)
-                        .armor(2.0f,4.0f,6.0f,2.0f)
-                        .toughness(0f)
-                        .knockbackResistance(0f),
+                        .armor(2.0f,4.0f,6.0f,2.0f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.chillslime_cryogel,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(22f)
                         .armor(1,4,6,1)
-                        .toughness(1f)
-                        .knockbackResistance(0f),
+                        .toughness(1f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.electrical_steel,
@@ -491,8 +486,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(24f)
                         .armor(1.5f,3.5f,5.5f,1.5f)
-                        .toughness(1f)
-                        .knockbackResistance(0f),
+                        .toughness(1f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.metherite,
@@ -507,16 +501,13 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(30f)
                         .armor(1.5f,3.5f,5.5f,1.5f)
-                        .toughness(1.5f)
-                        .knockbackResistance(0f),
+                        .toughness(1.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.chlorophyte,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(31f)
-                        .armor(1.5f,3.5f,5.5f,1.5f)
-                        .toughness(0f)
-                        .knockbackResistance(0f),
+                        .armor(1.5f,3.5f,5.5f,1.5f),
                 StatlessMaterialStats.MAILLE);
 
         addMaterialStats(ModMaterialIds.gilded_silky_cloth, StatlessMaterialStats.MAILLE, StatlessMaterialStats.CUIRASS);
@@ -525,7 +516,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(36f)
                         .armor(2, 5, 7, 2)
-                        .toughness(0f)
+                        
                         .knockbackResistance(0.15f),
                 StatlessMaterialStats.MAILLE);
         // tier4
@@ -533,16 +524,15 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(26f)
                         .armor(2,5,7,2)
-                        .toughness(3.5f)
-                        .knockbackResistance(0f),
+                        .toughness(3.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.copshowium,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(24f)
                         .armor(2.5f,5.5f,7.5f,2.5f)
-                        .toughness(1.5f)
-                        .knockbackResistance(0f),
+                        .toughness(1.5f),
+
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.stewium,
@@ -557,7 +547,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(23f)
                         .armor(2.5f,4.5f,6.5f,2.5f)
-                        .toughness(0f)
+                        
                         .knockbackResistance(0.10f),
                 StatlessMaterialStats.MAILLE);
 
@@ -565,15 +555,14 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(30f)
                         .armor(2,5,7,2)
-                        .toughness(1.5f)
-                        .knockbackResistance(0f),
+                        .toughness(1.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.zith,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(31f)
                         .armor(2,5,7,2)
-                        .toughness(0f)
+                        
                         .knockbackResistance(0.15f),
                 StatlessMaterialStats.MAILLE);
 
@@ -581,8 +570,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                 PlatingMaterialStats.builder()
                         .durabilityFactor(60f)
                         .armor(2,5,7,2)
-                        .toughness(2f)
-                        .knockbackResistance(0f),
+                        .toughness(2f),
                 StatlessMaterialStats.MAILLE);
 
         addMaterialStats(ModMaterialIds.soul_vine, StatlessMaterialStats.MAILLE, StatlessMaterialStats.SHIELD_CORE);
@@ -590,9 +578,7 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
         addArmorShieldStats(ModMaterialIds.errorite,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(36f)
-                        .armor(4,7,9,4)
-                        .toughness(0f)
-                        .knockbackResistance(0f),
+                        .armor(4,7,9,4),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.adamantium,
