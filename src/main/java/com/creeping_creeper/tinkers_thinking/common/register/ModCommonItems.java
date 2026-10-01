@@ -123,8 +123,8 @@ public class ModCommonItems extends ModModule {
             () -> new TorchBlock(BlockBehaviour.Properties.of().noCollission().strength(0.6f).lightLevel((p_50886_) -> 10).sound(STONE), ParticleTypes.SOUL_FIRE_FLAME));
     public static final RegistryObject<WallTorchBlock> wall_stone_soul_torch = BLOCKS.registerNoItem("wall_stone_soul_torch",
             () -> new WallTorchBlock(BlockBehaviour.Properties.of().noCollission().strength(0.6f).lightLevel((p_50886_) -> 10).sound(STONE), ParticleTypes.SOUL_FIRE_FLAME));
-    public static final ItemObject<Item> stone_torch_item = ITEMS.register("stone_torch", () -> new StandingAndWallBlockItem(ModCommonItems.ground_stone_torch.get(), ModCommonItems.wall_stone_torch.get(),GENERAL_PROPS, Direction.DOWN));
-    public static final ItemObject<Item> stone_soul_torch_item = ITEMS.register("stone_soul_torch", () -> new StandingAndWallBlockItem(ModCommonItems.ground_stone_soul_torch.get(), ModCommonItems.wall_stone_soul_torch.get(),GENERAL_PROPS, Direction.DOWN));
+    public static final ItemObject<Item> stone_torch_item = ITEMS.register("stone_torch", () -> new StandingAndWallBlockItem(ModCommonItems.ground_stone_torch.get(), ModCommonItems.wall_stone_torch.get(), GENERAL_PROPS, Direction.DOWN));
+    public static final ItemObject<Item> stone_soul_torch_item = ITEMS.register("stone_soul_torch", () -> new StandingAndWallBlockItem(ModCommonItems.ground_stone_soul_torch.get(), ModCommonItems.wall_stone_soul_torch.get(), GENERAL_PROPS, Direction.DOWN));
     public static final ItemObject<LadderBlock> stone_ladder = BLOCKS.register("stone_ladder", () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER).sound(LADDER).strength(0.8f)), GENERAL_BLOCK_ITEM);
     public static final ItemObject<GlassBlock> tempered_glass = BLOCKS.register("tempered_glass", () -> new GlassBlock(BlockBehaviour.Properties.of().mapColor(NONE).strength(10f,1200).requiresCorrectToolForDrops().sound(GLASS).instrument(NoteBlockInstrument.HAT)
             .noOcclusion().isValidSpawn(Blocks::never)

@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data.provider.assets;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModCommonItems;
+import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -55,6 +56,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         pathItem(ModCommonItems.raw_zith, "zith/");
 
         pathItem(ModCommonItems.lightite_compound.get(), "lightite/");
+        pathItem(ModCommonItems.lightite_reinforcement.get(), "lightite/");
         pathItem(ModCommonItems.chlorophyll_a.get(), "chlorophyte/");
         pathItem(ModCommonItems.chlorophyll_b.get(), "chlorophyte/");
         pathItem(ModCommonItems.chlorophyte_compound.get(), "chlorophyte/");
@@ -65,6 +67,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         pathItem(ModCommonItems.chromatic_crystal.get(), "crystal/");
         pathItem(ModCommonItems.magma_crystal.get(), "crystal/");
         pathItem(ModCommonItems.quartz_crystal.get(), "crystal/");
+        pathItem(ModCommonItems.ochre_frogcroaking.get(), "frogcroaking/");
+        pathItem(ModCommonItems.pearlescent_frogcroaking.get(), "frogcroaking/");
+        pathItem(ModCommonItems.verdant_frogcroaking.get(), "frogcroaking/");
 
         basicItem(ModCommonItems.ancient_ceramic.get());
         basicItem(ModCommonItems.ashes.get());
@@ -73,15 +78,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModCommonItems.dusk_chunk.get());
         basicItem(ModCommonItems.gilded_silky_cloth.get());
         basicItem(ModCommonItems.silky_jewel.get());
-        basicItem(ModCommonItems.soul_shard_a.get());
-        basicItem(ModCommonItems.soul_shard_b.get());
-        basicItem(ModCommonItems.stone_ladder.asItem());
+        customItem(ModCommonItems.soul_shard_a.get(), "soul_shard");
+        customItem(ModCommonItems.soul_shard_b.get(), "soul_shard");
+        blockItem(ModCommonItems.stone_ladder.asItem(), "stone_ladder");
         basicItem(ModCommonItems.stone_stick.get());
-        basicItem(ModCommonItems.stone_soul_torch_item.get());
-        basicItem(ModCommonItems.stone_torch_item.get());
+        blockItem(ModCommonItems.stone_soul_torch_item.get(), "stone_soul_torch");
+        blockItem(ModCommonItems.stone_torch_item.get(), "stone_torch");
         basicItem(ModCommonItems.stabilized_gunpowder.get());
         basicItem(ModCommonItems.surging_wellspring.get());
 
+        basicItem(ModToolItems.narrow_blade_cast.get());
+        basicItem(ModToolItems.narrow_blade_cast.getSand());
+        basicItem(ModToolItems.narrow_blade_cast.getRedSand());
     }
 
     @SuppressWarnings("deprecation") // no its not
@@ -104,6 +112,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public ItemModelBuilder customItem(ItemLike item, String texture) {
         return otherItem(id(item), texture);
+    }
+
+    private ItemModelBuilder blockItem(ItemLike item, String texture) {
+        return generated(id(item), "block/" + texture);
     }
 
     protected ItemModelBuilder pathItem(ItemLike item, String path) {

@@ -3,6 +3,7 @@ package com.creeping_creeper.tinkers_thinking.data;
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
 import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModBlockStateProvider;
+import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModItemModelProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModModifierModelMapProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModToolItemModelProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.loot.ModLootTableProvider;
@@ -21,7 +22,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
 
-@Mod.EventBusSubscriber(modid = TinkersThinking.MODID, bus=Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = TinkersThinking.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModProvider {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -33,6 +34,7 @@ public class ModProvider {
         boolean client = event.includeClient();
         // resource pack
         generator.addProvider(client, new ModBlockStateProvider(output, existingFileHelper));
+        generator.addProvider(client, new ModItemModelProvider(output, existingFileHelper));
 
         generator.addProvider(client, new ModToolItemModelProvider(output, existingFileHelper));
         generator.addProvider(client, new ModModifierModelMapProvider(output));
