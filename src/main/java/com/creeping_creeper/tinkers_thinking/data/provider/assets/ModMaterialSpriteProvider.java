@@ -335,7 +335,7 @@ public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .build());
 
         buildMaterial(ModMaterialIds.pearlescent_frogcroaking)
-                .statType(StatlessMaterialStats.BOWSTRING)
+                .statType(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING)
                 .fallbacks("wood")
                 .colorMapper(GreyToColorMapping.builderFromBlack()
                         .addARGB(63,0xFFA37FA4)
@@ -518,6 +518,6 @@ public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
 
     @Override
     public @NotNull String getName() {
-        return "Slime World Materials";
+        return "TiT Materials";
     }
 }
