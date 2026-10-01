@@ -213,7 +213,6 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .attackDamage(1.10f)
                         .build(),
                 StatlessMaterialStats.BINDING);
-        addMaterialStats(ModMaterialIds.ochre_frogcroaking, StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.verdant_frogcroaking,
                 new HeadMaterialStats(425,5.0f, GOLD,2.0f),
                 HandleMaterialStats.multipliers()
@@ -308,7 +307,6 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .attackDamage(1.00f)
                         .build(),
                 StatlessMaterialStats.BINDING);
-        addMaterialStats(ModMaterialIds.soul_vine, StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.colorite,
                 new HeadMaterialStats(1350,4.5f, NETHERITE,3.5f),
                 HandleMaterialStats.multipliers()
@@ -389,6 +387,8 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
         addMaterialStats(ModMaterialIds.ochre_frogcroaking,
                 new LimbMaterialStats(485,0.05f,0.05f,-0.05f),
                 new GripMaterialStats(-0.05f,0.05f,2.0f));
+        addMaterialStats(ModMaterialIds.pearlescent_frogcroaking, StatlessMaterialStats.BOWSTRING);
+
 
         // tier4
         addMaterialStats(ModMaterialIds.copshowium,

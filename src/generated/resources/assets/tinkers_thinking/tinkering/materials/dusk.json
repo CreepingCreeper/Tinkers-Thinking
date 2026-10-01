@@ -9,6 +9,7 @@
       "tconstruct:handle",
       "tconstruct:binding",
       "tconstruct:repair_kit",
+      "tconstruct:arrow_head",
       "tconstruct:shield_core"
     ],
     "transformer": {

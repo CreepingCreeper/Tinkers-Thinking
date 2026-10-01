@@ -49,7 +49,7 @@ public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
 
         // tier 2
         buildMaterial(ModMaterialIds.dusk)
-                .meleeHarvest().shieldCore()
+                .meleeHarvest().arrowHead().shieldCore()
                 .fallbacks("slime_wood")
                 .colorMapper(GreyToColorMapping.builderFromBlack()
                         .addARGB(63,0xFF1C007F)

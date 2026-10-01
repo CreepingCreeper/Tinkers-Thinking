@@ -5,6 +5,7 @@
   ],
   "generator": {
     "supported_stats": [
+      "tconstruct:binding",
       "tconstruct:bowstring"
     ],
     "transformer": {
