@@ -1,0 +1,26 @@
+{
+  "color": "FFD4BFC8",
+  "fallbacks": [
+    "wood"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:bowstring"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": {
+          "000": "FF000000",
+          "063": "FFA37FA4",
+          "102": "FFC2A4C3",
+          "140": "FFC4A8B4",
+          "178": "FFD4BFC8",
+          "216": "FFE2D3D3",
+          "255": "FFEFE6E1"
+        }
+      }
+    }
+  }
+}

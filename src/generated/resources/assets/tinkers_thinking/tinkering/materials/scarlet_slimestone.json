@@ -1,0 +1,31 @@
+{
+  "color": "FFA52548",
+  "fallbacks": [
+    "slime_wood",
+    "crystal"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:head",
+      "tconstruct:handle",
+      "tconstruct:binding",
+      "tconstruct:repair_kit"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": {
+          "000": "FF000000",
+          "063": "FF1D070A",
+          "102": "FF41141E",
+          "140": "FF56212C",
+          "178": "FFA52548",
+          "216": "FFED494E",
+          "255": "FFF27D81"
+        }
+      }
+    }
+  },
+  "luminosity": 5
+}

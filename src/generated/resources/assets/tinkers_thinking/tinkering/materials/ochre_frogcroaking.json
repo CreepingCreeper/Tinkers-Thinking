@@ -1,0 +1,29 @@
+{
+  "color": "FFF7DF92",
+  "fallbacks": [
+    "wood"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:limb",
+      "tconstruct:grip",
+      "tconstruct:repair_kit"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": {
+          "000": "FF000000",
+          "063": "FFD9AC46",
+          "102": "FFD9B86E",
+          "140": "FFF5DC98",
+          "178": "FFE9CE86",
+          "216": "FFF7DF92",
+          "255": "FFFAEFB2"
+        }
+      }
+    }
+  },
+  "luminosity": 4
+}

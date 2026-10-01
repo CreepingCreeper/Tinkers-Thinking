@@ -1,0 +1,34 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:reverse"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_thinking:retransit"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:reverse"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_thinking:rederangement"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:reverse"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_thinking:rederangement"
+      }
+    ]
+  }
+}

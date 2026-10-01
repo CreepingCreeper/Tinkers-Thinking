@@ -1,0 +1,29 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:countermeasures"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:cutting"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:impact"
+      }
+    ],
+    "tinkers_ingenuity:curio": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:cutting_curio",
+        "optional": true
+      }
+    ]
+  }
+}

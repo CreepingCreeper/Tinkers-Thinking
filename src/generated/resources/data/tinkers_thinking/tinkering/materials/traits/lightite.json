@@ -1,0 +1,29 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:hurried"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:lightly_attack"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:lightly_attack"
+      }
+    ],
+    "tinkers_ingenuity:curio": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:lightly_speed_curio",
+        "optional": true
+      }
+    ]
+  }
+}

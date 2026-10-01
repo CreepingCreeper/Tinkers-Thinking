@@ -1,0 +1,27 @@
+{
+  "color": "FF7CCC35",
+  "fallbacks": [
+    "cloth"
+  ],
+  "generator": {
+    "supported_stats": [
+      "tconstruct:arrow_shaft"
+    ],
+    "transformer": {
+      "type": "tconstruct:recolor_sprite",
+      "color_mapping": {
+        "type": "tconstruct:grey_to_color",
+        "palette": {
+          "000": "FF000000",
+          "063": "FF2A4C0D",
+          "102": "FFB4183A",
+          "140": "FFB4183A",
+          "178": "FF60A028",
+          "216": "FF7CCC35",
+          "255": "FF97F544"
+        }
+      }
+    }
+  },
+  "luminosity": 5
+}

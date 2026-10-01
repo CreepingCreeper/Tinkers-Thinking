@@ -1,0 +1,30 @@
+{
+  "perStat": {
+    "tconstruct:ammo": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:fronzen"
+      }
+    ],
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:overslime"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:overfreeze"
+      },
+      {
+        "level": 1,
+        "name": "tconstruct:overslime"
+      }
+    ]
+  }
+}

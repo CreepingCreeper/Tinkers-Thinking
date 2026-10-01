@@ -1,0 +1,26 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_thinking:sculk_catalyse"
+    },
+    {
+      "level": 1,
+      "name": "tinkers_thinking:sculk_boost"
+    }
+  ],
+  "perStat": {
+    "tinkers_ingenuity:curio": [
+      {
+        "level": 1,
+        "name": "tinkers_thinking:sculk_catalyse_curio",
+        "optional": true
+      },
+      {
+        "level": 1,
+        "name": "tinkers_thinking:sculk_heal",
+        "optional": true
+      }
+    ]
+  }
+}
