@@ -4,7 +4,7 @@
   "textures": {
     "limb": "tinkers_thinking:item/tool/repeating_crossbow/limb",
     "body": "tinkers_thinking:item/tool/repeating_crossbow/body",
-    "bowstring": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_1_broken"
+    "bowstring": "tinkers_thinking:item/tool/repeating_crossbow/bowstring_broken"
   },
   "modifier_maps": [
     "tinkers_thinking:repeating_crossbow/broken",

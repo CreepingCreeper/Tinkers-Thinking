@@ -2,10 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
-import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModBlockStateProvider;
-import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModItemModelProvider;
-import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModModifierModelMapProvider;
-import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModToolItemModelProvider;
+import com.creeping_creeper.tinkers_thinking.data.provider.assets.*;
 import com.creeping_creeper.tinkers_thinking.data.provider.loot.ModLootTableProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.tag.*;
 import com.creeping_creeper.tinkers_thinking.data.provider.tinkering.ModMaterialProvider;
@@ -19,6 +16,10 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import slimeknights.tconstruct.library.client.data.material.GeneratorPartTextureJsonGenerator;
+import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
+import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -38,7 +39,14 @@ public class ModProvider {
 
         generator.addProvider(client, new ModToolItemModelProvider(output, existingFileHelper));
         generator.addProvider(client, new ModModifierModelMapProvider(output));
-
+        TinkerPartSpriteProvider ticPartSprites = new TinkerPartSpriteProvider();
+        TinkerMaterialSpriteProvider ticMaterialSprites = new TinkerMaterialSpriteProvider();
+        ModPartSpriteProvider modPartSprites = new ModPartSpriteProvider();
+        ModMaterialSpriteProvider modMaterialSprites = new ModMaterialSpriteProvider();
+        generator.addProvider(client, new ModMaterialRenderInfoProvider(output, modMaterialSprites, existingFileHelper));
+        generator.addProvider(client, new GeneratorPartTextureJsonGenerator(output, TinkersThinking.MODID, modPartSprites));
+        generator.addProvider(client, new MaterialPartTextureGenerator(output, existingFileHelper, ticPartSprites, modMaterialSprites));
+        generator.addProvider(client, new MaterialPartTextureGenerator(output, existingFileHelper, modPartSprites, ticMaterialSprites, modMaterialSprites));
         // data pack
         // tag
         ModBlockTagsProvider blockTags = new ModBlockTagsProvider(output, lookupProvider, existingFileHelper);

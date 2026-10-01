@@ -85,7 +85,7 @@ public class ModModifierIds {
     // durability
     public static final ModifierId SculkCatalyse = id("sculk_catalyse");
     public static final ModifierId Reverse = id("reverse");
-    public static final ModifierId DepositionModule = id("deposition");
+    public static final ModifierId Deposition = id("deposition");
     public static final ModifierId Duritae = id("duritae");
     public static final ModifierId Overeat = id("overeat");
     public static final ModifierId Durable = id("durable");

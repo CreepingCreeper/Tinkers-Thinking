@@ -399,7 +399,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.TeleportAdvanced).addModule(new TeleportAdvancedModule(LevelingInt.eachLevel(300)));
 
         // durability
-        buildModifier(ModModifierIds.DepositionModule).addModule(new DepositionModule(0.8f));
+        buildModifier(ModModifierIds.Deposition).addModule(new DepositionModule(0.8f));
         buildModifier(ModModifierIds.Durable).addModule(new DurableModule(0.9f));
         buildModifier(ModModifierIds.Duritae).addModule(DuritaeModule.INSTANCE);
         buildModifier(ModModifierIds.Overcharge).addModule(new OverchargeModule(100, 200));

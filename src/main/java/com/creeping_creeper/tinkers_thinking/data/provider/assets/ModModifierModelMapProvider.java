@@ -68,9 +68,9 @@ public class ModModifierModelMapProvider extends AbstractModifierModelMapProvide
                        ModifierIds.emerald
                 );
         for (int i = 1; i < 4; i++){
-            tool(ModToolItems.repeating_crossbow, "/" + i).basic("_" + i, ModifierIds.quickCharge);
+            tool(ModToolItems.repeating_crossbow, "/" + i).smallFolder(crossbowSmall).basic("_" + i, ModifierIds.quickCharge);
         }
-        tool(ModToolItems.repeating_crossbow, "/broken").basic("_broken", ModifierIds.quickCharge);
+        tool(ModToolItems.repeating_crossbow, "/broken").smallFolder(crossbowSmall).basic("_broken", ModifierIds.quickCharge);
     }
 
     @Override
