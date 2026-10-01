@@ -2,6 +2,7 @@ package com.creeping_creeper.tinkers_thinking.data;
 
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.data.provider.SmelteryRecipe;
+import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModBlockStateProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModModifierModelMapProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.assets.ModToolItemModelProvider;
 import com.creeping_creeper.tinkers_thinking.data.provider.loot.ModLootTableProvider;
@@ -31,6 +32,8 @@ public class ModProvider {
         boolean server = event.includeServer();
         boolean client = event.includeClient();
         // resource pack
+        generator.addProvider(client, new ModBlockStateProvider(output, existingFileHelper));
+
         generator.addProvider(client, new ModToolItemModelProvider(output, existingFileHelper));
         generator.addProvider(client, new ModModifierModelMapProvider(output));
 

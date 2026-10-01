@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tinkers_thinking:block/ardite_top",
+    "side": "tinkers_thinking:block/ardite"
+  }
+}
