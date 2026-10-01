@@ -49,7 +49,7 @@ public class ModMaterialProvider extends AbstractMaterialDataProvider {
         // tier 4
         material(ModMaterialIds.ancient_ceramic).tier(4).sort(2);
         material(ModMaterialIds.scarlet_slimestone).tier(4).sort(2).craftable();
-        // copshowium 带条件判断，不适用简单builder
+        material(ModMaterialIds.copshowium).tier(4).sort(2).craftable().compatAlloy("copshowium");
         material(ModMaterialIds.stewium).tier(4).sort(10);
         material(ModMaterialIds.burnt_ashes).tier(4).sort(12);
         material(ModMaterialIds.solidified_emptiness).tier(4).sort(12);

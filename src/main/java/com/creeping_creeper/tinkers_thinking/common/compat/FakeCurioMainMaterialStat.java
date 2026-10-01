@@ -35,11 +35,6 @@ public record FakeCurioMainMaterialStat(float curio_movement_speed, float curio_
     }
 
     @Override
-    public MaterialStatsId getIdentifier() {
-        return ID;
-    }
-
-    @Override
     public void apply(ModifierStatsBuilder builder, float scale) {
 
     }

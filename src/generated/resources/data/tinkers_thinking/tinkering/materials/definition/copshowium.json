@@ -1,0 +1,32 @@
+{
+  "condition": {
+    "type": "forge:or",
+    "values": [
+      {
+        "type": "tconstruct:config",
+        "prop": "force_integration_materials"
+      },
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/copshowium"
+      },
+      {
+        "type": "forge:and",
+        "values": [
+          {
+            "type": "tconstruct:config",
+            "prop": "allow_ingotless_alloys"
+          },
+          {
+            "type": "mantle:tag_filled",
+            "tag": "forge:ingots/copshowium"
+          }
+        ]
+      }
+    ]
+  },
+  "craftable": true,
+  "hidden": false,
+  "sortOrder": 2,
+  "tier": 4
+}
