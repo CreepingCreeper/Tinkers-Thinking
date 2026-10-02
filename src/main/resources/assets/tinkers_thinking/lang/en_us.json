@@ -1,6 +1,7 @@
  {
   "itemGroup.tinkers_thinking.common": "Tinkers' Thinking's Common Items",
   "itemGroup.tinkers_thinking.tool": "Tinkers' Thinking's Tools",
+
   "item.tinkers_thinking.life_fruit": "Life Fruit",
   "item.tinkers_thinking.beef_jerky": "Beef Jerky",
   "item.tinkers_thinking.pork_jerky": "Pork Jerky",
@@ -304,11 +305,6 @@
   "item.tinkers_thinking.narrow_blade_sand_cast": "Narrow Blade Sand Cast",
   "item.tinkers_thinking.narrow_blade_red_sand_cast": "Narrow Blade Red Sand Cast",
   "item.tinkers_thinking.narrow_blade_cast": "Narrow Blade Gold Cast",
-  "pattern.tinkers_thinking.guard": "护手",
-  "item.tinkers_thinking.guard": "护手",
-  "item.tinkers_thinking.guard_sand_cast": "护手沙子铸模",
-  "item.tinkers_thinking.guard_red_sand_cast": "护手红沙铸模",
-  "item.tinkers_thinking.guard_cast": "护手金质铸模",
 
   "item.tinkers_thinking.paxel": "Paxel",
   "item.tinkers_thinking.paxel.description": "Paxel is a versatile mining tool. It is suitable for almost all kinds of blocks, but excels at breaking rocks and logs.\n The villagers must dislike this.",
@@ -667,6 +663,7 @@
   "modifier.tinkers_thinking.sculk_boost": "Sculk Boost",
   "modifier.tinkers_thinking.sculk_boost.flavor": "A good grounding ensures success in what one does",
   "modifier.tinkers_thinking.sculk_boost.description": "When under the Sculk Power effect, boosts mining speed, draw speed or armor toughness of all armors",
+  "modifier.tinkers_thinking.sculk_boost.mining_speed": "Sculk Boost Mining Speed",
   "modifier.tinkers_thinking.sculk_heal": "Sculk Heal",
   "modifier.tinkers_thinking.sculk_heal.flavor": "Protracted Battle!",
   "modifier.tinkers_thinking.sculk_heal.description": "When under the Sculk Power effect, continuously restores health",
@@ -730,8 +727,7 @@
 
   "modifier.tinkers_thinking.sculk_breed": "Sculk Breed",
   "modifier.tinkers_thinking.sculk_breed.flavor": "Grow through pain",
-  "modifier.tinkers_thinking.sculk_breed.description": "When under the Sculk Power effect, maximum health is temporarily increased based on the damage taken",
-  "modifier.tinkers_thinking.sculk_breed.boost": "Breed Max Health",
+  "modifier.tinkers_thinking.sculk_breed.description": "When under the Sculk Power effect, temporarily increase maximum health",
 
   "modifier.tinkers_thinking.sculk_dash": "Sculk Dash",
   "modifier.tinkers_thinking.sculk_dash.flavor": "You're next",

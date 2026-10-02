@@ -305,11 +305,6 @@
   "item.tinkers_thinking.narrow_blade_sand_cast": "窄刃沙子铸模",
   "item.tinkers_thinking.narrow_blade_red_sand_cast": "窄刃红沙铸模",
   "item.tinkers_thinking.narrow_blade_cast": "窄刃金质铸模",
-  "pattern.tinkers_thinking.guard": "护手",
-  "item.tinkers_thinking.guard": "护手",
-  "item.tinkers_thinking.guard_sand_cast": "护手沙子铸模",
-  "item.tinkers_thinking.guard_red_sand_cast": "护手红沙铸模",
-  "item.tinkers_thinking.guard_cast": "护手金质铸模",
 
   "item.tinkers_thinking.paxel": "镐尖斧",
   "item.tinkers_thinking.paxel.description": "镐尖斧是一种多功能采掘工具，适用于挖掘各种方块，但对岩石和木头效果最好。\n村民肯定不喜欢这个。",
@@ -668,6 +663,7 @@
   "modifier.tinkers_thinking.sculk_boost": "幽匿激发",
   "modifier.tinkers_thinking.sculk_boost.flavor": "厚积薄发",
   "modifier.tinkers_thinking.sculk_boost.description": "拥有幽匿能量效果时提升挖掘速度、拉弓速度或所有盔甲的盔甲韧性",
+  "modifier.tinkers_thinking.sculk_boost.mining_speed": "幽匿激发挖掘速度",
   "modifier.tinkers_thinking.sculk_heal": "幽匿治愈",
   "modifier.tinkers_thinking.sculk_heal.flavor": "持久战！",
   "modifier.tinkers_thinking.sculk_heal.description": "拥有幽匿能量效果时持续恢复生命值",
@@ -731,8 +727,7 @@
 
   "modifier.tinkers_thinking.sculk_breed": "幽匿滋生",
   "modifier.tinkers_thinking.sculk_breed.flavor": "在伤痛中成长",
-  "modifier.tinkers_thinking.sculk_breed.description": "拥有幽匿能量效果时，根据期间受到过最大的单次伤害值的一半暂时提升生命上限",
-  "modifier.tinkers_thinking.sculk_breed.boost": "滋生生命上限",
+  "modifier.tinkers_thinking.sculk_breed.description": "拥有幽匿能量效果时，暂时提升生命上限",
 
   "modifier.tinkers_thinking.sculk_dash": "幽匿连破",
   "modifier.tinkers_thinking.sculk_dash.flavor": "你就是下一个",
