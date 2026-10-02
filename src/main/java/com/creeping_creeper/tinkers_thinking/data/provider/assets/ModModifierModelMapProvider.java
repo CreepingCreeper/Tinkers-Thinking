@@ -17,10 +17,10 @@ public class ModModifierModelMapProvider extends AbstractModifierModelMapProvide
     @Override
     protected void addModels() {
         // small
-        ResourceLocation pickaxeModifier = TConstruct.getResource("pickaxe/modifiers/");
+        ResourceLocation axeModifier = TConstruct.getResource("axe/modifiers/");
         tool(ModToolItems.paxel)
-                // shared with pickaxe
-                .smallFolder(pickaxeModifier)
+                // shared with axe
+                .smallFolder(axeModifier)
                 .basic(
                         ModifierIds.diamond, ModifierIds.emerald, ModifierIds.netherite,
                         ModifierIds.reinforced, ModifierIds.overforced, ModifierIds.magnetic, ModifierIds.soulbound,

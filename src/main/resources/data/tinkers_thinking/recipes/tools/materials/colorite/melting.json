@@ -2,7 +2,7 @@
   "type": "tconstruct:material_melting",
   "byproducts": [
     {
-      "tag": "tconstruct:molten_zith",
+      "tag": "tinkers_thinking:molten_zith",
       "amount": 90
     }
   ],
