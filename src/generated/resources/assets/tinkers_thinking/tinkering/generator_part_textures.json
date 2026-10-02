@@ -17,6 +17,14 @@
       "stat_type": "tconstruct:grip"
     },
     {
+      "path": "tinkers_thinking:item/tool/atlatl/bowstring",
+      "stat_type": "tconstruct:bowstring"
+    },
+    {
+      "path": "tinkers_thinking:item/tool/atlatl/bowstring_broken",
+      "stat_type": "tconstruct:bowstring"
+    },
+    {
       "path": "tinkers_thinking:item/tool/atlatl/large/limb",
       "stat_type": "tconstruct:limb"
     },
@@ -27,6 +35,14 @@
     {
       "path": "tinkers_thinking:item/tool/atlatl/large/grip_bottom",
       "stat_type": "tconstruct:grip"
+    },
+    {
+      "path": "tinkers_thinking:item/tool/atlatl/large/bowstring",
+      "stat_type": "tconstruct:bowstring"
+    },
+    {
+      "path": "tinkers_thinking:item/tool/atlatl/large/bowstring_broken",
+      "stat_type": "tconstruct:bowstring"
     },
     {
       "path": "tinkers_thinking:item/tool/cutlass/blade",

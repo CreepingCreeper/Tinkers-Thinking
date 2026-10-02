@@ -15,7 +15,7 @@ public class ModPartSpriteProvider extends AbstractPartSpriteProvider {
     protected void addAllSpites() {
         addHead("narrow_blade");
         buildTool("atlatl").withLarge()
-                .addLimb("limb").addGrip("grip_top").addGrip("grip_bottom");
+                .addLimb("limb").addGrip("grip_top").addGrip("grip_bottom").addBreakableBowstring("bowstring");
         buildTool("cutlass").addBreakableHead("blade").addPart("binding", StatlessMaterialStats.SHIELD_CORE).addHandle("handle");
         buildTool("paxel").addBreakableHead("head").addBreakableHead("axe");
         buildTool("knife").addBreakableHead("blade_left").addBreakableHead("blade_right").addHandle("handle");
