@@ -5,43 +5,43 @@
       "stat_type": "tconstruct:head"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/limb",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/limb",
       "stat_type": "tconstruct:limb"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/grip_top",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/grip_top",
       "stat_type": "tconstruct:grip"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/grip_bottom",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/grip_bottom",
       "stat_type": "tconstruct:grip"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/bowstring",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/bowstring",
       "stat_type": "tconstruct:bowstring"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/bowstring_broken",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/bowstring_broken",
       "stat_type": "tconstruct:bowstring"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/large/limb",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/large/limb",
       "stat_type": "tconstruct:limb"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/large/grip_top",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/large/grip_top",
       "stat_type": "tconstruct:grip"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/large/grip_bottom",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/large/grip_bottom",
       "stat_type": "tconstruct:grip"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/large/bowstring",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/large/bowstring",
       "stat_type": "tconstruct:bowstring"
     },
     {
-      "path": "tinkers_thinking:item/tool/atlatl/large/bowstring_broken",
+      "path": "tinkers_thinking:item/tool/arrow_thrower/large/bowstring_broken",
       "stat_type": "tconstruct:bowstring"
     },
     {
