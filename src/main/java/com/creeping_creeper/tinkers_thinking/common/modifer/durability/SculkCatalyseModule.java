@@ -49,8 +49,9 @@ public enum SculkCatalyseModule implements ModifierModule, ToolDamageModifierHoo
     }
 
     @Override
+    @Nullable
     public Boolean showDurabilityBar(IToolStackView tool, ModifierEntry modifier) {
-        return !ModifierUtils.reverse(tool, modifier);
+        return ModifierUtils.reverse(tool, modifier) ? null : true;
     }
 
     @Override
