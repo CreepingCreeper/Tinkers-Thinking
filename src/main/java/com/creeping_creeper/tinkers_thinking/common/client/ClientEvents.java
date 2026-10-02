@@ -3,15 +3,19 @@ package com.creeping_creeper.tinkers_thinking.common.client;
 import com.creeping_creeper.tinkers_thinking.TinkersThinking;
 import com.creeping_creeper.tinkers_thinking.common.register.ModToolItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.font.FontManager;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import slimeknights.tconstruct.library.client.model.TinkerItemProperties;
+
+import static slimeknights.tconstruct.library.client.model.tools.ToolModel.registerItemColors;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -38,7 +42,22 @@ public class ClientEvents {
         });
         ModBooks.FANTASTIC_GADGETRY.fontRenderer = unicodeFontRender();
     }
-    private static Font unicodeRenderer;
+
+    @SubscribeEvent
+    static void itemColors(RegisterColorHandlersEvent.Item event) {
+        final ItemColors colors = event.getItemColors();
+        registerItemColors(colors, ModToolItems.paxel);
+        registerItemColors(colors, ModToolItems.knife);
+        registerItemColors(colors, ModToolItems.mace);
+        registerItemColors(colors, ModToolItems.cutlass);
+        registerItemColors(colors, ModToolItems.atlatl);
+        registerItemColors(colors, ModToolItems.magma_staff);
+        registerItemColors(colors, ModToolItems.quartz_staff);
+        registerItemColors(colors, ModToolItems.clay_staff);
+        registerItemColors(colors, ModToolItems.repeating_crossbow);
+    }
+
+        private static Font unicodeRenderer;
     public static Font unicodeFontRender() {
         if (unicodeRenderer == null)
             unicodeRenderer = new Font(rl -> {

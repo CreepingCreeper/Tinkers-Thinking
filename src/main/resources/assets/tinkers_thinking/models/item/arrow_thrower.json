@@ -10,7 +10,7 @@
     "large_grip_top":         "tinkers_thinking:item/tool/arrow_thrower/large/grip_top",
     "large_grip_bottom":      "tinkers_thinking:item/tool/arrow_thrower/large/grip_bottom",
     "large_limb":             "tinkers_thinking:item/tool/arrow_thrower/large/limb",
-    "large_bowstring":             "tinkers_thinking:item/tool/arrow_thrower/large/bowstring" },
+    "large_bowstring":        "tinkers_thinking:item/tool/arrow_thrower/large/bowstring" },
   "parts": [
     { "name": "grip_top", "index": 0 },
     { "name": "grip_bottom",    "index": 2 },
@@ -21,11 +21,11 @@
   "large_offset": [-8, 4],
   "overrides": [
     {
-      "predicate": { "tconstruct:charging": 1, "tconstruct:charge": 1.0 },
+      "predicate": { "tconstruct:charging": 1 },
       "model": "tinkers_thinking:item/tool/arrow_thrower/pulling"
     },
     {
-      "predicate": { "tconstruct:charging": 2},
+      "predicate": { "tconstruct:charging": 2 },
       "model": "tinkers_thinking:item/tool/arrow_thrower/blocking"
     },
     {

@@ -1,15 +1,15 @@
 {
   "loader": "tconstruct:tool",
   "textures": {
-    "grip_top":         "tinkers_thinking:item/tool/atlatl/grip_top",
-    "grip_bottom":      "tinkers_thinking:item/tool/atlatl/grip_bottom",
-    "limb":             "tinkers_thinking:item/tool/atlatl/limb",
-    "bowstring":             "tinkers_thinking:item/tool/atlatl/bowstring",
+    "grip_top":         "tinkers_thinking:item/tool/arrow_thrower/grip_top",
+    "grip_bottom":      "tinkers_thinking:item/tool/arrow_thrower/grip_bottom",
+    "limb":             "tinkers_thinking:item/tool/arrow_thrower/limb",
+    "bowstring":             "tinkers_thinking:item/tool/arrow_thrower/bowstring",
 
-    "large_grip_top":         "tinkers_thinking:item/tool/atlatl/large/grip_top",
-    "large_grip_bottom":      "tinkers_thinking:item/tool/atlatl/large/grip_bottom",
-    "large_limb":             "tinkers_thinking:item/tool/atlatl/large/limb",
-    "large_bowstring":             "tinkers_thinking:item/tool/atlatl/large/bowstring" },
+    "large_grip_top":         "tinkers_thinking:item/tool/arrow_thrower/large/grip_top",
+    "large_grip_bottom":      "tinkers_thinking:item/tool/arrow_thrower/large/grip_bottom",
+    "large_limb":             "tinkers_thinking:item/tool/arrow_thrower/large/limb",
+    "large_bowstring":             "tinkers_thinking:item/tool/arrow_thrower/large/bowstring" },
   "parts": [
     { "name": "grip_top", "index": 0 },
     { "name": "grip_bottom",    "index": 2 },
