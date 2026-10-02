@@ -42,7 +42,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         //basicBlock(ModCommonItems.ground_stone_soul_torch.get());
         //basicBlock(ModCommonItems.wall_stone_soul_torch.get());
         basicBlock(ModCommonItems.echo_bronze.get());
-        horizontalBlock(ModCommonItems.waste_fluid_cylinder.get(), TinkersThinking.getResource("block/waste_fluid_cylinder/side"), TinkersThinking.getResource("block/waste_fluid_cylinder/front"), TinkersThinking.getResource("block/waste_fluid_cylinder/top"));
+
+        ModelFile waste_fluid_cylinder = models().orientable(name(ModCommonItems.waste_fluid_cylinder.get()), TinkersThinking.getResource("block/waste_fluid_cylinder/side"), TinkersThinking.getResource("block/waste_fluid_cylinder/front"), TinkersThinking.getResource("block/waste_fluid_cylinder/top"));
+        horizontalBlock(ModCommonItems.waste_fluid_cylinder.get(), waste_fluid_cylinder);
+        simpleBlockItem(ModCommonItems.waste_fluid_cylinder.get(), waste_fluid_cylinder);
         basicBlock(ModCommonItems.warden_steel.get());
         //basicBlock(ModCommonItems.soul_vine.get());
         //basicBlock(ModCommonItems.bound_chain.get());
