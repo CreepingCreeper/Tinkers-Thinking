@@ -61,7 +61,6 @@ public class ModModifiers{
             ModifierModule.LOADER.register(getResource("shadowing"), ShadowingModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_protection"), SculkProtectionModule.LOADER);
             ModifierModule.LOADER.register(getResource("spiky"), SpikyModule.LOADER);
-            ModifierModule.LOADER.register(getResource("sculk_breed"), SculkBreedModule.LOADER);
             ModifierModule.LOADER.register(getResource("crimson"), CrimsonModule.LOADER);
             ModifierModule.LOADER.register(getResource("magic_transform"), MagicTransformModule.LOADER);
             ModifierModule.LOADER.register(getResource("sculk_siphon"), SculkSiphonModule.LOADER);

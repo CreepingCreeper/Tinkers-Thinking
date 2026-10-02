@@ -1,3 +1,9 @@
 {
-  "level_display": "tconstruct:default"
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_thinking:shadowing",
+      "each_level": 0.5
+    }
+  ]
 }

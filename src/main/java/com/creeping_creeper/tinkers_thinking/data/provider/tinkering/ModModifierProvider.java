@@ -245,7 +245,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .variable(VALUE).multiply()
                         .build())
                 .addModule(AttributeModule.builder(Attributes.ARMOR_TOUGHNESS, AttributeModifier.Operation.MULTIPLY_BASE)
-                        .tooltipStyle(AttributeModule.TooltipStyle.PERCENT).toolTag(TinkerTags.Items.WORN_ARMOR)
+                        .tooltipStyle(AttributeModule.TooltipStyle.PERCENT)
                         .tool(ToolStackPredicate.and(ToolStackPredicate.tag(TinkerTags.Items.ARMOR), ToolVariableRangePredicate.min(catalyse, 1, false)))
                         .eachLevel(0.2f));
 
@@ -379,10 +379,13 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.Retransit).addModule(new RetransitModule(new LevelingInt(240, -20)))
                 .addModule(new ArmorLevelModule(ModDataKeys.Retransit, false, TinkerTags.Items.HELD))
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY, AttributeModifier.Operation.MULTIPLY_TOTAL).tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(-0.1f));
-        buildModifier(ModModifierIds.SculkBreed);
+        buildModifier(ModModifierIds.SculkBreed).addModule(AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.MULTIPLY_BASE)
+                .tooltipStyle(AttributeModule.TooltipStyle.PERCENT)
+                .tool(ToolStackPredicate.and(ToolStackPredicate.tag(TinkerTags.Items.ARMOR), ToolVariableRangePredicate.min(catalyse, 1, false)))
+                .eachLevel(0.2f));
         buildModifier(ModModifierIds.SculkProtection).addModule(new SculkProtectionModule(LevelingValue.ZERO));
         buildModifier(ModModifierIds.SculkSiphon).addModule(new SculkSiphonModule(0.2f));
-        buildModifier(ModModifierIds.Shadowing);
+        buildModifier(ModModifierIds.Shadowing).addModule(new ShadowingModule(LevelingValue.eachLevel(0.5f)));
 
         MobEffectModule.Builder spikyBuilder = MobEffectModule.builder(ModEffects.modifier_immune.get()).time(RandomLevelingValue.flat(60))
                 .target(new HasMobEffectPredicate(ModEffects.modifier_immune.get()).inverted());
