@@ -4,6 +4,7 @@ import com.creeping_creeper.tinkers_thinking.data.ModMaterialIds;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
 public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
@@ -514,6 +515,18 @@ public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .addARGB(216, 0xFFB80000)
                         .addARGB(255, 0xFFE82323)
                         .build());
+
+        // overwrite
+        buildMaterial(MaterialIds.paper)
+                .statType(StatlessMaterialStats.BINDING, StatlessMaterialStats.BOWSTRING)
+                .cuirass().maille().shieldCore().laces()
+                .fallbacks("primitive")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF878787).addARGB(102, 0xFFAEAEAE).addARGB(140, 0xFFC1C1C1).addARGB(178, 0xFFD6D6D6).addARGB(216, 0xFFE9EAEB).addARGB(255, 0xFFFCFCF2).build());
+        buildMaterial(MaterialIds.gold)
+                .meleeHarvest().ranged()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF752802).addARGB(102, 0xFFB26411).addARGB(140, 0xFFE9B115).addARGB(178, 0xFFFAD64A).addARGB(216, 0xFFFDF55F).addARGB(255, 0xFFFFFDE0).build());
+
     }
 
     @Override

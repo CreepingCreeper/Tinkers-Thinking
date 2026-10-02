@@ -15,6 +15,14 @@ public class ModModifierTagsProvider extends AbstractModifierTagProvider {
 
     @Override
     protected void addTags() {
+        tag(TinkerTags.Modifiers.INTERACTION_ABILITIES).add(ModModifierIds.Sprinting);
+        tag(TinkerTags.Modifiers.MELEE_ABILITIES).addOptional(ModModifierIds.Backstabbing);
+        tag(TinkerTags.Modifiers.EXTRACT_SLOTLESS_BLACKLIST).addOptional(ModModifierIds.Backstabbing);
+        tag(TinkerTags.Modifiers.BONUS_SLOTLESS).add(ModModifierIds.Repayed, ModModifierIds.Withernic);
+        tag(TinkerTags.Modifiers.GENERAL_UPGRADES).add(ModModifierIds.LightlySpeed);
+        tag(TinkerTags.Modifiers.GENERAL_ARMOR_UPGRADES).add(ModModifierIds.Broad);
+
+
         tag(TinkerTags.Modifiers.BLOCK_WHILE_CHARGING).add(ModModifierIds.Sprinting);
         tag(TinkerTags.Modifiers.CHARGE_EMPTY_BOW_WITH_DRAWTIME).add(ModModifierIds.Sprinting);
         tag(TinkerTags.Modifiers.DRILL_ATTACKS).add(ModModifierIds.Sprinting);
