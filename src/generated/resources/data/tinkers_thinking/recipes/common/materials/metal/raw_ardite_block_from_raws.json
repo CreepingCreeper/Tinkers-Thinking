@@ -4,7 +4,7 @@
   "group": "tinkers_thinking:raw_ardite_block",
   "key": {
     "#": {
-      "tag": "forge:raw_ardite"
+      "tag": "forge:raw_materials/ardite"
     },
     "*": {
       "item": "tinkers_thinking:raw_ardite"

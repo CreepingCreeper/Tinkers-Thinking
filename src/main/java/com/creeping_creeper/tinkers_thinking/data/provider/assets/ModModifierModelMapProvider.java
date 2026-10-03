@@ -17,7 +17,7 @@ public class ModModifierModelMapProvider extends AbstractModifierModelMapProvide
     @Override
     protected void addModels() {
         // small
-        ResourceLocation axeModifier = TConstruct.getResource("axe/modifiers/");
+        ResourceLocation axeModifier = TConstruct.getResource("hand_axe/modifiers/");
         tool(ModToolItems.paxel)
                 // shared with axe
                 .smallFolder(axeModifier)

@@ -16,11 +16,11 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> STONE_ROD = common("rods/stone");
         public static final TagKey<Item> ARDITE_ORE = common("ores/ardite");
-        public static final TagKey<Item> RAW_ARDITE = common("raw_ardite");
+        public static final TagKey<Item> RAW_ARDITE = common("raw_materials/ardite");
         public static final TagKey<Item> RAW_ARDITE_BLOCK = common("storage_blocks/raw_ardite");
         public static final TagKey<Item> CHLOROPHYLL_ORE = common("ores/chlorophyll");
-        public static final TagKey<Item> ZITH_ORE = common("ores/ith");
-        public static final TagKey<Item> RAW_ZITH = common("raw_zith");
+        public static final TagKey<Item> ZITH_ORE = common("ores/zith");
+        public static final TagKey<Item> RAW_ZITH = common("raw_materials/raw_zith");
         public static final TagKey<Item> RAW_ZITH_BLOCK = common("storage_blocks/raw_zith");
         public static final TagKey<Item> SILKY_JEWEL = common("gems/silky_jewel");
         public static final TagKey<Item> SILKY_JEWEL_BLOCK = common("storage_blocks/silky_jewel");
@@ -45,7 +45,7 @@ public class ModTags {
         public static final TagKey<Block> RAW_ARDITE_BLOCK = common("storage_blocks/raw_ardite");
         public static final TagKey<Block> CUTTABLE = local("cuttable_blocks");
         public static final TagKey<Block> CHLOROPHYLL_ORE = common("ores/chlorophyll");
-        public static final TagKey<Block> ZITH_ORE = common("ores/ith");
+        public static final TagKey<Block> ZITH_ORE = common("ores/zith");
         public static final TagKey<Block> RAW_ZITH_BLOCK = common("storage_blocks/raw_zith");
         public static final TagKey<Block> SILKY_JEWEL_BLOCK = common("storage_blocks/silky_jewel");
 

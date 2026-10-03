@@ -23,7 +23,7 @@ public class ModFluidTagProvider extends FluidTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider lookupProvider) {
         // tconstruct
-        tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(ModFluids.moltenTinkersBronze.getTag(), ModFluids.moltenAdamantium.getTag(), ModFluids.moltenLightite.getTag(), ModFluids.moltenBlackChocolate.getTag(),
+        tag(TinkerTags.Fluids.METAL_TOOLTIPS).addTags(ModFluids.moltenArdite.getTag(), ModFluids.moltenTinkersBronze.getTag(), ModFluids.moltenAdamantium.getTag(), ModFluids.moltenLightite.getTag(), ModFluids.moltenBlackChocolate.getTag(),
                 ModFluids.moltenWhiteChocolate.getTag(), ModFluids.moltenChlorophyte.getTag(), ModFluids.moltenSpectre.getTag(), ModFluids.moltenShroomite.getTag(), ModFluids.moltenObsidianBronze.getTag(), ModFluids.moltenElectricalSteel.getTag(),
                 ModFluids.moltenEchoBronze.getTag(), ModFluids.moltenBeetron.getTag(), ModFluids.moltenWardenSteel.getTag(), ModFluids.moltenZith.getTag(), ModFluids.moltenShimmerslime.getTag(), ModFluids.moltenAncientCeramic.getTag());
         tag(TinkerTags.Fluids.GLASS_TOOLTIPS).addTag(ModFluids.moltenTemperedGlass.getTag());

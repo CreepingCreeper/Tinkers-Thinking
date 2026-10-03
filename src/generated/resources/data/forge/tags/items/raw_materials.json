@@ -1,6 +1,6 @@
 {
   "values": [
-    "#forge:raw_ardite",
-    "#forge:raw_zith"
+    "#forge:raw_materials/ardite",
+    "#forge:raw_materials/raw_zith"
   ]
 }
