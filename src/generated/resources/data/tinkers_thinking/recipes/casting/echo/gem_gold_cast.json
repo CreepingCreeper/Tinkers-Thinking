@@ -3,10 +3,12 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/gem"
   },
+  "cooling_time": 76,
   "fluid": {
-    "fluid": "tinkers_thinking:molten_echo",
-    "amount": 100
+    "amount": 100,
+    "tag": "forge:molten_echo"
   },
-  "result": "minecraft:echo_shard",
-  "cooling_time": 31
+  "result": {
+    "tag": "forge:gems/echo"
+  }
 }

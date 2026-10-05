@@ -11,7 +11,7 @@
       "durability": 500,
       "melee_attack": 3.0,
       "mining_speed": 5.5,
-      "mining_tier": "minecraft:iron"
+      "mining_tier": "minecraft:netherite"
     }
   }
 }

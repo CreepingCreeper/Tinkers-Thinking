@@ -16,7 +16,6 @@ public class ModMaterialIds {
     // tier 3
     public static final MaterialId obsidian_bronze = id("obsidian_bronze");
     public static final MaterialId beetron = id("beetron");
-    public static final MaterialId echo_bronze = id("echo_bronze");
     public static final MaterialId shroomite = id("shroomite");
     public static final MaterialId shroomite_compound = id("shroomite_compound");
     public static final MaterialId tinkers_bronze = id("tinkers_bronze");
@@ -40,13 +39,15 @@ public class ModMaterialIds {
     public static final MaterialId pearlescent_frogcroaking = id("pearlescent_frogcroaking");
 
     // tier 4
-    public static final MaterialId ancient_ceramic = id("ancient_ceramic");
-    public static final MaterialId scarlet_slimestone = id("scarlet_slimestone");
     public static final MaterialId copshowium = id("copshowium");
-    public static final MaterialId stewium = id("stewium");
+    public static final MaterialId echo_bronze = id("echo_bronze");
+    public static final MaterialId scarlet_slimestone = id("scarlet_slimestone");
     public static final MaterialId burnt_ashes = id("burnt_ashes");
     public static final MaterialId solidified_emptiness = id("solidified_emptiness");
+    public static final MaterialId stewium = id("stewium");
     public static final MaterialId warden_steel = id("warden_steel");
+    public static final MaterialId ancient_ceramic = id("ancient_ceramic");
+
     public static final MaterialId zith = id("zith");
     public static final MaterialId bound_chain = id("bound_chain");
     public static final MaterialId shimmerslime = id("shimmerslime");
@@ -54,7 +55,6 @@ public class ModMaterialIds {
     public static final MaterialId colorite = id("colorite");
     public static final MaterialId errorite = id("errorite");
     public static final MaterialId adamantium = id("adamantium");
-
 
 
     private static MaterialId id(String name) {

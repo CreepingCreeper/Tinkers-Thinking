@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:gems/echo"
+  },
+  "result": {
+    "amount": 100,
+    "tag": "forge:molten_echo"
+  },
+  "temperature": 1200,
+  "time": 72
+}

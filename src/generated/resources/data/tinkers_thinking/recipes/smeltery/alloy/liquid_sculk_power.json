@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 100,
+      "tag": "forge:molten_echo"
+    },
+    {
+      "amount": 200,
+      "tag": "tconstruct:liquid_soul"
+    },
+    {
+      "amount": 200,
+      "tag": "tconstruct:ichor"
+    }
+  ],
+  "result": {
+    "amount": 200,
+    "fluid": "tinkers_thinking:liquid_sculk_power"
+  },
+  "temperature": 20
+}

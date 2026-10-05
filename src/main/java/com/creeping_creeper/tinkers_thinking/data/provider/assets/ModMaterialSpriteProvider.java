@@ -7,6 +7,9 @@ import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColor
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
 
+import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.INGOT;
+import static slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider.STORAGE_BLOCK;
+
 public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
 
     @Override
@@ -373,7 +376,7 @@ public class ModMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                         .build());
 
         buildMaterial(ModMaterialIds.copshowium)
-                .meleeHarvest().ranged().armor()
+                .meleeHarvest().ranged().armor().statType(INGOT, STORAGE_BLOCK)
                 .fallbacks("metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack()
                         .addARGB(63,0xFF962B07)

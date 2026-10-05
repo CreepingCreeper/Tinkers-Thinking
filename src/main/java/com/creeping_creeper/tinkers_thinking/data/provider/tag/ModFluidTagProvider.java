@@ -28,7 +28,7 @@ public class ModFluidTagProvider extends FluidTagsProvider {
                 ModFluids.moltenEchoBronze.getTag(), ModFluids.moltenBeetron.getTag(), ModFluids.moltenWardenSteel.getTag(), ModFluids.moltenZith.getTag(), ModFluids.moltenShimmerslime.getTag(), ModFluids.moltenAncientCeramic.getTag());
         tag(TinkerTags.Fluids.GLASS_TOOLTIPS).addTag(ModFluids.moltenTemperedGlass.getTag());
         tag(TinkerTags.Fluids.SLIME_TOOLTIPS).addTags(ModFluids.pulp.getTag(), ModFluids.chillslime.getTag(), ModFluids.scarletslime.getTag(), ModFluids.colorLiquid.getTag(), ModFluids.errorLiquid.getTag());
-        tag(TinkerTags.Fluids.SMALL_GEM_TOOLTIPS).addTags(ModFluids.syrup.getTag(), ModFluids.moltenEcho.getTag(), ModFluids.liquidSculkPower.getTag(), ModFluids.emptiness.getTag());
+        tag(TinkerTags.Fluids.LARGE_GEM_TOOLTIPS).addTags(ModFluids.syrup.getTag(), ModFluids.moltenEcho.getTag(), ModFluids.liquidSculkPower.getTag(), ModFluids.emptiness.getTag());
         tag(MantleTags.Fluids.SOUP).addTags(ModFluids.moltenCocoa.getTag());
 
         // self

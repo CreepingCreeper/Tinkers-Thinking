@@ -25,12 +25,13 @@ public class ModTags {
         public static final TagKey<Item> SILKY_JEWEL = common("gems/silky_jewel");
         public static final TagKey<Item> SILKY_JEWEL_BLOCK = common("storage_blocks/silky_jewel");
 
+        public static final TagKey<Item> ECHO_GEM = common("gems/echo");
+
         public static final TagKey<Item> TOOL_KNIVES = common("tools/knives");
         public static final TagKey<Item> FILLET_KNIFE = common("fillet_knife");
 
         public static final TagKey<Item> PULP_INGREDIENT = local("pulp_ingredient");
         public static final TagKey<Item> PULP_INGREDIENT_LARGE = local("pulp_ingredient_large");
-
 
         private static TagKey<Item> local(String name) {
             return TagKey.create(Registries.ITEM, getResource(name));

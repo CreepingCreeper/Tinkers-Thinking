@@ -97,15 +97,6 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .attackDamage(1.10f)
                         .build(),
                 StatlessMaterialStats.BINDING);
-        addMaterialStats(ModMaterialIds.echo_bronze,
-                new HeadMaterialStats(325, 4.5f, GOLD, 2.25f),
-                HandleMaterialStats.multipliers()
-                        .durability(0.90f)
-                        .miningSpeed(0.90f)
-                        .attackSpeed(1.05f)
-                        .attackDamage(1.05f)
-                        .build(),
-                StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.shroomite,
                 new HeadMaterialStats(1050, 6.0f, DIAMOND, 2.75f),
                 HandleMaterialStats.multipliers()
@@ -225,26 +216,8 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
         addMaterialStats(ModMaterialIds.pearlescent_frogcroaking, StatlessMaterialStats.BINDING);
 
         // tier4
-        addMaterialStats(ModMaterialIds.ancient_ceramic,
-                new HeadMaterialStats(830,8.0f,  NETHERITE,3.5f),
-                HandleMaterialStats.multipliers()
-                        .durability(0.75f)
-                        .miningSpeed(1.20f)
-                        .attackSpeed(1.15f)
-                        .attackDamage(1.15f)
-                        .build(),
-                StatlessMaterialStats.BINDING);
-        addMaterialStats(ModMaterialIds.scarlet_slimestone,
-                new HeadMaterialStats(500,5.5f, IRON,3.0f),
-                HandleMaterialStats.multipliers()
-                        .durability(0.85f)
-                        .miningSpeed(0.85f)
-                        .attackSpeed(1.15f)
-                        .attackDamage(1.15f)
-                        .build(),
-                StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.copshowium,
-                new HeadMaterialStats(764,6.0f, DIAMOND,3f),
+                new HeadMaterialStats(764,6.0f, NETHERITE,3f),
                 HandleMaterialStats.multipliers()
                         .durability(0.80f)
                         .miningSpeed(1.10f)
@@ -252,13 +225,22 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .attackDamage(0.95f)
                         .build(),
                 StatlessMaterialStats.BINDING);
-        addMaterialStats(ModMaterialIds.stewium,
-                new HeadMaterialStats(1540,5.5f, DIAMOND,2.5f),
+        addMaterialStats(ModMaterialIds.echo_bronze,
+                new HeadMaterialStats(425, 6.5f, DIAMOND, 2.75f),
                 HandleMaterialStats.multipliers()
-                        .durability(1.15f)
-                        .miningSpeed(1.10f)
-                        .attackSpeed(0.90f)
-                        .attackDamage(0.95f)
+                        .durability(0.90f)
+                        .miningSpeed(1.1f)
+                        .attackSpeed(1.1f)
+                        .attackDamage(1.1f)
+                        .build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(ModMaterialIds.scarlet_slimestone,
+                new HeadMaterialStats(500,5.5f, NETHERITE,3.0f),
+                HandleMaterialStats.multipliers()
+                        .durability(0.85f)
+                        .miningSpeed(0.85f)
+                        .attackSpeed(1.15f)
+                        .attackDamage(1.15f)
                         .build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.burnt_ashes,
@@ -279,6 +261,15 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .attackDamage(1.10f)
                         .build(),
                 StatlessMaterialStats.BINDING);
+        addMaterialStats(ModMaterialIds.stewium,
+                new HeadMaterialStats(1540,5.5f, NETHERITE,2.5f),
+                HandleMaterialStats.multipliers()
+                        .durability(1.15f)
+                        .miningSpeed(1.10f)
+                        .attackSpeed(0.90f)
+                        .attackDamage(0.95f)
+                        .build(),
+                StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.warden_steel,
                 new HeadMaterialStats(480,6.5f, NETHERITE,2.5f),
                 HandleMaterialStats.multipliers()
@@ -286,6 +277,15 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .miningSpeed(1.10f)
                         .attackSpeed(1.15f)
                         .attackDamage(0.95f)
+                        .build(),
+                StatlessMaterialStats.BINDING);
+        addMaterialStats(ModMaterialIds.ancient_ceramic,
+                new HeadMaterialStats(830,8.0f, NETHERITE,3.5f),
+                HandleMaterialStats.multipliers()
+                        .durability(0.75f)
+                        .miningSpeed(1.20f)
+                        .attackSpeed(1.15f)
+                        .attackDamage(1.15f)
                         .build(),
                 StatlessMaterialStats.BINDING);
         addMaterialStats(ModMaterialIds.zith,
@@ -354,9 +354,6 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
         addMaterialStats(ModMaterialIds.beetron,
                 new LimbMaterialStats(550,0.15f,-0.05f,0.05f),
                 new GripMaterialStats(0.05f,0.05f,2.5f));
-        addMaterialStats(ModMaterialIds.echo_bronze,
-                new LimbMaterialStats(325,0.05f,-0.05f,-0.05f),
-                new GripMaterialStats(-0.1f,0.05f,2.25f));
         addMaterialStats(ModMaterialIds.shroomite,
                 new LimbMaterialStats(1050,-0.10f,0.05f,0.10f),
                 new GripMaterialStats(0.15f,0.05f,2.75f));
@@ -394,15 +391,18 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
         addMaterialStats(ModMaterialIds.copshowium,
                 new LimbMaterialStats(764,0.10f,-0.05f,0.20f),
                 new GripMaterialStats(-0.2f,0.15f,3f));
-        addMaterialStats(ModMaterialIds.stewium,
-                new LimbMaterialStats(1540,-0.15f,0.05f,-0.05f),
-                new GripMaterialStats(0.15f,0.10f,2.5f));
+        addMaterialStats(ModMaterialIds.echo_bronze,
+                new LimbMaterialStats(425,0.05f,0.15f,0.05f),
+                new GripMaterialStats(-0.1f,0.05f,2.75f));
         addMaterialStats(ModMaterialIds.burnt_ashes,
                 new LimbMaterialStats(750,0.10f,0.05f,-0.10f),
                 new GripMaterialStats(-0.15f,0.05f,2.75f));
         addMaterialStats(ModMaterialIds.solidified_emptiness,
                 new LimbMaterialStats(1200,0.25f,-0.15f,0.10f),
                 new GripMaterialStats(-0.2f,0.10f,2.5f));
+        addMaterialStats(ModMaterialIds.stewium,
+                new LimbMaterialStats(1540,-0.15f,0.05f,-0.05f),
+                new GripMaterialStats(0.15f,0.10f,2.5f));
         addMaterialStats(ModMaterialIds.zith,
                 new LimbMaterialStats(1000,-0.05f,0.2f,0.05f),
                 new GripMaterialStats(-0.15f,0.1f,3f));
@@ -444,13 +444,6 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .armor(2,5,7,2)
                         .toughness(1.5f)
                         .knockbackResistance(0.1f),
-                StatlessMaterialStats.MAILLE);
-
-        addArmorShieldStats(ModMaterialIds.echo_bronze,
-                PlatingMaterialStats.builder()
-                        .durabilityFactor(20f)
-                        .armor(1.5f,3.0f,4.5f,1.5f)
-                        .toughness(1.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.shroomite,
@@ -520,27 +513,18 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .knockbackResistance(0.15f),
                 StatlessMaterialStats.MAILLE);
         // tier4
-        addArmorShieldStats(ModMaterialIds.ancient_ceramic,
-                PlatingMaterialStats.builder()
-                        .durabilityFactor(26f)
-                        .armor(2,5,7,2)
-                        .toughness(3.5f),
-                StatlessMaterialStats.MAILLE);
-
         addArmorShieldStats(ModMaterialIds.copshowium,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(24f)
                         .armor(2.5f,5.5f,7.5f,2.5f)
                         .toughness(1.5f),
-
                 StatlessMaterialStats.MAILLE);
 
-        addArmorShieldStats(ModMaterialIds.stewium,
+        addArmorShieldStats(ModMaterialIds.echo_bronze,
                 PlatingMaterialStats.builder()
-                        .durabilityFactor(48f)
-                        .armor(3,6,8,3)
-                        .toughness(1.5f)
-                        .knockbackResistance(0.05f),
+                        .durabilityFactor(26f)
+                        .armor(2f,5f,6f,2f)
+                        .toughness(1.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.burnt_ashes,
@@ -551,11 +535,26 @@ public class ModStatsProvider extends AbstractMaterialStatsDataProvider {
                         .knockbackResistance(0.10f),
                 StatlessMaterialStats.MAILLE);
 
+        addArmorShieldStats(ModMaterialIds.stewium,
+                PlatingMaterialStats.builder()
+                        .durabilityFactor(48f)
+                        .armor(3,6,8,3)
+                        .toughness(1.5f)
+                        .knockbackResistance(0.05f),
+                StatlessMaterialStats.MAILLE);
+
         addArmorShieldStats(ModMaterialIds.warden_steel,
                 PlatingMaterialStats.builder()
                         .durabilityFactor(30f)
                         .armor(2,5,7,2)
                         .toughness(1.5f),
+                StatlessMaterialStats.MAILLE);
+
+        addArmorShieldStats(ModMaterialIds.ancient_ceramic,
+                PlatingMaterialStats.builder()
+                        .durabilityFactor(26f)
+                        .armor(2,5,7,2)
+                        .toughness(3.5f),
                 StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ModMaterialIds.zith,

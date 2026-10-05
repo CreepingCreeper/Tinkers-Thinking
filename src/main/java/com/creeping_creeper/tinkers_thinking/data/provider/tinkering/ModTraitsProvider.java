@@ -42,8 +42,6 @@ public class ModTraitsProvider extends AbstractMaterialTraitDataProvider {
 
         addDefaultTraits(ModMaterialIds.beetron, ModModifierIds.Hungriness);
 
-        addDefaultTraits(ModMaterialIds.echo_bronze, ModModifierIds.SculkCatalyse, ModModifierIds.SculkBoost);
-
         addTraits(ModMaterialIds.shroomite, RANGED, ModModifierIds.Shady);
         addTraits(ModMaterialIds.shroomite, MELEE_HARVEST, ModModifierIds.Shady);
         addTraits(ModMaterialIds.shroomite, ARMOR, ModModifierIds.Shadowing);
@@ -99,15 +97,13 @@ public class ModTraitsProvider extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(ModMaterialIds.pearlescent_frogcroaking, ModModifierIds.SculkCatalyse, ModModifierIds.SculkTeleport);
 
         // tier4
-        addDefaultTraits(ModMaterialIds.ancient_ceramic, ModModifierIds.SculkCatalyse, ModModifierIds.SculkSiphon);
-        
-        addDefaultTraits(ModMaterialIds.scarlet_slimestone, ModModifierIds.Overdisintegrate, TinkerModifiers.overslime.getId());
-
         addTraits(ModMaterialIds.copshowium, RANGED, ModModifierIds.Reverse, ModModifierIds.Rederangement);
         addTraits(ModMaterialIds.copshowium, MELEE_HARVEST, ModModifierIds.Reverse, ModModifierIds.Rederangement);
         addTraits(ModMaterialIds.copshowium, ARMOR, ModModifierIds.Reverse, ModModifierIds.Retransit);
-        
-        addDefaultTraits(ModMaterialIds.stewium, ModModifierIds.Overeat, TinkerModifiers.overslime.getId());
+
+        addDefaultTraits(ModMaterialIds.echo_bronze, ModModifierIds.SculkCatalyse, ModModifierIds.SculkBoost);
+
+        addDefaultTraits(ModMaterialIds.scarlet_slimestone, ModModifierIds.Overdisintegrate, TinkerModifiers.overslime.getId());
 
         addTraits(ModMaterialIds.burnt_ashes, RANGED, ModModifierIds.BurningOut);
         addTraits(ModMaterialIds.burnt_ashes, MELEE_HARVEST, ModModifierIds.BurningOut);
@@ -116,7 +112,11 @@ public class ModTraitsProvider extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(ModMaterialIds.solidified_emptiness, ModModifierIds.Reverse);
         addDefaultTraits(ModMaterialIds.solidified_emptiness, ModModifierIds.Recalamity);
 
+        addDefaultTraits(ModMaterialIds.stewium, ModModifierIds.Overeat, TinkerModifiers.overslime.getId());
+
         addDefaultTraits(ModMaterialIds.warden_steel, ModModifierIds.SculkCatalyse, ModModifierIds.SculkStruggle);
+
+        addDefaultTraits(ModMaterialIds.ancient_ceramic, ModModifierIds.SculkCatalyse, ModModifierIds.SculkSiphon);
 
         addDefaultTraits(ModMaterialIds.zith, ModModifierIds.SharpCircumstance);
 

@@ -10,6 +10,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
@@ -20,7 +21,9 @@ import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.shared.TinkerMaterials;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import java.util.function.Consumer;
@@ -66,6 +69,7 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         metalCrafting(consumer, ModCommonItems.echo_bronze, metal);
         metalCrafting(consumer, ModCommonItems.electrical_steel, metal);
         metalCrafting(consumer, ModCommonItems.warden_steel, metal);
+        metalCrafting(consumer, ModCommonItems.zith, metal);
         metalCrafting(consumer, ModCommonItems.shimmerslime, metal);
         metalCrafting(consumer, ModCommonItems.adamantium, metal);
 
@@ -74,6 +78,9 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
                 .save(consumer, location(metal + "ardite_ingot_blasting"));
         packingRecipe(consumer, RecipeCategory.MISC, "raw_block", ModCommonItems.raw_ardite_block, "raw", ModCommonItems.raw_ardite, ModTags.Items.RAW_ARDITE, metal);
 
+        MeltingRecipeBuilder.melting(Ingredient.of(Items.RECOVERY_COMPASS), TinkerFluids.moltenIron, FluidValues.INGOT * 4)
+                .addByproduct(ModFluids.moltenEcho.result(FluidValues.GEM * 8))
+                .save(consumer, location("smeltery/melting/crystal/recovery_compass"));
     }
 
     private void addAlloy(Consumer<FinishedRecipe> consumer){
@@ -124,6 +131,12 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
                 .addInput(TinkerFluids.moltenDebris.getTag(), FluidValues.INGOT * 2)
                 .addInput(ModFluids.moltenZith.getTag(), FluidValues.INGOT)
                 .save(consumer, prefix(ModFluids.moltenAdamantium, folder));
+
+        AlloyRecipeBuilder.alloy(ModFluids.liquidSculkPower, FluidValues.GEM * 2)
+                .addInput(ModFluids.moltenEcho.getTag(), FluidValues.GEM)
+                .addInput(TinkerFluids.liquidSoul.getTag(), FluidValues.GEM * 2)
+                .addInput(TinkerFluids.ichor.getTag(), FluidValues.GEM * 2)
+                .save(consumer, prefix(ModFluids.liquidSculkPower, folder));
     }
 
     private void addTagRecipes(Consumer<FinishedRecipe> consumer) {
@@ -138,8 +151,11 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         metal(consumer, ModFluids.moltenEchoBronze).metal();
         metal(consumer, ModFluids.moltenElectricalSteel).metal();
         metal(consumer, ModFluids.moltenWardenSteel).metal();
+        //metal(consumer, ModFluids.moltenZith).metal();
         metal(consumer, ModFluids.moltenShimmerslime).metal();
         metal(consumer, ModFluids.moltenAdamantium).metal();
+
+        molten(consumer, ModFluids.moltenEcho).baseUnit(FluidValues.GEM).meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, false).castingFolder("smeltery/casting/crystal").meltingFolder("smeltery/melting/crystal");
     }
 
 }

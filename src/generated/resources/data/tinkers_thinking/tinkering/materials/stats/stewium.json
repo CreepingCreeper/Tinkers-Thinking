@@ -16,7 +16,7 @@
       "durability": 1540,
       "melee_attack": 2.5,
       "mining_speed": 5.5,
-      "mining_tier": "minecraft:diamond"
+      "mining_tier": "minecraft:netherite"
     },
     "tconstruct:limb": {
       "accuracy": -0.05,

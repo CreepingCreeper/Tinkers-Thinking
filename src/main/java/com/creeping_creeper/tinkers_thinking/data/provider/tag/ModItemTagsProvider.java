@@ -49,8 +49,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.STONE_ROD).add(ModCommonItems.stone_stick.get());
         tag(Tags.Items.RODS).addTag(ModTags.Items.STONE_ROD);
         tag(ModTags.Items.SILKY_JEWEL).add(ModCommonItems.silky_jewel.get());
+        tag(ModTags.Items.ECHO_GEM).add(Items.ECHO_SHARD);
         tag(Tags.Items.GEMS_QUARTZ).add(ModCommonItems.quartz_crystal.get());
-        tag(Tags.Items.GEMS).addTag(ModTags.Items.SILKY_JEWEL);
+        tag(Tags.Items.GEMS).addTags(ModTags.Items.SILKY_JEWEL, ModTags.Items.ECHO_GEM);
         tag(ModTags.Items.RAW_ARDITE).add(ModCommonItems.raw_ardite.get());
         tag(ModTags.Items.RAW_ZITH).add(ModCommonItems.raw_zith.get());
         tag(Tags.Items.RAW_MATERIALS).addTags(ModTags.Items.RAW_ARDITE, ModTags.Items.RAW_ZITH);

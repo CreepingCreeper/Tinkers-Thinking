@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:zith_ingot",
+  "key": {
+    "#": {
+      "tag": "forge:nuggets/zith"
+    },
+    "*": {
+      "item": "tinkers_thinking:zith_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:zith_ingot"
+  },
+  "show_notification": true
+}

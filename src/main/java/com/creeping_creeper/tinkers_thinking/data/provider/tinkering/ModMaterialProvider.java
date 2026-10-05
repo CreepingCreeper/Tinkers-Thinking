@@ -23,7 +23,6 @@ public class ModMaterialProvider extends AbstractMaterialDataProvider {
         // tier 3
         material(ModMaterialIds.obsidian_bronze).tier(3).sort(0);
         material(ModMaterialIds.beetron).tier(3).sort(1);
-        material(ModMaterialIds.echo_bronze).tier(3).sort(1);
         material(ModMaterialIds.shroomite).tier(3).sort(1);
         material(ModMaterialIds.shroomite_compound).tier(3).sort(1);
         material(ModMaterialIds.tinkers_bronze).tier(3).sort(1);
@@ -47,14 +46,15 @@ public class ModMaterialProvider extends AbstractMaterialDataProvider {
         material(ModMaterialIds.pearlescent_frogcroaking).tier(3).sort(20).craftable();
 
         // tier 4
-        material(ModMaterialIds.ancient_ceramic).tier(4).sort(2);
-        material(ModMaterialIds.scarlet_slimestone).tier(4).sort(2).craftable();
-        material(ModMaterialIds.copshowium).tier(4).sort(2).craftable().compatAlloy("copshowium");
-        material(ModMaterialIds.stewium).tier(4).sort(10);
+        material(ModMaterialIds.copshowium).tier(4).sort(ORDER_WEAPON).craftable().compatAlloy("copshowium");
+        material(ModMaterialIds.echo_bronze).tier(4).sort(ORDER_NETHER + ORDER_HARVEST);
+        material(ModMaterialIds.scarlet_slimestone).tier(4).sort(ORDER_NETHER + ORDER_WEAPON).craftable();
         material(ModMaterialIds.burnt_ashes).tier(4).sort(12);
         material(ModMaterialIds.solidified_emptiness).tier(4).sort(12);
-        material(ModMaterialIds.warden_steel).tier(4).sort(13);
-        material(ModMaterialIds.zith).tier(4).sort(19);
+        material(ModMaterialIds.stewium).tier(4).sort(ORDER_WEAPON + ORDER_SPECIAL);
+        material(ModMaterialIds.warden_steel).tier(4).sort(ORDER_NETHER + ORDER_SPECIAL);
+        material(ModMaterialIds.ancient_ceramic).tier(4).sort(ORDER_NETHER + ORDER_SPECIAL);
+        material(ModMaterialIds.zith).tier(4).sort(ORDER_END);
         material(ModMaterialIds.bound_chain).tier(4).sort(20).craftable();
         material(ModMaterialIds.shimmerslime).tier(4).sort(20);
         material(ModMaterialIds.soul_vine).tier(4).sort(20).craftable();
