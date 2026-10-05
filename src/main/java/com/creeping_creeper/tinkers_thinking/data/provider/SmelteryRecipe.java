@@ -151,7 +151,7 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         metal(consumer, ModFluids.moltenEchoBronze).metal();
         metal(consumer, ModFluids.moltenElectricalSteel).metal();
         metal(consumer, ModFluids.moltenWardenSteel).metal();
-        //metal(consumer, ModFluids.moltenZith).metal();
+        metal(consumer, ModFluids.moltenZith).metal();
         metal(consumer, ModFluids.moltenShimmerslime).metal();
         metal(consumer, ModFluids.moltenAdamantium).metal();
 
