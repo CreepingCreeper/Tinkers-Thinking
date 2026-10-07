@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tinkers_thinking:raw_zith_block",
+  "key": {
+    "#": {
+      "tag": "forge:raw_materials/raw_zith"
+    },
+    "*": {
+      "item": "tinkers_thinking:raw_zith"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "tinkers_thinking:raw_zith_block"
+  },
+  "show_notification": true
+}

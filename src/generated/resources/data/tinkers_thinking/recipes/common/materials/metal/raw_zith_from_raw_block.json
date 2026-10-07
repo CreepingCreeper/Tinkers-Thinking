@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "tinkers_thinking:raw_zith",
+  "ingredients": [
+    {
+      "item": "tinkers_thinking:raw_zith_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_thinking:raw_zith"
+  }
+}

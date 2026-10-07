@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
-import slimeknights.tconstruct.shared.TinkerMaterials;
+import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 
@@ -73,10 +73,15 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         metalCrafting(consumer, ModCommonItems.shimmerslime, metal);
         metalCrafting(consumer, ModCommonItems.adamantium, metal);
 
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModCommonItems.raw_ardite, ModCommonItems.ardite_ore), RecipeCategory.MISC, TinkerMaterials.cobalt.getIngot(), 1.5f, 200)
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModCommonItems.raw_ardite, ModCommonItems.ardite_ore), RecipeCategory.MISC, ModCommonItems.ardite.getIngot(), 1.5f, 200)
                 .unlockedBy("has_item", has(ModCommonItems.raw_ardite))
                 .save(consumer, location(metal + "ardite_ingot_blasting"));
         packingRecipe(consumer, RecipeCategory.MISC, "raw_block", ModCommonItems.raw_ardite_block, "raw", ModCommonItems.raw_ardite, ModTags.Items.RAW_ARDITE, metal);
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModCommonItems.raw_zith, ModCommonItems.zith_ore), RecipeCategory.MISC, TinkerCommons.obsidianPane, 1.5f, 200)
+                .unlockedBy("has_item", has(ModCommonItems.raw_zith))
+                .save(consumer, location(metal + "zith_ingot_blasting"));
+        packingRecipe(consumer, RecipeCategory.MISC, "raw_block", ModCommonItems.raw_zith_block, "raw", ModCommonItems.raw_zith, ModTags.Items.RAW_ZITH, metal);
+
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.RECOVERY_COMPASS), TinkerFluids.moltenIron, FluidValues.INGOT * 4)
                 .addByproduct(ModFluids.moltenEcho.result(FluidValues.GEM * 8))

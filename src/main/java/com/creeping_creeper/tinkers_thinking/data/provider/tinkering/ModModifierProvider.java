@@ -70,6 +70,7 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.modifiers.util.ModifierTooltip;
 import slimeknights.tconstruct.library.tools.IndestructibleItemEntity;
 import slimeknights.tconstruct.library.tools.SlotType;
+import slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability;
 import slimeknights.tconstruct.library.tools.definition.module.ToolHooks;
 import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
@@ -405,7 +406,9 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
         buildModifier(ModModifierIds.Deposition).addModule(new DepositionModule(0.8f));
         buildModifier(ModModifierIds.Durable).addModule(new DurableModule(0.9f));
         buildModifier(ModModifierIds.Duritae).addModule(DuritaeModule.INSTANCE);
-        buildModifier(ModModifierIds.Overcharge).addModule(new OverchargeModule(100, 200));
+        buildModifier(ModModifierIds.Overcharge)
+                .addModule(ToolEnergyCapability.ENERGY_HANDLER)
+                .addModule(new OverchargeModule(100, 200));
         buildModifier(ModModifierIds.Overeat).addModule(new OvereatModule(LevelingValue.eachLevel(0.15f)));
         buildModifier(ModModifierIds.Reverse).levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(new CapacityBarModule(LevelingInt.flat(1), null))
