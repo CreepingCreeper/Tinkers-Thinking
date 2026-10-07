@@ -1,6 +1,6 @@
 {
   "type": "tconstruct:casting_basin",
-  "cooling_time": 100,
+  "cooling_time": 139,
   "fluid": {
     "amount": 810,
     "tag": "tinkers_thinking:molten_beetron"

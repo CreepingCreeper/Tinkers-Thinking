@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
-  "cooling_time": 66,
+  "cooling_time": 65,
   "fluid": {
     "amount": 90,
     "tag": "forge:molten_ardite"

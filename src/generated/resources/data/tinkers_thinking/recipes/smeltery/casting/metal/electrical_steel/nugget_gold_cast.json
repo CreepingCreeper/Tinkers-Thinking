@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
-  "cooling_time": 22,
+  "cooling_time": 18,
   "fluid": {
     "amount": 10,
     "tag": "forge:molten_electrical_steel"

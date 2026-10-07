@@ -4,7 +4,7 @@
     "tag": "tconstruct:casts/single_use/ingot"
   },
   "cast_consumed": true,
-  "cooling_time": 42,
+  "cooling_time": 53,
   "fluid": {
     "amount": 90,
     "tag": "tinkers_thinking:molten_chlorophyte"

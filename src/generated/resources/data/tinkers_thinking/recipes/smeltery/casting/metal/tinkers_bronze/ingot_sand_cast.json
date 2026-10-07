@@ -4,7 +4,7 @@
     "tag": "tconstruct:casts/single_use/ingot"
   },
   "cast_consumed": true,
-  "cooling_time": 40,
+  "cooling_time": 52,
   "fluid": {
     "amount": 90,
     "tag": "tinkers_thinking:molten_tinkers_bronze"

@@ -7,6 +7,6 @@
     "amount": 10,
     "fluid": "tinkers_thinking:molten_spectre"
   },
-  "temperature": 300,
-  "time": 14
+  "temperature": 600,
+  "time": 18
 }

@@ -7,6 +7,6 @@
     "amount": 10,
     "fluid": "tinkers_thinking:molten_beetron"
   },
-  "temperature": 100,
-  "time": 11
+  "temperature": 400,
+  "time": 15
 }
