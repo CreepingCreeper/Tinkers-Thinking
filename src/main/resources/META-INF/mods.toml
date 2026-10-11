@@ -5,7 +5,7 @@ logoFile="logo.png"
 license="MIT"
 [[mods]]
 modId="tinkers_thinking"
-version="0.2.2"
+version="0.2.3"
 displayName="Tinkers' Thinking"
 authors="Creeping Creeper"
 description='''
@@ -30,7 +30,7 @@ side="BOTH"
 [[dependencies.tinkers_thinking]]
 modId="tconstruct"
 mandatory=true
-versionRange="[3.11.2.166,)"
+versionRange="[3.12.1.231,)"
 ordering = "AFTER"
 side="BOTH"
 

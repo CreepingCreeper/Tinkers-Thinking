@@ -57,6 +57,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.RAW_ARDITE_BLOCK).add(ModCommonItems.raw_ardite_block.get());
         tag(ModTags.Blocks.RAW_ZITH_BLOCK).add(ModCommonItems.raw_zith_block.get());
         tag(Tags.Blocks.ORES).addTags(ModTags.Blocks.ARDITE_ORE, ModTags.Blocks.CHLOROPHYLL_ORE, ModTags.Blocks.ZITH_ORE);
+        tag(Tags.Blocks.ORE_RATES_SPARSE).addTags(ModTags.Blocks.ARDITE_ORE, ModTags.Blocks.CHLOROPHYLL_ORE, ModTags.Blocks.ZITH_ORE);
+        tag(Tags.Blocks.ORES_IN_GROUND_STONE).add(ModCommonItems.chlorophyll_ore.get());
+        tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE).add(ModCommonItems.deepslate_chlorophyll_ore.get());
+        tag(Tags.Blocks.ORES_IN_GROUND_NETHERRACK).add(ModCommonItems.ardite_ore.get());
 
         tag(ModTags.Blocks.SILKY_JEWEL_BLOCK).add(ModCommonItems.silky_jewel_block.get());
         tag(ModCommonItems.ardite.getBlockTag()).add(ModCommonItems.ardite.get());

@@ -59,6 +59,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(ModTags.Blocks.CHLOROPHYLL_ORE, ModTags.Items.CHLOROPHYLL_ORE);
         copy(ModTags.Blocks.ZITH_ORE, ModTags.Items.ZITH_ORE);
         copy(Tags.Blocks.ORES, Tags.Items.ORES);
+        copy(Tags.Blocks.ORE_RATES_SPARSE, Tags.Items.ORE_RATES_SPARSE);
+        copy(Tags.Blocks.ORES_IN_GROUND_STONE, Tags.Items.ORES_IN_GROUND_STONE);
+        copy(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE, Tags.Items.ORES_IN_GROUND_DEEPSLATE);
+        copy(Tags.Blocks.ORES_IN_GROUND_NETHERRACK, Tags.Items.ORES_IN_GROUND_NETHERRACK);
+
         copy(ModTags.Blocks.RAW_ARDITE_BLOCK, ModTags.Items.RAW_ARDITE_BLOCK);
         copy(ModTags.Blocks.RAW_ZITH_BLOCK, ModTags.Items.RAW_ZITH_BLOCK);
 

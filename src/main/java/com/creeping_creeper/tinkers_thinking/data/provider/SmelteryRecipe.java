@@ -145,10 +145,10 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
     }
 
     private void addTagRecipes(Consumer<FinishedRecipe> consumer) {
-        metal(consumer, ModFluids.moltenArdite).metal().ore(Byproduct.GOLD).rawOre(Byproduct.GOLD);
+        metal(consumer, ModFluids.moltenArdite).metal().ore(Byproduct.GOLD).rawOre(Byproduct.GOLD).sparseOre(2);
         metal(consumer, ModFluids.moltenTinkersBronze).metal();
         metal(consumer, ModFluids.moltenLightite).metal();
-        metal(consumer, ModFluids.moltenChlorophyte).metal();
+        metal(consumer, ModFluids.moltenChlorophyte).metal().ore(Byproduct.COPPER).sparseOre(2);
         metal(consumer, ModFluids.moltenSpectre).metal();
         metal(consumer, ModFluids.moltenShroomite).metal();
         metal(consumer, ModFluids.moltenBeetron).metal();
@@ -160,7 +160,7 @@ public class SmelteryRecipe extends RecipeProvider implements ISmelteryRecipeHel
         metal(consumer, ModFluids.moltenShimmerslime).metal();
         metal(consumer, ModFluids.moltenAdamantium).metal();
 
-        molten(consumer, ModFluids.moltenEcho).baseUnit(FluidValues.GEM).meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, false).castingFolder("smeltery/casting/crystal").meltingFolder("smeltery/melting/crystal");
+        molten(consumer, ModFluids.moltenEcho).castingFolder("smeltery/casting/crystal").meltingFolder("smeltery/melting/crystal").baseUnit(FluidValues.GEM).meltingCasting(1, TinkerSmeltery.gemCast, 1.0f, false);
     }
 
 }
