@@ -24,7 +24,7 @@ import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = TinkersThinking.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModProvider {
+public class DataProvider {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();

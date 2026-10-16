@@ -468,8 +468,8 @@
 
   "material.tinkers_thinking.beetron": "甜菜钢",
   "material.tinkers_thinking.beetron.flavor": "不是血， 这是甜菜汤",
-  "material.tinkers_thinking.beetron.encyclopedia": "饥饿值每降低1点，工具的挖掘速度提高2%",
-  "material.tinkers_thinking.beetron.ranged":"饥饿值每降低1点，工具的初速度提高2%",
+  "material.tinkers_thinking.beetron.encyclopedia": "饥饿值每降低1点，工具的挖掘速度提高1.5%",
+  "material.tinkers_thinking.beetron.ranged":"饥饿值每降低1点，工具的初速度提高1.5%",
 
   "material.tinkers_thinking.burnt_ashes": "焚烬",
   "material.tinkers_thinking.burnt_ashes.flavor": "火烬未熄，生机暗涌",

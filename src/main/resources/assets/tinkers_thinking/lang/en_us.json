@@ -468,8 +468,8 @@
 
   "material.tinkers_thinking.beetron": "Beetron",
   "material.tinkers_thinking.beetron.flavor": "No blood but beetroot soup",
-  "material.tinkers_thinking.beetron.encyclopedia": "For each 1 point of Hunger reduced, increases mining speed by 2%",
-  "material.tinkers_thinking.beetron.ranged":"For each 1 point of Hunger reduced, increases projectile velocity by 2%",
+  "material.tinkers_thinking.beetron.encyclopedia": "For each 1 point of Hunger reduced, increases mining speed by 1.5%",
+  "material.tinkers_thinking.beetron.ranged":"For each 1 point of Hunger reduced, increases projectile velocity by 1.5%",
 
   "material.tinkers_thinking.burnt_ashes": "Burnt Ashes",
   "material.tinkers_thinking.burnt_ashes.flavor": "While embers still glow, life stirs unseen",

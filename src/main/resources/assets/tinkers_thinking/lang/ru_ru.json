@@ -294,8 +294,8 @@
 
   "material.tinkers_thinking.beetron": "Свёклин",
   "material.tinkers_thinking.beetron.flavor": "Не кровь, а просто свекольник (борщ).",
-  "material.tinkers_thinking.beetron.encyclopedia": "За каждое потерянное очко голода увеличивает скорость добычи на 2%.",
-  "material.tinkers_thinking.beetron.ranged": "За каждое потерянное очко голода увеличивает скорость снаряда на 2%.",
+  "material.tinkers_thinking.beetron.encyclopedia": "За каждое потерянное очко голода увеличивает скорость добычи на 1.5%.",
+  "material.tinkers_thinking.beetron.ranged": "За каждое потерянное очко голода увеличивает скорость снаряда на 1.5%.",
 
   "material.tinkers_thinking.burnt_ashes": "Сожжённый пепел",
   "material.tinkers_thinking.burnt_ashes.flavor": "",

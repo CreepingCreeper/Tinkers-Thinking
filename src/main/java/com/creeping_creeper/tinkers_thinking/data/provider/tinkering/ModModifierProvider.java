@@ -268,7 +268,7 @@ public class ModModifierProvider extends AbstractModifierProvider implements ICo
                         .constant(1).add()
                         .variable(VALUE).multiply()
                         .build());
-        buildModifier(ModModifierIds.Hungriness).addModule(new HungrinessModule(LevelingValue.eachLevel(0.02f)));
+        buildModifier(ModModifierIds.Hungriness).addModule(new HungrinessModule(LevelingValue.eachLevel(0.015f)));
         buildModifier(ModModifierIds.MeltAdvanced) .addModule(new ModifierTraitModule(ModifierIds.lustrous, 1, false));
         MobEffectModule.Builder inspiredBuilder = MobEffectModule.builder(MobEffects.DIG_SPEED).time(RandomLevelingValue.perLevel(0, 100)).level(RandomLevelingValue.flat(2)).isAoe(BooleanPredicate.FALSE).chance(LevelingValue.flat(0.25f));
 

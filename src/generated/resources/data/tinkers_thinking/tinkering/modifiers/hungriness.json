@@ -3,7 +3,7 @@
   "modules": [
     {
       "type": "tinkers_thinking:hungriness",
-      "each_level": 0.02
+      "each_level": 0.015
     }
   ]
 }

@@ -290,8 +290,8 @@
 
   "material.tinkers_thinking.beetron": "ビートロン",
   "material.tinkers_thinking.beetron.flavor": "血ではないがビートルートスープ",
-  "material.tinkers_thinking.beetron.encyclopedia": "満腹値が1減少すると、採掘速度が2%上昇する",
-  "material.tinkers_thinking.beetron.ranged":"満腹値が1減少すると、速度が2%上昇する",
+  "material.tinkers_thinking.beetron.encyclopedia": "満腹値が1減少すると、採掘速度が1.5%上昇する",
+  "material.tinkers_thinking.beetron.ranged":"満腹値が1減少すると、速度が1.5%上昇する",
 
   "material.tinkers_thinking.burnt_ashes": "バーントアッシュ",
   "material.tinkers_thinking.burnt_ashes.flavor": "",

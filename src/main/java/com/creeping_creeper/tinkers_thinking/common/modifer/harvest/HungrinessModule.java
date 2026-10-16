@@ -54,7 +54,7 @@ public record HungrinessModule(LevelingValue rate) implements ModifierModule, Co
     @Override
     public float modifyStat(IToolStackView tool, ModifierEntry modifier, LivingEntity living, FloatToolStat stat, float baseValue, float multiplier) {
         if (stat == ToolStats.VELOCITY && living instanceof Player player) {
-            return baseValue*(1 + (20 - ((player.getFoodData().getFoodLevel())) * rate.compute(modifier)));
+            return baseValue * (1 + (20 - player.getFoodData().getFoodLevel()) * rate.compute(modifier));
         }
         return baseValue;
     }
@@ -64,7 +64,7 @@ public record HungrinessModule(LevelingValue rate) implements ModifierModule, Co
         if (!isEffective || event.getEntity() == null) {
             return;
         }
-        event.setNewSpeed(event.getNewSpeed() * (1 + (20 - (event.getEntity().getFoodData().getFoodLevel())) * rate.compute(modifier)));
+        event.setNewSpeed(event.getNewSpeed() * (1 + (20 - event.getEntity().getFoodData().getFoodLevel()) * rate.compute(modifier)));
     }
 
     @Override
